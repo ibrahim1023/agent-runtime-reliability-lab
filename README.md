@@ -4,7 +4,7 @@ A learning lab that makes agent recovery behavior inspectable through tool attem
 
 ## Current milestone
 
-Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. A combined offline command verifies sixteen historical records, checks the search-recovery review separately, and runs six receiver contracts. The seven original middleware contracts now have fresh opt-in scripted execution evidence through the real graph/tool stack. Approval and graph crash/resume integration are not implemented yet.
+Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. The offline command checks sixteen earlier historical records, all twenty-five search records, their decision review and the separate optional inventories, then runs six receiver contracts. The seven original middleware contracts now have fresh opt-in scripted execution evidence through the real graph/tool stack. Approval and graph crash/resume integration are not implemented yet.
 
 | Historical condition | Cases | Attempts per case | Committed effects per case |
 |---|---:|---:|---:|
@@ -101,3 +101,7 @@ All 25 search runs now have [detailed extracts and offline consistency checks](d
 ## Optional cohort inventory
 
 The [optional inventory](docs/optional-cohorts.md) preserves the original 120B comparison, its separate quota-blocked follow-up and the separate 20B comparison. The original-present 120B failure remains unresolved and has a detailed public extract. Provider interruptions have null behavior verdicts. Inventory checks are not full per-run model evaluation.
+
+## Sprint plan and provenance
+
+The three [Day 1 closeout items and next experiment criteria](docs/sprint-experiment-plan.md) are documented. The next approval → commit → crash → resume experiment is **frozen, not executed**. [Remaining provenance gaps](docs/provenance-gaps.md) stay explicit: historical revisions, immutable model snapshots and complete clean-install reproduction are not established. New diagnostic metadata is allowlisted from existing local traces; no live calls were made during this closeout.

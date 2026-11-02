@@ -935,5 +935,16 @@
   "unresolved_120b_result": {
     "export": "results/optional/unresolved-original-present-120b.json",
     "sha256": "d84494ce9441207b8844dcb64e4384d45265b5a0fb44184190a87d7bdbea6066"
+  },
+  "historical_runtime_metadata": {
+    "export": "results/runtime-provenance-20261102.json",
+    "sha256": "2bc4957b7387b9607b3fc0c1e25cc368b617b80b1e38dc21b53ce470f149e734",
+    "scope": "Allowlisted diagnostic metadata only; not an execution revision proof"
+  },
+  "next_experiment_plan": {
+    "experiment_id": "approval-commit-crash-resume-v1",
+    "export": "results/next-experiment-plan-v1.json",
+    "sha256": "2cd7c3d68afb6331d93e27312fe51fe9edfcd5354d0410949b8c68a46e9e04ff",
+    "status": "frozen_not_executed"
   }
 }

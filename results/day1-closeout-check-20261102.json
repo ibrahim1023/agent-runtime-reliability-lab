@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-02",
+  "kind": "fresh deterministic validation/packaging, not model evaluation",
+  "original_historical_records_checked": 16,
+  "full_search_records_checked": 25,
+  "optional_inventory": {
+    "status": "passed",
+    "kind": "historical inventory/classification checks; not full per-run behavioral validation",
+    "cohort_attempt_counts": [
+      16,
+      1,
+      8
+    ],
+    "valid_trial_counts": [
+      13,
+      0,
+      8
+    ],
+    "unresolved_120b": "preserved",
+    "new_model_calls": 0
+  },
+  "fresh_receiver_contracts": 6,
+  "development_tests_passed": 61,
+  "fresh_scripted_graphs_during_closeout": 0,
+  "live_model_calls_during_closeout": 0,
+  "next_experiment_executed": false,
+  "frozen_plan_sha256": "2cd7c3d68afb6331d93e27312fe51fe9edfcd5354d0410949b8c68a46e9e04ff",
+  "historical_metadata_sha256": "2bc4957b7387b9607b3fc0c1e25cc368b617b80b1e38dc21b53ce470f149e734"
+}

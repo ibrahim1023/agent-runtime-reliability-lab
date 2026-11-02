@@ -1,0 +1,1215 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-02",
+  "kind": "allowlisted metadata from stored historical traces; no new provider/tracing call",
+  "records": [
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "baseline-alternate_name-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "31adaf23bea8cb462b50626109812d7118cff61b29875b184e4f47ad1d90b3f3",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "baseline-ambiguous-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "974211ddc0a84f9ce6f1fc292b150e1197035fb895618ea9256d4b2e5b615cd9",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "baseline-empty-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "1233e390c613330e0e30174869701e0bbc5ab4fc66b29c9bc4495a2b6a5537e4",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "baseline-empty-2",
+      "source_trace_available": true,
+      "source_trace_sha256": "0a51f64a8dc32fa41c6acf94e10fa7cb3000ce1a4e6893c4fd388d76c5179523",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "baseline-empty-3",
+      "source_trace_available": true,
+      "source_trace_sha256": "b59cd34781a422231d5ef60b920982c91ec09fcf56eb26a3f2b88f02efd1fa89",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "baseline-existing-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "de85c19f48fc0265eb3bec6a49adc722b226166f2c0347e9187d6e7ec89eae06",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "baseline-nested-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "068d85384e9ec9ed453902f5c8af2554b4b9df4f322ffc03615220bd75cd3922",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "baseline-transient-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "86375398da3053bb860b2729cb5efa219dcb42db763d8b91c5262daa953a2bb2",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "baseline-wrong_directory-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "eca7d8b6a7ecc0be1441585c446c24371a9da6e97081618935e950dc741d68d1",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "candidate-alternate_name-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "6533103f0c5d782d725c8a5093a79ef4f14e99e47d656f1ccb1f0255e734ccf2",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "candidate-ambiguous-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "28222c22937428a37e5dd08fecd614e3ecf4abc68ff18dc32ec0108620b53438",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "candidate-empty-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "cdb5a6d1c80fc074d9bc2e447d62a12f772955bb05565a8d992f2a6339c94ebc",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "candidate-existing-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "16e41ddaa6db64fa338be65131784661a65f3998b6c2db80102796cae6c9532b",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "candidate-nested-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "9b9d6dd4ed005a84b76fde7bb112a71b7dff496a91dbdb4e76663fb8ae8d615f",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "candidate-transient-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "cab5a2ef25b40090e2a27cb9dccfa41619ec91cd0f481861781813d80db784c9",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "candidate-wrong_directory-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "3bf748e0a1ed32e787151a9bc627a3ae8263d9fac98b19454645aad5e2d76324",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "conservative-alternate_name-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "4091a54e213779f8f2224282e0cc198237bf74aa2aaae2637fb99aa9bba27777",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "conservative-ambiguous-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "44de4b21933e6804f69c56ba537b293523f2d7c8de27761c94d787064ab98e1b",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "conservative-empty-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "6f46c04f32dbfdce93421488ef704b99786f8c300c2bb9565d40c50d9c2be2e6",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "conservative-empty-2",
+      "source_trace_available": true,
+      "source_trace_sha256": "6b37a8d6953f325e0516a9b628f499eff465a4f21dd5dba0363794dd01a3fdac",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "conservative-empty-3",
+      "source_trace_available": true,
+      "source_trace_sha256": "692277e8f16cf904a0c271607650f6cad40868aa0bc04814a469735812c1293b",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "conservative-existing-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "a63f6bac44bae71bc3999ad2b352d58eedc645831fe882da629ba83eb4586e97",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "conservative-nested-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "68774bccf7665b43473a36168274d1890764392f5cb165c38332c7712c362c8d",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "conservative-transient-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "bae7c55bdd97a78993c0e80da6b53e6ce898f004119fe5ec59b70a96fdd54a99",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-search-improvement",
+      "label": "conservative-wrong_directory-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "955dbffec6bf27fe552018d716c7530ee7bfc35f55e03a5b256d855cd59de671",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "previous-ambiguous_alternative-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "17335ffba1bb12f9d2c04227b644a3830eef737535383a8029edc06232424938",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "previous-ambiguous_original-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "66507a61fc44b205ae54f93cca508395ca1fdcc84e61867ece130555715dbdbf",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "previous-confirmation_required-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "92b69b16778da49f8646042cb601832a115cdbd61c543bce0de84782eea4e238",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "previous-explicit-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "9df61db03bda5ecb818123bd76e7e79cbafd7b1b6df0e376b6e678aedeb28c27",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "previous-explicit-2",
+      "source_trace_available": true,
+      "source_trace_sha256": "fb9dcaa136ae34c0cfa96ab998b8f3b980501ba4722f1d5c6ee3e7f4eb2ef29f",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "previous-explicit-3",
+      "source_trace_available": true,
+      "source_trace_sha256": "7fa9de1cce0ba86dea5faf3015a12e7bafb7820507cdaddb451f337275c79e63",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "previous-missing_alternative-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "4189078dc667f628417fcfd0f75de62c39b72cfb4a4d3f7eb133d4c82671b297",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "previous-original_present-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "4a75de2614d62acfa46e36a1603d0e6d64c2149fac815800c269a6fe6347420b",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "scoped-ambiguous_alternative-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "f110cb71ee37d23189c158eae2500a218373267acb2c9e1960f28f1b6129a6b7",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "scoped-ambiguous_original-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "e5a57fd88cb455f44dc72fdfa2991d05f3a8576f78b5b73df12f994bf790656f",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "scoped-confirmation_required-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "d3a3d679c6a5244f16d279e0a721fe2e8113a5916ccb7f3a69ffc5f995dc5f0d",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "scoped-explicit-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "7adb9b6e51728cd0e517f22fcaec5397aa5f8edfbcac274d7d6ad637b1cb8844",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "scoped-explicit-2",
+      "source_trace_available": true,
+      "source_trace_sha256": "9089b0290e5b53ae23cddbf72c64d419a4984fcf0ae6be70b38541eb4a4000e2",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "scoped-explicit-3",
+      "source_trace_available": true,
+      "source_trace_sha256": "e825aca5e78aaf6dbb7a0089de1c7c77409a73a1776860d134e8bb4d84c7211e",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "scoped-missing_alternative-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "fc9421ef09ed72c54cab434717a1ebbf9e54729a700242aee04e411913f3f8ec",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "scoped-original_present-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "6bbe3cb9b012d6816c1ff20dd4e5af8926e1d210cab61168c00ef0ef3d3299ca",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-explicit-alternative",
+      "label": "scoped-original_present-2",
+      "source_trace_available": true,
+      "source_trace_sha256": "78f8e55f03445ae1344f2497228446b3ea56f1c8f348342a138b0806339823c1",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-120b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-gptoss20b",
+      "label": "previous-ambiguous_alternative-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "4c85ace8b023a49b4ef50ee437b30434dbf695088cc3bd227c6f7c32b7828ab8",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-20b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-gptoss20b",
+      "label": "previous-explicit-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "99a24afaf6a623bb720adb6cf68b5b9f1c0762edb72366b83a070c27cf16b655",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-20b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-gptoss20b",
+      "label": "previous-original_present-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "15de95d179b57f047c3706bb596256e0a5862bab6fa85fa5c9e73d61552e040a",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-20b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-gptoss20b",
+      "label": "previous-original_present-2",
+      "source_trace_available": true,
+      "source_trace_sha256": "c8d641e0ee0e614d5d4c097b2b447ea707057d670c7d2411cb98209d78fd82db",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-20b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-gptoss20b",
+      "label": "scoped-ambiguous_alternative-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "47a8c03e87251eaa5dd08a8f1526cf2817327ba1d39e511f26780d54be6764de",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-20b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-gptoss20b",
+      "label": "scoped-explicit-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "e251ef0942a507de63c7b8d4c41e9f7ea15cd82f5444353deb4ed5e85822df98",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-20b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-gptoss20b",
+      "label": "scoped-original_present-1",
+      "source_trace_available": true,
+      "source_trace_sha256": "39453432b1c40c7397d19263a688aef632a73a97d95424e69368a19adc0806b6",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-20b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    },
+    {
+      "source_cohort": "2026-10-29-gptoss20b",
+      "label": "scoped-original_present-2",
+      "source_trace_available": true,
+      "source_trace_sha256": "edb0e479cc8cb1f57972248140d197418ca1a37df06b648f205117e0ad753ca9",
+      "allowlisted_trace_samples": [
+        {
+          "trace_reported_model_settings": {
+            "ls_model_name": "openai/gpt-oss-20b",
+            "ls_provider": "groq",
+            "ls_temperature": 1e-08,
+            "ls_max_tokens": 512
+          },
+          "trace_reported_runtime": {
+            "langchain_core_version": "1.7.0",
+            "langchain_version": "1.4.7",
+            "library": "langchain-core",
+            "library_version": "1.7.0",
+            "runtime_version": "3.14.6",
+            "sdk_version": "0.14.12"
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Search and optional cohorts only; diagnostic metadata is not an immutable model snapshot or exact historical source revision. Runtime fields are partial, not a dependency lock.",
+  "requested_settings_evidence": "Current search/optional runner source requests temperature 0 and max_tokens 512; exact per-run source revision remains unknown. Trace-reported values are retained separately.",
+  "not_recovered": [
+    "Immutable provider model revision",
+    "Exact historical Deep Agents/LangGraph source revision",
+    "Complete historical dependency lock",
+    "Exact wire payload and all per-request timeout/retry/pacing settings"
+  ]
+}

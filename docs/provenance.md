@@ -96,3 +96,9 @@ Earlier record schemas differ from the current runner: some omit result executio
 ## Optional-cohort inventory milestone
 
 The manifest hash-links three inventories with 16, 1 and 8 attempt records and a reviewed detailed unresolved 120B failure. Invalid provider attempts retain null behavior/task verdicts. The follow-up preserves three unstarted trials as unstarted, not extra attempts. `optional_cohort_inventory` checks identity, roster/classification and preservation of the unresolved result; it does not perform full optional per-run artifact validation or reissue semantic judgments. See [optional cohort limits](optional-cohorts.md). No optional cohort is merged into search scores or adopted as a default.
+
+## Provenance closeout and next criteria
+
+[The provenance-gap register](provenance-gaps.md) distinguishes observed identities, partial trace metadata and remaining unknowns. `runtime-provenance-20261102.json` records only allowlisted settings/version samples from stored search/optional traces, with source hashes. Diagnostic temperature metadata is retained as reported (`1e-08`), separately from current source requesting 0. No raw trace is published, no wire-payload or immutable provider-revision claim is made, and the original runtime revision remains unknown. This metadata file is hash-linked for review; the default verifier does not independently authenticate original traces or re-evaluate these diagnostic fields.
+
+`next-experiment-plan-v1.json` freezes the bounded five-case approval/commit/crash/resume criteria. It is not execution evidence. The [sprint plan](sprint-experiment-plan.md) records Day 1 closeout, phase boundaries, preflight gates, exact expected effects and failure handling. The next execution and clean-install validation remain pending. Existing live-provider quotas are not assumed available.

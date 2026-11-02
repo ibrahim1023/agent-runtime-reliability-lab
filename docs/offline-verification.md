@@ -29,3 +29,9 @@ These checks do not rerun an LLM, LangGraph, approval, or crash/resume experimen
 After the sixteen-record stage and before fresh receiver checks, the command checks the historical search review. Its report distinguishes 25 roster entries from three detailed ambiguity extracts; it does not count them as 25 newly verified model outcomes. Seven historical graph-contract outcomes are inventoried, with zero fresh graph contracts executed. The read/write consistency check operates on stored JSON fields, not a graph or backend.
 
 Tests alter disposable copies and, except for the byte-drift control, update their manifest hash. Dropping a failed run, changing the selected prototype, contradicting final state or read contents, or relabeling a recorded ambiguous write as correct is rejected. Failures stop the command before receiver contracts. Final-answer quality is not rejudged. The initial review export's scope note records its earlier pre-integration state; this section describes current coverage.
+
+## Day 1 closeout coverage
+
+Current reports keep these units separate: sixteen original historical records; the initial search decision review; twenty-five detailed search records; optional cohort inventory/classification (16 original 120B attempts, one blocked follow-up and eight separate 20B runs); and six fresh receiver contracts. All 61 development tests pass on Python 3.14.6. The twenty-five search records are historical consistency checks, not new or uniformly successful model evaluations. Optional inventories are not full optional per-run behavioral validation.
+
+The provenance metadata and frozen next-experiment plan are hash-linked for reviewed publication, not semantically certified by the offline command. The plan has not run. Fresh scripted-runtime report validation and clean-install reproduction also remain separate pending work. See `results/day1-closeout-check-20261102.json` for this packaging/verification checkpoint.

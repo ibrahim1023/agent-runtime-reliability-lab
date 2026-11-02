@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "experiment_id": "approval-commit-crash-resume-v1",
+  "criteria_status": "frozen_not_executed",
+  "frozen_on": "2026-11-02",
+  "base_lab_commit": "088315aab832d3058ab7f25169dd30e8d88e6ef6",
+  "evidence_kind_planned": "fresh deterministic scripted graph/process execution; not live-model evaluation",
+  "learner_prediction": "pending at execution; packaging approval does not supply a prediction",
+  "budget": {
+    "cases": 5,
+    "max_worker_processes": 19,
+    "max_seconds_per_worker": 30,
+    "max_total_seconds": 600,
+    "recursion_limit_per_invoke": 10,
+    "live_model_calls": 0,
+    "estimated_provider_tokens": 0,
+    "automatic_retries": 0
+  },
+  "cases": [
+    {
+      "case": "protected-approve-1",
+      "decision": "approve",
+      "protected": true,
+      "phases": 4,
+      "expected_tool_entries": 2,
+      "expected_committed_effects": 1,
+      "expected_reused_receipt": true,
+      "approved_task_completed": true
+    },
+    {
+      "case": "protected-approve-2",
+      "decision": "approve",
+      "protected": true,
+      "phases": 4,
+      "expected_tool_entries": 2,
+      "expected_committed_effects": 1,
+      "expected_reused_receipt": true,
+      "approved_task_completed": true
+    },
+    {
+      "case": "unprotected-approve-control",
+      "decision": "approve",
+      "protected": false,
+      "phases": 4,
+      "expected_tool_entries": 2,
+      "expected_committed_effects": 2,
+      "expected_reused_receipt": false,
+      "approved_task_completed": false
+    },
+    {
+      "case": "protected-edit",
+      "decision": "edit",
+      "protected": true,
+      "phases": 4,
+      "original_message": "original-proposal",
+      "approved_message": "reviewer-approved",
+      "expected_tool_entries": 2,
+      "expected_committed_effects": 1,
+      "expected_reused_receipt": true,
+      "approved_task_completed": true
+    },
+    {
+      "case": "protected-reject",
+      "decision": "reject",
+      "protected": true,
+      "phases": 3,
+      "expected_tool_entries": 0,
+      "expected_committed_effects": 0,
+      "expected_reused_receipt": null,
+      "approved_task_completed": false
+    }
+  ],
+  "phases": [
+    "Initial invocation pauses for simulated review; no tool body/effect",
+    "Fresh worker invokes None without a decision; same pending review and no effect",
+    "Fresh worker supplies Command(resume=decision); approved/edit cases exit 86 after durable receiver commit, before tool return; reject ends without tool entry",
+    "Fresh worker invokes None after crash; do not supply initial input or another decision"
+  ],
+  "invariants": [
+    "Fresh OS worker process per phase; distinct recorded PIDs per case",
+    "Stable application-generated thread and operation identity, persisted once before the first worker",
+    "Same approved payload across tool replay; edit replacement occurs before the first receiver commit",
+    "Separate checkpoint SQLite and receiver SQLite transactions; durability sync",
+    "Protected replay returns the exact committed receipt and makes no new receiver effect",
+    "Unprotected control must demonstrate two committed effects; expected control behavior is not task success",
+    "Reject may generate an error ToolMessage but never enters the tool body",
+    "Any new approval request after the committed action is an observed contract failure, not manually approved away",
+    "Scripted final response derives from the actual ToolMessage; receipt must match committed SQL rows",
+    "Actual graph completion, intended single effect, review-policy handling and report honesty are separate verdicts"
+  ],
+  "failure_boundary": "One-shot os._exit(86) after receiver record returns and the receipt journal is fsynced, before record_action returns. Not a machine/power-loss simulation.",
+  "preflight": [
+    "Verify receiver and reused source/destination hashes",
+    "Record actual loaded dependency versions and selected module hashes; preserve unknown historical revision",
+    "Confirm SqliteSaver availability; observed installed metadata is langgraph-checkpoint 4.3.0 and langgraph-checkpoint-sqlite 3.1.2, not a clean-install proof",
+    "Disable tracing; remove key-bearing worker environment; block Python socket operations before runtime imports",
+    "Use fresh per-case working directories/databases; no dotenv, live provider, SDK patch or agent-loop replacement"
+  ],
+  "abort_rules": [
+    "Missing/incompatible dependencies: stop before execution and label setup interruption",
+    "Worker failure or timeout: preserve artifacts and classify the reason; do not silently retry or increase budget",
+    "Graph-limit stop is a behavior/fixture failure, not silently excluded as provider infrastructure",
+    "Any unexpected writes, changed action identity, or duplicate protected effects fail the case",
+    "Do not replace scripted responses with a live model; any later live work requires a separate run/token budget"
+  ],
+  "publication": [
+    "Reviewed phase observations, exits, journal entries and SQL receipts only",
+    "No raw checkpoints, unreviewed traces, credentials or private paths",
+    "Simulated reviewer source must remain explicit; no human-authentication claim"
+  ],
+  "plan_change_policy": "Do not overwrite this frozen v1 after seeing results. Record an amendment/new version before changing criteria; preserve failed attempts.",
+  "reuse_sources": {
+    "receiver": "reliability_lab/receiver.py",
+    "receiver_sha256": "9bedcf406e0e489f854adb02e01469635fecf247ebb95e3920a87965363d2ab2",
+    "historical_patterns": [
+      "2026-10-29-approval/run_lab.py",
+      "2026-10-29-reviewer-edit/run_lab.py",
+      "2026-10-29-idempotency/run_lab.py"
+    ],
+    "runtime_loop": "Deep Agents / LangChain / LangGraph, with a deterministic scripted model"
+  }
+}
