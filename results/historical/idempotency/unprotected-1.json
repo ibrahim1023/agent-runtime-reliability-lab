@@ -1,0 +1,78 @@
+{
+  "case": "unprotected-1",
+  "historical": true,
+  "initial_exit": 86,
+  "resume_exit": 0,
+  "events": [
+    {
+      "pid": 5217,
+      "event": "worker_start",
+      "phase": "initial"
+    },
+    {
+      "pid": 5217,
+      "event": "tool_enter",
+      "operation_id": "6cf904db-e999-4442-b5c4-15e604719947",
+      "message": "checkpoint-demo"
+    },
+    {
+      "pid": 5217,
+      "event": "ledger_result",
+      "receipt": {
+        "message": "checkpoint-demo",
+        "operation_id": "6cf904db-e999-4442-b5c4-15e604719947",
+        "receipt_id": "47ffd8d0-e649-48af-b147-23255cea2e65",
+        "status": "recorded"
+      },
+      "reused": false
+    },
+    {
+      "pid": 5254,
+      "event": "worker_start",
+      "phase": "resume"
+    },
+    {
+      "pid": 5254,
+      "event": "tool_enter",
+      "operation_id": "6cf904db-e999-4442-b5c4-15e604719947",
+      "message": "checkpoint-demo"
+    },
+    {
+      "pid": 5254,
+      "event": "ledger_result",
+      "receipt": {
+        "message": "checkpoint-demo",
+        "operation_id": "6cf904db-e999-4442-b5c4-15e604719947",
+        "receipt_id": "ddfc0972-951e-4267-bd46-35ca832bf1b1",
+        "status": "recorded"
+      },
+      "reused": false
+    },
+    {
+      "pid": 5254,
+      "event": "tool_return",
+      "receipt": {
+        "message": "checkpoint-demo",
+        "operation_id": "6cf904db-e999-4442-b5c4-15e604719947",
+        "receipt_id": "ddfc0972-951e-4267-bd46-35ca832bf1b1",
+        "status": "recorded"
+      }
+    }
+  ],
+  "committed_receipts": [
+    {
+      "message": "checkpoint-demo",
+      "operation_id": "6cf904db-e999-4442-b5c4-15e604719947",
+      "receipt_id": "47ffd8d0-e649-48af-b147-23255cea2e65",
+      "status": "recorded"
+    },
+    {
+      "message": "checkpoint-demo",
+      "operation_id": "6cf904db-e999-4442-b5c4-15e604719947",
+      "receipt_id": "ddfc0972-951e-4267-bd46-35ca832bf1b1",
+      "status": "recorded"
+    }
+  ],
+  "expected_effect_count": 2,
+  "expectation_note": "Unprotected duplicates are the expected control outcome, not an experiment failure."
+}

@@ -1,0 +1,56 @@
+# Agent Runtime Reliability Lab
+
+A learning lab that makes agent recovery behavior inspectable through tool attempts, committed receiver effects, and receipts.
+
+## Current milestone
+
+Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. A combined offline command verifies four historical exports and runs six receiver contracts. Fresh graph crash/resume integration is not implemented yet.
+
+| Historical condition | Cases | Attempts per case | Committed effects per case |
+|---|---:|---:|---:|
+| Unprotected control | 1 | 2 | 2 |
+| Protected receiver | 3 | 2 | 1 |
+
+Start with [the evidence walkthrough](docs/idempotency-evidence.md) and [provenance](docs/provenance.md). Machine-readable evidence is in `results/historical/idempotency/`; source and export hashes are in `results/manifest.json`.
+
+These results demonstrate a local SQLite receiver property at one crash boundary. They do not prove exactly-once effects for arbitrary remote services or general production readiness.
+
+## Attribution
+
+The original AI-assisted experiments were developed by Ibrahim Arshad using Deep Agents, LangChain, and LangGraph. Those projects supply the agent runtime; this lab packages experiment harnesses, receiver logic, evaluators, and evidence. This is not an upstream SDK contribution. No upstream implementation source has been copied in this milestone. Licensing review is required before source extraction.
+
+Supporting work: [InferenceBench](https://github.com/ibrahim1023/inference-bench), a separate local inference benchmarking project outside this lab's implementation scope.
+
+## Run the receiver contracts
+
+From the repository root, using Python 3.10 or newer:
+
+```sh
+python3 -S -m unittest discover -s tests -v
+```
+
+No dependencies or API keys are needed. `-S` disables site-package loading. This path imports only the standard library and the extracted receiver, contains no provider or tracing client, and uses fresh temporary databases. Test failures return a nonzero exit code. Temporary test databases are cleaned up; historical evidence is not overwritten.
+
+These are fresh deterministic receiver executions, not new LLM evaluations or graph crash/resume runs. The unprotected control is expected to create two effects. Use the combined command below to validate historical artifacts as a separate stage.
+
+## Verify historical evidence and fresh receiver behavior
+
+From the repository root:
+
+```sh
+python3 -S -m reliability_lab verify-offline
+```
+
+The JSON report separates `historical_evidence` (four stored records checked) from `receiver_contracts` (six fresh local checks). Each invocation writes a new `work/attempts/<unique-id>/report.json` and prints its relative path. It never overwrites historical results. Any evidence or receiver failure returns exit code 1. Invalid historical evidence prevents fresh receiver checks from starting.
+
+The command disables tracing and installs a Python audit hook rejecting socket operations before loading receiver tests. No live-provider entry point exists yet. This guard prevents accidental Python network use on this path; it is not an operating-system security sandbox for hostile code.
+
+Run all development checks, including evidence tampering and command failure cases:
+
+```sh
+python3 -S -m unittest discover -s tests -v
+```
+
+Verified on Python 3.14.6: 19 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
+
+See [offline verification limits](docs/offline-verification.md) for what the checks do and do not establish.

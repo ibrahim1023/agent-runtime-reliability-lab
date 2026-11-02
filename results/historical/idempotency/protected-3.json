@@ -1,0 +1,72 @@
+{
+  "case": "protected-3",
+  "historical": true,
+  "initial_exit": 86,
+  "resume_exit": 0,
+  "events": [
+    {
+      "pid": 5358,
+      "event": "worker_start",
+      "phase": "initial"
+    },
+    {
+      "pid": 5358,
+      "event": "tool_enter",
+      "operation_id": "8f1f1518-a150-400c-b886-bc1a5c9faeb0",
+      "message": "checkpoint-demo"
+    },
+    {
+      "pid": 5358,
+      "event": "ledger_result",
+      "receipt": {
+        "message": "checkpoint-demo",
+        "operation_id": "8f1f1518-a150-400c-b886-bc1a5c9faeb0",
+        "receipt_id": "9d1ab9a4-42a3-4668-97de-21381e068b3e",
+        "status": "recorded"
+      },
+      "reused": false
+    },
+    {
+      "pid": 5378,
+      "event": "worker_start",
+      "phase": "resume"
+    },
+    {
+      "pid": 5378,
+      "event": "tool_enter",
+      "operation_id": "8f1f1518-a150-400c-b886-bc1a5c9faeb0",
+      "message": "checkpoint-demo"
+    },
+    {
+      "pid": 5378,
+      "event": "ledger_result",
+      "receipt": {
+        "message": "checkpoint-demo",
+        "operation_id": "8f1f1518-a150-400c-b886-bc1a5c9faeb0",
+        "receipt_id": "9d1ab9a4-42a3-4668-97de-21381e068b3e",
+        "status": "recorded"
+      },
+      "reused": true
+    },
+    {
+      "pid": 5378,
+      "event": "tool_return",
+      "receipt": {
+        "message": "checkpoint-demo",
+        "operation_id": "8f1f1518-a150-400c-b886-bc1a5c9faeb0",
+        "receipt_id": "9d1ab9a4-42a3-4668-97de-21381e068b3e",
+        "status": "recorded"
+      }
+    }
+  ],
+  "committed_receipts": [
+    {
+      "message": "checkpoint-demo",
+      "operation_id": "8f1f1518-a150-400c-b886-bc1a5c9faeb0",
+      "receipt_id": "9d1ab9a4-42a3-4668-97de-21381e068b3e",
+      "status": "recorded"
+    }
+  ],
+  "expected_effect_count": 1,
+  "expectation_note": "Unprotected duplicates are the expected control outcome, not an experiment failure."
+}

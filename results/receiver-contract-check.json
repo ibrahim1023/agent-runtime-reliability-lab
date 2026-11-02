@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-02",
+  "python_version": "3.14.6",
+  "kind": "fresh deterministic receiver contracts; not LLM evaluations",
+  "command": "python3 -S -m unittest discover -s tests -v",
+  "exit_code": 0,
+  "tests_run": 5,
+  "tests_passed": 5,
+  "source_sha256": "b3e960c5d8fafd4d319a49ac9b9fabd09e71b8a78851b3de36c3c7d01800edfe",
+  "limits": [
+    "No graph crash/resume execution in this check",
+    "No arbitrary remote service guarantees",
+    "No general concurrent graph safety claim"
+  ]
+}

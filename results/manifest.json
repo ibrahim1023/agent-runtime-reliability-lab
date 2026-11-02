@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "assembled_on": "2026-11-02",
+  "timezone": "Asia/Dubai",
+  "evidence_kind": "historical evidence export; not a new execution",
+  "upstream": "https://github.com/langchain-ai/deepagents",
+  "checkout_commit_observed_at_export": "1daa89e9f9c33d186026d0d6884f4aec5b153512",
+  "historical_execution_commit": null,
+  "historical_execution_commit_note": "Not established by this export; current checkout is not proof of historical revision.",
+  "sources": [
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-idempotency/ledger.py",
+      "sha256": "b3e960c5d8fafd4d319a49ac9b9fabd09e71b8a78851b3de36c3c7d01800edfe",
+      "bytes": 2204
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-idempotency/run_lab.py",
+      "sha256": "425c8d90513144a94043ebf0367dce34758a3695ad89e27c7d655ce011b4ec15",
+      "bytes": 9999
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-idempotency/review_lab.py",
+      "sha256": "3eb33d1aa1f1e3ae74c18af11e53206639337e3deb9b6f741b1c47a67a7a477d",
+      "bytes": 9554
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-idempotency/reviewed-results.json",
+      "sha256": "04cc3892a70d3d2daa3010b8417bdcc72a90746609d132eaf75782ac4e6eaadc",
+      "bytes": 3597
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-idempotency/REPORT.md",
+      "sha256": "b9822fa9be1da0517afbe6b2fd6899e0ce7c0312f342e8e3790c01cfa2d8f19b",
+      "bytes": 5049
+    }
+  ],
+  "cases": [
+    {
+      "case": "unprotected-1",
+      "export": "results/historical/idempotency/unprotected-1.json",
+      "sha256": "1b506d895d5dfd505ce170f3d7f0fc211627710c0e476ed9d19c1214933a70b8",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/unprotected-1/events.jsonl",
+          "sha256": "b28baf948a16c509929c273723521b0413564c4929c36b8d060f2263650cccd2"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/unprotected-1/ledger.sqlite",
+          "sha256": "893c0726ab586486a03418de26bec47be7ca91f3bfd1edaafbc93cf8b20fbf0b"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/unprotected-1/result.json",
+          "sha256": "0b565ce05b36b13aad04d64b60caf03ca1135407287d803fe07ccaa0e4d2e3b6"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/unprotected-1/manifest.json",
+          "sha256": "bbadfc5f640b792527cc271e3c160c86d1ab27cc12fa83267b7c1922b5f33855"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/unprotected-1/interrupted.json",
+          "sha256": "b9516f1c907dc3031aa0a69b1daa1e86244da3330f92d6bf324a3b22ed68648a"
+        }
+      ]
+    },
+    {
+      "case": "protected-1",
+      "export": "results/historical/idempotency/protected-1.json",
+      "sha256": "8a3cfb6c7a13d21a352e160faf6d0509fd178d86f1559168c1189bae0c932d49",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-1/events.jsonl",
+          "sha256": "684ba36be0e67686121a83131128c5ee0f26b57abf2b7a43210a00977638129f"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-1/ledger.sqlite",
+          "sha256": "cff17f534bc680782fc70285652c26b8f9dc2dfb7b91b52c5295d02576de8f6f"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-1/result.json",
+          "sha256": "f6d307d8af64c6029931dde12e36114c3a649ab1ab9a2cc4774102fb245ea80c"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-1/manifest.json",
+          "sha256": "5520fe76898ea37f6278f5a887bc18ad81f3c14c7b2a49fac467ad3fe65789e1"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-1/interrupted.json",
+          "sha256": "e1efee85ba03120dc7798073e58270b7971415e7dadaf5d4d9573b87f5b5e42b"
+        }
+      ]
+    },
+    {
+      "case": "protected-2",
+      "export": "results/historical/idempotency/protected-2.json",
+      "sha256": "2b72ee3ca3a8a7d5e93a0f829f6692e2f90f8c4ce5ff741faff870cfcee6701c",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-2/events.jsonl",
+          "sha256": "29da778d37366fd3d0ec96c84c7b1f9959df446ec97a2738f188650fd6b40cfe"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-2/ledger.sqlite",
+          "sha256": "c0da328a15016cc2d5af84f85fd671f41bb5a4814840ab50c8aa6d4ea3234824"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-2/result.json",
+          "sha256": "13dd5214728329a9a81b5ee47926b4a332e82623532a0b756ec2e193c0431db8"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-2/manifest.json",
+          "sha256": "5cec805a486d62577fd000f1a9446579e5c0bb936276ed0bf95c11ca8bdb63a4"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-2/interrupted.json",
+          "sha256": "e2005fbc5d8f7bb4226631fb2087d44dffda22fd89f24011cd96e7c8f00bbad9"
+        }
+      ]
+    },
+    {
+      "case": "protected-3",
+      "export": "results/historical/idempotency/protected-3.json",
+      "sha256": "a36abf9a5ff54b238b4127612e381292b860fa518a4a1eb82821a2e40ecd2c23",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-3/events.jsonl",
+          "sha256": "c9d3cdbfd601462df620f744ffac070f2f5dc680af974844508221b4b1616185"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-3/ledger.sqlite",
+          "sha256": "eefeeeb28afcfd6018f6e8ff842515867fdc26c1b15412fe3cd36243ec12d00f"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-3/result.json",
+          "sha256": "bf2211df10bdf133e33282fc775302af3f033ef32e8e4b57988ff2f4179fabc3"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-3/manifest.json",
+          "sha256": "531607b05a8d5538373599a160d1c30a72b6a1f2391186df162094e01620692a"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-idempotency/protected-3/interrupted.json",
+          "sha256": "ca0f6c7335fd2cd5d2e12602ec798ec46fa43b787dd4881382bd02488fc6f0de"
+        }
+      ]
+    }
+  ],
+  "extractions": [
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-idempotency/ledger.py",
+      "destination": "reliability_lab/receiver.py",
+      "source_sha256": "b3e960c5d8fafd4d319a49ac9b9fabd09e71b8a78851b3de36c3c7d01800edfe",
+      "destination_sha256": "9bedcf406e0e489f854adb02e01469635fecf247ebb95e3920a87965363d2ab2",
+      "changes": "Added contextlib.closing around all SQLite transaction contexts so connections close deterministically; receiver semantics unchanged.",
+      "contracts_source": "libs/evals/.agent-labs/2026-10-29-idempotency/run_lab.py::local_checks",
+      "contracts_changes": "Split existing concurrent/conflict/new-ID checks into independent tests; add explicit reopened-receiver and unprotected-control checks."
+    }
+  ]
+}

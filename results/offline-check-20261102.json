@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-11-02T12:33:39.278366+00:00",
+  "python_version": "3.14.6",
+  "network": "Python socket operations blocked; no provider/tracing clients imported",
+  "historical_evidence": {
+    "status": "passed",
+    "kind": "stored evidence validation; no historical replay",
+    "cases": [
+      {
+        "case": "unprotected-1",
+        "tool_attempts": 2,
+        "committed_effects": 2,
+        "original_receipt_reused": false,
+        "interpretation": "expected duplicate-effect control"
+      },
+      {
+        "case": "protected-1",
+        "tool_attempts": 2,
+        "committed_effects": 1,
+        "original_receipt_reused": true,
+        "interpretation": "protected effect deduplicated"
+      },
+      {
+        "case": "protected-2",
+        "tool_attempts": 2,
+        "committed_effects": 1,
+        "original_receipt_reused": true,
+        "interpretation": "protected effect deduplicated"
+      },
+      {
+        "case": "protected-3",
+        "tool_attempts": 2,
+        "committed_effects": 1,
+        "original_receipt_reused": true,
+        "interpretation": "protected effect deduplicated"
+      }
+    ]
+  },
+  "receiver_contracts": {
+    "kind": "fresh deterministic receiver executions; not LLM evaluations",
+    "status": "passed",
+    "tests_run": 6,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "log": "test_conflicting_payload_is_rejected_without_another_effect (test_receiver.ReceiverContracts.test_conflicting_payload_is_rejected_without_another_effect) ... ok\ntest_database_connections_are_closed (test_receiver.ReceiverContracts.test_database_connections_are_closed) ... ok\ntest_distinct_id_permits_a_new_action_with_same_contents (test_receiver.ReceiverContracts.test_distinct_id_permits_a_new_action_with_same_contents) ... ok\ntest_eight_concurrent_duplicates_commit_once (test_receiver.ReceiverContracts.test_eight_concurrent_duplicates_commit_once) ... ok\ntest_reopened_receiver_returns_original_receipt (test_receiver.ReceiverContracts.test_reopened_receiver_returns_original_receipt) ... ok\ntest_unprotected_control_records_two_effects (test_receiver.ReceiverContracts.test_unprotected_control_records_two_effects) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.052s\n\nOK\n"
+  },
+  "report_path": "work/attempts/47a11fdcff8347a9ab50eec7aa233766/report.json",
+  "exit_code": 0,
+  "finished_at_utc": "2026-11-02T12:33:39.337681+00:00"
+}
