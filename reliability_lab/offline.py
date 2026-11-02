@@ -12,6 +12,7 @@ import uuid
 from reliability_lab.evidence import verify_evidence
 from reliability_lab.approval_evidence import verify_approval_evidence
 from reliability_lab.missing_source_evidence import verify_missing_source_evidence
+from reliability_lab.search_review import verify_search_review
 
 
 def install_offline_guard() -> None:
@@ -56,6 +57,7 @@ def verify_offline(root: Path) -> tuple[dict, int]:
         "python_version": sys.version.split()[0],
         "network": "Python socket operations blocked; no provider/tracing clients imported",
         "historical_evidence": {"status": "not_run"},
+        "search_recovery_review": {"status": "not_run"},
         "receiver_contracts": {"status": "not_run"},
         "report_path": str(attempt / "report.json"),
     }
@@ -63,11 +65,13 @@ def verify_offline(root: Path) -> tuple[dict, int]:
     try:
         cases = verify_evidence(root) + verify_approval_evidence(root) + verify_missing_source_evidence(root)
         report[stage] = {"status": "passed", "kind": "stored evidence validation; no historical replay", "cases": cases}
+        stage = "search_recovery_review"
+        report[stage] = verify_search_review(root)
         stage = "receiver_contracts"
         report[stage] = receiver_contracts(root)
     except (OSError, ValueError, KeyError, TypeError, StopIteration, ImportError) as exc:
         report[stage] = {"status": "failed", "error": str(exc)}
-    passed = all(report[s]["status"] == "passed" for s in ("historical_evidence", "receiver_contracts"))
+    passed = all(report[s]["status"] == "passed" for s in ("historical_evidence", "search_recovery_review", "receiver_contracts"))
     report["exit_code"] = 0 if passed else 1
     report["finished_at_utc"] = datetime.now(timezone.utc).isoformat()
     (directory / "report.json").write_text(json.dumps(report, indent=2) + "\n")

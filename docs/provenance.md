@@ -7,7 +7,7 @@ This inventory is the first packaging milestone, assembled November 2, 2026 (Asi
 | idempotency | Receiver, crash runner, review logic | Four reviewed event/receipt extracts; source hashes captured |
 | approval / reviewer-edit | Durable review and edited-action fixtures | Three sanitized phase/journal/SQL exports; original artifact and runner hashes captured |
 | missing-source | Honest stopping and distinct score dimensions | Three valid runs and six excluded attempts exported; feedback and source hashes retained |
-| search-improvement | Recorder, seven cases, scorer, conservative middleware | Decision review, 25-run roster and three ambiguity extracts; full per-run export and offline integration pending |
+| search-improvement | Recorder, seven cases, scorer, conservative middleware | Decision review, 25-run roster and three ambiguity extracts checked offline; full per-run export pending |
 | rejected recovery middleware | Historical comparison only | Failed ambiguity extract and source hash preserved; never the default |
 | explicit-alternative | Optional variant and unresolved regression | Not exported yet |
 | gptoss20b | Separate model cohort | Not exported yet |
@@ -60,3 +60,11 @@ Failure-handling scores preserve historical manual assistant trace review. The v
 The conservative variant remains a scoped lab prototype. The rejected broad candidate remains failed and is not a default. The original rejection marker contains stale generic reason text; actual observed writes and files establish its ambiguity failure. Its source hash is retained without editing the original. Later explicit-alternative and 20B cohorts are not merged, and the unresolved original-present 120B failure is not removed.
 
 No runtime code was extracted or executed in this milestone. The manifest hash-links this decision review, but `verify-offline` does not yet check that optional entry: its count remains sixteen historical records plus six fresh receiver contracts. Source identities were compared directly against original files during packaging. A full search-evidence validator and portable scripted graph execution remain pending.
+
+## Search-review validation milestone
+
+The earlier decision review remains byte-for-byte unchanged. Its `verification_scope` field describes the initial packaging state, before integration. The current `search_recovery_review` report section checks its manifest hash, fixed retrospective roster, matrix alignment, selected/rejected identities, seven stored contract-outcome entries, and the three detailed ambiguity extracts. The other twenty-two roster entries are not full per-run behavioral validations. The sixteen earlier records stay in their existing historical stage; six receiver contracts still execute fresh.
+
+The learner prediction was unsure. Before implementation, eight tampering tests failed because the command ignored the new review; the unaltered control passed. After integration, a test explicitly confirms that relabeling the rejected run and recomputing the manifest hash passes byte-identity checking, while the recorded write still contradicts the verdict. Nine new tests now pass. These are fresh deterministic validator tests against stored evidence, not fresh graph executions or model evaluations. `results/search-review-check-20261102.json` records the focused probe and development verification.
+
+This closed-fixture checker compares the declared synthetic files and recorded successful writes. It does not run StateBackend, judge natural language, authenticate old artifacts, establish an unknown historical runtime revision, or detect a coherent replacement of both evidence and manifest. No new provider or tracing client was added. Full private traces and original labs remain untouched.

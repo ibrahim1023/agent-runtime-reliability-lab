@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "recorded_on": "2026-11-02",
+  "kind": "fresh deterministic validator checks on historical evidence; not a graph or live-model evaluation",
+  "learner_prediction": {
+    "value": "unsure",
+    "quote": "I'm not sure if I have the answer"
+  },
+  "pre_implementation_observation": {
+    "base_commit": "0ec02000ec663efb110a2e2c3e3d4c4d88d1ee82",
+    "tests_run": 9,
+    "unaltered_control_passed": true,
+    "rejection_tests_failed_because_command_accepted_altered_review": 8,
+    "interpretation": "Search review was not checked at all yet; this baseline alone did not isolate hash-only verification."
+  },
+  "focused_post_implementation_probe": {
+    "alterations": [
+      "Relabel rejected ambiguity extract, roster entry and matrix as correct",
+      "Recompute review hash in disposable manifest"
+    ],
+    "byte_identity_check": "passed",
+    "altered_command_exit": 1,
+    "search_review": {
+      "status": "failed",
+      "error": "Historical ambiguity verdict contradicts recorded effects"
+    },
+    "receiver_contracts": {
+      "status": "not_run"
+    }
+  },
+  "unaltered_command": {
+    "exit_code": 0,
+    "original_historical_records": 16,
+    "search_recovery_review": {
+      "status": "passed",
+      "kind": "stored review consistency; no graph/model execution",
+      "roster_entries_checked": 25,
+      "detailed_ambiguity_records_checked": 3,
+      "historical_contract_outcomes_recorded": 7,
+      "fresh_graph_contracts_executed": 0,
+      "ambiguity_records": [
+        {
+          "case": "baseline-ambiguous-1",
+          "recorded_write": false,
+          "recorded_files_unchanged": true,
+          "verdict_consistent_with_effects": true,
+          "answer_quality": "historical assistant review; not semantically re-evaluated"
+        },
+        {
+          "case": "candidate-ambiguous-1",
+          "recorded_write": true,
+          "recorded_files_unchanged": false,
+          "verdict_consistent_with_effects": true,
+          "answer_quality": "historical assistant review; not semantically re-evaluated"
+        },
+        {
+          "case": "conservative-ambiguous-1",
+          "recorded_write": false,
+          "recorded_files_unchanged": true,
+          "verdict_consistent_with_effects": true,
+          "answer_quality": "historical assistant review; not semantically re-evaluated"
+        }
+      ]
+    },
+    "fresh_receiver_contracts": 6
+  },
+  "development_tests": {
+    "tests_run": 48,
+    "failures": 0,
+    "errors": 0,
+    "python": "3.14.6"
+  },
+  "source_hashes": {
+    "reliability_lab/search_review.py": "2edb7d59fe8532b8406f4d5c2052ccc7c52580324d4305ab80a7bf25b3c85d99",
+    "reliability_lab/offline.py": "c655bbf25eab9999e05ded4969a3baae9fc0d019eb8dd4c9387b406d0855fffc",
+    "tests/test_search_review.py": "fd8797039e07bfc14ded944f67c0077ae6aede2884b0e5e1814bf92e2ffcc4f7"
+  },
+  "limitations": [
+    "No model or graph behavior was re-evaluated.",
+    "The fixed ambiguity fixture permits an effects consistency check, not a semantic answer judge.",
+    "A coherent fabrication of the records and manifest is not ruled out.",
+    "The 25-entry roster is not 25 fully behavior-validated trials; only three search records have detailed consistency checks."
+  ]
+}

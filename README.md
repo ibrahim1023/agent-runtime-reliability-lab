@@ -4,7 +4,7 @@ A learning lab that makes agent recovery behavior inspectable through tool attem
 
 ## Current milestone
 
-Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. A combined offline command verifies sixteen historical records and runs six receiver contracts. Fresh graph crash/resume integration is not implemented yet.
+Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. A combined offline command verifies sixteen historical records, checks the search-recovery review separately, and runs six receiver contracts. Fresh graph crash/resume integration is not implemented yet.
 
 | Historical condition | Cases | Attempts per case | Committed effects per case |
 |---|---:|---:|---:|
@@ -41,7 +41,7 @@ From the repository root:
 python3 -S -m reliability_lab verify-offline
 ```
 
-The JSON report separates `historical_evidence` (sixteen stored records checked, including excluded attempts) from `receiver_contracts` (six fresh local checks). Each invocation writes a new `work/attempts/<unique-id>/report.json` and prints its relative path. It never overwrites historical results. Any evidence or receiver failure returns exit code 1. Invalid historical evidence prevents fresh receiver checks from starting.
+The JSON report separates `historical_evidence` (sixteen stored records checked, including excluded attempts) from `receiver_contracts` (six fresh local checks). Each invocation writes a new `work/attempts/<unique-id>/report.json` and prints its relative path. It never overwrites historical results. Any evidence, search-review, or receiver failure returns exit code 1. Invalid historical evidence prevents fresh receiver checks from starting.
 
 The command disables tracing and installs a Python audit hook rejecting socket operations before loading receiver tests. No live-provider entry point exists yet. This guard prevents accidental Python network use on this path; it is not an operating-system security sandbox for hostile code.
 
@@ -51,7 +51,7 @@ Run all development checks, including evidence tampering and command failure cas
 python3 -S -m unittest discover -s tests -v
 ```
 
-Verified on Python 3.14.6: 39 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
+Verified on Python 3.14.6: 48 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
 
 See [offline verification limits](docs/offline-verification.md) for what the checks do and do not establish.
 
@@ -77,4 +77,4 @@ The task asked the agent to reverse lines from `/data.txt` into `/out.txt`, but 
 
 ## Recovery middleware decision review
 
-[Read why the conservative prototype was retained and the broader candidate rejected](docs/search-recovery-evidence.md). The new review preserves the historical seven-case comparison, 25-run roster, and actual ambiguity tool evidence. This is historical artifact inspection, not a new evaluation. The additional review is not yet included in `verify-offline`; that command still validates sixteen records and runs six receiver contracts. No runtime default was added.
+[Read why the conservative prototype was retained and the broader candidate rejected](docs/search-recovery-evidence.md). The new review preserves the historical seven-case comparison, 25-run roster, and actual ambiguity tool evidence. This is historical artifact inspection, not a new evaluation. The command checks this review in a separate `search_recovery_review` section: a 25-entry retrospective roster and three detailed ambiguity records. Those are not 25 fully validated model trials or new executions. The original historical stage still validates sixteen records; six receiver contracts execute fresh. No runtime default was added. [See the tampering experiment](docs/search-review-validation.md).

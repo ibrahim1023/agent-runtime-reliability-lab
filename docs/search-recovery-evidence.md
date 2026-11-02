@@ -4,7 +4,7 @@
 
 The lab started clean at `f8837d54c285c0c71720e3faeee7c63a6b3c43f6` on `main`, matching the live GitHub remote. Python 3.14.6 passed all 39 development tests. The offline command validated sixteen historical records and executed six fresh receiver contracts. None of these checks were live-model evaluations.
 
-This milestone reviews the existing search-improvement artifacts. It does not reproduce a graph run, change a runtime default, or select the rejected candidate. The [reviewed JSON](../results/search-recovery-review.json) preserves a retrospective 25-run roster, seven-case matrix, three allowlisted ambiguity extracts, source identities, and seven historical contract outcomes. The offline command does **not yet validate this additional review**; its historical-record count remains sixteen.
+This milestone reviews the existing search-improvement artifacts. It does not reproduce a graph run, change a runtime default, or select the rejected candidate. The [reviewed JSON](../results/search-recovery-review.json) preserves a retrospective 25-run roster, seven-case matrix, three allowlisted ambiguity extracts, source identities, and seven historical contract outcomes. At initial packaging the offline command did not check this review. It now checks the roster, matrix, hash and three detailed ambiguity extracts in a separate section; the original historical-record count remains sixteen. See [the validation experiment](search-review-validation.md).
 
 ## Why the conservative version was retained
 
@@ -71,4 +71,4 @@ The conservative rule assumes a synchronous, complete, unfiltered StateBackend. 
 
 The later explicit-alternative and GPT-OSS 20B cohorts remain separate and are not used to improve these seven-case scores. In particular, the unresolved 120B original-present failure remains a failure in its own cohort. This review neither reclassifies it nor promotes the later alternative-selection middleware.
 
-The next packaging milestone is to export and validate the full search records offline, with negative checks that catch a changed ambiguity outcome or a dropped rejected run. Portable scripted graph execution remains future work. Before any new experiment, record the learner's prediction; live experiments also require a bounded run count and an agreed token budget. Routine artifact packaging requires neither a model call nor a quiz answer.
+The narrow review now has offline consistency checks and negative tampering tests. A full per-run search export and validation beyond the three ambiguity extracts remain future packaging work. Portable scripted graph execution remains future work. Before any new experiment, record the learner's prediction; live experiments also require a bounded run count and an agreed token budget. Routine artifact packaging requires neither a model call nor a quiz answer.
