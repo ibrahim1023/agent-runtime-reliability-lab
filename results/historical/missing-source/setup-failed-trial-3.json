@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "case": "setup-failed-trial-3",
+  "historical": true,
+  "status": "setup_interrupted",
+  "started_model_request": false,
+  "valid_trial": false,
+  "error": {
+    "category": "setup_configuration",
+    "type": "KeyError",
+    "excerpt": "KeyError: 'DEEPAGENTS_EVALS_MODEL'"
+  },
+  "task_completion": null,
+  "failure_handling": null
+}

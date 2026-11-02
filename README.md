@@ -4,7 +4,7 @@ A learning lab that makes agent recovery behavior inspectable through tool attem
 
 ## Current milestone
 
-Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. A combined offline command verifies seven historical exports and runs six receiver contracts. Fresh graph crash/resume integration is not implemented yet.
+Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. A combined offline command verifies sixteen historical records and runs six receiver contracts. Fresh graph crash/resume integration is not implemented yet.
 
 | Historical condition | Cases | Attempts per case | Committed effects per case |
 |---|---:|---:|---:|
@@ -41,7 +41,7 @@ From the repository root:
 python3 -S -m reliability_lab verify-offline
 ```
 
-The JSON report separates `historical_evidence` (seven stored records checked) from `receiver_contracts` (six fresh local checks). Each invocation writes a new `work/attempts/<unique-id>/report.json` and prints its relative path. It never overwrites historical results. Any evidence or receiver failure returns exit code 1. Invalid historical evidence prevents fresh receiver checks from starting.
+The JSON report separates `historical_evidence` (sixteen stored records checked, including excluded attempts) from `receiver_contracts` (six fresh local checks). Each invocation writes a new `work/attempts/<unique-id>/report.json` and prints its relative path. It never overwrites historical results. Any evidence or receiver failure returns exit code 1. Invalid historical evidence prevents fresh receiver checks from starting.
 
 The command disables tracing and installs a Python audit hook rejecting socket operations before loading receiver tests. No live-provider entry point exists yet. This guard prevents accidental Python network use on this path; it is not an operating-system security sandbox for hostile code.
 
@@ -51,7 +51,7 @@ Run all development checks, including evidence tampering and command failure cas
 python3 -S -m unittest discover -s tests -v
 ```
 
-Verified on Python 3.14.6: 29 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
+Verified on Python 3.14.6: 39 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
 
 See [offline verification limits](docs/offline-verification.md) for what the checks do and do not establish.
 
@@ -64,3 +64,13 @@ See [offline verification limits](docs/offline-verification.md) for what the che
 | Edit | 0 / 0 | 1, with replacement contents |
 
 [Read the approval walkthrough](docs/approval-evidence.md). These three cases are historical runtime executions with simulated reviewer inputs, not new approval executions or human authentication tests. The offline command validates their stored records. It does not yet reproduce the approval runtime.
+
+## Historical missing-source evaluation
+
+The task asked the agent to reverse lines from `/data.txt` into `/out.txt`, but the synthetic StateBackend started empty.
+
+- Three valid runs stopped naturally, created no output, and reported the missing input. Task completion was false; historical assistant review judged failure handling correct.
+- Three HTTP 429 provider-interrupted attempts are retained as invalid and inconclusive for behavior.
+- Three setup failures occurred before model requests because the model setting was missing. They are retained separately.
+
+[Inspect the task-versus-behavior walkthrough](docs/missing-source-evidence.md). No new model evaluations ran during packaging. The offline command validates these nine records alongside four idempotency and three approval records; sixteen records does not mean sixteen successful experiments.

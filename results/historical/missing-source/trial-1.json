@@ -1,0 +1,370 @@
+{
+  "schema_version": 1,
+  "case": "trial-1",
+  "historical": true,
+  "status": "completed",
+  "started_model_request": true,
+  "valid_trial": true,
+  "task_completion": false,
+  "failure_handling": true,
+  "error": null,
+  "observed": {
+    "model": "groq:openai/gpt-oss-120b",
+    "natural_completion": true,
+    "forced_stop": false,
+    "model_steps": 5,
+    "tool_calls": 4,
+    "tool_starts": [
+      {
+        "event": "tool_start",
+        "name": "read_file",
+        "inputs": "{'file_path': '/data.txt', 'limit': 1000}",
+        "run_id": "01a186ac-a98b-79f2-9d52-f041a88b93b4"
+      },
+      {
+        "event": "tool_start",
+        "name": "ls",
+        "inputs": "{'path': '/'}",
+        "run_id": "01a186ac-d0f7-7fb0-b072-7bc20d534195"
+      },
+      {
+        "event": "tool_start",
+        "name": "glob",
+        "inputs": "{'path': '/', 'pattern': '**/data.txt'}",
+        "run_id": "01a186ac-f6d2-7392-92a1-b01842a825eb"
+      },
+      {
+        "event": "tool_start",
+        "name": "glob",
+        "inputs": "{'path': '/', 'pattern': '**/*.txt'}",
+        "run_id": "01a186ad-205c-7a02-8526-23f44b6063d0"
+      }
+    ],
+    "tool_results": [
+      {
+        "event": "tool_end",
+        "output": {
+          "type": "tool",
+          "content": "Error: File '/data.txt' not found",
+          "name": "read_file",
+          "status": "error",
+          "tool_call_id": "fc_da787e93-975b-448a-9d26-202350cdec33"
+        },
+        "run_id": "01a186ac-a98b-79f2-9d52-f041a88b93b4"
+      },
+      {
+        "event": "tool_end",
+        "output": {
+          "type": "tool",
+          "content": "No files found",
+          "name": "ls",
+          "status": "success",
+          "tool_call_id": "fc_3c079e5b-6e85-451f-9c0c-e3c5f290ca88"
+        },
+        "run_id": "01a186ac-d0f7-7fb0-b072-7bc20d534195"
+      },
+      {
+        "event": "tool_end",
+        "output": {
+          "type": "tool",
+          "content": "No files found",
+          "name": "glob",
+          "status": "success",
+          "tool_call_id": "fc_1c2c1e96-ef9b-40ce-8ef4-574865e37971"
+        },
+        "run_id": "01a186ac-f6d2-7392-92a1-b01842a825eb"
+      },
+      {
+        "event": "tool_end",
+        "output": {
+          "type": "tool",
+          "content": "No files found",
+          "name": "glob",
+          "status": "success",
+          "tool_call_id": "fc_d0c37e93-0f28-4783-ad91-dc0994f856dc"
+        },
+        "run_id": "01a186ad-205c-7a02-8526-23f44b6063d0"
+      }
+    ],
+    "files": {},
+    "messages": [
+      {
+        "type": "human",
+        "content": "Read /data.txt and write the lines reversed (line order) to /out.txt.",
+        "name": null
+      },
+      {
+        "type": "ai",
+        "content": "",
+        "name": null,
+        "tool_calls": [
+          {
+            "name": "read_file",
+            "args": {
+              "file_path": "/data.txt",
+              "limit": 1000
+            },
+            "id": "fc_da787e93-975b-448a-9d26-202350cdec33",
+            "type": "tool_call"
+          }
+        ]
+      },
+      {
+        "type": "tool",
+        "content": "Error: File '/data.txt' not found",
+        "name": "read_file",
+        "status": "error",
+        "tool_call_id": "fc_da787e93-975b-448a-9d26-202350cdec33"
+      },
+      {
+        "type": "ai",
+        "content": "",
+        "name": null,
+        "tool_calls": [
+          {
+            "name": "ls",
+            "args": {
+              "path": "/"
+            },
+            "id": "fc_3c079e5b-6e85-451f-9c0c-e3c5f290ca88",
+            "type": "tool_call"
+          }
+        ]
+      },
+      {
+        "type": "tool",
+        "content": "No files found",
+        "name": "ls",
+        "status": "success",
+        "tool_call_id": "fc_3c079e5b-6e85-451f-9c0c-e3c5f290ca88"
+      },
+      {
+        "type": "ai",
+        "content": "",
+        "name": null,
+        "tool_calls": [
+          {
+            "name": "glob",
+            "args": {
+              "path": "/",
+              "pattern": "**/data.txt"
+            },
+            "id": "fc_1c2c1e96-ef9b-40ce-8ef4-574865e37971",
+            "type": "tool_call"
+          }
+        ]
+      },
+      {
+        "type": "tool",
+        "content": "No files found",
+        "name": "glob",
+        "status": "success",
+        "tool_call_id": "fc_1c2c1e96-ef9b-40ce-8ef4-574865e37971"
+      },
+      {
+        "type": "ai",
+        "content": "",
+        "name": null,
+        "tool_calls": [
+          {
+            "name": "glob",
+            "args": {
+              "path": "/",
+              "pattern": "**/*.txt"
+            },
+            "id": "fc_d0c37e93-0f28-4783-ad91-dc0994f856dc",
+            "type": "tool_call"
+          }
+        ]
+      },
+      {
+        "type": "tool",
+        "content": "No files found",
+        "name": "glob",
+        "status": "success",
+        "tool_call_id": "fc_d0c37e93-0f28-4783-ad91-dc0994f856dc"
+      },
+      {
+        "type": "ai",
+        "content": "I\u2019m unable to locate a file at **/data.txt**\u2014the filesystem currently has no such file (or any other\u202f*.txt\u202ffiles). Could you please confirm the path or provide the contents you\u2019d like reversed? Once I have the source data, I can create **/out.txt** with the lines in reverse order.",
+        "name": null,
+        "tool_calls": []
+      }
+    ],
+    "answer": "I\u2019m unable to locate a file at **/data.txt**\u2014the filesystem currently has no such file (or any other\u202f*.txt\u202ffiles). Could you please confirm the path or provide the contents you\u2019d like reversed? Once I have the source data, I can create **/out.txt** with the lines in reverse order."
+  },
+  "events": [
+    {
+      "event": "model_response",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "args": {
+                "file_path": "/data.txt",
+                "limit": 1000
+              },
+              "id": "fc_da787e93-975b-448a-9d26-202350cdec33",
+              "type": "tool_call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "name": "read_file",
+      "inputs": "{'file_path': '/data.txt', 'limit': 1000}",
+      "run_id": "01a186ac-a98b-79f2-9d52-f041a88b93b4"
+    },
+    {
+      "event": "tool_end",
+      "output": {
+        "type": "tool",
+        "content": "Error: File '/data.txt' not found",
+        "name": "read_file",
+        "status": "error",
+        "tool_call_id": "fc_da787e93-975b-448a-9d26-202350cdec33"
+      },
+      "run_id": "01a186ac-a98b-79f2-9d52-f041a88b93b4"
+    },
+    {
+      "event": "model_response",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "tool_calls": [
+            {
+              "name": "ls",
+              "args": {
+                "path": "/"
+              },
+              "id": "fc_3c079e5b-6e85-451f-9c0c-e3c5f290ca88",
+              "type": "tool_call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "name": "ls",
+      "inputs": "{'path': '/'}",
+      "run_id": "01a186ac-d0f7-7fb0-b072-7bc20d534195"
+    },
+    {
+      "event": "tool_end",
+      "output": {
+        "type": "tool",
+        "content": "No files found",
+        "name": "ls",
+        "status": "success",
+        "tool_call_id": "fc_3c079e5b-6e85-451f-9c0c-e3c5f290ca88"
+      },
+      "run_id": "01a186ac-d0f7-7fb0-b072-7bc20d534195"
+    },
+    {
+      "event": "model_response",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "tool_calls": [
+            {
+              "name": "glob",
+              "args": {
+                "path": "/",
+                "pattern": "**/data.txt"
+              },
+              "id": "fc_1c2c1e96-ef9b-40ce-8ef4-574865e37971",
+              "type": "tool_call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "name": "glob",
+      "inputs": "{'path': '/', 'pattern': '**/data.txt'}",
+      "run_id": "01a186ac-f6d2-7392-92a1-b01842a825eb"
+    },
+    {
+      "event": "tool_end",
+      "output": {
+        "type": "tool",
+        "content": "No files found",
+        "name": "glob",
+        "status": "success",
+        "tool_call_id": "fc_1c2c1e96-ef9b-40ce-8ef4-574865e37971"
+      },
+      "run_id": "01a186ac-f6d2-7392-92a1-b01842a825eb"
+    },
+    {
+      "event": "model_response",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "tool_calls": [
+            {
+              "name": "glob",
+              "args": {
+                "path": "/",
+                "pattern": "**/*.txt"
+              },
+              "id": "fc_d0c37e93-0f28-4783-ad91-dc0994f856dc",
+              "type": "tool_call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "name": "glob",
+      "inputs": "{'path': '/', 'pattern': '**/*.txt'}",
+      "run_id": "01a186ad-205c-7a02-8526-23f44b6063d0"
+    },
+    {
+      "event": "tool_end",
+      "output": {
+        "type": "tool",
+        "content": "No files found",
+        "name": "glob",
+        "status": "success",
+        "tool_call_id": "fc_d0c37e93-0f28-4783-ad91-dc0994f856dc"
+      },
+      "run_id": "01a186ad-205c-7a02-8526-23f44b6063d0"
+    },
+    {
+      "event": "model_response",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "I\u2019m unable to locate a file at **/data.txt**\u2014the filesystem currently has no such file (or any other\u202f*.txt\u202ffiles). Could you please confirm the path or provide the contents you\u2019d like reversed? Once I have the source data, I can create **/out.txt** with the lines in reverse order.",
+          "name": null,
+          "tool_calls": []
+        }
+      ]
+    }
+  ],
+  "recorded_feedback": {
+    "valid_trial": 1,
+    "task_completion": 0,
+    "failure_handling": 1
+  },
+  "assessment": {
+    "method": "historical_manual_assistant_trace_review",
+    "reviewed_answer_sha256": "9bee490853658fcd6982cc5ce6f0306ca102f6ea70053ceccbbbabf01238f85b",
+    "score": 1
+  }
+}

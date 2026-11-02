@@ -72,6 +72,36 @@
       "source": "libs/evals/.agent-labs/2026-10-29-reviewer-edit/reviewed-results.json",
       "sha256": "8bac5017538f82d6f61d93c2943e70cd4e58ee286b96c04a84debaca39a8f156",
       "bytes": 1506
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-missing-source/run_missing_source.py",
+      "sha256": "76150b90d2de9f930ddb4d9f1a98b69bdfa04c5e1678266fbc1bb86e739f586a",
+      "bytes": 6635
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-missing-source/score_and_report.py",
+      "sha256": "3d80c5b6ecfa7d5412517b36a587a3b4231a8e5348c6dbd6f257d033dac8d866",
+      "bytes": 7329
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-missing-source/review_results.py",
+      "sha256": "e2c1485529175f0375f49bc41a92091a5685cc2825da320229adac0fcb4c0074",
+      "bytes": 1756
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-missing-source/REPORT.md",
+      "sha256": "926133572c23620b888dec6e059c4ee099756a03f35b3215e4989e4f4dd99988",
+      "bytes": 5258
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-missing-source/summary.json",
+      "sha256": "7ff1d0f8275d3098a1b49ecac36ba42776b0fd07f19801634b1e0637ee092d35",
+      "bytes": 2093
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-missing-source/PREDICTIONS.md",
+      "sha256": "1bcc38001e72186a536b962ed13f88b15a5a1cd28d4278e77260bdb40b4647ad",
+      "bytes": 2501
     }
   ],
   "cases": [
@@ -289,5 +319,163 @@
         }
       ]
     }
-  ]
+  ],
+  "missing_source_cases": [
+    {
+      "case": "trial-1",
+      "export": "results/historical/missing-source/trial-1.json",
+      "sha256": "4672afeab3df64b1fcb69e8207f5cc3569f11e350481e700f0fc4e4292fc4363",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/trial-1/observed.json",
+          "sha256": "5b8432f7279121e366eb0f8a5e19c2d175e6c490c51d698e439875569321229d"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/trial-1/events.jsonl",
+          "sha256": "34076290446f6cec215969e5bc7ccc1e39ee519d95b2642389882b3370407f97"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/trial-1/feedback.json",
+          "sha256": "f90be2df56034828b5dd6362f7e08471707627780b8e0693a920033952504f91"
+        }
+      ]
+    },
+    {
+      "case": "trial-2",
+      "export": "results/historical/missing-source/trial-2.json",
+      "sha256": "10773e7af4c9c81eb1ace8d19ca7ac26eb142ea690c80694a4076c62b03feb43",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/trial-2/observed.json",
+          "sha256": "20f09967629ff892628b515c493e0786be070e093a6c8340be48b837d8410b87"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/trial-2/events.jsonl",
+          "sha256": "38729e12f4e997bb5da620765e1f0e47e6fef18154ece2de9b98d5a183089b8b"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/trial-2/feedback.json",
+          "sha256": "844328fbd1074b842b62da94b3713b7d3de56104b1a38e30b3c726f289096e8b"
+        }
+      ]
+    },
+    {
+      "case": "trial-3",
+      "export": "results/historical/missing-source/trial-3.json",
+      "sha256": "80069ffa4321b31ab167961b81f6b116a393088061c5f9e32b645843c6f69555",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/trial-3/observed.json",
+          "sha256": "2c067df9c248c9004a96aba45a7bcd9fb1b96f37498909a49f4f3f07e865f05e"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/trial-3/events.jsonl",
+          "sha256": "262e1000b467d70338cf3a9ececa46552b4e59593d6fe68d811283c7b0b2b18a"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/trial-3/feedback.json",
+          "sha256": "0434f9f0d2630bcdefecf3a7ed58bc5a0452e293edabf9ce987a5a61cb6d9716"
+        }
+      ]
+    },
+    {
+      "case": "rate-limited-trial-1",
+      "export": "results/historical/missing-source/rate-limited-trial-1.json",
+      "sha256": "3467b14b8a2635e2231d450c6152e6d098fc3377111f3b1775e536602566fffd",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/rate-limited-trial-1/observed.json",
+          "sha256": "caec3813e5e73ee36f91d433b3c8352d8e615dbe072c29c85aa7466a84d95731"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/rate-limited-trial-1/events.jsonl",
+          "sha256": "af3e2e768db42a31d6a507ec285974b8af7645be7ab0e2647974e52273586dac"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/rate-limited-trial-1/feedback.json",
+          "sha256": "e96c183d7ef50302ba3071e559aaab987703bd0b7062f3dbf95fb9a4b2689cb5"
+        }
+      ]
+    },
+    {
+      "case": "rate-limited-trial-2",
+      "export": "results/historical/missing-source/rate-limited-trial-2.json",
+      "sha256": "9a2eae82171063b4c82ee75aecda76ac08cb74a25fbb06ceef2ddf0f018f52a7",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/rate-limited-trial-2/observed.json",
+          "sha256": "f65e1870804ab410d281893db9cdf67501d4ea7637845a1ee377260eed73c84d"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/rate-limited-trial-2/events.jsonl",
+          "sha256": "6dee432026a30a766838eb4974ea69838704ab0a49cb70efeddc73127345a653"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/rate-limited-trial-2/feedback.json",
+          "sha256": "ec14bd997d175592cba10e8e6fcdcb3a6fac1a949c600b4e20959212765f3c90"
+        }
+      ]
+    },
+    {
+      "case": "rate-limited-trial-3",
+      "export": "results/historical/missing-source/rate-limited-trial-3.json",
+      "sha256": "b18f0db3f6fc11b32e8937d5b4622277de8b9d5993b9fc3de2fc23b2a15bb1a9",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/rate-limited-trial-3/observed.json",
+          "sha256": "051a0e0d5c049b2156495af949c4e9efc27940f61ff378bef136ce7fbf1ab6e1"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/rate-limited-trial-3/events.jsonl",
+          "sha256": "dbf26d77de9393e873112ae18d02bdc1a6d2f0ba65a1c7aad5455b7bdfcfe1be"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/rate-limited-trial-3/feedback.json",
+          "sha256": "fd597bb207a6dc0dc535d924abce3e46938ab4ee0412252d9b004bdb702cd3e4"
+        }
+      ]
+    },
+    {
+      "case": "setup-failed-trial-1",
+      "export": "results/historical/missing-source/setup-failed-trial-1.json",
+      "sha256": "603f2a96394c6c53284064d8cee3e12c96fb40aff73e38e4ddca44a257d8d867",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/setup-failed-trial-1/worker.log",
+          "sha256": "e2a918e58aec91592c8b556ed61bc98b7d6f8affa8593aab36e2f969cfa5d67d"
+        }
+      ]
+    },
+    {
+      "case": "setup-failed-trial-2",
+      "export": "results/historical/missing-source/setup-failed-trial-2.json",
+      "sha256": "a12710cda9ce2eda69afe7f522971e503d1fca723ef3b6a672b89671212fcade",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/setup-failed-trial-2/worker.log",
+          "sha256": "e2a918e58aec91592c8b556ed61bc98b7d6f8affa8593aab36e2f969cfa5d67d"
+        }
+      ]
+    },
+    {
+      "case": "setup-failed-trial-3",
+      "export": "results/historical/missing-source/setup-failed-trial-3.json",
+      "sha256": "0da334c6dda26d95111149cada5e618bdc8cae8d82097801fc1f0243acddb0eb",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-missing-source/setup-failed-trial-3/worker.log",
+          "sha256": "e2a918e58aec91592c8b556ed61bc98b7d6f8affa8593aab36e2f969cfa5d67d"
+        }
+      ]
+    }
+  ],
+  "missing_source_denominators": {
+    "historical_plan_count": null,
+    "plan_count_note": "No machine-readable pre-run attempt roster exported; do not infer a prospective denominator.",
+    "recorded_attempts": 9,
+    "completed_valid": 3,
+    "invalid_provider": 3,
+    "invalid_setup": 3,
+    "behavior_denominator": 3
+  }
 }

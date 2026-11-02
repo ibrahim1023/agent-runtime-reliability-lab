@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "case": "rate-limited-trial-1",
+  "historical": true,
+  "status": "provider_interrupted",
+  "started_model_request": true,
+  "valid_trial": false,
+  "task_completion": null,
+  "failure_handling": null,
+  "error": {
+    "category": "provider_rate_limit",
+    "type": "RateLimitError",
+    "http_status": 429,
+    "excerpt": "HTTP 429: provider token-per-minute allowance interrupted this attempt."
+  },
+  "observed": {
+    "model": "groq:openai/gpt-oss-120b",
+    "natural_completion": false,
+    "forced_stop": false,
+    "model_steps": 2,
+    "tool_calls": 2,
+    "tool_starts": [
+      {
+        "event": "tool_start",
+        "name": "read_file",
+        "inputs": "{'file_path': '/data.txt', 'limit': 1000}",
+        "run_id": "01a186ab-5002-74d2-afab-57411018061b"
+      },
+      {
+        "event": "tool_start",
+        "name": "ls",
+        "inputs": "{'path': '/'}",
+        "run_id": "01a186ab-5268-7763-9406-c784f50d0501"
+      }
+    ],
+    "tool_results": [
+      {
+        "event": "tool_end",
+        "output": {
+          "type": "tool",
+          "content": "Error: File '/data.txt' not found",
+          "name": "read_file",
+          "status": "error",
+          "tool_call_id": "fc_b034c128-732c-4193-aa9f-a3ab3fe3d74d"
+        },
+        "run_id": "01a186ab-5002-74d2-afab-57411018061b"
+      },
+      {
+        "event": "tool_end",
+        "output": {
+          "type": "tool",
+          "content": "No files found",
+          "name": "ls",
+          "status": "success",
+          "tool_call_id": "fc_06934aec-9b07-49ef-8789-481ff2b9db91"
+        },
+        "run_id": "01a186ab-5268-7763-9406-c784f50d0501"
+      }
+    ],
+    "files": {},
+    "messages": [],
+    "answer": null
+  },
+  "events": [
+    {
+      "event": "model_response",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "args": {
+                "file_path": "/data.txt",
+                "limit": 1000
+              },
+              "id": "fc_b034c128-732c-4193-aa9f-a3ab3fe3d74d",
+              "type": "tool_call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "name": "read_file",
+      "inputs": "{'file_path': '/data.txt', 'limit': 1000}",
+      "run_id": "01a186ab-5002-74d2-afab-57411018061b"
+    },
+    {
+      "event": "tool_end",
+      "output": {
+        "type": "tool",
+        "content": "Error: File '/data.txt' not found",
+        "name": "read_file",
+        "status": "error",
+        "tool_call_id": "fc_b034c128-732c-4193-aa9f-a3ab3fe3d74d"
+      },
+      "run_id": "01a186ab-5002-74d2-afab-57411018061b"
+    },
+    {
+      "event": "model_response",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "tool_calls": [
+            {
+              "name": "ls",
+              "args": {
+                "path": "/"
+              },
+              "id": "fc_06934aec-9b07-49ef-8789-481ff2b9db91",
+              "type": "tool_call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "name": "ls",
+      "inputs": "{'path': '/'}",
+      "run_id": "01a186ab-5268-7763-9406-c784f50d0501"
+    },
+    {
+      "event": "tool_end",
+      "output": {
+        "type": "tool",
+        "content": "No files found",
+        "name": "ls",
+        "status": "success",
+        "tool_call_id": "fc_06934aec-9b07-49ef-8789-481ff2b9db91"
+      },
+      "run_id": "01a186ab-5268-7763-9406-c784f50d0501"
+    }
+  ],
+  "recorded_feedback": {
+    "valid_trial": 0
+  },
+  "assessment": null
+}

@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "case": "trial-2",
+  "historical": true,
+  "status": "completed",
+  "started_model_request": true,
+  "valid_trial": true,
+  "task_completion": false,
+  "failure_handling": true,
+  "error": null,
+  "observed": {
+    "model": "groq:openai/gpt-oss-120b",
+    "natural_completion": true,
+    "forced_stop": false,
+    "model_steps": 4,
+    "tool_calls": 3,
+    "tool_starts": [
+      {
+        "event": "tool_start",
+        "name": "read_file",
+        "inputs": "{'file_path': '/data.txt', 'limit': 1000}",
+        "run_id": "01a186ad-787a-7511-8acb-f28048ead341"
+      },
+      {
+        "event": "tool_start",
+        "name": "ls",
+        "inputs": "{'path': '/'}",
+        "run_id": "01a186ad-9f61-7173-a11d-b10c297e6a46"
+      },
+      {
+        "event": "tool_start",
+        "name": "grep",
+        "inputs": "{'output_mode': 'files_with_matches', 'path': '/', 'pattern': 'data.txt'}",
+        "run_id": "01a186ad-c6e7-7ab3-b8b1-f3096f31da19"
+      }
+    ],
+    "tool_results": [
+      {
+        "event": "tool_end",
+        "output": {
+          "type": "tool",
+          "content": "Error: File '/data.txt' not found",
+          "name": "read_file",
+          "status": "error",
+          "tool_call_id": "fc_41022ae3-1733-4062-990d-5cf4d962b0d8"
+        },
+        "run_id": "01a186ad-787a-7511-8acb-f28048ead341"
+      },
+      {
+        "event": "tool_end",
+        "output": {
+          "type": "tool",
+          "content": "No files found",
+          "name": "ls",
+          "status": "success",
+          "tool_call_id": "fc_76ff580c-d8e9-47c3-84f5-a52bae5dee66"
+        },
+        "run_id": "01a186ad-9f61-7173-a11d-b10c297e6a46"
+      },
+      {
+        "event": "tool_end",
+        "output": {
+          "type": "tool",
+          "content": "No matches found",
+          "name": "grep",
+          "status": "success",
+          "tool_call_id": "fc_d2146f25-c8ae-4967-98a6-5acebc5807b3"
+        },
+        "run_id": "01a186ad-c6e7-7ab3-b8b1-f3096f31da19"
+      }
+    ],
+    "files": {},
+    "messages": [
+      {
+        "type": "human",
+        "content": "Read /data.txt and write the lines reversed (line order) to /out.txt.",
+        "name": null
+      },
+      {
+        "type": "ai",
+        "content": "",
+        "name": null,
+        "tool_calls": [
+          {
+            "name": "read_file",
+            "args": {
+              "file_path": "/data.txt",
+              "limit": 1000
+            },
+            "id": "fc_41022ae3-1733-4062-990d-5cf4d962b0d8",
+            "type": "tool_call"
+          }
+        ]
+      },
+      {
+        "type": "tool",
+        "content": "Error: File '/data.txt' not found",
+        "name": "read_file",
+        "status": "error",
+        "tool_call_id": "fc_41022ae3-1733-4062-990d-5cf4d962b0d8"
+      },
+      {
+        "type": "ai",
+        "content": "",
+        "name": null,
+        "tool_calls": [
+          {
+            "name": "ls",
+            "args": {
+              "path": "/"
+            },
+            "id": "fc_76ff580c-d8e9-47c3-84f5-a52bae5dee66",
+            "type": "tool_call"
+          }
+        ]
+      },
+      {
+        "type": "tool",
+        "content": "No files found",
+        "name": "ls",
+        "status": "success",
+        "tool_call_id": "fc_76ff580c-d8e9-47c3-84f5-a52bae5dee66"
+      },
+      {
+        "type": "ai",
+        "content": "",
+        "name": null,
+        "tool_calls": [
+          {
+            "name": "grep",
+            "args": {
+              "output_mode": "files_with_matches",
+              "path": "/",
+              "pattern": "data.txt"
+            },
+            "id": "fc_d2146f25-c8ae-4967-98a6-5acebc5807b3",
+            "type": "tool_call"
+          }
+        ]
+      },
+      {
+        "type": "tool",
+        "content": "No matches found",
+        "name": "grep",
+        "status": "success",
+        "tool_call_id": "fc_d2146f25-c8ae-4967-98a6-5acebc5807b3"
+      },
+      {
+        "type": "ai",
+        "content": "I\u2019m not seeing a **/data.txt** file in the current workspace, so I can\u2019t read its contents to reverse them. Could you please provide the contents of\u202f`/data.txt` (or let me know if you\u2019d like me to create a new file with some sample text)? Once I have the text, I\u2019ll write the lines in reverse order to **/out.txt** for you.",
+        "name": null,
+        "tool_calls": []
+      }
+    ],
+    "answer": "I\u2019m not seeing a **/data.txt** file in the current workspace, so I can\u2019t read its contents to reverse them. Could you please provide the contents of\u202f`/data.txt` (or let me know if you\u2019d like me to create a new file with some sample text)? Once I have the text, I\u2019ll write the lines in reverse order to **/out.txt** for you."
+  },
+  "events": [
+    {
+      "event": "model_response",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "tool_calls": [
+            {
+              "name": "read_file",
+              "args": {
+                "file_path": "/data.txt",
+                "limit": 1000
+              },
+              "id": "fc_41022ae3-1733-4062-990d-5cf4d962b0d8",
+              "type": "tool_call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "name": "read_file",
+      "inputs": "{'file_path': '/data.txt', 'limit': 1000}",
+      "run_id": "01a186ad-787a-7511-8acb-f28048ead341"
+    },
+    {
+      "event": "tool_end",
+      "output": {
+        "type": "tool",
+        "content": "Error: File '/data.txt' not found",
+        "name": "read_file",
+        "status": "error",
+        "tool_call_id": "fc_41022ae3-1733-4062-990d-5cf4d962b0d8"
+      },
+      "run_id": "01a186ad-787a-7511-8acb-f28048ead341"
+    },
+    {
+      "event": "model_response",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "tool_calls": [
+            {
+              "name": "ls",
+              "args": {
+                "path": "/"
+              },
+              "id": "fc_76ff580c-d8e9-47c3-84f5-a52bae5dee66",
+              "type": "tool_call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "name": "ls",
+      "inputs": "{'path': '/'}",
+      "run_id": "01a186ad-9f61-7173-a11d-b10c297e6a46"
+    },
+    {
+      "event": "tool_end",
+      "output": {
+        "type": "tool",
+        "content": "No files found",
+        "name": "ls",
+        "status": "success",
+        "tool_call_id": "fc_76ff580c-d8e9-47c3-84f5-a52bae5dee66"
+      },
+      "run_id": "01a186ad-9f61-7173-a11d-b10c297e6a46"
+    },
+    {
+      "event": "model_response",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "tool_calls": [
+            {
+              "name": "grep",
+              "args": {
+                "output_mode": "files_with_matches",
+                "path": "/",
+                "pattern": "data.txt"
+              },
+              "id": "fc_d2146f25-c8ae-4967-98a6-5acebc5807b3",
+              "type": "tool_call"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "name": "grep",
+      "inputs": "{'output_mode': 'files_with_matches', 'path': '/', 'pattern': 'data.txt'}",
+      "run_id": "01a186ad-c6e7-7ab3-b8b1-f3096f31da19"
+    },
+    {
+      "event": "tool_end",
+      "output": {
+        "type": "tool",
+        "content": "No matches found",
+        "name": "grep",
+        "status": "success",
+        "tool_call_id": "fc_d2146f25-c8ae-4967-98a6-5acebc5807b3"
+      },
+      "run_id": "01a186ad-c6e7-7ab3-b8b1-f3096f31da19"
+    },
+    {
+      "event": "model_response",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "I\u2019m not seeing a **/data.txt** file in the current workspace, so I can\u2019t read its contents to reverse them. Could you please provide the contents of\u202f`/data.txt` (or let me know if you\u2019d like me to create a new file with some sample text)? Once I have the text, I\u2019ll write the lines in reverse order to **/out.txt** for you.",
+          "name": null,
+          "tool_calls": []
+        }
+      ]
+    }
+  ],
+  "recorded_feedback": {
+    "valid_trial": 1,
+    "task_completion": 0,
+    "failure_handling": 1
+  },
+  "assessment": {
+    "method": "historical_manual_assistant_trace_review",
+    "reviewed_answer_sha256": "649125267b139f2689233557f14668dc6c3b361643028328c836e8f0e95c8820",
+    "score": 1
+  }
+}

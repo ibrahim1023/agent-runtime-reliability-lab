@@ -24,7 +24,7 @@ class OfflineCommandContracts(unittest.TestCase):
                                         cwd=target, env=env, capture_output=True, text=True)
                 self.assertEqual(result.returncode, 0, result.stderr + result.stdout)
                 report = json.loads(result.stdout)
-                self.assertEqual(len(report["historical_evidence"]["cases"]), 7)
+                self.assertEqual(len(report["historical_evidence"]["cases"]), 16)
                 self.assertEqual(report["receiver_contracts"]["tests_run"], 6)
                 self.assertEqual(report["historical_evidence"]["status"], "passed")
                 self.assertEqual(report["receiver_contracts"]["status"], "passed")
@@ -58,6 +58,18 @@ class OfflineCommandContracts(unittest.TestCase):
             shutil.copytree(ROOT, target, ignore=shutil.ignore_patterns(".git", "work", "__pycache__"))
             case = target / "results/historical/approval/reject.json"
             case.write_text(case.read_text() + "\n")
+            result = subprocess.run([sys.executable, "-S", "-m", "reliability_lab", "verify-offline"],
+                                    cwd=target, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 1)
+            report = json.loads(result.stdout)
+            self.assertEqual(report["historical_evidence"]["status"], "failed")
+            self.assertEqual(report["receiver_contracts"]["status"], "not_run")
+
+    def test_missing_source_invalid_attempt_cannot_be_dropped(self) -> None:
+        with TemporaryDirectory() as directory:
+            target = Path(directory) / "lab"
+            shutil.copytree(ROOT, target, ignore=shutil.ignore_patterns(".git", "work", "__pycache__"))
+            (target / "results/historical/missing-source/rate-limited-trial-1.json").unlink()
             result = subprocess.run([sys.executable, "-S", "-m", "reliability_lab", "verify-offline"],
                                     cwd=target, capture_output=True, text=True)
             self.assertEqual(result.returncode, 1)

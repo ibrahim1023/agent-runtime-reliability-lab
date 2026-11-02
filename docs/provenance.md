@@ -6,7 +6,7 @@ This inventory is the first packaging milestone, assembled November 2, 2026 (Asi
 |---|---|---|
 | idempotency | Receiver, crash runner, review logic | Four reviewed event/receipt extracts; source hashes captured |
 | approval / reviewer-edit | Durable review and edited-action fixtures | Three sanitized phase/journal/SQL exports; original artifact and runner hashes captured |
-| missing-source | Honest stopping and distinct score dimensions | Not exported yet |
+| missing-source | Honest stopping and distinct score dimensions | Three valid runs and six excluded attempts exported; feedback and source hashes retained |
 | search-improvement | Recorder, seven cases, scorer, conservative middleware | Not exported yet |
 | rejected recovery middleware | Historical comparison only | Not exported yet; never the default |
 | explicit-alternative | Optional variant and unresolved regression | Not exported yet |
@@ -40,3 +40,15 @@ New verifier: `reliability_lab/approval_evidence.py`. Original `initial.json`, `
 `results/manifest.json::approval_cases` maps each export to hashes of original phase records, manifest, journal, and ledger. Runner/reviewer/report hashes are also captured. No approval runner code is copied yet; the existing protected receiver remains the shared implementation planned for runtime extraction. Original checkpoint databases, full traces, provider logs, duration fields, and private filesystem paths are excluded. Source timestamps are not being used to infer a historical runtime revision.
 
 `results/offline-check-approval-20261102.json` records validation of seven historical cases plus six fresh receiver contracts. The previous four-case report remains as a separate packaging checkpoint. All 29 development tests passed on Python 3.14.6. Original labs and historical four-case exports were unchanged by this step.
+
+## Missing-source export milestone
+
+New verifier: `reliability_lab/missing_source_evidence.py`. Observed records are exported through an explicit field allowlist, omitting root tracing IDs and elapsed durations. Synthetic task messages, tool requests/results, callback counts and final filesystem remain available. Callback journal root entries are omitted; model-response and tool start/end events are retained to cross-check counts and message history.
+
+Each original provider error contained account-specific organization details. Public exports retain its type, observed HTTP 429 status, and a reviewed generic token-per-minute error excerpt. Original observed records, journals and uploaded feedback files are hash-linked in the manifest. Setup failures are reduced to the actual missing-setting exception, with source worker-log hashes and no private traceback paths.
+
+The original summary called setup failure a helper path problem. Direct logs show `KeyError: 'DEEPAGENTS_EVALS_MODEL'` before model initialization. This export records that observed symptom; it does not assert a new root-cause diagnosis. Original reports remain untouched.
+
+Failure-handling scores preserve historical manual assistant trace review. The verifier checks objective no-output observations and that the retained reviewed answer has not changed; it is not a new general language judge. Provider/setup attempts have null task and behavior verdicts. The historical prospective attempt count remains unknown; the exported retrospective roster contains nine attempts, with three valid behavioral observations, three provider interruptions and three setup interruptions. No graph-limit failure is discarded as infrastructure in this cohort.
+
+`results/offline-check-missing-source-20261102.json` records the actual combined check: sixteen historical records validated and six fresh receiver checks passed. The full development suite passed 39 tests on Python 3.14.6. No new LLM trial, tracing upload, or original-source mutation occurred.

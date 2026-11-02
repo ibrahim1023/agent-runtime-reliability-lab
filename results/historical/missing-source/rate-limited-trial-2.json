@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "case": "rate-limited-trial-2",
+  "historical": true,
+  "status": "provider_interrupted",
+  "started_model_request": true,
+  "valid_trial": false,
+  "task_completion": null,
+  "failure_handling": null,
+  "error": {
+    "category": "provider_rate_limit",
+    "type": "RateLimitError",
+    "http_status": 429,
+    "excerpt": "HTTP 429: provider token-per-minute allowance interrupted this attempt."
+  },
+  "observed": {
+    "model": "groq:openai/gpt-oss-120b",
+    "natural_completion": false,
+    "forced_stop": false,
+    "model_steps": 0,
+    "tool_calls": 0,
+    "tool_starts": [],
+    "tool_results": [],
+    "files": {},
+    "messages": [],
+    "answer": null
+  },
+  "events": [],
+  "recorded_feedback": {
+    "valid_trial": 0
+  },
+  "assessment": null
+}
