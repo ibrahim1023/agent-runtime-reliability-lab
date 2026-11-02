@@ -516,5 +516,12 @@
     "kind": "fresh scripted graph execution; two conditions of one root-alias fixture",
     "live_model_calls": 0,
     "included_in_verify_offline": false
+  },
+  "scripted_filesystem_execution": {
+    "export": "results/scripted-filesystem-check-20261102.json",
+    "sha256": "6bdd7b0f60b1a346bc3c75c9a034e359c58fdb33b93d2b5afc74021b74c751fa",
+    "kind": "six remaining original contracts, fresh scripted graph execution",
+    "live_model_calls": 0,
+    "included_in_verify_offline": false
   }
 }

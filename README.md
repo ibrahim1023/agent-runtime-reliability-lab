@@ -4,7 +4,7 @@ A learning lab that makes agent recovery behavior inspectable through tool attem
 
 ## Current milestone
 
-Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. A combined offline command verifies sixteen historical records, checks the search-recovery review separately, and runs six receiver contracts. One opt-in scripted root-path contract now executes the real graph/tool stack. Approval and graph crash/resume integration are not implemented yet.
+Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. A combined offline command verifies sixteen historical records, checks the search-recovery review separately, and runs six receiver contracts. The seven original middleware contracts now have fresh opt-in scripted execution evidence through the real graph/tool stack. Approval and graph crash/resume integration are not implemented yet.
 
 | Historical condition | Cases | Attempts per case | Committed effects per case |
 |---|---:|---:|---:|
@@ -90,4 +90,6 @@ python -m reliability_lab scripted-root-check
 python -m unittest discover -s runtime_checks -v
 ```
 
-See [runtime environment and reproduction limits](runtime_checks/README.md). The recorded check reused an existing editable Deep Agents environment; a clean installation has not been verified. The default offline verifier does not yet validate the new scripted result. The other six middleware contracts remain future work.
+See [runtime environment and reproduction limits](runtime_checks/README.md). The recorded check reused an existing editable Deep Agents environment; a clean installation has not been verified. The default offline verifier does not yet validate the new scripted result. The remaining six now have separate [fresh scripted evidence](docs/scripted-filesystem-check.md), including the distinction between raw tool output and middleware-enriched model observations.
+
+Run the remaining fixtures with `python -m reliability_lab scripted-filesystem-check`. The full opt-in suite has two test methods covering seven middleware cases plus the baseline control. The standard-library development suite remains separate. No live-model evaluation is performed by either scripted command.

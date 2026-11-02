@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "kind": "fresh scripted graph execution; no live-model evaluation",
+  "started_at_utc": "2026-11-02T16:27:06.012177+00:00",
+  "live_model_calls": 0,
+  "learner_prediction": "not supplied; continued under request to proceed without another quiz",
+  "assistant_hypothesis": "Root aliases are corrected, explicit scope is preserved, and empty-directory results do not imply an empty workspace.",
+  "network": "Tracing disabled and Python socket operations blocked before runtime imports; not an OS sandbox",
+  "report_path": "work/scripted-filesystem/1bf117b98bb34bed8910fb29f2c63b0f/report.json",
+  "conditions": [
+    {
+      "condition": "conservative",
+      "conversation_proposal": {
+        "name": "glob",
+        "args": {
+          "path": ".",
+          "pattern": "*.txt"
+        }
+      },
+      "actual_tool_args": {
+        "path": "/",
+        "pattern": "*.txt"
+      },
+      "tool_result": {
+        "name": "glob",
+        "status": "success",
+        "content": "['/incoming/data.txt']"
+      },
+      "model_facing_tool_result": {
+        "name": "glob",
+        "status": "success",
+        "content": "['/incoming/data.txt']"
+      },
+      "next_model_received_tool_result": true,
+      "files_unchanged": true,
+      "scripted_model_responses": 2,
+      "middleware_events": [
+        {
+          "event": "root_alias",
+          "tool": "glob",
+          "original_path": "."
+        }
+      ],
+      "case": "dot",
+      "initial_files": {
+        "/incoming/data.txt": "found"
+      }
+    },
+    {
+      "condition": "conservative",
+      "conversation_proposal": {
+        "name": "glob",
+        "args": {
+          "path": "./",
+          "pattern": "*.txt"
+        }
+      },
+      "actual_tool_args": {
+        "path": "/",
+        "pattern": "*.txt"
+      },
+      "tool_result": {
+        "name": "glob",
+        "status": "success",
+        "content": "['/incoming/data.txt']"
+      },
+      "model_facing_tool_result": {
+        "name": "glob",
+        "status": "success",
+        "content": "['/incoming/data.txt']"
+      },
+      "next_model_received_tool_result": true,
+      "files_unchanged": true,
+      "scripted_model_responses": 2,
+      "middleware_events": [
+        {
+          "event": "root_alias",
+          "tool": "glob",
+          "original_path": "./"
+        }
+      ],
+      "case": "dot_slash",
+      "initial_files": {
+        "/incoming/data.txt": "found"
+      }
+    },
+    {
+      "condition": "conservative",
+      "conversation_proposal": {
+        "name": "glob",
+        "args": {
+          "path": "/.",
+          "pattern": "*.txt"
+        }
+      },
+      "actual_tool_args": {
+        "path": "/",
+        "pattern": "*.txt"
+      },
+      "tool_result": {
+        "name": "glob",
+        "status": "success",
+        "content": "['/incoming/data.txt']"
+      },
+      "model_facing_tool_result": {
+        "name": "glob",
+        "status": "success",
+        "content": "['/incoming/data.txt']"
+      },
+      "next_model_received_tool_result": true,
+      "files_unchanged": true,
+      "scripted_model_responses": 2,
+      "middleware_events": [
+        {
+          "event": "root_alias",
+          "tool": "glob",
+          "original_path": "/."
+        }
+      ],
+      "case": "slash_dot",
+      "initial_files": {
+        "/incoming/data.txt": "found"
+      }
+    },
+    {
+      "condition": "conservative",
+      "conversation_proposal": {
+        "name": "glob",
+        "args": {
+          "path": "/visible",
+          "pattern": "*.txt"
+        }
+      },
+      "actual_tool_args": {
+        "path": "/visible",
+        "pattern": "*.txt"
+      },
+      "tool_result": {
+        "name": "glob",
+        "status": "success",
+        "content": "['/visible/data.txt']"
+      },
+      "model_facing_tool_result": {
+        "name": "glob",
+        "status": "success",
+        "content": "['/visible/data.txt']"
+      },
+      "next_model_received_tool_result": true,
+      "files_unchanged": true,
+      "scripted_model_responses": 2,
+      "middleware_events": [],
+      "case": "explicit_scope",
+      "initial_files": {
+        "/visible/data.txt": "visible",
+        "/other/data.txt": "other"
+      }
+    },
+    {
+      "condition": "conservative",
+      "conversation_proposal": {
+        "name": "ls",
+        "args": {
+          "path": "/"
+        }
+      },
+      "actual_tool_args": {
+        "path": "/"
+      },
+      "tool_result": {
+        "name": "ls",
+        "status": "success",
+        "content": "No files found"
+      },
+      "model_facing_tool_result": {
+        "name": "ls",
+        "status": "success",
+        "content": "No files found\nWorkspace context: this workspace currently contains zero files. More listing or searching here cannot locate the input until files are provided. Ask for the source content or a populated source location."
+      },
+      "next_model_received_tool_result": true,
+      "files_unchanged": true,
+      "scripted_model_responses": 2,
+      "middleware_events": [
+        {
+          "event": "empty_workspace",
+          "tool": "ls"
+        }
+      ],
+      "case": "empty_workspace",
+      "initial_files": {}
+    },
+    {
+      "condition": "conservative",
+      "conversation_proposal": {
+        "name": "ls",
+        "args": {
+          "path": "/missing"
+        }
+      },
+      "actual_tool_args": {
+        "path": "/missing"
+      },
+      "tool_result": {
+        "name": "ls",
+        "status": "success",
+        "content": "No files found"
+      },
+      "model_facing_tool_result": {
+        "name": "ls",
+        "status": "success",
+        "content": "No files found"
+      },
+      "next_model_received_tool_result": true,
+      "files_unchanged": true,
+      "scripted_model_responses": 2,
+      "middleware_events": [],
+      "case": "empty_subdirectory",
+      "initial_files": {
+        "/incoming/data.txt": "present"
+      }
+    }
+  ],
+  "runtime_identity": {
+    "python": "3.14.6",
+    "packages": {
+      "deepagents": "0.7.32",
+      "langchain": "1.4.7",
+      "langchain-core": "1.7.0",
+      "langgraph": "1.2.17",
+      "langgraph-prebuilt": "1.1.0",
+      "langsmith": "0.14.12"
+    },
+    "selected_loaded_module_sha256": {
+      "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+      "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+      "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+      "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+      "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+    },
+    "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+  },
+  "status": "passed",
+  "exit_code": 0,
+  "finished_at_utc": "2026-11-02T16:27:06.690841+00:00",
+  "lab_source_sha256": {
+    "reliability_lab/scripted_filesystem.py": "16ea70d40ae079372aef83a96f44757e6d232742ddf8896d968126d55a001a91",
+    "reliability_lab/scripted_root.py": "dc9a1ece80744582c6183001559235af0c5974103e4611f6ae45a5c38208c357",
+    "reliability_lab/runtime/conservative_middleware.py": "9a9228b3bbb81c03391cdd4100806eab6979222ae7914a815e17bee1abfe869f",
+    "reliability_lab/runtime/recorder.py": "baffb460cbb8836683cf10d8d832ae5c8c319bc23cf3652a43ded65c0a2b653f",
+    "runtime_checks/test_filesystem.py": "4e610162370f653ab752b33820dbb53f7ecac47236db1ddb05a0c906ec0c7106"
+  },
+  "source_checkout_observation": {
+    "commit_observed_now": "1daa89e9f9c33d186026d0d6884f4aec5b153512",
+    "tracked_sdk_source_clean": true,
+    "historical_revision_claim": false
+  }
+}

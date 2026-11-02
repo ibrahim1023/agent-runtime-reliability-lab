@@ -35,7 +35,8 @@ def runtime_identity() -> dict:
             "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"}
 
 
-def run_condition(directory: Path, *, corrected: bool) -> dict:
+def run_condition(directory: Path, *, corrected: bool, tool_name: str = "glob",
+                  tool_args: dict[str, str] | None = None, initial_files: dict[str, str] | None = None) -> dict:
     """Run the reused fixture, retaining the original and actual tool requests."""
     from typing import Self
     from deepagents import create_deep_agent
@@ -58,25 +59,29 @@ def run_condition(directory: Path, *, corrected: bool) -> dict:
         def on_chat_model_start(self, serialized, messages, **kwargs) -> None:
             self.tool_inputs.extend(message.content for batch in messages for message in batch if message.type == "tool")
 
+    args = {"path": "", "pattern": "*.txt"} if tool_args is None else dict(tool_args)
+    files = {"/incoming/data.txt": "found"} if initial_files is None else dict(initial_files)
     directory.mkdir()
     recorder, inputs = Recorder(directory), ModelInputs()
     model = ScriptedModel(messages=iter([
-        AIMessage(content="", tool_calls=[{"name": "glob", "args": {"path": "", "pattern": "*.txt"}, "id": "root-call"}]),
+        AIMessage(content="", tool_calls=[{"name": tool_name, "args": args, "id": "root-call"}]),
         AIMessage(content="done"),
     ]))
     middleware = StateFilesystemRecoveryMiddleware() if corrected else None
     agent = create_deep_agent(model=model, backend=StateBackend(), middleware=[middleware] if middleware else [])
-    files = {"/incoming/data.txt": "found"}
     result = agent.invoke({"messages": [{"role": "user", "content": "Run the declared contract check."}],
                            "files": {path: create_file_data(value) for path, value in files.items()}},
                           {"callbacks": [recorder, inputs], "recursion_limit": 10})
     proposal = next(message.tool_calls[0] for message in result["messages"] if message.type == "ai" and message.tool_calls)
     require(len(recorder.calls) == len(recorder.results) == 1, "Expected exactly one executed tool")
     tool_result = {key: recorder.results[0][key] for key in ("name", "status", "content")}
+    message = next(message for message in result["messages"] if message.type == "tool")
+    model_result = {"name": message.name, "status": message.status, "content": message.content}
     return {"condition": "conservative" if corrected else "baseline",
             "conversation_proposal": {key: proposal[key] for key in ("name", "args")},
             "actual_tool_args": recorder.calls[0]["args"], "tool_result": tool_result,
-            "next_model_received_tool_result": tool_result["content"] in inputs.tool_inputs,
+            "model_facing_tool_result": model_result,
+            "next_model_received_tool_result": model_result["content"] in inputs.tool_inputs,
             "files_unchanged": {path: file_data_to_string(value) for path, value in result["files"].items()} == files,
             "scripted_model_responses": recorder.steps,
             "middleware_events": middleware.events if middleware else []}

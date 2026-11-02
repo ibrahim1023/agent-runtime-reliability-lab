@@ -7,7 +7,7 @@ This inventory is the first packaging milestone, assembled November 2, 2026 (Asi
 | idempotency | Receiver, crash runner, review logic | Four reviewed event/receipt extracts; source hashes captured |
 | approval / reviewer-edit | Durable review and edited-action fixtures | Three sanitized phase/journal/SQL exports; original artifact and runner hashes captured |
 | missing-source | Honest stopping and distinct score dimensions | Three valid runs and six excluded attempts exported; feedback and source hashes retained |
-| search-improvement | Recorder, seven cases, scorer, conservative middleware | Historical review checked offline; recorder/middleware extracted; first scripted root-alias fixture executed; full historical per-run export pending |
+| search-improvement | Recorder, seven cases, scorer, conservative middleware | Historical review checked offline; recorder/middleware extracted; all seven middleware fixtures executed with scripted responses; full historical per-run export pending |
 | rejected recovery middleware | Historical comparison only | Failed ambiguity extract and source hash preserved; never the default |
 | explicit-alternative | Optional variant and unresolved regression | Not exported yet |
 | gptoss20b | Separate model cohort | Not exported yet |
@@ -78,3 +78,11 @@ The learner requested immediate execution without supplying a prediction. The as
 The runtime used the existing local environment, with editable Deep Agents source at the tracked-clean checkout revision observed now and selected loaded-module hashes in the result. It does not establish the October execution revision. `requirements-runtime.txt` records selected package versions, not a full transitive lock; a clean package installation has not been validated as equivalent. No dependencies were installed in this milestone.
 
 Tracing is disabled and Python socket operations are blocked before runtime imports. This is not an OS security sandbox. Raw callbacks stay in ignored work directories; only reviewed report fields are committed. The standard-library development suite still passes 48 tests, separate from the one opt-in runtime contract. The default offline verifier does not yet check this new result or the new extraction entries; the scripted command checks extraction hashes before executing. Crash/resume and approval integration remain pending.
+
+## Remaining six scripted middleware fixtures
+
+The original middleware and extracted Recorder bytes remain unchanged. The shared root harness now accepts the remaining original tool arguments/files and records the model-facing ToolMessage separately from the raw tool-end callback. The new `scripted-filesystem-check` command executes six fresh graphs; its opt-in test first failed on the missing command, then passed. The existing two-condition root check passed after the helper change. That is eight scripted graph conditions across two test methods, not eight model evaluations.
+
+`results/scripted-filesystem-check-20261102.json` contains the six per-case observations, package versions, selected loaded-source hashes and current helper hashes. The first root report and all historical evidence remain unchanged; the first report's helper hash identifies its earlier version at commit `2b47bea`. The six new fixtures plus the earlier empty-root fixture cover the seven original contracts. No packages were installed; the editable-dependency and clean-install limitations remain.
+
+In the two empty-listing fixtures, raw tool results matched, but only the truly empty workspace received the added empty-workspace context. The next model-input callback observed the enriched message. These are runtime-mechanics checks, not new semantic judgments or demonstrations of independent model recovery. The default offline verifier does not yet check the saved runtime result files. Approval/crash/resume integration remains pending.

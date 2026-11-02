@@ -35,3 +35,7 @@ Use [the opt-in runtime instructions](../runtime_checks/README.md). The recorded
 Tracing is disabled and Python socket operations are blocked before importing runtime dependencies. No model provider is selected, keys are not needed, and the command does not load `.env`. This is an accidental-network guard, not an OS security sandbox. Raw callback journals remain in ignored local work directories; the public report contains no private paths or tracing IDs.
 
 The standard-library offline verification and development suite remain separate and do not import runtime dependencies. The new command checks extracted component hashes before execution; the default offline command does not yet validate this new saved result. Pending approval and post-commit crash/resume are still untested together.
+
+## Follow-up
+
+The [remaining six fixtures](scripted-filesystem-check.md) subsequently passed in a separate fresh scripted execution. That follow-up generalized the shared helper and added distinct raw-tool and model-facing observations. This document and its saved report describe the earlier first-root milestone.
