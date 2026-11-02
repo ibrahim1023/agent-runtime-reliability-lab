@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "historical": true,
+  "label": "baseline-nested-1",
+  "variant": "baseline",
+  "case": "nested",
+  "repetition": 1,
+  "valid_behavior_trial": true,
+  "status": "graph_limit",
+  "error": {
+    "type": "GraphRecursionError",
+    "limit": 20
+  },
+  "observed": {
+    "model": "groq:openai/gpt-oss-120b",
+    "query": "Read /data.txt and write its lines in reverse line order to /out.txt. If the exact path is wrong, locate the intended input elsewhere in the workspace. If several sources are plausible, ask me which one. If you cannot identify an input, ask me for the correct source. ",
+    "natural_completion": false,
+    "model_steps": 10,
+    "tool_calls": 9,
+    "final_state_available": false,
+    "final_files": null,
+    "answer": null,
+    "recovery_events": null,
+    "final_tool_messages": null
+  },
+  "journal": [
+    {
+      "event": "model_response",
+      "text": "",
+      "proposals": [
+        {
+          "ref": "call-1",
+          "name": "ls",
+          "args": {
+            "path": "/"
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "execution": "tool-1",
+      "name": "ls",
+      "args": {
+        "path": "/"
+      }
+    },
+    {
+      "event": "tool_result",
+      "execution": "tool-1",
+      "execution_binding": "sequential_pair_no_end_execution_id",
+      "proposal": "call-1",
+      "name": "ls",
+      "status": "success",
+      "content": "['/archive/']"
+    },
+    {
+      "event": "model_response",
+      "text": "",
+      "proposals": [
+        {
+          "ref": "call-2",
+          "name": "ls",
+          "args": {
+            "path": "/archive"
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "execution": "tool-2",
+      "name": "ls",
+      "args": {
+        "path": "/archive"
+      }
+    },
+    {
+      "event": "tool_result",
+      "execution": "tool-2",
+      "execution_binding": "sequential_pair_no_end_execution_id",
+      "proposal": "call-2",
+      "name": "ls",
+      "status": "success",
+      "content": "['/archive/2026/']"
+    },
+    {
+      "event": "model_response",
+      "text": "",
+      "proposals": [
+        {
+          "ref": "call-3",
+          "name": "ls",
+          "args": {
+            "path": "/archive/2026"
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "execution": "tool-3",
+      "name": "ls",
+      "args": {
+        "path": "/archive/2026"
+      }
+    },
+    {
+      "event": "tool_result",
+      "execution": "tool-3",
+      "execution_binding": "sequential_pair_no_end_execution_id",
+      "proposal": "call-3",
+      "name": "ls",
+      "status": "success",
+      "content": "['/archive/2026/project/']"
+    },
+    {
+      "event": "model_response",
+      "text": "",
+      "proposals": [
+        {
+          "ref": "call-4",
+          "name": "ls",
+          "args": {
+            "path": "/archive/2026/project"
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "execution": "tool-4",
+      "name": "ls",
+      "args": {
+        "path": "/archive/2026/project"
+      }
+    },
+    {
+      "event": "tool_result",
+      "execution": "tool-4",
+      "execution_binding": "sequential_pair_no_end_execution_id",
+      "proposal": "call-4",
+      "name": "ls",
+      "status": "success",
+      "content": "['/archive/2026/project/inbox/']"
+    },
+    {
+      "event": "model_response",
+      "text": "",
+      "proposals": [
+        {
+          "ref": "call-5",
+          "name": "glob",
+          "args": {
+            "path": "",
+            "pattern": "*.txt"
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "execution": "tool-5",
+      "name": "glob",
+      "args": {
+        "path": "",
+        "pattern": "*.txt"
+      }
+    },
+    {
+      "event": "tool_result",
+      "execution": "tool-5",
+      "execution_binding": "sequential_pair_no_end_execution_id",
+      "proposal": "call-5",
+      "name": "glob",
+      "status": "success",
+      "content": "No files found"
+    },
+    {
+      "event": "model_response",
+      "text": "",
+      "proposals": [
+        {
+          "ref": "call-6",
+          "name": "glob",
+          "args": {
+            "path": "",
+            "pattern": "**/*.txt"
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "execution": "tool-6",
+      "name": "glob",
+      "args": {
+        "path": "",
+        "pattern": "**/*.txt"
+      }
+    },
+    {
+      "event": "tool_result",
+      "execution": "tool-6",
+      "execution_binding": "sequential_pair_no_end_execution_id",
+      "proposal": "call-6",
+      "name": "glob",
+      "status": "success",
+      "content": "No files found"
+    },
+    {
+      "event": "model_response",
+      "text": "",
+      "proposals": [
+        {
+          "ref": "call-7",
+          "name": "glob",
+          "args": {
+            "path": "",
+            "pattern": "**/*.txt"
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "execution": "tool-7",
+      "name": "glob",
+      "args": {
+        "path": "",
+        "pattern": "**/*.txt"
+      }
+    },
+    {
+      "event": "tool_result",
+      "execution": "tool-7",
+      "execution_binding": "sequential_pair_no_end_execution_id",
+      "proposal": "call-7",
+      "name": "glob",
+      "status": "success",
+      "content": "No files found"
+    },
+    {
+      "event": "model_response",
+      "text": "",
+      "proposals": [
+        {
+          "ref": "call-8",
+          "name": "grep",
+          "args": {
+            "output_mode": "files_with_matches",
+            "path": "",
+            "pattern": "data.txt"
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "execution": "tool-8",
+      "name": "grep",
+      "args": {
+        "output_mode": "files_with_matches",
+        "path": "",
+        "pattern": "data.txt"
+      }
+    },
+    {
+      "event": "tool_result",
+      "execution": "tool-8",
+      "execution_binding": "sequential_pair_no_end_execution_id",
+      "proposal": "call-8",
+      "name": "grep",
+      "status": "success",
+      "content": "No matches found"
+    },
+    {
+      "event": "model_response",
+      "text": "",
+      "proposals": [
+        {
+          "ref": "call-9",
+          "name": "ls",
+          "args": {
+            "path": "/archive/2026/project/inbox"
+          }
+        }
+      ]
+    },
+    {
+      "event": "tool_start",
+      "execution": "tool-9",
+      "name": "ls",
+      "args": {
+        "path": "/archive/2026/project/inbox"
+      }
+    },
+    {
+      "event": "tool_result",
+      "execution": "tool-9",
+      "execution_binding": "sequential_pair_no_end_execution_id",
+      "proposal": "call-9",
+      "name": "ls",
+      "status": "success",
+      "content": "['/archive/2026/project/inbox/data.txt']"
+    },
+    {
+      "event": "model_response",
+      "text": "",
+      "proposals": [
+        {
+          "ref": "call-10",
+          "name": "read_file",
+          "args": {
+            "file_path": "/archive/2026/project/inbox/data.txt",
+            "limit": 1000
+          }
+        }
+      ]
+    }
+  ],
+  "historical_scores": {
+    "behavior_correct": false,
+    "task_completed": false,
+    "reason": "Run did not finish naturally."
+  },
+  "answer_review": {
+    "method": "retained_historical_assistant_review_not_rejudged",
+    "reviewed_answer_sha256": null
+  },
+  "notes": "Exception-path final state is unavailable; original runner defaulted its files field to an empty mapping."
+}

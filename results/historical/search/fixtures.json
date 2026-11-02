@@ -1,0 +1,59 @@
+{
+  "empty": {
+    "requested": "/data.txt",
+    "files": {},
+    "source": null,
+    "query": "Read /data.txt and write its lines in reverse line order to /out.txt. If the exact path is wrong, locate the intended input elsewhere in the workspace. If several sources are plausible, ask me which one. If you cannot identify an input, ask me for the correct source. "
+  },
+  "wrong_directory": {
+    "requested": "/reports/data.txt",
+    "files": {
+      "/incoming/data.txt": "river\ncedar\nquartz\n"
+    },
+    "source": "/incoming/data.txt",
+    "query": "Read /reports/data.txt and write its lines in reverse line order to /out.txt. If the exact path is wrong, locate the intended input elsewhere in the workspace. If several sources are plausible, ask me which one. If you cannot identify an input, ask me for the correct source. "
+  },
+  "nested": {
+    "requested": "/data.txt",
+    "files": {
+      "/archive/2026/project/inbox/data.txt": "amber\nwillow\nslate\n"
+    },
+    "source": "/archive/2026/project/inbox/data.txt",
+    "query": "Read /data.txt and write its lines in reverse line order to /out.txt. If the exact path is wrong, locate the intended input elsewhere in the workspace. If several sources are plausible, ask me which one. If you cannot identify an input, ask me for the correct source. "
+  },
+  "alternate_name": {
+    "requested": "/notes/data.txt",
+    "files": {
+      "/notes/dataset.txt": "maple\ncoral\nindigo\n"
+    },
+    "source": "/notes/dataset.txt",
+    "hint": "The source may be named dataset.txt.",
+    "query": "Read /notes/data.txt and write its lines in reverse line order to /out.txt. If the exact path is wrong, locate the intended input elsewhere in the workspace. If several sources are plausible, ask me which one. If you cannot identify an input, ask me for the correct source. The source may be named dataset.txt."
+  },
+  "ambiguous": {
+    "requested": "/data.txt",
+    "files": {
+      "/a/data.txt": "north\nwest\n",
+      "/b/data.txt": "south\neast\n"
+    },
+    "source": null,
+    "query": "Read /data.txt and write its lines in reverse line order to /out.txt. If the exact path is wrong, locate the intended input elsewhere in the workspace. If several sources are plausible, ask me which one. If you cannot identify an input, ask me for the correct source. "
+  },
+  "transient": {
+    "requested": "/data.txt",
+    "files": {
+      "/data.txt": "papaya\nhazel\ncobalt\n"
+    },
+    "source": "/data.txt",
+    "transient": true,
+    "query": "Read /data.txt and write its lines in reverse line order to /out.txt. If the exact path is wrong, locate the intended input elsewhere in the workspace. If several sources are plausible, ask me which one. If you cannot identify an input, ask me for the correct source. "
+  },
+  "existing": {
+    "requested": "/data.txt",
+    "files": {
+      "/data.txt": "moss\npearl\nsaffron\n"
+    },
+    "source": "/data.txt",
+    "query": "Read /data.txt and write its lines in reverse line order to /out.txt. If the exact path is wrong, locate the intended input elsewhere in the workspace. If several sources are plausible, ask me which one. If you cannot identify an input, ask me for the correct source. "
+  }
+}

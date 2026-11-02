@@ -7,7 +7,7 @@ This inventory is the first packaging milestone, assembled November 2, 2026 (Asi
 | idempotency | Receiver, crash runner, review logic | Four reviewed event/receipt extracts; source hashes captured |
 | approval / reviewer-edit | Durable review and edited-action fixtures | Three sanitized phase/journal/SQL exports; original artifact and runner hashes captured |
 | missing-source | Honest stopping and distinct score dimensions | Three valid runs and six excluded attempts exported; feedback and source hashes retained |
-| search-improvement | Recorder, seven cases, scorer, conservative middleware | Historical review checked offline; recorder/middleware extracted; all seven middleware fixtures executed with scripted responses; full historical per-run export pending |
+| search-improvement | Recorder, seven cases, scorer, conservative middleware | Historical review checked offline; recorder/middleware extracted; all seven middleware fixtures executed with scripted responses; all 25 historical search records now exported/checked |
 | rejected recovery middleware | Historical comparison only | Failed ambiguity extract and source hash preserved; never the default |
 | explicit-alternative | Optional variant and unresolved regression | Not exported yet |
 | gptoss20b | Separate model cohort | Not exported yet |
@@ -86,3 +86,9 @@ The original middleware and extracted Recorder bytes remain unchanged. The share
 `results/scripted-filesystem-check-20261102.json` contains the six per-case observations, package versions, selected loaded-source hashes and current helper hashes. The first root report and all historical evidence remain unchanged; the first report's helper hash identifies its earlier version at commit `2b47bea`. The six new fixtures plus the earlier empty-root fixture cover the seven original contracts. No packages were installed; the editable-dependency and clean-install limitations remain.
 
 In the two empty-listing fixtures, raw tool results matched, but only the truly empty workspace received the added empty-workspace context. The next model-input callback observed the enriched message. These are runtime-mechanics checks, not new semantic judgments or demonstrations of independent model recovery. The default offline verifier does not yet check the saved runtime result files. Approval/crash/resume integration remains pending.
+
+## Full search-export milestone
+
+`search_cases` and `search_fixtures` in the manifest now bind all 25 detailed historical records, original observed/journal identities and the original seven fixtures. The separate `historical_search_evidence` stage checks their consistency without importing runtime dependencies. Earlier exports and the initial decision-review JSON are unchanged. The new validator retains the historical artifact rubric and answer-review identity; it does not implement a new semantic judge.
+
+Earlier record schemas differ from the current runner: some omit result execution IDs, recovery events and final message snapshots. The export labels sequential callback pairing and uses null for missing observations. The baseline nested graph-limit run has no final-state snapshot and is not interpreted as empty or excluded from behavioral results. Source-module hashes observed today do not establish every historical execution's code or settings. See [full export limits](search-export.md).

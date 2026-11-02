@@ -523,5 +523,396 @@
     "kind": "six remaining original contracts, fresh scripted graph execution",
     "live_model_calls": 0,
     "included_in_verify_offline": false
+  },
+  "search_fixtures": {
+    "export": "results/historical/search/fixtures.json",
+    "sha256": "89df58a716447294571e3b35f98625df90a5210b558086bae69a0d75ed0aa159",
+    "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/run_lab.py",
+    "source_sha256": "2b10233de9ac38caf1da52527e1d22ddfb8b7f23c5d8a4a8f5f48df7383d7518",
+    "extraction": "CASES literal plus recorded per-case user queries; no source module imported"
+  },
+  "search_cases": [
+    {
+      "label": "baseline-alternate_name-1",
+      "export": "results/historical/search/baseline-alternate_name-1.json",
+      "sha256": "b729144321b476d9936f6ada059eaa6378122433b6ce2e829899fac756969087",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-alternate_name-1/observed.json",
+          "sha256": "9c33730730432d78cce4a93bfe4cf88c4d789905b3e25527c492b999fa179178"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-alternate_name-1/events.jsonl",
+          "sha256": "4ee42b47847cfd6da8bf696becc3a0594931e5cb706bf87e0f7c58c0467d9259"
+        }
+      ]
+    },
+    {
+      "label": "baseline-ambiguous-1",
+      "export": "results/historical/search/baseline-ambiguous-1.json",
+      "sha256": "eb49c4ae39a5f404163b09958891ab2aaae03ce1149b5b8bf8213bdc0a473e07",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-ambiguous-1/observed.json",
+          "sha256": "9d830b49416c6cfa2e28f55f805aafa9f031006ad7cd4abb1c23dc6920ce894f"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-ambiguous-1/events.jsonl",
+          "sha256": "2f11d03f6eda04dd3b1d27a80c390df3d871e5627665b79ddee76ddb50ebd973"
+        }
+      ]
+    },
+    {
+      "label": "baseline-empty-1",
+      "export": "results/historical/search/baseline-empty-1.json",
+      "sha256": "8ee17014af5fbbf82c89288f7fc46b26c1f6055affd3b557804204026562634f",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-empty-1/observed.json",
+          "sha256": "1755229785fc7608232efaa4f359d6a3ade4306d0340eb88d657b7c4345a0df2"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-empty-1/events.jsonl",
+          "sha256": "3b1fa1a4e3bc138a420779a43c4dad4b8b71235caf73fe6fb11a3909c18b04fb"
+        }
+      ]
+    },
+    {
+      "label": "baseline-empty-2",
+      "export": "results/historical/search/baseline-empty-2.json",
+      "sha256": "87f0e7cf7e33723e99168ea35b186983397ab76f9a5014000b9bb15e607e6e6a",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-empty-2/observed.json",
+          "sha256": "4b6e55cb2f64d56d672a2b9fba8714ab6f5788a02e2f1a1a6df20a235bf7f55f"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-empty-2/events.jsonl",
+          "sha256": "2d7d2b207c683a700c24fc41192dd94c103c7fab2e9cf5e37b5789dd46300765"
+        }
+      ]
+    },
+    {
+      "label": "baseline-empty-3",
+      "export": "results/historical/search/baseline-empty-3.json",
+      "sha256": "5c3e4cf21c178d14886b7c1d79cddc146ae9513e9d5dc5ad18324971cc367958",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-empty-3/observed.json",
+          "sha256": "51d4f0c8f940a06bfb822037a7a85f6e263fa93fccefa0faa687529941b9c827"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-empty-3/events.jsonl",
+          "sha256": "a700ffdc94039fa49d4df7e2ddebcf4a2f23759d1e25b580b6f8d5ac610dd060"
+        }
+      ]
+    },
+    {
+      "label": "baseline-existing-1",
+      "export": "results/historical/search/baseline-existing-1.json",
+      "sha256": "68872ce6a064d13c67db19abf9a43e864afa8afe0f4629dd9ae86d1fa2b2c9cb",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-existing-1/observed.json",
+          "sha256": "f1ecc65a23b57772683fbf52c62a65df8cf4408008b42fafaf90482e8633a4af"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-existing-1/events.jsonl",
+          "sha256": "ab397dea438891faad36afa88bb18a5702f1b58ac30795bde21b73812fe404be"
+        }
+      ]
+    },
+    {
+      "label": "baseline-nested-1",
+      "export": "results/historical/search/baseline-nested-1.json",
+      "sha256": "11d1ce16fe17d6d55c0bc1b335a969a82e35493c3a7cc4e4eafb953a8a925d68",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-nested-1/observed.json",
+          "sha256": "8381c61fa725495ab91bc503cecd0073a22355c46944cd13c4b3058c15d26476"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-nested-1/events.jsonl",
+          "sha256": "e771855e8ff0a9e14d06450997d0cb58ed8e08a8ac5cd058a0a7459e88da16a5"
+        }
+      ]
+    },
+    {
+      "label": "baseline-transient-1",
+      "export": "results/historical/search/baseline-transient-1.json",
+      "sha256": "ede9fb019221a952e9356a4dff78cda7874fdd8356c76347c1bacda49b1afd63",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-transient-1/observed.json",
+          "sha256": "c8c28acffb65516edb5aae39eb26102e64aeacbd6edbb73fec46af63a718922d"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-transient-1/events.jsonl",
+          "sha256": "29eaaca855a7b0b819853ad6250b6922a3278e85dd9081c4c33fa005b52c45fa"
+        }
+      ]
+    },
+    {
+      "label": "baseline-wrong_directory-1",
+      "export": "results/historical/search/baseline-wrong_directory-1.json",
+      "sha256": "f5dcf1584f85d433eefd04fe1dcde3de2651aa055b21c50f51ea8c15d70c0612",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-wrong_directory-1/observed.json",
+          "sha256": "03a59bbb930d5ffd89d48f5cdebe5af628a57dd7b1520ac146bf40dfd5bd6d47"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-wrong_directory-1/events.jsonl",
+          "sha256": "11873bc0e8f4aec09ec6c483e90cfca55c8065f88e9336171705567e215aa463"
+        }
+      ]
+    },
+    {
+      "label": "candidate-alternate_name-1",
+      "export": "results/historical/search/candidate-alternate_name-1.json",
+      "sha256": "e33933805df2ce5d5d510fc82932034196161e14854bc2ebaf8c9c1be89a36e4",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-alternate_name-1/observed.json",
+          "sha256": "6d09cf1cf8cc350de2cd94eca117458cd36fa222bd77e6ead3acf2c53482a234"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-alternate_name-1/events.jsonl",
+          "sha256": "091163ecc0f459d8c3ed4bdf84b856cf3b2f87d79704539023b2abeb363d5ecf"
+        }
+      ]
+    },
+    {
+      "label": "candidate-ambiguous-1",
+      "export": "results/historical/search/candidate-ambiguous-1.json",
+      "sha256": "2602983ad652976ec17c51125bd52ebfad2a61b195624624450a5bf7ef8f3fe9",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-ambiguous-1/observed.json",
+          "sha256": "625442300de831b3ad0bb1b101ce61d5f2c5dac3aa26844f5702e54b9a3e995f"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-ambiguous-1/events.jsonl",
+          "sha256": "65b821fa412588eee9d8321cf29e741467145d53d7f01828e36fd88884981bd3"
+        }
+      ]
+    },
+    {
+      "label": "candidate-empty-1",
+      "export": "results/historical/search/candidate-empty-1.json",
+      "sha256": "8011e23ea126b7354fc13ad5df3d0c4155c6723df6367d19688be63681d648a5",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-empty-1/observed.json",
+          "sha256": "d088e586c547d816574d1169140bc6a03dea2733f75b2acf8a1dc503d9ccac32"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-empty-1/events.jsonl",
+          "sha256": "4c3b0db43bf76638c9a6ed20ffbf301f277004f44cd9314209561a9a86a0be79"
+        }
+      ]
+    },
+    {
+      "label": "candidate-existing-1",
+      "export": "results/historical/search/candidate-existing-1.json",
+      "sha256": "b9a1ab67492bc4cb5d75a595d25bf48ea3f1965ce8812031741b91099f9a5ccc",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-existing-1/observed.json",
+          "sha256": "52c394c49bd47cc0d58bdf4ddaee857e6513c7a23f717fc29839327125f025d3"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-existing-1/events.jsonl",
+          "sha256": "bbd70f8454eda0af6f7b0a7a0554d88158d64e25c5f71126934858c2148869fc"
+        }
+      ]
+    },
+    {
+      "label": "candidate-nested-1",
+      "export": "results/historical/search/candidate-nested-1.json",
+      "sha256": "15cd6eb6308e55b321b01dc1e241c86107fe1d2de1380e09a8088f39d4eb4006",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-nested-1/observed.json",
+          "sha256": "70258ba94e537e331d0ae30d02eb3a65249caa253abef6782d53384d0530471a"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-nested-1/events.jsonl",
+          "sha256": "da07c85c04a943eb314d19be3e8a32d1e4e67f708a390ebc2c0272dc08635a56"
+        }
+      ]
+    },
+    {
+      "label": "candidate-transient-1",
+      "export": "results/historical/search/candidate-transient-1.json",
+      "sha256": "91b8b8c166c155b1a390c681ce53d2114d1efdbc914e5f21066355818096ce11",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-transient-1/observed.json",
+          "sha256": "9cbf4a6ec2362f0c75df54f4a0ed309f8bfb6196f5959653e3f5b1641139b559"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-transient-1/events.jsonl",
+          "sha256": "205635d81881ac9ed62e44617682cb1ec55933a1a568c695e871044cbe168026"
+        }
+      ]
+    },
+    {
+      "label": "candidate-wrong_directory-1",
+      "export": "results/historical/search/candidate-wrong_directory-1.json",
+      "sha256": "fe1fd15e84144d02468680a693aca2f0a560386c5ffe1dad018089aff9dcdffa",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-wrong_directory-1/observed.json",
+          "sha256": "7642d1d1746e16d74e0ff4f8e2c63886207a95cb967cc07a4f88a28c00fb2dce"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-wrong_directory-1/events.jsonl",
+          "sha256": "6e7f50020f743bd672bf2c9f5f140e19110cd0e8dcf4bf09f9e54bd006bfd3a4"
+        }
+      ]
+    },
+    {
+      "label": "conservative-alternate_name-1",
+      "export": "results/historical/search/conservative-alternate_name-1.json",
+      "sha256": "b18ecfc470ca268e1e3bbd0f028f707364c89463a2f3902026b47a561a2138a3",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-alternate_name-1/observed.json",
+          "sha256": "9f5d7e0f516fbdbd3f0fdb1a5af0087466e3a8e242cee9501bc10ce7d8a8b2f8"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-alternate_name-1/events.jsonl",
+          "sha256": "61f9233d8bd5bc99a63047d0b851b7771fc1892fa4e082d46976659d5d732323"
+        }
+      ]
+    },
+    {
+      "label": "conservative-ambiguous-1",
+      "export": "results/historical/search/conservative-ambiguous-1.json",
+      "sha256": "0b4af89554e9b31ab902ab0df5991644722672c372ddc7541ad6ea8784b05367",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-ambiguous-1/observed.json",
+          "sha256": "55d8dc8733ab7a7d222639bd822f44303978a27bfcc4b38c745ba9fc31c1f5f0"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-ambiguous-1/events.jsonl",
+          "sha256": "82a2b7a6be52d1df534f6a4264135b7d2559acfecd28a895c9d955fc31daaede"
+        }
+      ]
+    },
+    {
+      "label": "conservative-empty-1",
+      "export": "results/historical/search/conservative-empty-1.json",
+      "sha256": "850a506d7e55eae50cf19784a63c3940d3d1e6040c26834ad78005a9ad3bb7e3",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-empty-1/observed.json",
+          "sha256": "0179ae745c1dffd1017926e6ea0285eef40a64f936a4af3022214343dcf9c64f"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-empty-1/events.jsonl",
+          "sha256": "2ce603822750dff1598a7fa02a600e49efba97337c151d49eb8fe953df5cd86d"
+        }
+      ]
+    },
+    {
+      "label": "conservative-empty-2",
+      "export": "results/historical/search/conservative-empty-2.json",
+      "sha256": "4b40327891c1931b45c29b567d2c770a6a7d3fbd29701757d1efd5b7cc5866b8",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-empty-2/observed.json",
+          "sha256": "a76a4559cf1d8d3195460ebbe46582a7d854501aab954a3906bd0d8a2b9f734f"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-empty-2/events.jsonl",
+          "sha256": "7b261d3b0e9b721e48323414de920ebd681df2eb6ebde94f8ba82447cd0ad48f"
+        }
+      ]
+    },
+    {
+      "label": "conservative-empty-3",
+      "export": "results/historical/search/conservative-empty-3.json",
+      "sha256": "0d94ca324bffd6cf8f723c1cbf4210907b64e0114722f9fbdf673f14e13945a4",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-empty-3/observed.json",
+          "sha256": "ed0549f055fd94b1678af3eea5aab150d971dd7404e1d91a7178363171b2a062"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-empty-3/events.jsonl",
+          "sha256": "dcd3b93d85d75f53dc67c29d6aec80b2e62099d2c4e6d476f2bbccb19ff51411"
+        }
+      ]
+    },
+    {
+      "label": "conservative-existing-1",
+      "export": "results/historical/search/conservative-existing-1.json",
+      "sha256": "87af16330695dbe8aeab51a5ae966f6e974a9b9b69ba7e56f0215fbcc6b62612",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-existing-1/observed.json",
+          "sha256": "8c2a0f351dcbe4df68d0ebef7862564938397b4067a32d4693ae0a52e67106f3"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-existing-1/events.jsonl",
+          "sha256": "0cd5fd908346ff9f348e23eceb8a6b1e3da252554f1958d5cbee306b19cdf424"
+        }
+      ]
+    },
+    {
+      "label": "conservative-nested-1",
+      "export": "results/historical/search/conservative-nested-1.json",
+      "sha256": "bd2aada2e60f8c87dcebf86ffa77e0ab8c39295d70abfccf5fb98563c9bd21b5",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-nested-1/observed.json",
+          "sha256": "4d88473e33d96f88961d29000168548657910a69bc1781ae651bf4cfb5ca715a"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-nested-1/events.jsonl",
+          "sha256": "5b7126c75ad41fc885dc8babe199707ad5f96cd2f0527e50519abc44fa17ba6a"
+        }
+      ]
+    },
+    {
+      "label": "conservative-transient-1",
+      "export": "results/historical/search/conservative-transient-1.json",
+      "sha256": "ef81f42512ed49d7feaaad14cf9ffb6734772b468748d9b7151ba178c4e05bbc",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-transient-1/observed.json",
+          "sha256": "02a9e741524f0bc1f8bd4050ce2a6150990d1625a3b39d3dfc938bddfc5ec623"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-transient-1/events.jsonl",
+          "sha256": "c395a9aeb2015c844f2383697a52b2c9b1efeb44baab74b6aa6315d69d5bf67d"
+        }
+      ]
+    },
+    {
+      "label": "conservative-wrong_directory-1",
+      "export": "results/historical/search/conservative-wrong_directory-1.json",
+      "sha256": "3ea9e31b1b69058ff494dac760cfe72884ab21a8a41c67c89c215fbd127e62ef",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-wrong_directory-1/observed.json",
+          "sha256": "6ba653da0227fac070afbd068b3ed22929d68cb5edfbd58a77f3ccd3fa1b17fe"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-wrong_directory-1/events.jsonl",
+          "sha256": "aada5659836762c5942414ed0c4d738937fe62bfe46a431bd63924a8405db4a6"
+        }
+      ]
+    }
+  ],
+  "search_denominators": {
+    "recorded_attempts": 25,
+    "natural_completions": 24,
+    "graph_limit_behavior_failures": 1,
+    "valid_behavior_trials": 25,
+    "prospective_frozen_roster_established": false
   }
 }

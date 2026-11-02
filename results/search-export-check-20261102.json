@@ -1,0 +1,216 @@
+{
+  "kind": "fresh deterministic validation of historical exports, not graph/model execution",
+  "recorded_on": "2026-11-02",
+  "historical_records_original": 16,
+  "search": {
+    "status": "passed",
+    "kind": "historical artifact consistency; no graph/model execution",
+    "records_checked": 25,
+    "graph_limit_behavior_failures": 1,
+    "answer_quality": "historical assistant review retained; not a new semantic judge",
+    "cases": [
+      {
+        "case": "baseline-alternate_name-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": false,
+        "final_state_available": true
+      },
+      {
+        "case": "baseline-ambiguous-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "baseline-empty-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "baseline-empty-2",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "baseline-empty-3",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "baseline-existing-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": true,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "baseline-nested-1",
+        "status": "graph_limit",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": false,
+        "final_state_available": false
+      },
+      {
+        "case": "baseline-transient-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": true,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "baseline-wrong_directory-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": false,
+        "final_state_available": true
+      },
+      {
+        "case": "candidate-alternate_name-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": false,
+        "final_state_available": true
+      },
+      {
+        "case": "candidate-ambiguous-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": false,
+        "final_state_available": true
+      },
+      {
+        "case": "candidate-empty-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "candidate-existing-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": true,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "candidate-nested-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": true,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "candidate-transient-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": true,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "candidate-wrong_directory-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": false,
+        "final_state_available": true
+      },
+      {
+        "case": "conservative-alternate_name-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": false,
+        "final_state_available": true
+      },
+      {
+        "case": "conservative-ambiguous-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "conservative-empty-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "conservative-empty-2",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "conservative-empty-3",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": false,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "conservative-existing-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": true,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "conservative-nested-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": true,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "conservative-transient-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": true,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      },
+      {
+        "case": "conservative-wrong_directory-1",
+        "status": "completed",
+        "valid_behavior_trial": true,
+        "task_completion": true,
+        "historical_behavior_correct": true,
+        "final_state_available": true
+      }
+    ]
+  },
+  "fresh_receiver_checks": 6,
+  "development_tests_passed": 57
+}
