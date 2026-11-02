@@ -477,5 +477,14 @@
     "invalid_provider": 3,
     "invalid_setup": 3,
     "behavior_denominator": 3
+  },
+  "search_recovery_review": {
+    "export": "results/search-recovery-review.json",
+    "sha256": "7f2f02e9868c3e97a86f897a7dc9d9e588ca745be0bd31625ed98246a36e3f53",
+    "kind": "historical decision review; not yet integrated with verify-offline",
+    "historical_run_roster_count": 25,
+    "detailed_ambiguity_extract_count": 3,
+    "historical_contract_outcome_count": 7,
+    "new_model_calls": 0
   }
 }

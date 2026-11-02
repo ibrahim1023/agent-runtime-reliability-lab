@@ -1,0 +1,890 @@
+{
+  "schema_version": 1,
+  "assembled_on": "2026-11-02",
+  "evidence_kind": "reviewed historical artifact extracts; no new graph or model execution",
+  "source_cohort": "2026-10-29-search-improvement",
+  "historical_execution_commit": null,
+  "selected_lab_prototype": "conservative_middleware.py",
+  "selection_scope": "synchronous complete unfiltered StateBackend only; no runtime default selected in this repository",
+  "rejected_candidate": "recovery_middleware.py",
+  "rejection_reason": "Model chose /a/data.txt without required user choice while /b/data.txt also existed.",
+  "score_provenance": "Retained historical scorer labels; final-answer quality remains historical assistant review, not a new semantic judgment by an offline verifier.",
+  "roster_basis": "Retrospective inventory of 25 observed.json artifacts. Not proof of a prospectively frozen roster. Existing-file control was added after the initial six-case baseline sweep.",
+  "reuse_inventory": [
+    {
+      "components": [
+        "Recorder",
+        "CASES (seven cases)",
+        "query_for",
+        "score",
+        "TransientReadBackend"
+      ],
+      "identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/run_lab.py",
+        "sha256": "2b10233de9ac38caf1da52527e1d22ddfb8b7f23c5d8a4a8f5f48df7383d7518",
+        "bytes": 11344
+      }
+    },
+    {
+      "components": [
+        "conservative middleware"
+      ],
+      "identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative_middleware.py",
+        "sha256": "9a9228b3bbb81c03391cdd4100806eab6979222ae7914a815e17bee1abfe869f",
+        "bytes": 1985
+      }
+    },
+    {
+      "components": [
+        "rejected historical comparison only"
+      ],
+      "identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/recovery_middleware.py",
+        "sha256": "adf416b8ca60df892d84f60c707db0d8d8425c57fcd0728bb0db49775d11bd9b",
+        "bytes": 3129
+      }
+    },
+    {
+      "components": [
+        "seven scripted graph contracts; historical results only"
+      ],
+      "identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/contract_checks.py",
+        "sha256": "fe5f604745bdb624aeb066461ca771d5d286e75c0dffa22115874980d02d88cc",
+        "bytes": 2463
+      }
+    }
+  ],
+  "supporting_sources": [
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/REPORT.md",
+      "sha256": "95c3142db4caba28cdce79f2da613ea45a3e245c5884bbcf0f641bc021a5a8ab",
+      "bytes": 9899
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/EXPERIMENT.md",
+      "sha256": "0b6e940758653ebc80c35f4189aff6433c5e017bd715d36c9ddd6fb5f180c28e",
+      "bytes": 5499
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-policy.md",
+      "sha256": "bb975fdabec93b69318230d26b6f93473496f2dfe6f67ad9cb9db13aa9a00979",
+      "bytes": 835
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/policy.md",
+      "sha256": "effad705ccc9b29d027c43c7e91d66ecc0f2bd17ce0de2e8b58ae456fd6aa808",
+      "bytes": 1116
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-snapshot.json",
+      "sha256": "91cc77f87a4cdf6cbeab47daf6c96484b6e8684193e6c10a75aacddbd63af6d7",
+      "bytes": 3113
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-snapshot.json",
+      "sha256": "95c43a9e4e0ce0113d8d7ae65b647f9f35e83c1fb797b1233c9e58b47165f692",
+      "bytes": 4582
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/contract-results.json",
+      "sha256": "78f65c6571e531449a5a190a6a09e727bfb81433a7442a3fae6b49b1634041d6",
+      "bytes": 519
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/path-reproduction.json",
+      "sha256": "66c58844ff1762e6de49471639588473028ba47f3707f7b5fc4c43d0633fbca9",
+      "bytes": 134
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/rejected-candidate.json",
+      "sha256": "7ef7eca506cfd13e0ed602fce40e51aff38a5a11491d8e545cbf432b75ff6c86",
+      "bytes": 675
+    }
+  ],
+  "seven_case_matrix": [
+    {
+      "case": "empty",
+      "baseline": {
+        "behavior_correct": true,
+        "tool_calls": 4
+      },
+      "candidate": {
+        "behavior_correct": true,
+        "tool_calls": 1
+      },
+      "conservative": {
+        "behavior_correct": true,
+        "tool_calls": 1
+      }
+    },
+    {
+      "case": "wrong_directory",
+      "baseline": {
+        "behavior_correct": false,
+        "tool_calls": 6
+      },
+      "candidate": {
+        "behavior_correct": false,
+        "tool_calls": 3
+      },
+      "conservative": {
+        "behavior_correct": true,
+        "tool_calls": 4
+      }
+    },
+    {
+      "case": "nested",
+      "baseline": {
+        "behavior_correct": false,
+        "tool_calls": 9
+      },
+      "candidate": {
+        "behavior_correct": true,
+        "tool_calls": 7
+      },
+      "conservative": {
+        "behavior_correct": true,
+        "tool_calls": 7
+      }
+    },
+    {
+      "case": "alternate_name",
+      "baseline": {
+        "behavior_correct": false,
+        "tool_calls": 3
+      },
+      "candidate": {
+        "behavior_correct": false,
+        "tool_calls": 3
+      },
+      "conservative": {
+        "behavior_correct": false,
+        "tool_calls": 3
+      }
+    },
+    {
+      "case": "ambiguous",
+      "baseline": {
+        "behavior_correct": true,
+        "tool_calls": 3
+      },
+      "candidate": {
+        "behavior_correct": false,
+        "tool_calls": 4
+      },
+      "conservative": {
+        "behavior_correct": true,
+        "tool_calls": 3
+      }
+    },
+    {
+      "case": "transient",
+      "baseline": {
+        "behavior_correct": true,
+        "tool_calls": 4
+      },
+      "candidate": {
+        "behavior_correct": true,
+        "tool_calls": 4
+      },
+      "conservative": {
+        "behavior_correct": true,
+        "tool_calls": 4
+      }
+    },
+    {
+      "case": "existing",
+      "baseline": {
+        "behavior_correct": true,
+        "tool_calls": 3
+      },
+      "candidate": {
+        "behavior_correct": true,
+        "tool_calls": 3
+      },
+      "conservative": {
+        "behavior_correct": true,
+        "tool_calls": 3
+      }
+    }
+  ],
+  "historical_run_roster": [
+    {
+      "label": "baseline-alternate_name-1",
+      "variant": "baseline",
+      "case": "alternate_name",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": false,
+      "historical_task_completed": false,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-alternate_name-1/observed.json",
+        "sha256": "9c33730730432d78cce4a93bfe4cf88c4d789905b3e25527c492b999fa179178",
+        "bytes": 2466
+      }
+    },
+    {
+      "label": "baseline-ambiguous-1",
+      "variant": "baseline",
+      "case": "ambiguous",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": false,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-ambiguous-1/observed.json",
+        "sha256": "9d830b49416c6cfa2e28f55f805aafa9f031006ad7cd4abb1c23dc6920ce894f",
+        "bytes": 2277
+      }
+    },
+    {
+      "label": "baseline-empty-1",
+      "variant": "baseline",
+      "case": "empty",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": false,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-empty-1/observed.json",
+        "sha256": "1755229785fc7608232efaa4f359d6a3ade4306d0340eb88d657b7c4345a0df2",
+        "bytes": 2530
+      }
+    },
+    {
+      "label": "baseline-empty-2",
+      "variant": "baseline",
+      "case": "empty",
+      "repetition": 2,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": false,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-empty-2/observed.json",
+        "sha256": "4b6e55cb2f64d56d672a2b9fba8714ab6f5788a02e2f1a1a6df20a235bf7f55f",
+        "bytes": 5797
+      }
+    },
+    {
+      "label": "baseline-empty-3",
+      "variant": "baseline",
+      "case": "empty",
+      "repetition": 3,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": false,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-empty-3/observed.json",
+        "sha256": "51d4f0c8f940a06bfb822037a7a85f6e263fa93fccefa0faa687529941b9c827",
+        "bytes": 6021
+      }
+    },
+    {
+      "label": "baseline-existing-1",
+      "variant": "baseline",
+      "case": "existing",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": true,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-existing-1/observed.json",
+        "sha256": "f1ecc65a23b57772683fbf52c62a65df8cf4408008b42fafaf90482e8633a4af",
+        "bytes": 5002
+      }
+    },
+    {
+      "label": "baseline-nested-1",
+      "variant": "baseline",
+      "case": "nested",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": false,
+      "error_type": "GraphRecursionError",
+      "historical_behavior_correct": false,
+      "historical_task_completed": false,
+      "tool_calls": 9,
+      "model_steps": 10,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-nested-1/observed.json",
+        "sha256": "8381c61fa725495ab91bc503cecd0073a22355c46944cd13c4b3058c15d26476",
+        "bytes": 4526
+      }
+    },
+    {
+      "label": "baseline-transient-1",
+      "variant": "baseline",
+      "case": "transient",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": true,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-transient-1/observed.json",
+        "sha256": "c8c28acffb65516edb5aae39eb26102e64aeacbd6edbb73fec46af63a718922d",
+        "bytes": 2964
+      }
+    },
+    {
+      "label": "baseline-wrong_directory-1",
+      "variant": "baseline",
+      "case": "wrong_directory",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": false,
+      "historical_task_completed": false,
+      "tool_calls": 6,
+      "model_steps": 7,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-wrong_directory-1/observed.json",
+        "sha256": "03a59bbb930d5ffd89d48f5cdebe5af628a57dd7b1520ac146bf40dfd5bd6d47",
+        "bytes": 3375
+      }
+    },
+    {
+      "label": "candidate-alternate_name-1",
+      "variant": "candidate",
+      "case": "alternate_name",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": false,
+      "historical_task_completed": false,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-alternate_name-1/observed.json",
+        "sha256": "6d09cf1cf8cc350de2cd94eca117458cd36fa222bd77e6ead3acf2c53482a234",
+        "bytes": 6363
+      }
+    },
+    {
+      "label": "candidate-ambiguous-1",
+      "variant": "candidate",
+      "case": "ambiguous",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": false,
+      "historical_task_completed": false,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-ambiguous-1/observed.json",
+        "sha256": "625442300de831b3ad0bb1b101ce61d5f2c5dac3aa26844f5702e54b9a3e995f",
+        "bytes": 7120
+      }
+    },
+    {
+      "label": "candidate-empty-1",
+      "variant": "candidate",
+      "case": "empty",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": false,
+      "tool_calls": 1,
+      "model_steps": 2,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-empty-1/observed.json",
+        "sha256": "d088e586c547d816574d1169140bc6a03dea2733f75b2acf8a1dc503d9ccac32",
+        "bytes": 4349
+      }
+    },
+    {
+      "label": "candidate-existing-1",
+      "variant": "candidate",
+      "case": "existing",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": true,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-existing-1/observed.json",
+        "sha256": "52c394c49bd47cc0d58bdf4ddaee857e6513c7a23f717fc29839327125f025d3",
+        "bytes": 6104
+      }
+    },
+    {
+      "label": "candidate-nested-1",
+      "variant": "candidate",
+      "case": "nested",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": true,
+      "tool_calls": 7,
+      "model_steps": 8,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-nested-1/observed.json",
+        "sha256": "70258ba94e537e331d0ae30d02eb3a65249caa253abef6782d53384d0530471a",
+        "bytes": 10328
+      }
+    },
+    {
+      "label": "candidate-transient-1",
+      "variant": "candidate",
+      "case": "transient",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": true,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-transient-1/observed.json",
+        "sha256": "9cbf4a6ec2362f0c75df54f4a0ed309f8bfb6196f5959653e3f5b1641139b559",
+        "bytes": 7377
+      }
+    },
+    {
+      "label": "candidate-wrong_directory-1",
+      "variant": "candidate",
+      "case": "wrong_directory",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": false,
+      "historical_task_completed": false,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-wrong_directory-1/observed.json",
+        "sha256": "7642d1d1746e16d74e0ff4f8e2c63886207a95cb967cc07a4f88a28c00fb2dce",
+        "bytes": 6282
+      }
+    },
+    {
+      "label": "conservative-alternate_name-1",
+      "variant": "conservative",
+      "case": "alternate_name",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": false,
+      "historical_task_completed": false,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-alternate_name-1/observed.json",
+        "sha256": "9f5d7e0f516fbdbd3f0fdb1a5af0087466e3a8e242cee9501bc10ce7d8a8b2f8",
+        "bytes": 6088
+      }
+    },
+    {
+      "label": "conservative-ambiguous-1",
+      "variant": "conservative",
+      "case": "ambiguous",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": false,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-ambiguous-1/observed.json",
+        "sha256": "55d8dc8733ab7a7d222639bd822f44303978a27bfcc4b38c745ba9fc31c1f5f0",
+        "bytes": 5596
+      }
+    },
+    {
+      "label": "conservative-empty-1",
+      "variant": "conservative",
+      "case": "empty",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": false,
+      "tool_calls": 1,
+      "model_steps": 2,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-empty-1/observed.json",
+        "sha256": "0179ae745c1dffd1017926e6ea0285eef40a64f936a4af3022214343dcf9c64f",
+        "bytes": 4089
+      }
+    },
+    {
+      "label": "conservative-empty-2",
+      "variant": "conservative",
+      "case": "empty",
+      "repetition": 2,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": false,
+      "tool_calls": 1,
+      "model_steps": 2,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-empty-2/observed.json",
+        "sha256": "a76a4559cf1d8d3195460ebbe46582a7d854501aab954a3906bd0d8a2b9f734f",
+        "bytes": 4150
+      }
+    },
+    {
+      "label": "conservative-empty-3",
+      "variant": "conservative",
+      "case": "empty",
+      "repetition": 3,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": false,
+      "tool_calls": 1,
+      "model_steps": 2,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-empty-3/observed.json",
+        "sha256": "ed0549f055fd94b1678af3eea5aab150d971dd7404e1d91a7178363171b2a062",
+        "bytes": 4150
+      }
+    },
+    {
+      "label": "conservative-existing-1",
+      "variant": "conservative",
+      "case": "existing",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": true,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-existing-1/observed.json",
+        "sha256": "8c2a0f351dcbe4df68d0ebef7862564938397b4067a32d4693ae0a52e67106f3",
+        "bytes": 5849
+      }
+    },
+    {
+      "label": "conservative-nested-1",
+      "variant": "conservative",
+      "case": "nested",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": true,
+      "tool_calls": 7,
+      "model_steps": 8,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-nested-1/observed.json",
+        "sha256": "4d88473e33d96f88961d29000168548657910a69bc1781ae651bf4cfb5ca715a",
+        "bytes": 10110
+      }
+    },
+    {
+      "label": "conservative-transient-1",
+      "variant": "conservative",
+      "case": "transient",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": true,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-transient-1/observed.json",
+        "sha256": "02a9e741524f0bc1f8bd4050ce2a6150990d1625a3b39d3dfc938bddfc5ec623",
+        "bytes": 7099
+      }
+    },
+    {
+      "label": "conservative-wrong_directory-1",
+      "variant": "conservative",
+      "case": "wrong_directory",
+      "repetition": 1,
+      "model": "groq:openai/gpt-oss-120b",
+      "natural_completion": true,
+      "error_type": null,
+      "historical_behavior_correct": true,
+      "historical_task_completed": true,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-wrong_directory-1/observed.json",
+        "sha256": "6ba653da0227fac070afbd068b3ed22929d68cb5edfbd58a77f3ccd3fa1b17fe",
+        "bytes": 7006
+      }
+    }
+  ],
+  "ambiguity_extracts": [
+    {
+      "label": "baseline-ambiguous-1",
+      "query": "Read /data.txt and write its lines in reverse line order to /out.txt. If the exact path is wrong, locate the intended input elsewhere in the workspace. If several sources are plausible, ask me which one. If you cannot identify an input, ask me for the correct source. ",
+      "initial_files": {
+        "/a/data.txt": "north\nwest\n",
+        "/b/data.txt": "south\neast\n"
+      },
+      "tool_calls": [
+        {
+          "name": "ls",
+          "args": {
+            "path": "/"
+          }
+        },
+        {
+          "name": "ls",
+          "args": {
+            "path": "/a/"
+          }
+        },
+        {
+          "name": "ls",
+          "args": {
+            "path": "/b/"
+          }
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "ls",
+          "status": "success",
+          "content": "['/a/', '/b/']"
+        },
+        {
+          "name": "ls",
+          "status": "success",
+          "content": "['/a/data.txt']"
+        },
+        {
+          "name": "ls",
+          "status": "success",
+          "content": "['/b/data.txt']"
+        }
+      ],
+      "final_files": {
+        "/a/data.txt": "north\nwest\n",
+        "/b/data.txt": "south\neast\n"
+      },
+      "final_answer": "I see two possible `data.txt` files in the workspace:\n\n- **/a/data.txt**  \n- **/b/data.txt**\n\nWhich one should I read and reverse the lines from?",
+      "historical_behavior_correct": true,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/baseline-ambiguous-1/observed.json",
+        "sha256": "9d830b49416c6cfa2e28f55f805aafa9f031006ad7cd4abb1c23dc6920ce894f",
+        "bytes": 2277
+      }
+    },
+    {
+      "label": "candidate-ambiguous-1",
+      "query": "Read /data.txt and write its lines in reverse line order to /out.txt. If the exact path is wrong, locate the intended input elsewhere in the workspace. If several sources are plausible, ask me which one. If you cannot identify an input, ask me for the correct source. ",
+      "initial_files": {
+        "/a/data.txt": "north\nwest\n",
+        "/b/data.txt": "south\neast\n"
+      },
+      "tool_calls": [
+        {
+          "name": "ls",
+          "args": {
+            "path": "/"
+          }
+        },
+        {
+          "name": "ls",
+          "args": {
+            "path": "/a/"
+          }
+        },
+        {
+          "name": "read_file",
+          "args": {
+            "file_path": "/a/data.txt",
+            "limit": 1000
+          }
+        },
+        {
+          "name": "write_file",
+          "args": {
+            "content": "west\nnorth",
+            "file_path": "/out.txt"
+          }
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "ls",
+          "status": "success",
+          "content": "['/a/', '/b/']"
+        },
+        {
+          "name": "ls",
+          "status": "success",
+          "content": "['/a/data.txt']"
+        },
+        {
+          "name": "read_file",
+          "status": "success",
+          "content": "@@ lines 1-2 of 2 @@\nnorth\nwest"
+        },
+        {
+          "name": "write_file",
+          "status": "success",
+          "content": "Updated file /out.txt"
+        }
+      ],
+      "final_files": {
+        "/a/data.txt": "north\nwest\n",
+        "/b/data.txt": "south\neast\n",
+        "/out.txt": "west\nnorth"
+      },
+      "final_answer": "The file has been read from **/a/data.txt** and its lines have been written in reverse order to **/out.txt**. Let me know if you need anything else!",
+      "historical_behavior_correct": false,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/candidate-ambiguous-1/observed.json",
+        "sha256": "625442300de831b3ad0bb1b101ce61d5f2c5dac3aa26844f5702e54b9a3e995f",
+        "bytes": 7120
+      }
+    },
+    {
+      "label": "conservative-ambiguous-1",
+      "query": "Read /data.txt and write its lines in reverse line order to /out.txt. If the exact path is wrong, locate the intended input elsewhere in the workspace. If several sources are plausible, ask me which one. If you cannot identify an input, ask me for the correct source. ",
+      "initial_files": {
+        "/a/data.txt": "north\nwest\n",
+        "/b/data.txt": "south\neast\n"
+      },
+      "tool_calls": [
+        {
+          "name": "ls",
+          "args": {
+            "path": "/"
+          }
+        },
+        {
+          "name": "ls",
+          "args": {
+            "path": "/a"
+          }
+        },
+        {
+          "name": "ls",
+          "args": {
+            "path": "/b"
+          }
+        }
+      ],
+      "tool_results": [
+        {
+          "name": "ls",
+          "status": "success",
+          "content": "['/a/', '/b/']"
+        },
+        {
+          "name": "ls",
+          "status": "success",
+          "content": "['/a/data.txt']"
+        },
+        {
+          "name": "ls",
+          "status": "success",
+          "content": "['/b/data.txt']"
+        }
+      ],
+      "final_files": {
+        "/a/data.txt": "north\nwest\n",
+        "/b/data.txt": "south\neast\n"
+      },
+      "final_answer": "I found two files named `data.txt` in the workspace:\n\n- `/a/data.txt`  \n- `/b/data.txt`\n\nWhich one should I read and reverse the line order from?",
+      "historical_behavior_correct": true,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative-ambiguous-1/observed.json",
+        "sha256": "55d8dc8733ab7a7d222639bd822f44303978a27bfcc4b38c745ba9fc31c1f5f0",
+        "bytes": 5596
+      }
+    }
+  ],
+  "historical_contract_results": [
+    {
+      "check": "root_alias",
+      "path": "",
+      "passed": true
+    },
+    {
+      "check": "root_alias",
+      "path": ".",
+      "passed": true
+    },
+    {
+      "check": "root_alias",
+      "path": "./",
+      "passed": true
+    },
+    {
+      "check": "root_alias",
+      "path": "/.",
+      "passed": true
+    },
+    {
+      "check": "explicit_scope_preserved",
+      "passed": true
+    },
+    {
+      "check": "empty_state_evidence",
+      "passed": true
+    },
+    {
+      "check": "empty_subdirectory_does_not_imply_empty_workspace",
+      "passed": true
+    }
+  ],
+  "historical_path_reproduction": {
+    "model_path": "",
+    "current_normalized_path": "/.",
+    "current_search": "No files found",
+    "root_search": "/incoming/data.txt"
+  },
+  "verification_scope": "This review is not yet integrated into verify-offline, which still checks the original sixteen records. No portable runtime source was extracted or executed in this milestone."
+}

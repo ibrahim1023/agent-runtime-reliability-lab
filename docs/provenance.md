@@ -7,8 +7,8 @@ This inventory is the first packaging milestone, assembled November 2, 2026 (Asi
 | idempotency | Receiver, crash runner, review logic | Four reviewed event/receipt extracts; source hashes captured |
 | approval / reviewer-edit | Durable review and edited-action fixtures | Three sanitized phase/journal/SQL exports; original artifact and runner hashes captured |
 | missing-source | Honest stopping and distinct score dimensions | Three valid runs and six excluded attempts exported; feedback and source hashes retained |
-| search-improvement | Recorder, seven cases, scorer, conservative middleware | Not exported yet |
-| rejected recovery middleware | Historical comparison only | Not exported yet; never the default |
+| search-improvement | Recorder, seven cases, scorer, conservative middleware | Decision review, 25-run roster and three ambiguity extracts; full per-run export and offline integration pending |
+| rejected recovery middleware | Historical comparison only | Failed ambiguity extract and source hash preserved; never the default |
 | explicit-alternative | Optional variant and unresolved regression | Not exported yet |
 | gptoss20b | Separate model cohort | Not exported yet |
 | InferenceBench | Supporting link only | No code or measurements copied |
@@ -52,3 +52,11 @@ The original summary called setup failure a helper path problem. Direct logs sho
 Failure-handling scores preserve historical manual assistant trace review. The verifier checks objective no-output observations and that the retained reviewed answer has not changed; it is not a new general language judge. Provider/setup attempts have null task and behavior verdicts. The historical prospective attempt count remains unknown; the exported retrospective roster contains nine attempts, with three valid behavioral observations, three provider interruptions and three setup interruptions. No graph-limit failure is discarded as infrastructure in this cohort.
 
 `results/offline-check-missing-source-20261102.json` records the actual combined check: sixteen historical records validated and six fresh receiver checks passed. The full development suite passed 39 tests on Python 3.14.6. No new LLM trial, tracing upload, or original-source mutation occurred.
+
+## Search-recovery decision review
+
+`results/search-recovery-review.json` contains the retrospective roster of twenty-five stored runs, the seven-case matrix, three sanitized ambiguity extracts, and source hashes identifying the existing recorder, suite, scorer, both middleware variants and seven contract checks. Tool call arguments, result contents, synthetic files and final answers are allowlisted in the three extracts. Trace/run IDs, durations, provider logs, private paths and full traces are omitted. Scorer labels remain historical labels, with historical assistant answer review; this packaging step supplies no new semantic judge.
+
+The conservative variant remains a scoped lab prototype. The rejected broad candidate remains failed and is not a default. The original rejection marker contains stale generic reason text; actual observed writes and files establish its ambiguity failure. Its source hash is retained without editing the original. Later explicit-alternative and 20B cohorts are not merged, and the unresolved original-present 120B failure is not removed.
+
+No runtime code was extracted or executed in this milestone. The manifest hash-links this decision review, but `verify-offline` does not yet check that optional entry: its count remains sixteen historical records plus six fresh receiver contracts. Source identities were compared directly against original files during packaging. A full search-evidence validator and portable scripted graph execution remain pending.

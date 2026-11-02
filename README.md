@@ -74,3 +74,7 @@ The task asked the agent to reverse lines from `/data.txt` into `/out.txt`, but 
 - Three setup failures occurred before model requests because the model setting was missing. They are retained separately.
 
 [Inspect the task-versus-behavior walkthrough](docs/missing-source-evidence.md). No new model evaluations ran during packaging. The offline command validates these nine records alongside four idempotency and three approval records; sixteen records does not mean sixteen successful experiments.
+
+## Recovery middleware decision review
+
+[Read why the conservative prototype was retained and the broader candidate rejected](docs/search-recovery-evidence.md). The new review preserves the historical seven-case comparison, 25-run roster, and actual ambiguity tool evidence. This is historical artifact inspection, not a new evaluation. The additional review is not yet included in `verify-offline`; that command still validates sixteen records and runs six receiver contracts. No runtime default was added.
