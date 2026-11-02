@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "case": "approve",
+  "historical": true,
+  "decision_source": "simulated_reviewer",
+  "model_id": "groq:openai/gpt-oss-120b",
+  "immutable_model_revision": null,
+  "operation_id": "2573593b-c9ba-46ef-9f02-449f9d585803",
+  "phases": [
+    {
+      "phase": "initial",
+      "decision": "approve",
+      "pid": 11454,
+      "interrupts": [
+        {
+          "id": "60d919b129f2803e9b95a3863086990a",
+          "value": {
+            "action_requests": [
+              {
+                "name": "record_action",
+                "args": {
+                  "message": "approval-demo"
+                },
+                "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'approval-demo'}"
+              }
+            ],
+            "review_configs": [
+              {
+                "action_name": "record_action",
+                "allowed_decisions": [
+                  "approve",
+                  "reject"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "checkpoint_next": [
+        "HumanInTheLoopMiddleware.after_model"
+      ],
+      "messages": [
+        {
+          "type": "human",
+          "content": "Use record_action to record the exact message approval-demo once, then return its receipt.",
+          "name": null,
+          "status": null,
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "status": null,
+          "tool_calls": [
+            {
+              "name": "record_action",
+              "args": {
+                "message": "approval-demo"
+              },
+              "id": "fc_14a663f7-ac0b-40ea-b974-7ffc7f5a0a87",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        }
+      ],
+      "ledger": [],
+      "answer": null
+    },
+    {
+      "phase": "restore",
+      "decision": "approve",
+      "pid": 11483,
+      "interrupts": [
+        {
+          "id": "60d919b129f2803e9b95a3863086990a",
+          "value": {
+            "action_requests": [
+              {
+                "name": "record_action",
+                "args": {
+                  "message": "approval-demo"
+                },
+                "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'approval-demo'}"
+              }
+            ],
+            "review_configs": [
+              {
+                "action_name": "record_action",
+                "allowed_decisions": [
+                  "approve",
+                  "reject"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "checkpoint_next": [
+        "HumanInTheLoopMiddleware.after_model"
+      ],
+      "messages": [
+        {
+          "type": "human",
+          "content": "Use record_action to record the exact message approval-demo once, then return its receipt.",
+          "name": null,
+          "status": null,
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "status": null,
+          "tool_calls": [
+            {
+              "name": "record_action",
+              "args": {
+                "message": "approval-demo"
+              },
+              "id": "fc_14a663f7-ac0b-40ea-b974-7ffc7f5a0a87",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        }
+      ],
+      "ledger": [],
+      "answer": null
+    },
+    {
+      "phase": "decision",
+      "decision": "approve",
+      "pid": 11503,
+      "interrupts": [],
+      "checkpoint_next": [],
+      "messages": [
+        {
+          "type": "human",
+          "content": "Use record_action to record the exact message approval-demo once, then return its receipt.",
+          "name": null,
+          "status": null,
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "status": null,
+          "tool_calls": [
+            {
+              "name": "record_action",
+              "args": {
+                "message": "approval-demo"
+              },
+              "id": "fc_14a663f7-ac0b-40ea-b974-7ffc7f5a0a87",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "type": "tool",
+          "content": "{\"message\": \"approval-demo\", \"operation_id\": \"2573593b-c9ba-46ef-9f02-449f9d585803\", \"receipt_id\": \"21424a77-ecc2-48f1-a678-8ce8858d790b\", \"status\": \"recorded\"}",
+          "name": "record_action",
+          "status": "success",
+          "tool_calls": [],
+          "tool_call_id": "fc_14a663f7-ac0b-40ea-b974-7ffc7f5a0a87"
+        },
+        {
+          "type": "ai",
+          "content": "Here is the receipt for the recorded action:\n\n**Receipt ID:** `21424a77-ecc2-48f1-a678-8ce8858d790b`",
+          "name": null,
+          "status": null,
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "ledger": [
+        {
+          "message": "approval-demo",
+          "operation_id": "2573593b-c9ba-46ef-9f02-449f9d585803",
+          "receipt_id": "21424a77-ecc2-48f1-a678-8ce8858d790b",
+          "status": "recorded"
+        }
+      ],
+      "answer": "Here is the receipt for the recorded action:\n\n**Receipt ID:** `21424a77-ecc2-48f1-a678-8ce8858d790b`"
+    }
+  ],
+  "events": [
+    {
+      "pid": 11454,
+      "event": "worker_start",
+      "phase": "initial"
+    },
+    {
+      "pid": 11483,
+      "event": "worker_start",
+      "phase": "restore"
+    },
+    {
+      "pid": 11503,
+      "event": "worker_start",
+      "phase": "decision"
+    },
+    {
+      "pid": 11503,
+      "event": "reviewer_decision",
+      "source": "simulated_reviewer",
+      "decision": {
+        "type": "approve"
+      }
+    },
+    {
+      "pid": 11503,
+      "event": "tool_enter",
+      "operation_id": "2573593b-c9ba-46ef-9f02-449f9d585803",
+      "message": "approval-demo"
+    },
+    {
+      "pid": 11503,
+      "event": "ledger_result",
+      "receipt": {
+        "message": "approval-demo",
+        "operation_id": "2573593b-c9ba-46ef-9f02-449f9d585803",
+        "receipt_id": "21424a77-ecc2-48f1-a678-8ce8858d790b",
+        "status": "recorded"
+      },
+      "reused": false
+    }
+  ],
+  "committed_receipts": [
+    {
+      "message": "approval-demo",
+      "operation_id": "2573593b-c9ba-46ef-9f02-449f9d585803",
+      "receipt_id": "21424a77-ecc2-48f1-a678-8ce8858d790b",
+      "status": "recorded"
+    }
+  ],
+  "limits": "Historical synthetic task with simulated reviewer inputs; no real human identity or authorization verified."
+}

@@ -32,6 +32,46 @@
       "source": "libs/evals/.agent-labs/2026-10-29-idempotency/REPORT.md",
       "sha256": "b9822fa9be1da0517afbe6b2fd6899e0ce7c0312f342e8e3790c01cfa2d8f19b",
       "bytes": 5049
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-approval/run_lab.py",
+      "sha256": "6b249067b3b78b62ae401d2997de82efbeee354545a0c23ddccf49a7136ae49f",
+      "bytes": 9043
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-approval/review_lab.py",
+      "sha256": "11db19ecd518676d449e8e6abc82a2c9c8717d43e299e0e7ee5189b17f54e9c7",
+      "bytes": 9257
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-approval/REPORT.md",
+      "sha256": "0a2b2a1667ed837871b2805407b425b28f1c2817b449f071947a9504441d0bad",
+      "bytes": 5247
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-approval/reviewed-results.json",
+      "sha256": "39c48099cc6efa91388fdad6d91db0795fc2413ba623bf3995518cced8a79033",
+      "bytes": 1717
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-reviewer-edit/run_lab.py",
+      "sha256": "8388929fc71b133671ea557a900926cc013db66a986622b1c9a09489459ecd18",
+      "bytes": 9483
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-reviewer-edit/review_lab.py",
+      "sha256": "4d70a861646b63224918b1152f98c12b34619433266feb351d3340f3d7b95d99",
+      "bytes": 8236
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-reviewer-edit/REPORT.md",
+      "sha256": "369428f00d34443dc5020d76b2f969669dbb9794bd8417a054a230f627bac813",
+      "bytes": 3835
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-reviewer-edit/reviewed-results.json",
+      "sha256": "8bac5017538f82d6f61d93c2943e70cd4e58ee286b96c04a84debaca39a8f156",
+      "bytes": 1506
     }
   ],
   "cases": [
@@ -153,6 +193,101 @@
       "changes": "Added contextlib.closing around all SQLite transaction contexts so connections close deterministically; receiver semantics unchanged.",
       "contracts_source": "libs/evals/.agent-labs/2026-10-29-idempotency/run_lab.py::local_checks",
       "contracts_changes": "Split existing concurrent/conflict/new-ID checks into independent tests; add explicit reopened-receiver and unprotected-control checks."
+    }
+  ],
+  "approval_cases": [
+    {
+      "case": "approve",
+      "export": "results/historical/approval/approve.json",
+      "sha256": "e38585a04d7b27c0cace1770bfec1b7c09ec9e7b000f8b061d7dd541b65e2cbc",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-approval/approve/manifest.json",
+          "sha256": "2fcacfbce17f81ba37379c95c5125db868fbe7b718da27560638fa1f987a799b"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-approval/approve/initial.json",
+          "sha256": "158da2e93609a4a99c01ba41999a3a340f539474be800520e300751999cd4bcc"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-approval/approve/restore.json",
+          "sha256": "a0add37db3c3f03c14f42bc96d28c72d2d5f8a4e8c089b44d8e0cc6bf645235a"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-approval/approve/decision.json",
+          "sha256": "052e5b8b609fc5e9ef9ae898e09fd35ac0d5eac02a9f0089ad2d7914f67f8401"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-approval/approve/events.jsonl",
+          "sha256": "2631c2b5bb58e72a38bf8faa3b077cd51ad77b0dedd5ae878a62dcf98b545c91"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-approval/approve/ledger.sqlite",
+          "sha256": "ce1dcd4fc9a85c340478a87db04c8ddd7b8b4f66b6ab2bf696b54d895504aa09"
+        }
+      ]
+    },
+    {
+      "case": "reject",
+      "export": "results/historical/approval/reject.json",
+      "sha256": "3b40c9ea6057f5df135464d0fbdb62ca7466c692d65629a7817e6407efff7661",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-approval/reject/manifest.json",
+          "sha256": "d95732b06c25a6a43a024d6056decf2d33226955ad1de85426b665ab1b355650"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-approval/reject/initial.json",
+          "sha256": "d658c486be1c7c08ebdc04f314a613c426b8b5e7f4f6b624bff332b02b3ee2f4"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-approval/reject/restore.json",
+          "sha256": "c7c00d93bb21a7b453144fffec79e85592beb65f50d6bde56ee3729e21ea931d"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-approval/reject/decision.json",
+          "sha256": "d9c8e214ccde5a5b901cc3ed518550dcec02a7e6d85b926eee7ab8d8c7971a2e"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-approval/reject/events.jsonl",
+          "sha256": "6c90ddb290bbcaa7d8f064e20219d80f84727847ce047b7dd26eeb2d5ffc5730"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-approval/reject/ledger.sqlite",
+          "sha256": "1912341efb042470d48d129dc5df4c7125adb111b23573d145f5857c4d67053e"
+        }
+      ]
+    },
+    {
+      "case": "edit",
+      "export": "results/historical/approval/edit.json",
+      "sha256": "490d733aca1849721747e8f1aba4a784e8a29cc5f1fb401444ce2ad5492597e3",
+      "original_sources": [
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-reviewer-edit/edit/manifest.json",
+          "sha256": "c5bc3f2f4faf6ed64478e6f7e74208f14c5a04c00463e6dc0a2dfeba64bfd347"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-reviewer-edit/edit/initial.json",
+          "sha256": "9d3807de23c4019b16628a824a696b83db99c6e957cc492b26a5477d0aa45081"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-reviewer-edit/edit/restore.json",
+          "sha256": "cecec28676572fb174c5a2e33da8e487163f835a314eac48ac96c12aa593feab"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-reviewer-edit/edit/decision.json",
+          "sha256": "c1cc3af4ef6a6f5c08ca6cd67703fa21fc78621187c921df64d8828dc5d00f55"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-reviewer-edit/edit/events.jsonl",
+          "sha256": "970cabc9493ac45648d5b0aadae7f210831d085419bb5f1a35591bdf7ca71975"
+        },
+        {
+          "source": "libs/evals/.agent-labs/2026-10-29-reviewer-edit/edit/ledger.sqlite",
+          "sha256": "3c846af542b8edca9231a7f0a20a32c924beb658643e1b8c45fbdbf5aae42a31"
+        }
+      ]
     }
   ]
 }

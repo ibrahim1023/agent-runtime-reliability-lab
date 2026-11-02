@@ -5,7 +5,7 @@ This inventory is the first packaging milestone, assembled November 2, 2026 (Asi
 | Existing cohort | Planned reuse | Current export status |
 |---|---|---|
 | idempotency | Receiver, crash runner, review logic | Four reviewed event/receipt extracts; source hashes captured |
-| approval / reviewer-edit | Durable review and edited-action fixtures | Not exported yet |
+| approval / reviewer-edit | Durable review and edited-action fixtures | Three sanitized phase/journal/SQL exports; original artifact and runner hashes captured |
 | missing-source | Honest stopping and distinct score dimensions | Not exported yet |
 | search-improvement | Recorder, seven cases, scorer, conservative middleware | Not exported yet |
 | rejected recovery middleware | Historical comparison only | Not exported yet; never the default |
@@ -32,3 +32,11 @@ New code: `evidence.py` validates export hashes, fixed cohort completeness, acti
 A larger test run exposed ResourceWarning messages from the original receiver's unclosed SQLite connections. A new regression test reproduced the warning (failed), then the extracted receiver was changed to nest the existing transaction context inside `contextlib.closing`. The transaction completes before closure. All receiver contracts passed afterward, without suppressing warnings. The original source remains untouched.
 
 The original five-test record in `results/receiver-contract-check.json` describes the earlier byte-identical extraction. The newer combined report in `results/offline-check-20261102.json` supersedes it for the current receiver. They are different check milestones, not two model cohorts.
+
+## Approval export milestone
+
+New verifier: `reliability_lab/approval_evidence.py`. Original `initial.json`, `restore.json`, and `decision.json` are reduced to an explicit field allowlist: phase, decision, PID, interrupts, checkpoint-next labels, messages, ledger snapshots, and answer. Synthetic prompt/tool text is retained so proposal and execution can be compared. Model alias and simulated reviewer source come from each original manifest; no immutable model revision is known. Journal fields were reviewed and allowlisted; committed receipts were read directly from each original SQLite database with read-only access and compared with the recorded final snapshot.
+
+`results/manifest.json::approval_cases` maps each export to hashes of original phase records, manifest, journal, and ledger. Runner/reviewer/report hashes are also captured. No approval runner code is copied yet; the existing protected receiver remains the shared implementation planned for runtime extraction. Original checkpoint databases, full traces, provider logs, duration fields, and private filesystem paths are excluded. Source timestamps are not being used to infer a historical runtime revision.
+
+`results/offline-check-approval-20261102.json` records validation of seven historical cases plus six fresh receiver contracts. The previous four-case report remains as a separate packaging checkpoint. All 29 development tests passed on Python 3.14.6. Original labs and historical four-case exports were unchanged by this step.

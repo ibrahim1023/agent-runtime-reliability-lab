@@ -10,6 +10,7 @@ import unittest
 import uuid
 
 from reliability_lab.evidence import verify_evidence
+from reliability_lab.approval_evidence import verify_approval_evidence
 
 
 def install_offline_guard() -> None:
@@ -59,7 +60,7 @@ def verify_offline(root: Path) -> tuple[dict, int]:
     }
     stage = "historical_evidence"
     try:
-        cases = verify_evidence(root)
+        cases = verify_evidence(root) + verify_approval_evidence(root)
         report[stage] = {"status": "passed", "kind": "stored evidence validation; no historical replay", "cases": cases}
         stage = "receiver_contracts"
         report[stage] = receiver_contracts(root)

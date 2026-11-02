@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "case": "reject",
+  "historical": true,
+  "decision_source": "simulated_reviewer",
+  "model_id": "groq:openai/gpt-oss-120b",
+  "immutable_model_revision": null,
+  "operation_id": "ddd1fa3a-2a4c-45dc-b08d-cda6bdc34889",
+  "phases": [
+    {
+      "phase": "initial",
+      "decision": "reject",
+      "pid": 11527,
+      "interrupts": [
+        {
+          "id": "f0d8831068b4cfc5ed591a3e1f9be807",
+          "value": {
+            "action_requests": [
+              {
+                "name": "record_action",
+                "args": {
+                  "message": "approval-demo"
+                },
+                "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'approval-demo'}"
+              }
+            ],
+            "review_configs": [
+              {
+                "action_name": "record_action",
+                "allowed_decisions": [
+                  "approve",
+                  "reject"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "checkpoint_next": [
+        "HumanInTheLoopMiddleware.after_model"
+      ],
+      "messages": [
+        {
+          "type": "human",
+          "content": "Use record_action to record the exact message approval-demo once, then return its receipt.",
+          "name": null,
+          "status": null,
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "status": null,
+          "tool_calls": [
+            {
+              "name": "record_action",
+              "args": {
+                "message": "approval-demo"
+              },
+              "id": "fc_aeddf9e2-71ae-4754-8345-170c7ccddcd6",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        }
+      ],
+      "ledger": [],
+      "answer": null
+    },
+    {
+      "phase": "restore",
+      "decision": "reject",
+      "pid": 11548,
+      "interrupts": [
+        {
+          "id": "f0d8831068b4cfc5ed591a3e1f9be807",
+          "value": {
+            "action_requests": [
+              {
+                "name": "record_action",
+                "args": {
+                  "message": "approval-demo"
+                },
+                "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'approval-demo'}"
+              }
+            ],
+            "review_configs": [
+              {
+                "action_name": "record_action",
+                "allowed_decisions": [
+                  "approve",
+                  "reject"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "checkpoint_next": [
+        "HumanInTheLoopMiddleware.after_model"
+      ],
+      "messages": [
+        {
+          "type": "human",
+          "content": "Use record_action to record the exact message approval-demo once, then return its receipt.",
+          "name": null,
+          "status": null,
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "status": null,
+          "tool_calls": [
+            {
+              "name": "record_action",
+              "args": {
+                "message": "approval-demo"
+              },
+              "id": "fc_aeddf9e2-71ae-4754-8345-170c7ccddcd6",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        }
+      ],
+      "ledger": [],
+      "answer": null
+    },
+    {
+      "phase": "decision",
+      "decision": "reject",
+      "pid": 11568,
+      "interrupts": [],
+      "checkpoint_next": [],
+      "messages": [
+        {
+          "type": "human",
+          "content": "Use record_action to record the exact message approval-demo once, then return its receipt.",
+          "name": null,
+          "status": null,
+          "tool_calls": [],
+          "tool_call_id": null
+        },
+        {
+          "type": "ai",
+          "content": "",
+          "name": null,
+          "status": null,
+          "tool_calls": [
+            {
+              "name": "record_action",
+              "args": {
+                "message": "approval-demo"
+              },
+              "id": "fc_aeddf9e2-71ae-4754-8345-170c7ccddcd6",
+              "type": "tool_call"
+            }
+          ],
+          "tool_call_id": null
+        },
+        {
+          "type": "tool",
+          "content": "User rejected the tool call for `record_action` with reason: This test reviewer rejects the action. Do not execute it, retry it, or use another tool. Report that it was not executed.",
+          "name": "record_action",
+          "status": "error",
+          "tool_calls": [],
+          "tool_call_id": "fc_aeddf9e2-71ae-4754-8345-170c7ccddcd6"
+        },
+        {
+          "type": "ai",
+          "content": "I\u2019m sorry, but the requested action was not executed.",
+          "name": null,
+          "status": null,
+          "tool_calls": [],
+          "tool_call_id": null
+        }
+      ],
+      "ledger": [],
+      "answer": "I\u2019m sorry, but the requested action was not executed."
+    }
+  ],
+  "events": [
+    {
+      "pid": 11527,
+      "event": "worker_start",
+      "phase": "initial"
+    },
+    {
+      "pid": 11548,
+      "event": "worker_start",
+      "phase": "restore"
+    },
+    {
+      "pid": 11568,
+      "event": "worker_start",
+      "phase": "decision"
+    },
+    {
+      "pid": 11568,
+      "event": "reviewer_decision",
+      "source": "simulated_reviewer",
+      "decision": {
+        "type": "reject",
+        "message": "This test reviewer rejects the action. Do not execute it, retry it, or use another tool. Report that it was not executed."
+      }
+    }
+  ],
+  "committed_receipts": [],
+  "limits": "Historical synthetic task with simulated reviewer inputs; no real human identity or authorization verified."
+}
