@@ -914,5 +914,26 @@
     "graph_limit_behavior_failures": 1,
     "valid_behavior_trials": 25,
     "prospective_frozen_roster_established": false
+  },
+  "optional_cohorts": [
+    {
+      "cohort": "explicit-alternative-120b",
+      "export": "results/optional/explicit-alternative-120b.json",
+      "sha256": "baac4283119fc28ed78c52df1a86c8bfd6b92d55cb3c32c03c125fcce9f11c7f"
+    },
+    {
+      "cohort": "original-present-followup-120b",
+      "export": "results/optional/original-present-followup-120b.json",
+      "sha256": "42f27e0103316fbefc11855b502bdcb4427bac9e4ec1ec0b612b5d2a049bb5ee"
+    },
+    {
+      "cohort": "comparison-20b",
+      "export": "results/optional/comparison-20b.json",
+      "sha256": "0f92bca8b973e88746f1798b4e137c19562df0f5b965d39dab13049602a7af68"
+    }
+  ],
+  "unresolved_120b_result": {
+    "export": "results/optional/unresolved-original-present-120b.json",
+    "sha256": "d84494ce9441207b8844dcb64e4384d45265b5a0fb44184190a87d7bdbea6066"
   }
 }

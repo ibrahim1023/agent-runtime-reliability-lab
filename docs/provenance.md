@@ -9,8 +9,8 @@ This inventory is the first packaging milestone, assembled November 2, 2026 (Asi
 | missing-source | Honest stopping and distinct score dimensions | Three valid runs and six excluded attempts exported; feedback and source hashes retained |
 | search-improvement | Recorder, seven cases, scorer, conservative middleware | Historical review checked offline; recorder/middleware extracted; all seven middleware fixtures executed with scripted responses; all 25 historical search records now exported/checked |
 | rejected recovery middleware | Historical comparison only | Failed ambiguity extract and source hash preserved; never the default |
-| explicit-alternative | Optional variant and unresolved regression | Not exported yet |
-| gptoss20b | Separate model cohort | Not exported yet |
+| explicit-alternative | Optional variant and unresolved regression | Original 16-attempt inventory, separate blocked follow-up, detailed unresolved 120B result; not full optional per-run validation |
+| gptoss20b | Separate model cohort | Eight-run inventory retained separately; not a 120B reproduction |
 | InferenceBench | Supporting link only | No code or measurements copied |
 
 The manifest records the checkout revision observed now. The original idempotency execution revision has not been established; do not substitute the observed revision. Model/settings/dependency/scorer provenance still needs inspection before a complete reproducible release.
@@ -92,3 +92,7 @@ In the two empty-listing fixtures, raw tool results matched, but only the truly 
 `search_cases` and `search_fixtures` in the manifest now bind all 25 detailed historical records, original observed/journal identities and the original seven fixtures. The separate `historical_search_evidence` stage checks their consistency without importing runtime dependencies. Earlier exports and the initial decision-review JSON are unchanged. The new validator retains the historical artifact rubric and answer-review identity; it does not implement a new semantic judge.
 
 Earlier record schemas differ from the current runner: some omit result execution IDs, recovery events and final message snapshots. The export labels sequential callback pairing and uses null for missing observations. The baseline nested graph-limit run has no final-state snapshot and is not interpreted as empty or excluded from behavioral results. Source-module hashes observed today do not establish every historical execution's code or settings. See [full export limits](search-export.md).
+
+## Optional-cohort inventory milestone
+
+The manifest hash-links three inventories with 16, 1 and 8 attempt records and a reviewed detailed unresolved 120B failure. Invalid provider attempts retain null behavior/task verdicts. The follow-up preserves three unstarted trials as unstarted, not extra attempts. `optional_cohort_inventory` checks identity, roster/classification and preservation of the unresolved result; it does not perform full optional per-run artifact validation or reissue semantic judgments. See [optional cohort limits](optional-cohorts.md). No optional cohort is merged into search scores or adopted as a default.

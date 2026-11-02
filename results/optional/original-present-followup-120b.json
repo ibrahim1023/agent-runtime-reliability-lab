@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "cohort": "original-present-followup-120b",
+  "historical": true,
+  "model": "groq:openai/gpt-oss-120b",
+  "coverage": "retrospective inventory only; not full per-run behavioral validation",
+  "historical_execution_commit": null,
+  "records": [
+    {
+      "label": "scoped-original_present-2",
+      "variant": "scoped",
+      "case": "original_present",
+      "repetition": 2,
+      "status": "provider_interrupted",
+      "valid_behavior_trial": false,
+      "historical_behavior_correct": null,
+      "task_completed": null,
+      "error": {
+        "type": "RateLimitError",
+        "http_status": 429,
+        "category": "provider_quota"
+      },
+      "tool_calls": 0,
+      "model_steps": 0,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/scoped-original_present-2/observed.json",
+        "sha256": "fa56ac9fe757a7abc2504f1bddd32df268eb2da786d93184d1618d68785635c0"
+      }
+    }
+  ],
+  "attempts": 1,
+  "valid_behavior_trials": 0,
+  "invalid_provider_attempts": 1,
+  "resolves_120b_original_present_failure": false,
+  "planned_trials": 4,
+  "unstarted_trials": 3,
+  "source_files": [
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/experiment.py",
+      "sha256": "310e3af8d221e3442a5db91d06dd6a4d1227a2ad880d5887e75fd667a3da83ea"
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/selection_middleware.py",
+      "sha256": "ef13600fd1108b460e44ab48e0519354a9f88a9d2ff7a2be296fbb14203e7db8"
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/summary.json",
+      "sha256": "40b04e7678f706ef6371835fe7034dc010a429bc046797f73211c3160bdaee94"
+    }
+  ]
+}

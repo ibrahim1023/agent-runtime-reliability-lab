@@ -51,7 +51,7 @@ Run all development checks, including evidence tampering and command failure cas
 python3 -S -m unittest discover -s tests -v
 ```
 
-Verified on Python 3.14.6: 57 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
+Verified on Python 3.14.6: 61 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
 
 See [offline verification limits](docs/offline-verification.md) for what the checks do and do not establish.
 
@@ -97,3 +97,7 @@ Run the remaining fixtures with `python -m reliability_lab scripted-filesystem-c
 ## Complete historical search records
 
 All 25 search runs now have [detailed extracts and offline consistency checks](docs/search-export.md), including the rejected ambiguity run and graph-limit failure. `historical_search_evidence` reports them separately from the original sixteen records and the three-record decision review. These are historical artifact validations, not fresh model trials.
+
+## Optional cohort inventory
+
+The [optional inventory](docs/optional-cohorts.md) preserves the original 120B comparison, its separate quota-blocked follow-up and the separate 20B comparison. The original-present 120B failure remains unresolved and has a detailed public extract. Provider interruptions have null behavior verdicts. Inventory checks are not full per-run model evaluation.

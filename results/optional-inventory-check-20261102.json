@@ -1,0 +1,21 @@
+{
+  "kind": "fresh deterministic historical inventory checks; not model evaluation",
+  "recorded_on": "2026-11-02",
+  "inventory": {
+    "status": "passed",
+    "kind": "historical inventory/classification checks; not full per-run behavioral validation",
+    "cohort_attempt_counts": [
+      16,
+      1,
+      8
+    ],
+    "valid_trial_counts": [
+      13,
+      0,
+      8
+    ],
+    "unresolved_120b": "preserved",
+    "new_model_calls": 0
+  },
+  "development_tests_passed": 61
+}

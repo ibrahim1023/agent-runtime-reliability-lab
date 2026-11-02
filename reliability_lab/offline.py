@@ -14,6 +14,7 @@ from reliability_lab.approval_evidence import verify_approval_evidence
 from reliability_lab.missing_source_evidence import verify_missing_source_evidence
 from reliability_lab.search_review import verify_search_review
 from reliability_lab.search_evidence import verify_search_evidence
+from reliability_lab.optional_inventory import verify_optional_inventory
 
 
 def install_offline_guard() -> None:
@@ -60,6 +61,7 @@ def verify_offline(root: Path) -> tuple[dict, int]:
         "historical_evidence": {"status": "not_run"},
         "search_recovery_review": {"status": "not_run"},
         "historical_search_evidence": {"status": "not_run"},
+        "optional_cohort_inventory": {"status": "not_run"},
         "receiver_contracts": {"status": "not_run"},
         "report_path": str(attempt / "report.json"),
     }
@@ -71,11 +73,13 @@ def verify_offline(root: Path) -> tuple[dict, int]:
         report[stage] = verify_search_review(root)
         stage = "historical_search_evidence"
         report[stage] = verify_search_evidence(root)
+        stage = "optional_cohort_inventory"
+        report[stage] = verify_optional_inventory(root)
         stage = "receiver_contracts"
         report[stage] = receiver_contracts(root)
     except (OSError, ValueError, KeyError, TypeError, StopIteration, ImportError) as exc:
         report[stage] = {"status": "failed", "error": str(exc)}
-    passed = all(report[s]["status"] == "passed" for s in ("historical_evidence", "search_recovery_review", "historical_search_evidence", "receiver_contracts"))
+    passed = all(report[s]["status"] == "passed" for s in ("historical_evidence", "search_recovery_review", "historical_search_evidence", "optional_cohort_inventory", "receiver_contracts"))
     report["exit_code"] = 0 if passed else 1
     report["finished_at_utc"] = datetime.now(timezone.utc).isoformat()
     (directory / "report.json").write_text(json.dumps(report, indent=2) + "\n")

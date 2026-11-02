@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "cohort": "comparison-20b",
+  "historical": true,
+  "model": "groq:openai/gpt-oss-20b",
+  "coverage": "retrospective inventory only; not full per-run behavioral validation",
+  "historical_execution_commit": null,
+  "records": [
+    {
+      "label": "previous-ambiguous_alternative-1",
+      "variant": "previous",
+      "case": "ambiguous_alternative",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-gptoss20b/previous-ambiguous_alternative-1/observed.json",
+        "sha256": "cde256d4897b34d55278a88cfa580fadfa4c453679477af023775fb9cb776820"
+      }
+    },
+    {
+      "label": "previous-explicit-1",
+      "variant": "previous",
+      "case": "explicit",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": false,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 2,
+      "model_steps": 3,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-gptoss20b/previous-explicit-1/observed.json",
+        "sha256": "eb6283fbf99fa2e8a8f03329565b0811f34d782f7733811b007404fad4161e1c"
+      }
+    },
+    {
+      "label": "previous-original_present-1",
+      "variant": "previous",
+      "case": "original_present",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": true,
+      "error": null,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-gptoss20b/previous-original_present-1/observed.json",
+        "sha256": "ba27e8244f276278771a70132b499385bb9a6074dc16daadd5e04c6123449308"
+      }
+    },
+    {
+      "label": "previous-original_present-2",
+      "variant": "previous",
+      "case": "original_present",
+      "repetition": 2,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": true,
+      "error": null,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-gptoss20b/previous-original_present-2/observed.json",
+        "sha256": "944a98fb0c8a170fbac3d37d1908a53d0a26e8fcfa156bf1f336d585951ae5fe"
+      }
+    },
+    {
+      "label": "scoped-ambiguous_alternative-1",
+      "variant": "scoped",
+      "case": "ambiguous_alternative",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-gptoss20b/scoped-ambiguous_alternative-1/observed.json",
+        "sha256": "72dcb50b8ceb7e9bf35705522899c5121b29784a2a6b0c3bb377d4a57f5e0dd2"
+      }
+    },
+    {
+      "label": "scoped-explicit-1",
+      "variant": "scoped",
+      "case": "explicit",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": true,
+      "error": null,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-gptoss20b/scoped-explicit-1/observed.json",
+        "sha256": "e04c8150cfb6bbc0b6592b788325005bf64993ed15bdce2228947904fd1210ab"
+      }
+    },
+    {
+      "label": "scoped-original_present-1",
+      "variant": "scoped",
+      "case": "original_present",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": true,
+      "error": null,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-gptoss20b/scoped-original_present-1/observed.json",
+        "sha256": "0c1388df2993a11280f922d56a6b32df050c584be68ead2791e940cd35cea164"
+      }
+    },
+    {
+      "label": "scoped-original_present-2",
+      "variant": "scoped",
+      "case": "original_present",
+      "repetition": 2,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": true,
+      "error": null,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-gptoss20b/scoped-original_present-2/observed.json",
+        "sha256": "7db3d3aa0dd7a83926f83c662b218bf32cffef53bced21dca007fb4ff8ef4529"
+      }
+    }
+  ],
+  "attempts": 8,
+  "valid_behavior_trials": 8,
+  "invalid_provider_attempts": 0,
+  "resolves_120b_original_present_failure": false,
+  "source_files": [
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-gptoss20b/run_comparison.py",
+      "sha256": "708d6275ebec56bfd4b96749a34b537c01ddcd22181d11c1f269f5a961f3ca39"
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-gptoss20b/PLAN.md",
+      "sha256": "ccca7a8857291aa277f6eeee25cf87a7b9876d4d6ad4816fc2b61bb5c15fae1b"
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-gptoss20b/summary.json",
+      "sha256": "7e7af5ddb1a2b0dfce959ccf23cab0c8454e36ab0571f94db6e5fc37963adcb0"
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "cohort": "explicit-alternative-120b",
+  "historical": true,
+  "model": "groq:openai/gpt-oss-120b",
+  "coverage": "retrospective inventory only; not full per-run behavioral validation",
+  "historical_execution_commit": null,
+  "records": [
+    {
+      "label": "previous-ambiguous_alternative-1",
+      "variant": "previous",
+      "case": "ambiguous_alternative",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/previous-ambiguous_alternative-1/observed.json",
+        "sha256": "5ac11609e4380282ac2ca60c7cb46758c34c23b04e415a6c950e0c3819d068e1"
+      }
+    },
+    {
+      "label": "previous-ambiguous_original-1",
+      "variant": "previous",
+      "case": "ambiguous_original",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/previous-ambiguous_original-1/observed.json",
+        "sha256": "8a1e82dba1dbf6e12390f375f61b67fa3c770b8a86c372fab7b3aed3539afc96"
+      }
+    },
+    {
+      "label": "previous-confirmation_required-1",
+      "variant": "previous",
+      "case": "confirmation_required",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 0,
+      "model_steps": 1,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/previous-confirmation_required-1/observed.json",
+        "sha256": "a5772edb1141a4208a397d0777c16e4136c395d36f15cd57d5cdf02790c28d8f"
+      }
+    },
+    {
+      "label": "previous-explicit-1",
+      "variant": "previous",
+      "case": "explicit",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": false,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/previous-explicit-1/observed.json",
+        "sha256": "bc4cf2fd2df4b9018eedaabb213135fc840e1ca31a6aca19fbedbc2bdbdc13fc"
+      }
+    },
+    {
+      "label": "previous-explicit-2",
+      "variant": "previous",
+      "case": "explicit",
+      "repetition": 2,
+      "status": "provider_interrupted",
+      "valid_behavior_trial": false,
+      "historical_behavior_correct": null,
+      "task_completed": null,
+      "error": {
+        "type": "RateLimitError",
+        "http_status": 429,
+        "category": "provider_quota"
+      },
+      "tool_calls": 2,
+      "model_steps": 2,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/previous-explicit-2/observed.json",
+        "sha256": "e029b29e923b8beecf892fae4ea241eb5ef98cfd603ca39a6c9e1db31c8c9e16"
+      }
+    },
+    {
+      "label": "previous-explicit-3",
+      "variant": "previous",
+      "case": "explicit",
+      "repetition": 3,
+      "status": "provider_interrupted",
+      "valid_behavior_trial": false,
+      "historical_behavior_correct": null,
+      "task_completed": null,
+      "error": {
+        "type": "RateLimitError",
+        "http_status": 429,
+        "category": "provider_quota"
+      },
+      "tool_calls": 0,
+      "model_steps": 0,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/previous-explicit-3/observed.json",
+        "sha256": "49431be973bdb791e40709bed2cb8737dacaba47313eeab67fb10e3eb9cc70e2"
+      }
+    },
+    {
+      "label": "previous-missing_alternative-1",
+      "variant": "previous",
+      "case": "missing_alternative",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 1,
+      "model_steps": 2,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/previous-missing_alternative-1/observed.json",
+        "sha256": "0056c8dd2ca34f9ef7436c3bf198bff9f68295d1e60828abf44de7b016370dff"
+      }
+    },
+    {
+      "label": "previous-original_present-1",
+      "variant": "previous",
+      "case": "original_present",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": true,
+      "error": null,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/previous-original_present-1/observed.json",
+        "sha256": "ef46a37cbd172a12d125e5ac623e261ad6256e9d3b1a329fccdaff9473793341"
+      }
+    },
+    {
+      "label": "scoped-ambiguous_alternative-1",
+      "variant": "scoped",
+      "case": "ambiguous_alternative",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/scoped-ambiguous_alternative-1/observed.json",
+        "sha256": "579dce30421a3cadb165ded06a9c77513615717fcf2d81660b0992fe8cd22b33"
+      }
+    },
+    {
+      "label": "scoped-ambiguous_original-1",
+      "variant": "scoped",
+      "case": "ambiguous_original",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 3,
+      "model_steps": 4,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/scoped-ambiguous_original-1/observed.json",
+        "sha256": "e0c7d1e31bec6810e45364af2090eb59195b2fddb7eb9b8c9311ee5e3c3151d5"
+      }
+    },
+    {
+      "label": "scoped-confirmation_required-1",
+      "variant": "scoped",
+      "case": "confirmation_required",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 0,
+      "model_steps": 1,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/scoped-confirmation_required-1/observed.json",
+        "sha256": "48ef06cf936a76138e86b6e99a035c5a14b843446cbeac755418de772f098f69"
+      }
+    },
+    {
+      "label": "scoped-explicit-1",
+      "variant": "scoped",
+      "case": "explicit",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": true,
+      "error": null,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/scoped-explicit-1/observed.json",
+        "sha256": "e5b081e9ded80b8eec55ffa34c948fd85d9af9c96e96e37c52aae581d7e50241"
+      }
+    },
+    {
+      "label": "scoped-explicit-2",
+      "variant": "scoped",
+      "case": "explicit",
+      "repetition": 2,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": true,
+      "error": null,
+      "tool_calls": 4,
+      "model_steps": 5,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/scoped-explicit-2/observed.json",
+        "sha256": "79119617f628056d7d5f07a779b8521790f4e7f036a24dac359fbcc7503f0822"
+      }
+    },
+    {
+      "label": "scoped-explicit-3",
+      "variant": "scoped",
+      "case": "explicit",
+      "repetition": 3,
+      "status": "provider_interrupted",
+      "valid_behavior_trial": false,
+      "historical_behavior_correct": null,
+      "task_completed": null,
+      "error": {
+        "type": "RateLimitError",
+        "http_status": 429,
+        "category": "provider_quota"
+      },
+      "tool_calls": 0,
+      "model_steps": 0,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/scoped-explicit-3/observed.json",
+        "sha256": "1c292abe8d659ae4ba04c9add2fc3dffabf88be674c5b63aa59fb43b569f43ea"
+      }
+    },
+    {
+      "label": "scoped-missing_alternative-1",
+      "variant": "scoped",
+      "case": "missing_alternative",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": true,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 1,
+      "model_steps": 2,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/scoped-missing_alternative-1/observed.json",
+        "sha256": "1f39bc761f4bef87537b6f5431eab5979235a52d3de1cf278cd7bdc47f8f77a1"
+      }
+    },
+    {
+      "label": "scoped-original_present-1",
+      "variant": "scoped",
+      "case": "original_present",
+      "repetition": 1,
+      "status": "completed",
+      "valid_behavior_trial": true,
+      "historical_behavior_correct": false,
+      "task_completed": false,
+      "error": null,
+      "tool_calls": 2,
+      "model_steps": 3,
+      "source_identity": {
+        "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/scoped-original_present-1/observed.json",
+        "sha256": "f43e1cc90aebcb5cb0e05b30711737ff22ec359fbd74e9b8e4b2bb2370d8461b"
+      }
+    }
+  ],
+  "attempts": 16,
+  "valid_behavior_trials": 13,
+  "invalid_provider_attempts": 3,
+  "resolves_120b_original_present_failure": false,
+  "source_files": [
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/experiment.py",
+      "sha256": "310e3af8d221e3442a5db91d06dd6a4d1227a2ad880d5887e75fd667a3da83ea"
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/selection_middleware.py",
+      "sha256": "ef13600fd1108b460e44ab48e0519354a9f88a9d2ff7a2be296fbb14203e7db8"
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-explicit-alternative/summary.json",
+      "sha256": "40b04e7678f706ef6371835fe7034dc010a429bc046797f73211c3160bdaee94"
+    }
+  ]
+}
