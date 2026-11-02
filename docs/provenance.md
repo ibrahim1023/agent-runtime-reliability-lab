@@ -7,7 +7,7 @@ This inventory is the first packaging milestone, assembled November 2, 2026 (Asi
 | idempotency | Receiver, crash runner, review logic | Four reviewed event/receipt extracts; source hashes captured |
 | approval / reviewer-edit | Durable review and edited-action fixtures | Three sanitized phase/journal/SQL exports; original artifact and runner hashes captured |
 | missing-source | Honest stopping and distinct score dimensions | Three valid runs and six excluded attempts exported; feedback and source hashes retained |
-| search-improvement | Recorder, seven cases, scorer, conservative middleware | Decision review, 25-run roster and three ambiguity extracts checked offline; full per-run export pending |
+| search-improvement | Recorder, seven cases, scorer, conservative middleware | Historical review checked offline; recorder/middleware extracted; first scripted root-alias fixture executed; full historical per-run export pending |
 | rejected recovery middleware | Historical comparison only | Failed ambiguity extract and source hash preserved; never the default |
 | explicit-alternative | Optional variant and unresolved regression | Not exported yet |
 | gptoss20b | Separate model cohort | Not exported yet |
@@ -68,3 +68,13 @@ The earlier decision review remains byte-for-byte unchanged. Its `verification_s
 The learner prediction was unsure. Before implementation, eight tampering tests failed because the command ignored the new review; the unaltered control passed. After integration, a test explicitly confirms that relabeling the rejected run and recomputing the manifest hash passes byte-identity checking, while the recorded write still contradicts the verdict. Nine new tests now pass. These are fresh deterministic validator tests against stored evidence, not fresh graph executions or model evaluations. `results/search-review-check-20261102.json` records the focused probe and development verification.
 
 This closed-fixture checker compares the declared synthetic files and recorded successful writes. It does not run StateBackend, judge natural language, authenticate old artifacts, establish an unknown historical runtime revision, or detect a coherent replacement of both evidence and manifest. No new provider or tracing client was added. Full private traces and original labs remain untouched.
+
+## First fresh scripted-runtime milestone
+
+`reliability_lab/runtime/conservative_middleware.py` is byte-identical to the original local lab module. `runtime/recorder.py` preserves the original `Recorder` class source unchanged, with a standalone header and imports. The manifest records original and destination hashes in a separate `scripted_runtime_extractions` list; receiver provenance is unchanged. No upstream framework implementation is copied. `scripted_root.py` adapts the first original contract and scripted-model pattern, adding a baseline, tool-argument recording, next-input observation, extraction hash checks and sanitized reports. It does not import the historical live runner or load .env.
+
+The learner requested immediate execution without supplying a prediction. The assistant hypothesis is labeled as such. The opt-in contract first failed because the CLI command did not exist; that is a harness failure, not a runtime/model result. After implementation, the single opt-in contract passed with two real graph conditions. The saved `results/scripted-root-check-20261102.json` is fresh execution evidence, not a historical export or live-model evaluation. The other six original graph contracts have not been rerun.
+
+The runtime used the existing local environment, with editable Deep Agents source at the tracked-clean checkout revision observed now and selected loaded-module hashes in the result. It does not establish the October execution revision. `requirements-runtime.txt` records selected package versions, not a full transitive lock; a clean package installation has not been validated as equivalent. No dependencies were installed in this milestone.
+
+Tracing is disabled and Python socket operations are blocked before runtime imports. This is not an OS security sandbox. Raw callbacks stay in ignored work directories; only reviewed report fields are committed. The standard-library development suite still passes 48 tests, separate from the one opt-in runtime contract. The default offline verifier does not yet check this new result or the new extraction entries; the scripted command checks extraction hashes before executing. Crash/resume and approval integration remain pending.

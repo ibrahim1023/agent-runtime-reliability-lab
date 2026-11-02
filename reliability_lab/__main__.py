@@ -9,10 +9,14 @@ from reliability_lab.offline import verify_offline
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Inspect evidence and execute local receiver contracts.")
-    parser.add_argument("command", choices=["verify-offline"])
-    parser.parse_args()
+    parser.add_argument("command", choices=["verify-offline", "scripted-root-check"])
+    args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
-    report, code = verify_offline(root)
+    if args.command == "scripted-root-check":
+        from reliability_lab.scripted_root import run_scripted_root
+        report, code = run_scripted_root(root)
+    else:
+        report, code = verify_offline(root)
     print(json.dumps(report, indent=2))
     return code
 

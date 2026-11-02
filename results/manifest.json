@@ -486,5 +486,35 @@
     "detailed_ambiguity_extract_count": 3,
     "historical_contract_outcome_count": 7,
     "new_model_calls": 0
+  },
+  "scripted_runtime_extractions": [
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/conservative_middleware.py",
+      "source_sha256": "9a9228b3bbb81c03391cdd4100806eab6979222ae7914a815e17bee1abfe869f",
+      "component": "StateFilesystemRecoveryMiddleware",
+      "destination": "reliability_lab/runtime/conservative_middleware.py",
+      "destination_sha256": "9a9228b3bbb81c03391cdd4100806eab6979222ae7914a815e17bee1abfe869f",
+      "changes": "Byte-identical module; no changes."
+    },
+    {
+      "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/run_lab.py",
+      "source_sha256": "2b10233de9ac38caf1da52527e1d22ddfb8b7f23c5d8a4a8f5f48df7383d7518",
+      "component": "Recorder",
+      "destination": "reliability_lab/runtime/recorder.py",
+      "destination_sha256": "baffb460cbb8836683cf10d8d832ae5c8c319bc23cf3652a43ded65c0a2b653f",
+      "changes": "Class source unchanged; standalone imports/header added. Live runner, provider setup, dotenv and tracing decorator not copied."
+    }
+  ],
+  "scripted_root_fixture_source": {
+    "source": "libs/evals/.agent-labs/2026-10-29-search-improvement/contract_checks.py",
+    "sha256": "fe5f604745bdb624aeb066461ca771d5d286e75c0dffa22115874980d02d88cc",
+    "reuse": "First empty-root glob fixture and ScriptedModel pattern; add an unmodified baseline and callback/next-input observations."
+  },
+  "scripted_root_execution": {
+    "export": "results/scripted-root-check-20261102.json",
+    "sha256": "d21b0871029b909e6a333cb783c4ed7d3595a04f4234bcebcbd2afa2a6cedc0e",
+    "kind": "fresh scripted graph execution; two conditions of one root-alias fixture",
+    "live_model_calls": 0,
+    "included_in_verify_offline": false
   }
 }

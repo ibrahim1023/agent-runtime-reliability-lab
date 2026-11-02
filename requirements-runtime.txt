@@ -1,0 +1,9 @@
+# Optional scripted-runtime environment reference, not a full transitive lock.
+# These are the observed versions; no installation was performed in this milestone.
+# The recorded run used editable Deep Agents source; compare module hashes too.
+deepagents==0.7.32
+langchain==1.4.7
+langchain-core==1.7.0
+langgraph==1.2.17
+langgraph-prebuilt==1.1.0
+langsmith==0.14.12

@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "kind": "fresh scripted graph execution; no live-model evaluation",
+  "started_at_utc": "2026-11-02T16:18:08.588143+00:00",
+  "live_model_calls": 0,
+  "learner_prediction": "not supplied; learner requested immediate execution",
+  "assistant_hypothesis": "Execution arguments can change while the original proposal remains in history.",
+  "network": "Tracing disabled and Python socket operations blocked before runtime imports; not an OS sandbox",
+  "report_path": "work/scripted-root/f91a118681b84d86a88892776e92a8af/report.json",
+  "conditions": [
+    {
+      "condition": "baseline",
+      "conversation_proposal": {
+        "name": "glob",
+        "args": {
+          "path": "",
+          "pattern": "*.txt"
+        }
+      },
+      "actual_tool_args": {
+        "path": "",
+        "pattern": "*.txt"
+      },
+      "tool_result": {
+        "name": "glob",
+        "status": "success",
+        "content": "No files found"
+      },
+      "next_model_received_tool_result": true,
+      "files_unchanged": true,
+      "scripted_model_responses": 2,
+      "middleware_events": []
+    },
+    {
+      "condition": "conservative",
+      "conversation_proposal": {
+        "name": "glob",
+        "args": {
+          "path": "",
+          "pattern": "*.txt"
+        }
+      },
+      "actual_tool_args": {
+        "path": "/",
+        "pattern": "*.txt"
+      },
+      "tool_result": {
+        "name": "glob",
+        "status": "success",
+        "content": "['/incoming/data.txt']"
+      },
+      "next_model_received_tool_result": true,
+      "files_unchanged": true,
+      "scripted_model_responses": 2,
+      "middleware_events": [
+        {
+          "event": "root_alias",
+          "tool": "glob",
+          "original_path": ""
+        }
+      ]
+    }
+  ],
+  "runtime_identity": {
+    "python": "3.14.6",
+    "packages": {
+      "deepagents": "0.7.32",
+      "langchain": "1.4.7",
+      "langchain-core": "1.7.0",
+      "langgraph": "1.2.17",
+      "langgraph-prebuilt": "1.1.0",
+      "langsmith": "0.14.12"
+    },
+    "selected_loaded_module_sha256": {
+      "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+      "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+      "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+      "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+      "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+    },
+    "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+  },
+  "status": "passed",
+  "exit_code": 0,
+  "finished_at_utc": "2026-11-02T16:18:09.803290+00:00",
+  "source_checkout_observation": {
+    "upstream": "https://github.com/langchain-ai/deepagents",
+    "commit_observed_now": "1daa89e9f9c33d186026d0d6884f4aec5b153512",
+    "tracked_sdk_source_clean": true,
+    "installation": "deepagents is editable in the existing local dependency environment",
+    "historical_revision_claim": false
+  },
+  "lab_source_sha256": {
+    "reliability_lab/scripted_root.py": "3bb082addb60578a6be3f5181bdf03556ccf700a86615263d4556b0276de79af",
+    "reliability_lab/runtime/conservative_middleware.py": "9a9228b3bbb81c03391cdd4100806eab6979222ae7914a815e17bee1abfe869f",
+    "reliability_lab/runtime/recorder.py": "baffb460cbb8836683cf10d8d832ae5c8c319bc23cf3652a43ded65c0a2b653f",
+    "runtime_checks/test_root_alias.py": "afcc7c3e3f71f2b8436b89afe577471fe22e34a2c55583231ad56448106d1778"
+  }
+}

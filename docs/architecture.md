@@ -22,4 +22,4 @@ LangSmith traces record observable operations for diagnosis. A trace is not a ch
 
 ## Current executable boundary
 
-The portable code currently executes only SQLite receiver contracts. It validates historical agent records but does not yet launch a new graph, call a model, or reproduce approval/crash mechanics. Scripted real-runtime fixtures and their dependency provenance remain future milestones.
+The standard-library path executes SQLite receiver contracts and checks historical evidence. A separate opt-in command now launches two fresh Deep Agents graphs for one root-alias fixture, using a scripted model and real middleware/search tools. It records the preserved proposal, actual execution arguments and next model input. It makes no provider calls and does not reproduce approval/crash mechanics. Optional runtime imports are lazy so the dependency-free path remains separate. See [the first scripted graph check](scripted-root-check.md) for environment/source provenance and the unverified clean-install boundary.

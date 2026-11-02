@@ -25,3 +25,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Local experimental middleware and recorder
+
+The conservative middleware module and Recorder class are reused from Ibrahim Arshad's local AI-assisted Deep Agents experiment. Their source/destination identities and extraction changes are recorded in `results/manifest.json`. The conservative module is byte-identical; the Recorder class source is unchanged within a standalone module. No upstream Deep Agents, LangChain or LangGraph framework implementation is copied here; those projects are runtime dependencies for the opt-in scripted fixture. The MIT notice above remains retained.

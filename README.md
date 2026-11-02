@@ -4,7 +4,7 @@ A learning lab that makes agent recovery behavior inspectable through tool attem
 
 ## Current milestone
 
-Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. A combined offline command verifies sixteen historical records, checks the search-recovery review separately, and runs six receiver contracts. Fresh graph crash/resume integration is not implemented yet.
+Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. A combined offline command verifies sixteen historical records, checks the search-recovery review separately, and runs six receiver contracts. One opt-in scripted root-path contract now executes the real graph/tool stack. Approval and graph crash/resume integration are not implemented yet.
 
 | Historical condition | Cases | Attempts per case | Committed effects per case |
 |---|---:|---:|---:|
@@ -78,3 +78,16 @@ The task asked the agent to reverse lines from `/data.txt` into `/out.txt`, but 
 ## Recovery middleware decision review
 
 [Read why the conservative prototype was retained and the broader candidate rejected](docs/search-recovery-evidence.md). The new review preserves the historical seven-case comparison, 25-run roster, and actual ambiguity tool evidence. This is historical artifact inspection, not a new evaluation. The command checks this review in a separate `search_recovery_review` section: a 25-entry retrospective roster and three detailed ambiguity records. Those are not 25 fully validated model trials or new executions. The original historical stage still validates sixteen records; six receiver contracts execute fresh. No runtime default was added. [See the tampering experiment](docs/search-review-validation.md).
+
+## First fresh scripted graph contract
+
+[Inspect proposal versus executed arguments](docs/scripted-root-check.md). With the same scripted empty-root search, the baseline tool reported no files; the extracted conservative middleware changed the executed path to `/` and found `/incoming/data.txt`. The empty-path proposal remained in conversation history. This saved result contains two fresh graph executions, zero live-provider calls, and unchanged source files. It tests a middleware contract, not model decision quality.
+
+This check requires an optional dependency environment and is separate from the standard-library commands above:
+
+```sh
+python -m reliability_lab scripted-root-check
+python -m unittest discover -s runtime_checks -v
+```
+
+See [runtime environment and reproduction limits](runtime_checks/README.md). The recorded check reused an existing editable Deep Agents environment; a clean installation has not been verified. The default offline verifier does not yet validate the new scripted result. The other six middleware contracts remain future work.
