@@ -110,3 +110,8 @@ The three [Day 1 closeout items and next experiment criteria](docs/sprint-experi
 ## Fresh package reproduction
 
 The [clean-install reproduction](docs/clean-install-reproduction.md) installed published packages in a new non-editable environment and repeated the five crash/resume cases once. All expected tool/effect outcomes matched, with nineteen new worker phases and zero provider calls. This verifies the setup on the same host and Python 3.14.6; it is not cross-platform reproduction or a fully locked build. `requirements-runtime.txt` now includes the checkpoint packages. The installed version inventory and separately reviewed new evidence are linked in the manifest; the default verifier still checks the earlier crash export.
+
+
+## Evidence-aware outcome reporting
+
+[The reporting experiment](docs/outcome-reporting-evidence.md) reused five closed-run receivers and added two controlled unreadable-evidence fixtures. A new read-only application reporter disclosed the duplicate that the original final receipt omitted, and returned unknown when receiver evidence could not be read. This is separate from the original model answer and is not yet integrated into the graph. Seven fresh reporting observations used zero new graph workers or provider calls. The development suite now has 83 tests. The new export is separately reviewed and manifest-linked, not yet a default offline validation stage.

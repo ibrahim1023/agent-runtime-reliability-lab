@@ -1,0 +1,13 @@
+# Outcome reporting from a local receiver snapshot
+
+The unprotected crash control returned a valid final receipt while the receiver contained two effects. A receipt establishes that an action committed, not that it committed only once. This change adds a deterministic application reporting function after graph execution, separate from the scripted model's answer. It does not modify Deep Agents, prevent duplicates, repair old actions or demonstrate model reasoning quality.
+
+Approaches considered: ask the model to interpret its existing receipt, or reconcile the operation against the receiver. The implementation partner selected read-only reconciliation because the existing tool observation omitted prior effects. No new model or tracing infrastructure is needed. The existing instruction to proceed in small practical steps authorizes this bounded implementation without another design approval cycle.
+
+Read one SQLite snapshot in read-only mode, scoped by the application operation ID. Compare the stored payload and receipt with the persisted approved message, including reviewer edits. The caller supplies whether the isolated graph has finished and the simulated review decision. The fixture's workers have all stopped; this is not an ongoing distributed-system snapshot guarantee.
+
+Outcomes: completed_once (approved/edit, one matching row), duplicate_detected (multiple matching rows), rejected (reject and no rows), not_recorded (approved/edit but no rows), payload_conflict (stored payload or receipt conflicts), policy_violation (a rejected action has rows), or outcome_unknown (evidence unreadable/invalid or graph unfinished). Unknown must never become task success. A rejection is correct handling, not a completed record action. Reports refer to this local receiver snapshot only.
+
+Seven experiment checks reuse five closed fresh-package crash-run databases, plus missing and invalid-database observations with an earlier valid receipt retained for comparison. Read-only operations must leave original database bytes unchanged and must not create a missing database. No new graph workers, new writes to receivers, automatic retries, provider calls or tokens. Development tests may use fresh temporary receivers; these are separate from the seven experiment observations.
+
+Publish reviewed SQL observations, prior tool result, application report, source/artifact hashes and explicit limitations. Keep raw databases and logs local. The original scripted answers remain unchanged; the application report is additional evidence presented after the graph. A subsequent integration into an agent's tool/model context requires a separate experiment.

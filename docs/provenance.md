@@ -114,3 +114,8 @@ The default offline verifier now checks these saved observations in a separate `
 ## Fresh package reproduction, 2026-11-03
 
 The [clean-install milestone](clean-install-reproduction.md) supersedes the earlier statement that no clean installation had been tested: published packages were installed into a fresh non-editable environment and the five crash/resume cases executed once using nineteen new workers and no provider calls. Selected loaded runtime module hashes and assessed behavior matched the previous environment. The seed requirements now include checkpoint dependencies; a 59-package installed version inventory is recorded separately. Same-host reproduction does not establish cross-platform compatibility or a full artifact lock. New results are manifest-linked and reviewed separately; the default offline command still validates the earlier crash export. The original failed edit assessment and A1 remain untouched.
+
+
+## Local outcome reporting, 2026-11-03
+
+[Seven fresh application reporting observations](outcome-reporting-evidence.md) read five completed clean-install receivers and two controlled unavailable-evidence fixtures. No graph or model execution was repeated. Original database hashes were unchanged and raw databases remain local. Published SQL observations and old answers are synthetic lab data, alongside the separate new application reports. The reporter's source hash and frozen criteria are retained. Eight deterministic development tests cover the reporting behavior; these are separate from the seven observations. Automatic offline validation of this new export and integration into the agent's final response remain pending.

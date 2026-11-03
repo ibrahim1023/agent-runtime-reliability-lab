@@ -991,5 +991,24 @@
       "sha256": "ec52bbe660d4154081aa58243577d9a1ef2300e0331c2790197614c94d995c4f"
     },
     "default_offline_validation": "not yet included; reviewed separately during publication"
+  },
+  "outcome_reporting_v1": {
+    "plan": {
+      "export": "results/outcome-reporting-plan-v1.json",
+      "sha256": "edefcc1a3b339d03f7ba36f4e2fb498311a95646a6449537e801e2aff5205361"
+    },
+    "design": {
+      "export": "docs/outcome-reporting-design.md",
+      "sha256": "24b7412591dc3f80868619c0c5e139b27157f66fd1ed5b679b7464c8e640681f"
+    },
+    "execution": {
+      "export": "results/fresh/outcome-reporting-v1/execution.json",
+      "sha256": "d936b7fee63046e2ccdf3dd19eed25fd41a518929338e021cdf1f8c4152f13d3"
+    },
+    "implementation": {
+      "export": "reliability_lab/outcome_reporting.py",
+      "sha256": "65a01a185a9fbeda330f6f34d5e54947b5eeca2644c7aae5c4dce3d7cbda343c"
+    },
+    "default_offline_validation": "Not yet included; separately reviewed publication assertions"
   }
 }

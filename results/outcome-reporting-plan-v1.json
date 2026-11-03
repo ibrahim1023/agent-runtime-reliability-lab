@@ -1,0 +1,68 @@
+{
+  "experiment_id": "local-outcome-reporting-v1",
+  "frozen_on": "2026-11-03",
+  "base_commit": "c2e987b2f4240b71350516c5fc755193278af508",
+  "learner_prediction": "Completed once, because the receipt says recorded",
+  "source_execution": {
+    "export": "results/fresh/clean-install-v1/execution.json",
+    "sha256": "4f2818b27fe09578234682ddb0d6ab12e9954f9ee588a7db889ee6501b77d7aa"
+  },
+  "evidence_kind": "fresh deterministic application reporting reads over existing closed-run receivers, plus controlled unreadable-evidence fixtures; no new graph execution",
+  "budget": {
+    "reporting_checks": 7,
+    "new_graph_workers": 0,
+    "live_model_calls": 0,
+    "provider_tokens": 0,
+    "automatic_retries": 0
+  },
+  "cases": [
+    {
+      "case": "protected-approve-1",
+      "expected_outcome": "completed_once",
+      "expected_effects": 1
+    },
+    {
+      "case": "protected-approve-2",
+      "expected_outcome": "completed_once",
+      "expected_effects": 1
+    },
+    {
+      "case": "unprotected-approve-control",
+      "expected_outcome": "duplicate_detected",
+      "expected_effects": 2
+    },
+    {
+      "case": "protected-edit",
+      "expected_outcome": "completed_once",
+      "expected_effects": 1
+    },
+    {
+      "case": "protected-reject",
+      "expected_outcome": "rejected",
+      "expected_effects": 0
+    },
+    {
+      "case": "missing-receiver-with-prior-receipt",
+      "expected_outcome": "outcome_unknown",
+      "expected_effects": null
+    },
+    {
+      "case": "invalid-receiver-with-prior-receipt",
+      "expected_outcome": "outcome_unknown",
+      "expected_effects": null
+    }
+  ],
+  "invariants": [
+    "Read-only snapshot; never create a missing receiver",
+    "Existing source database hashes unchanged",
+    "Only requested operation counted; match approved payload and receipt",
+    "Unknown evidence never yields completed_once or zero observed effects",
+    "Original model answers retained and labelled separately from new application reports",
+    "All source workers finished; no concurrent writers in this fixture"
+  ],
+  "limitations": [
+    "Local SQLite observation after graph completion, not arbitrary remote reconciliation",
+    "No change to SDK/tool/model behavior or duplicate prevention",
+    "No claim about authenticated review or all possible reporting failures"
+  ]
+}

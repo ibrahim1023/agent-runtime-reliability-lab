@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "experiment_id": "local-outcome-reporting-v1",
+  "executed_at_utc": "2026-11-03T12:11:37.709995+00:00",
+  "kind": "fresh deterministic application reporting reads over existing closed-run receivers, plus controlled unreadable-evidence fixtures; no new graph execution",
+  "learner_prediction": "Completed once, because the receipt says recorded",
+  "prediction_supported": false,
+  "prediction_explanation": "Earlier receipts establish a prior committed action, not a verified total effect count when current receiver evidence cannot be read. Both unreadable fixtures report unknown.",
+  "criteria_sha256": "edefcc1a3b339d03f7ba36f4e2fb498311a95646a6449537e801e2aff5205361",
+  "source_execution_sha256": "4f2818b27fe09578234682ddb0d6ab12e9954f9ee588a7db889ee6501b77d7aa",
+  "reporter_sha256": "65a01a185a9fbeda330f6f34d5e54947b5eeca2644c7aae5c4dce3d7cbda343c",
+  "new_graph_workers": 0,
+  "live_model_calls": 0,
+  "provider_tokens": 0,
+  "reporting_checks": 7,
+  "observations": [
+    {
+      "case": "protected-approve-1",
+      "kind": "fresh read-only report over existing closed-run receiver",
+      "operation_id": "d57f6c2c-aa38-482c-9680-0d74e491c8ca",
+      "approved_message": "record-once",
+      "decision": "approve",
+      "graph_finished": true,
+      "receiver_rows": [
+        {
+          "operation_id": "d57f6c2c-aa38-482c-9680-0d74e491c8ca",
+          "message": "record-once",
+          "receipt": {
+            "message": "record-once",
+            "operation_id": "d57f6c2c-aa38-482c-9680-0d74e491c8ca",
+            "receipt_id": "faa25601-346e-4ba9-ba9a-d67e2a800a9c",
+            "status": "recorded"
+          }
+        }
+      ],
+      "original_scripted_answer": "{\"message\": \"record-once\", \"operation_id\": \"d57f6c2c-aa38-482c-9680-0d74e491c8ca\", \"receipt_id\": \"faa25601-346e-4ba9-ba9a-d67e2a800a9c\", \"status\": \"recorded\"}",
+      "application_report": {
+        "outcome": "completed_once",
+        "operation_id": "d57f6c2c-aa38-482c-9680-0d74e491c8ca",
+        "observed_effects": 1,
+        "task_completed": true,
+        "evidence_available": true,
+        "graph_finished": true,
+        "report": "The local receiver contains exactly one committed record for this approved operation."
+      },
+      "source_database_sha256": "d1ea0d57e4f804acf156dc104a522043c8aa662d7062c4ced442ece09230057b",
+      "source_database_unchanged": true
+    },
+    {
+      "case": "protected-approve-2",
+      "kind": "fresh read-only report over existing closed-run receiver",
+      "operation_id": "6408ace8-32c4-4580-89d4-2acf39c8edf4",
+      "approved_message": "record-once",
+      "decision": "approve",
+      "graph_finished": true,
+      "receiver_rows": [
+        {
+          "operation_id": "6408ace8-32c4-4580-89d4-2acf39c8edf4",
+          "message": "record-once",
+          "receipt": {
+            "message": "record-once",
+            "operation_id": "6408ace8-32c4-4580-89d4-2acf39c8edf4",
+            "receipt_id": "f8626c8f-5e2f-42ea-8977-8f1ed74ebeb8",
+            "status": "recorded"
+          }
+        }
+      ],
+      "original_scripted_answer": "{\"message\": \"record-once\", \"operation_id\": \"6408ace8-32c4-4580-89d4-2acf39c8edf4\", \"receipt_id\": \"f8626c8f-5e2f-42ea-8977-8f1ed74ebeb8\", \"status\": \"recorded\"}",
+      "application_report": {
+        "outcome": "completed_once",
+        "operation_id": "6408ace8-32c4-4580-89d4-2acf39c8edf4",
+        "observed_effects": 1,
+        "task_completed": true,
+        "evidence_available": true,
+        "graph_finished": true,
+        "report": "The local receiver contains exactly one committed record for this approved operation."
+      },
+      "source_database_sha256": "c149f04ed2eeb3cdbfcf5ee32c0b2780de2a1b92f1fd6ab81d889ff5ca9fc680",
+      "source_database_unchanged": true
+    },
+    {
+      "case": "unprotected-approve-control",
+      "kind": "fresh read-only report over existing closed-run receiver",
+      "operation_id": "c4faa4b6-b668-4d3c-9587-c429c9d4310e",
+      "approved_message": "record-once",
+      "decision": "approve",
+      "graph_finished": true,
+      "receiver_rows": [
+        {
+          "operation_id": "c4faa4b6-b668-4d3c-9587-c429c9d4310e",
+          "message": "record-once",
+          "receipt": {
+            "message": "record-once",
+            "operation_id": "c4faa4b6-b668-4d3c-9587-c429c9d4310e",
+            "receipt_id": "693bc86a-0346-4052-bbdb-3abb26a19d8b",
+            "status": "recorded"
+          }
+        },
+        {
+          "operation_id": "c4faa4b6-b668-4d3c-9587-c429c9d4310e",
+          "message": "record-once",
+          "receipt": {
+            "message": "record-once",
+            "operation_id": "c4faa4b6-b668-4d3c-9587-c429c9d4310e",
+            "receipt_id": "df4571ba-f89f-4055-9172-a79b74e6fb3e",
+            "status": "recorded"
+          }
+        }
+      ],
+      "original_scripted_answer": "{\"message\": \"record-once\", \"operation_id\": \"c4faa4b6-b668-4d3c-9587-c429c9d4310e\", \"receipt_id\": \"df4571ba-f89f-4055-9172-a79b74e6fb3e\", \"status\": \"recorded\"}",
+      "application_report": {
+        "outcome": "duplicate_detected",
+        "operation_id": "c4faa4b6-b668-4d3c-9587-c429c9d4310e",
+        "observed_effects": 2,
+        "task_completed": false,
+        "evidence_available": true,
+        "graph_finished": true,
+        "report": "Duplicate detected: the local receiver contains 2 committed records for this operation. The record-once task was not completed correctly."
+      },
+      "source_database_sha256": "b56016e133f1cfd820e65932c632e6dd7e2ec9de4afac04ff8baf2e3ce6dd355",
+      "source_database_unchanged": true
+    },
+    {
+      "case": "protected-edit",
+      "kind": "fresh read-only report over existing closed-run receiver",
+      "operation_id": "014442be-f6dd-441e-9ee3-5171e648325e",
+      "approved_message": "reviewer-approved",
+      "decision": "edit",
+      "graph_finished": true,
+      "receiver_rows": [
+        {
+          "operation_id": "014442be-f6dd-441e-9ee3-5171e648325e",
+          "message": "reviewer-approved",
+          "receipt": {
+            "message": "reviewer-approved",
+            "operation_id": "014442be-f6dd-441e-9ee3-5171e648325e",
+            "receipt_id": "8654ac0f-887c-4cd5-9897-252c030bbb79",
+            "status": "recorded"
+          }
+        }
+      ],
+      "original_scripted_answer": "Note: a human reviewer replaced this tool call before it ran. The call recorded in your message is the one you produced, not the one that executed. This was intentional and authorized. Do not re-issue your original call. Executed instead: record_action with arguments {\"message\": \"reviewer-approved\"}.\n\nTool response:\n{\"message\": \"reviewer-approved\", \"operation_id\": \"014442be-f6dd-441e-9ee3-5171e648325e\", \"receipt_id\": \"8654ac0f-887c-4cd5-9897-252c030bbb79\", \"status\": \"recorded\"}",
+      "application_report": {
+        "outcome": "completed_once",
+        "operation_id": "014442be-f6dd-441e-9ee3-5171e648325e",
+        "observed_effects": 1,
+        "task_completed": true,
+        "evidence_available": true,
+        "graph_finished": true,
+        "report": "The local receiver contains exactly one committed record for this approved operation."
+      },
+      "source_database_sha256": "26991104723f566d993206e2d35f0ed932334b8ba39446f1bb593971184c129b",
+      "source_database_unchanged": true
+    },
+    {
+      "case": "protected-reject",
+      "kind": "fresh read-only report over existing closed-run receiver",
+      "operation_id": "c0334cca-72c5-48b9-bd4f-7daef8c87fbf",
+      "approved_message": "record-once",
+      "decision": "reject",
+      "graph_finished": true,
+      "receiver_rows": [],
+      "original_scripted_answer": "User rejected the tool call for `record_action` with reason: Simulated reviewer rejected this action; it was not executed.",
+      "application_report": {
+        "outcome": "rejected",
+        "operation_id": "c0334cca-72c5-48b9-bd4f-7daef8c87fbf",
+        "observed_effects": 0,
+        "task_completed": false,
+        "evidence_available": true,
+        "graph_finished": true,
+        "report": "The action was rejected. No committed record was found for this operation in the local receiver."
+      },
+      "source_database_sha256": "1912341efb042470d48d129dc5df4c7125adb111b23573d145f5857c4d67053e",
+      "source_database_unchanged": true
+    },
+    {
+      "case": "missing-receiver-with-prior-receipt",
+      "kind": "controlled observation failure; source receiver left intact",
+      "operation_id": "d57f6c2c-aa38-482c-9680-0d74e491c8ca",
+      "approved_message": "record-once",
+      "decision": "approve",
+      "graph_finished": true,
+      "earlier_valid_receipt": {
+        "message": "record-once",
+        "operation_id": "d57f6c2c-aa38-482c-9680-0d74e491c8ca",
+        "receipt_id": "faa25601-346e-4ba9-ba9a-d67e2a800a9c",
+        "status": "recorded"
+      },
+      "original_scripted_answer": "{\"message\": \"record-once\", \"operation_id\": \"d57f6c2c-aa38-482c-9680-0d74e491c8ca\", \"receipt_id\": \"faa25601-346e-4ba9-ba9a-d67e2a800a9c\", \"status\": \"recorded\"}",
+      "receiver_rows": null,
+      "fault": "configured receiver path missing",
+      "fixture_file_created_by_reporter": false,
+      "application_report": {
+        "outcome": "outcome_unknown",
+        "operation_id": "d57f6c2c-aa38-482c-9680-0d74e491c8ca",
+        "observed_effects": null,
+        "task_completed": null,
+        "evidence_available": false,
+        "graph_finished": true,
+        "report": "The outcome is unknown: receiver evidence is unavailable or execution is unfinished. I cannot verify that the action completed exactly once."
+      }
+    },
+    {
+      "case": "invalid-receiver-with-prior-receipt",
+      "kind": "controlled observation failure; source receiver left intact",
+      "operation_id": "d57f6c2c-aa38-482c-9680-0d74e491c8ca",
+      "approved_message": "record-once",
+      "decision": "approve",
+      "graph_finished": true,
+      "earlier_valid_receipt": {
+        "message": "record-once",
+        "operation_id": "d57f6c2c-aa38-482c-9680-0d74e491c8ca",
+        "receipt_id": "faa25601-346e-4ba9-ba9a-d67e2a800a9c",
+        "status": "recorded"
+      },
+      "original_scripted_answer": "{\"message\": \"record-once\", \"operation_id\": \"d57f6c2c-aa38-482c-9680-0d74e491c8ca\", \"receipt_id\": \"faa25601-346e-4ba9-ba9a-d67e2a800a9c\", \"status\": \"recorded\"}",
+      "receiver_rows": null,
+      "fault": "invalid database bytes",
+      "fixture_file_created_by_reporter": false,
+      "application_report": {
+        "outcome": "outcome_unknown",
+        "operation_id": "d57f6c2c-aa38-482c-9680-0d74e491c8ca",
+        "observed_effects": null,
+        "task_completed": null,
+        "evidence_available": false,
+        "graph_finished": true,
+        "report": "The outcome is unknown: receiver evidence is unavailable or execution is unfinished. I cannot verify that the action completed exactly once."
+      }
+    }
+  ],
+  "scope": "Deterministic application report, not the original model answer, not SDK integration or model honesty evaluation",
+  "default_offline_validation": "Not yet an automated stage; assertions and input/output hashes checked during publication"
+}

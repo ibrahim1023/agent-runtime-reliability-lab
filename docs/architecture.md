@@ -23,3 +23,8 @@ LangSmith traces record observable operations for diagnosis. A trace is not a ch
 ## Current executable boundary
 
 The standard-library path executes SQLite receiver contracts and checks historical evidence. Separate opt-in commands launch the baseline/conservative root-alias pair and the remaining six original middleware fixtures, using a scripted model and real middleware/search tools. They record preserved proposals, actual execution arguments, raw tool callback results, model-facing ToolMessages and next model input. They make no provider calls. A third opt-in command, `crash-resume-check`, uses persistent approval and a separate receiver database across fresh workers. Optional runtime imports are lazy so the dependency-free path remains separate. See [the first scripted graph check](scripted-root-check.md) for environment/source provenance and the unverified clean-install boundary.
+
+
+## Application outcome reporting
+
+The [read-only outcome reporter](outcome-reporting-evidence.md) runs outside the agent graph. With isolated workers stopped, it checks committed receiver rows for the stable operation ID and approved payload. It distinguishes one effect, duplicates, rejection, missing effects, conflicting evidence and unknown evidence. It does not infer a total effect count from a single receipt or replace the original model answer. Integration into the runtime's final response is a separate pending step.
