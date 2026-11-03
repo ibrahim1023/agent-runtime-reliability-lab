@@ -990,7 +990,7 @@
       "export": "requirements-runtime.txt",
       "sha256": "ec52bbe660d4154081aa58243577d9a1ef2300e0331c2790197614c94d995c4f"
     },
-    "default_offline_validation": "not yet included; reviewed separately during publication"
+    "default_offline_validation": "clean_install_evidence stage"
   },
   "outcome_reporting_v1": {
     "plan": {
@@ -1009,6 +1009,6 @@
       "export": "reliability_lab/outcome_reporting.py",
       "sha256": "65a01a185a9fbeda330f6f34d5e54947b5eeca2644c7aae5c4dce3d7cbda343c"
     },
-    "default_offline_validation": "Not yet included; separately reviewed publication assertions"
+    "default_offline_validation": "outcome_reporting_evidence stage"
   }
 }

@@ -115,3 +115,8 @@ The [clean-install reproduction](docs/clean-install-reproduction.md) installed p
 ## Evidence-aware outcome reporting
 
 [The reporting experiment](docs/outcome-reporting-evidence.md) reused five closed-run receivers and added two controlled unreadable-evidence fixtures. A new read-only application reporter disclosed the duplicate that the original final receipt omitted, and returned unknown when receiver evidence could not be read. This is separate from the original model answer and is not yet integrated into the graph. Seven fresh reporting observations used zero new graph workers or provider calls. The development suite now has 83 tests. The new export is separately reviewed and manifest-linked, not yet a default offline validation stage.
+
+
+## Automatic checks for recent evidence
+
+`verify-offline` now validates the clean-install export in `clean_install_evidence` and the seven reporting observations in `outcome_reporting_evidence`. These stages inspect saved evidence without installing packages, starting graphs or rereading private databases. Tampering tests reject contradictory conclusions even after artifact hashes are updated. This supersedes earlier pending-validator notes. The development suite has 88 tests at this milestone.
