@@ -71,7 +71,7 @@ def run_case(directory: Path, case: dict, deadline: float) -> dict:
         events = read_events(directory)
         phase.update(effects=len(ledger.entries()),
                      tool_entries=sum(event["event"] == "tool_enter" for event in events),
-                     pending_review=bool(phase["observation"].get("interrupts")))
+                     pending_review=bool(phase["observation"].get("interrupts")) if phase["observation"] else None)
         phases.append(phase)
         expected_exit = 86 if name == "decision" and case["decision"] != "reject" else 0
         if phase["timeout"] or phase["exit_code"] != expected_exit:
@@ -93,7 +93,7 @@ def run_case(directory: Path, case: dict, deadline: float) -> dict:
     return record
 
 
-def run_crash_resume(root: Path) -> tuple[dict, int]:
+def run_crash_resume(root: Path, *, learner_prediction: str = "not supplied") -> tuple[dict, int]:
     """Execute the frozen five-case plan once; never substitute live inference."""
     install_offline_guard()
     attempt = Path("work/crash-resume") / uuid.uuid4().hex
@@ -103,7 +103,7 @@ def run_crash_resume(root: Path) -> tuple[dict, int]:
               "kind": "fresh deterministic scripted graph/process execution; not live-model evaluation",
               "started_at_utc": datetime.now(timezone.utc).isoformat(), "live_model_calls": 0,
               "estimated_provider_tokens": 0, "decision_source": "simulated_reviewer",
-              "learner_prediction": "Checkpoint prevents the tool from repeating",
+              "learner_prediction": learner_prediction,
               "report_path": str(attempt / "report.json"), "cases": []}
     started = time.perf_counter()
     try:

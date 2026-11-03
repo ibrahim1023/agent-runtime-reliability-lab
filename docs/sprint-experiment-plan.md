@@ -12,7 +12,7 @@ These packaging/validation tasks made no new live-model calls and did not rerun 
 
 ## Next: approval → receiver commit → process crash → fresh-process resume
 
-Status: **frozen v1, not executed**. The machine-readable criteria are [next-experiment-plan-v1.json](../results/next-experiment-plan-v1.json), hash-linked in the manifest. Changes after observing results require a new version/amendment, not overwriting v1.
+Status: **v1 executed once on 2026-11-03; original failed assessment and A1 reassessment retained**. [Read the evidence](crash-resume-evidence.md). The frozen JSON keeps its original pre-execution status as a historical snapshot. The machine-readable criteria are [next-experiment-plan-v1.json](../results/next-experiment-plan-v1.json), hash-linked in the manifest. Changes after observing results require a new version/amendment, not overwriting v1.
 
 Reuse the existing SQLite receiver, historical approval/edit patterns, idempotency crash boundary and the Deep Agents/LangChain/LangGraph execution stack. Use deterministic scripted model responses and a simulated reviewer. Do not build an agent loop, authenticate a human, select a live model or add infrastructure.
 
@@ -42,6 +42,6 @@ Before implementation/execution, verify component hashes and dependency compatib
 
 Preserve every failed or interrupted attempt. A missing dependency is setup interruption; a graph-limit stop is a behavior/fixture failure, not silently excluded as infrastructure. Worker timeouts leave an unknown outcome to inspect; do not turn them into successful runs, increase budgets after the fact or retry under the same label. No claim is made about machine/power failure, arbitrary remote exactly-once delivery or authenticated review.
 
-Implementation, execution, reviewed result publication, and clean-environment reproduction remain pending. Any later live evaluation needs a separate bounded run/token budget; old Groq allowances are not assumed.
+Implementation, one bounded execution and reviewed result publication are complete. Clean-environment reproduction remains pending. The first assessment failed on the edit-message format; amendment A1 documents a saved-evidence reassessment without rerunning workers. Any later live evaluation needs a separate bounded run/token budget; old Groq allowances are not assumed.
 
 Frozen v1 SHA-256: `2cd7c3d68afb6331d93e27312fe51fe9edfcd5354d0410949b8c68a46e9e04ff`.

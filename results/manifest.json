@@ -945,6 +945,24 @@
     "experiment_id": "approval-commit-crash-resume-v1",
     "export": "results/next-experiment-plan-v1.json",
     "sha256": "2cd7c3d68afb6331d93e27312fe51fe9edfcd5354d0410949b8c68a46e9e04ff",
-    "status": "frozen_not_executed"
+    "status": "executed; original failure and A1 reassessment retained separately"
+  },
+  "crash_resume_v1": {
+    "execution": {
+      "export": "results/fresh/crash-resume-v1/execution.json",
+      "sha256": "cbd66c872879b6786554a3a475cd51a95bd7b51914341d68c5959c04d3ceb974"
+    },
+    "reassessment": {
+      "export": "results/fresh/crash-resume-v1/reassessment-a1.json",
+      "sha256": "36e9caa79dc1a5695d0f0143ce7e04447568190211b8a5c0ad2ed0a9b7f9d579"
+    },
+    "amendment": {
+      "export": "docs/crash-resume-assessment-amendment-a1.md",
+      "sha256": "92182034eb50bb28807f0bb12630be971fe7444e8b4bed2961e6ca99fb6df564"
+    },
+    "publication_check": {
+      "export": "results/crash-resume-check-20261103.json",
+      "sha256": "fce96a012c31b2c230d0921f901f27710333ea0f65553c3e3e99744f75df04ed"
+    }
   }
 }

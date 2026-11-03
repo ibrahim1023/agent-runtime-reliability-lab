@@ -4,7 +4,7 @@ A learning lab that makes agent recovery behavior inspectable through tool attem
 
 ## Current milestone
 
-Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. The offline command checks sixteen earlier historical records, all twenty-five search records, their decision review and the separate optional inventories, then runs six receiver contracts. The seven original middleware contracts now have fresh opt-in scripted execution evidence through the real graph/tool stack. Approval and graph crash/resume integration are not implemented yet.
+Historical idempotency evidence has been exported and independently inspected. No new experiments ran during packaging. The receiver is extracted with an explicit connection-cleanup fix. The offline command checks sixteen earlier historical records, all twenty-five search records, their decision review and the separate optional inventories, then runs six receiver contracts. The seven original middleware contracts now have fresh opt-in scripted execution evidence through the real graph/tool stack. The [combined approval/crash/resume experiment](docs/crash-resume-evidence.md) now has five fresh scripted cases and nineteen worker phases; its original edit-checker failure and separate corrected reassessment are both retained.
 
 | Historical condition | Cases | Attempts per case | Committed effects per case |
 |---|---:|---:|---:|
@@ -41,7 +41,7 @@ From the repository root:
 python3 -S -m reliability_lab verify-offline
 ```
 
-The JSON report separates `historical_evidence` (sixteen stored records checked, including excluded attempts) from `receiver_contracts` (six fresh local checks). Each invocation writes a new `work/attempts/<unique-id>/report.json` and prints its relative path. It never overwrites historical results. Any evidence, search-review, or receiver failure returns exit code 1. Invalid historical evidence prevents fresh receiver checks from starting.
+The JSON report separates `historical_evidence` (sixteen stored records checked, including excluded attempts) from `receiver_contracts` (six fresh local checks). Each invocation writes a new `work/attempts/<unique-id>/report.json` and prints its relative path. It never overwrites historical results. The separate `crash_resume_evidence` stage validates the five saved fresh-runtime cases without launching workers. Any evidence, search-review, or receiver failure returns exit code 1. Invalid historical evidence prevents fresh receiver checks from starting.
 
 The command disables tracing and installs a Python audit hook rejecting socket operations before loading receiver tests. No live-provider entry point exists yet. This guard prevents accidental Python network use on this path; it is not an operating-system security sandbox for hostile code.
 
@@ -51,7 +51,7 @@ Run all development checks, including evidence tampering and command failure cas
 python3 -S -m unittest discover -s tests -v
 ```
 
-Verified on Python 3.14.6: 61 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
+Verified on Python 3.14.6: 75 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
 
 See [offline verification limits](docs/offline-verification.md) for what the checks do and do not establish.
 
@@ -63,7 +63,7 @@ See [offline verification limits](docs/offline-verification.md) for what the che
 | Reject | 0 / 0 | 0 |
 | Edit | 0 / 0 | 1, with replacement contents |
 
-[Read the approval walkthrough](docs/approval-evidence.md). These three cases are historical runtime executions with simulated reviewer inputs, not new approval executions or human authentication tests. The offline command validates their stored records. It does not yet reproduce the approval runtime.
+[Read the approval walkthrough](docs/approval-evidence.md). These three cases are historical runtime executions with simulated reviewer inputs, not new approval executions or human authentication tests. The offline command validates their stored records. A separate fresh scripted experiment now combines approval with post-commit crash/resume; it does not rerun these historical model trials.
 
 ## Historical missing-source evaluation
 
@@ -104,4 +104,4 @@ The [optional inventory](docs/optional-cohorts.md) preserves the original 120B c
 
 ## Sprint plan and provenance
 
-The three [Day 1 closeout items and next experiment criteria](docs/sprint-experiment-plan.md) are documented. The next approval → commit → crash → resume experiment is **frozen, not executed**. [Remaining provenance gaps](docs/provenance-gaps.md) stay explicit: historical revisions, immutable model snapshots and complete clean-install reproduction are not established. New diagnostic metadata is allowlisted from existing local traces; no live calls were made during this closeout.
+The three [Day 1 closeout items and next experiment criteria](docs/sprint-experiment-plan.md) are documented. The frozen approval → commit → crash → resume experiment has [executed once](docs/crash-resume-evidence.md): protected replay kept one effect, while the control duplicated it. [Remaining provenance gaps](docs/provenance-gaps.md) stay explicit: historical revisions, immutable model snapshots and complete clean-install reproduction are not established. New diagnostic metadata is allowlisted from existing local traces; no live calls were made during this closeout.

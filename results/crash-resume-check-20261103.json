@@ -1,0 +1,26 @@
+{
+  "kind": "publication verification; saved observations checked, no new runtime experiment",
+  "development_tests_passed": 75,
+  "python_version": "3.14.6",
+  "offline_exit_code": 0,
+  "crash_resume_evidence": {
+    "status": "passed",
+    "kind": "stored fresh-runtime evidence validation; no workers or models executed",
+    "cases_checked": 5,
+    "original_execution_status": "failed",
+    "worker_processes_observed": 19,
+    "approved_tasks_completed": 3,
+    "assessment_amendment": "A1; original failed assessment preserved"
+  },
+  "original_execution_status": "failed",
+  "assessment_amendment": "A1",
+  "new_graph_workers_during_publication": 0,
+  "live_model_calls": 0,
+  "review": "No evidence-invalidating flaw found; stale-hash masking in negative tests corrected",
+  "mutation_check": "Removing original task-verdict validation makes the rehashed control-relabel test fail",
+  "execution_source_hashes_match_commit": "7bc4863",
+  "limitations": [
+    "Existing editable runtime; clean install unverified",
+    "Python socket audit guard is not an OS security sandbox"
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "kind": "offline reassessment of saved observations; no new execution",
+  "amendment": "docs/crash-resume-assessment-amendment-a1.md",
+  "execution_sha256": "cbd66c872879b6786554a3a475cd51a95bd7b51914341d68c5959c04d3ceb974",
+  "assessor_sha256": "f8e5c8982a36f8ef30fc7a662859f332f7a540009efae2820fbc2c566b996f55",
+  "cases": [
+    {
+      "case": "protected-approve-1",
+      "verdicts": {
+        "contract_met": true,
+        "graph_completed": true,
+        "review_policy_handled": true,
+        "approved_task_completed": true,
+        "report_matches_observed_tool_result": true,
+        "report_accounts_for_all_effects": true,
+        "tool_body_entries": 2,
+        "committed_effects": 1,
+        "checks": {
+          "stable_approved_identity": true,
+          "review_boundary": true,
+          "fresh_processes": true,
+          "expected_exits": true,
+          "receipt_replay": true,
+          "effect_count": true,
+          "attempt_count": true,
+          "phase_counts": true
+        }
+      }
+    },
+    {
+      "case": "protected-approve-2",
+      "verdicts": {
+        "contract_met": true,
+        "graph_completed": true,
+        "review_policy_handled": true,
+        "approved_task_completed": true,
+        "report_matches_observed_tool_result": true,
+        "report_accounts_for_all_effects": true,
+        "tool_body_entries": 2,
+        "committed_effects": 1,
+        "checks": {
+          "stable_approved_identity": true,
+          "review_boundary": true,
+          "fresh_processes": true,
+          "expected_exits": true,
+          "receipt_replay": true,
+          "effect_count": true,
+          "attempt_count": true,
+          "phase_counts": true
+        }
+      }
+    },
+    {
+      "case": "unprotected-approve-control",
+      "verdicts": {
+        "contract_met": true,
+        "graph_completed": true,
+        "review_policy_handled": true,
+        "approved_task_completed": false,
+        "report_matches_observed_tool_result": true,
+        "report_accounts_for_all_effects": false,
+        "tool_body_entries": 2,
+        "committed_effects": 2,
+        "checks": {
+          "stable_approved_identity": true,
+          "review_boundary": true,
+          "fresh_processes": true,
+          "expected_exits": true,
+          "receipt_replay": true,
+          "effect_count": true,
+          "attempt_count": true,
+          "phase_counts": true
+        }
+      }
+    },
+    {
+      "case": "protected-edit",
+      "verdicts": {
+        "contract_met": true,
+        "graph_completed": true,
+        "review_policy_handled": true,
+        "approved_task_completed": true,
+        "report_matches_observed_tool_result": true,
+        "report_accounts_for_all_effects": true,
+        "tool_body_entries": 2,
+        "committed_effects": 1,
+        "checks": {
+          "stable_approved_identity": true,
+          "review_boundary": true,
+          "fresh_processes": true,
+          "expected_exits": true,
+          "receipt_replay": true,
+          "effect_count": true,
+          "attempt_count": true,
+          "phase_counts": true
+        }
+      }
+    },
+    {
+      "case": "protected-reject",
+      "verdicts": {
+        "contract_met": true,
+        "graph_completed": true,
+        "review_policy_handled": true,
+        "approved_task_completed": false,
+        "report_matches_observed_tool_result": true,
+        "report_accounts_for_all_effects": true,
+        "tool_body_entries": 0,
+        "committed_effects": 0,
+        "checks": {
+          "stable_approved_identity": true,
+          "review_boundary": true,
+          "fresh_processes": true,
+          "expected_exits": true,
+          "receipt_replay": true,
+          "effect_count": true,
+          "attempt_count": true,
+          "phase_counts": true
+        }
+      }
+    }
+  ]
+}

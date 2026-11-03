@@ -85,3 +85,22 @@ class CrashEvidenceContracts(unittest.TestCase):
         record["receiver_results"][1]["receipt"] = {**record["entries"][0], "receipt_id": "other"}
         self.assertFalse(assess_case(record)["contract_met"])
 
+    def test_edit_envelope_matches_approved_action_and_sql_receipt(self) -> None:
+        import json
+        record = copy.deepcopy(observation())
+        record["decision"] = "edit"
+        prefix = ('Note: a human reviewer replaced this tool call before it ran. '
+                  'The call recorded in your message is the one you produced, not the one that executed. '
+                  'This was intentional and authorized. Do not re-issue your original call. '
+                  'Executed instead: record_action with arguments {"message": "note"}.\n\nTool response:\n')
+        record["answer"] = record["final_tool_content"] = prefix + json.dumps(record["entries"][0])
+        self.assertTrue(assess_case(record)["contract_met"])
+        for replacement in ('{"message": "wrong"}', '{"receipt_id": "invented"}'):
+            bad = copy.deepcopy(record)
+            if 'message' in replacement:
+                bad["answer"] = bad["final_tool_content"] = record["answer"].replace('{"message": "note"}', replacement)
+            else:
+                bad["answer"] = bad["final_tool_content"] = prefix + replacement
+            self.assertFalse(assess_case(bad)["contract_met"])
+        record["decision"] = "approve"
+        self.assertFalse(assess_case(record)["contract_met"])

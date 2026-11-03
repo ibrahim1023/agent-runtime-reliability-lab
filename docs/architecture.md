@@ -14,7 +14,7 @@ Deep Agents assembles the capabilities and middleware. LangChain supplies the ag
 
 A graph checkpoint records execution state, including pending work. The receiver's SQLite database records externally committed actions. They are separate transactions: a receiver action can commit before tool completion is checkpointed. The runtime may replay the pending tool on recovery. A stable application-generated operation ID and atomic receiver-side deduplication can make that repeated attempt return the original local receipt.
 
-Approval applies before tool execution. Existing historical records show pending review surviving restart, and simulated approve/reject/edit inputs changing what proceeds. They do not yet demonstrate approval and post-commit replay at the same boundary.
+Approval applies before tool execution. Existing historical records show pending review surviving restart, and simulated approve/reject/edit inputs changing what proceeds. The [fresh scripted crash fixture](crash-resume-evidence.md) now combines these at one post-commit boundary, with two protected approval repetitions, edit, reject and an unprotected control.
 
 ## Separate diagnostic evidence
 
@@ -22,4 +22,4 @@ LangSmith traces record observable operations for diagnosis. A trace is not a ch
 
 ## Current executable boundary
 
-The standard-library path executes SQLite receiver contracts and checks historical evidence. Separate opt-in commands launch the baseline/conservative root-alias pair and the remaining six original middleware fixtures, using a scripted model and real middleware/search tools. They record preserved proposals, actual execution arguments, raw tool callback results, model-facing ToolMessages and next model input. They make no provider calls and do not reproduce approval/crash mechanics. Optional runtime imports are lazy so the dependency-free path remains separate. See [the first scripted graph check](scripted-root-check.md) for environment/source provenance and the unverified clean-install boundary.
+The standard-library path executes SQLite receiver contracts and checks historical evidence. Separate opt-in commands launch the baseline/conservative root-alias pair and the remaining six original middleware fixtures, using a scripted model and real middleware/search tools. They record preserved proposals, actual execution arguments, raw tool callback results, model-facing ToolMessages and next model input. They make no provider calls. A third opt-in command, `crash-resume-check`, uses persistent approval and a separate receiver database across fresh workers. Optional runtime imports are lazy so the dependency-free path remains separate. See [the first scripted graph check](scripted-root-check.md) for environment/source provenance and the unverified clean-install boundary.

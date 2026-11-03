@@ -10,6 +10,7 @@ from reliability_lab.offline import verify_offline
 def main() -> int:
     parser = argparse.ArgumentParser(description="Inspect evidence and execute local receiver contracts.")
     parser.add_argument("command", choices=["verify-offline", "scripted-root-check", "scripted-filesystem-check", "crash-resume-check"])
+    parser.add_argument("--prediction", default="not supplied", help="Optional learner prediction for a new crash/resume attempt")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     if args.command == "scripted-root-check":
@@ -20,7 +21,7 @@ def main() -> int:
         report, code = run_scripted_filesystem(root)
     elif args.command == "crash-resume-check":
         from reliability_lab.crash_resume import run_crash_resume
-        report, code = run_crash_resume(root)
+        report, code = run_crash_resume(root, learner_prediction=args.prediction)
     else:
         report, code = verify_offline(root)
     print(json.dumps(report, indent=2))

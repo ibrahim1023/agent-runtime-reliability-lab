@@ -13,7 +13,7 @@
 | Historical scores | Original scorer source hash, fixed synthetic fixtures, retained scores, artifact checks | Answer-quality assessments remain earlier assistant review, not a new semantic judge |
 | Fresh scripted runtime | Versions, selected loaded-module hashes, observed tracked-clean editable checkout, extraction identities, actual callbacks | Selected pins/hashes are not a complete lock; clean installation equivalence unverified |
 | Extracted receiver | Original/destination hashes and explicit connection-cleanup change, fresh contracts | Local SQLite property only; not exactly-once effects for arbitrary remote services |
-| Approval | Historical simulated approve/reject/edit behavior | No authenticated human reviewer test; approval plus post-commit crash/resume not yet executed together |
+| Approval | Historical simulated approve/reject/edit behavior | Fresh scripted approval plus post-commit crash/resume now executed together; no authenticated human reviewer test or power-loss test |
 | Optional cohorts | 16 original 120B attempts, one blocked follow-up and eight 20B runs inventoried separately | Full optional per-run behavioral export not performed; original-present 120B failure unresolved |
 
 ## Recovered diagnostic metadata
