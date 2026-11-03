@@ -1,0 +1,266 @@
+{
+  "python": "3.14.6",
+  "fresh_environment": true,
+  "deepagents_loaded_within_fresh_venv": true,
+  "deepagents_editable": false,
+  "system_site_packages": false,
+  "index": "https://pypi.org/simple",
+  "runtime": {
+    "python": "3.14.6",
+    "packages": {
+      "deepagents": "0.7.32",
+      "langchain": "1.4.7",
+      "langchain-core": "1.7.0",
+      "langgraph": "1.2.17",
+      "langgraph-prebuilt": "1.1.0",
+      "langsmith": "0.14.12"
+    },
+    "selected_loaded_module_sha256": {
+      "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+      "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+      "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+      "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+      "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+    },
+    "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+  },
+  "installed_packages": [
+    {
+      "name": "aiosqlite",
+      "version": "0.22.1"
+    },
+    {
+      "name": "annotated-types",
+      "version": "0.8.0"
+    },
+    {
+      "name": "anthropic",
+      "version": "2.4.0"
+    },
+    {
+      "name": "anyio",
+      "version": "4.16.0"
+    },
+    {
+      "name": "bracex",
+      "version": "3.2"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23"
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2"
+    },
+    {
+      "name": "cryptography",
+      "version": "50.0.2"
+    },
+    {
+      "name": "deepagents",
+      "version": "0.7.32"
+    },
+    {
+      "name": "distro",
+      "version": "1.9.0"
+    },
+    {
+      "name": "docstring_parser",
+      "version": "0.18.0"
+    },
+    {
+      "name": "filetype",
+      "version": "1.2.0"
+    },
+    {
+      "name": "google-auth",
+      "version": "2.62.1"
+    },
+    {
+      "name": "google-genai",
+      "version": "2.34.0"
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0"
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9"
+    },
+    {
+      "name": "httpcore2",
+      "version": "2.16.0"
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1"
+    },
+    {
+      "name": "httpx2",
+      "version": "2.16.0"
+    },
+    {
+      "name": "idna",
+      "version": "3.20"
+    },
+    {
+      "name": "jiter",
+      "version": "0.18.0"
+    },
+    {
+      "name": "jsonpatch",
+      "version": "1.41"
+    },
+    {
+      "name": "jsonpointer",
+      "version": "3.8"
+    },
+    {
+      "name": "langchain",
+      "version": "1.4.7"
+    },
+    {
+      "name": "langchain-anthropic",
+      "version": "1.7.7"
+    },
+    {
+      "name": "langchain-core",
+      "version": "1.7.0"
+    },
+    {
+      "name": "langchain-google-genai",
+      "version": "4.4.2"
+    },
+    {
+      "name": "langchain-protocol",
+      "version": "0.0.20"
+    },
+    {
+      "name": "langgraph",
+      "version": "1.2.17"
+    },
+    {
+      "name": "langgraph-checkpoint",
+      "version": "4.3.0"
+    },
+    {
+      "name": "langgraph-checkpoint-sqlite",
+      "version": "3.1.2"
+    },
+    {
+      "name": "langgraph-prebuilt",
+      "version": "1.1.0"
+    },
+    {
+      "name": "langgraph-sdk",
+      "version": "0.4.11"
+    },
+    {
+      "name": "langsmith",
+      "version": "0.14.12"
+    },
+    {
+      "name": "opentelemetry-api",
+      "version": "1.45.2"
+    },
+    {
+      "name": "orjson",
+      "version": "3.13.0"
+    },
+    {
+      "name": "ormsgpack",
+      "version": "1.13.0"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pyasn1",
+      "version": "0.6.5"
+    },
+    {
+      "name": "pyasn1_modules",
+      "version": "0.4.2"
+    },
+    {
+      "name": "pycparser",
+      "version": "3.12"
+    },
+    {
+      "name": "pydantic",
+      "version": "2.14.2"
+    },
+    {
+      "name": "pydantic_core",
+      "version": "2.50.2"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3"
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2"
+    },
+    {
+      "name": "requests-toolbelt",
+      "version": "1.0.0"
+    },
+    {
+      "name": "sniffio",
+      "version": "1.3.1"
+    },
+    {
+      "name": "sqlite-vec",
+      "version": "0.1.9"
+    },
+    {
+      "name": "tenacity",
+      "version": "9.1.4"
+    },
+    {
+      "name": "truststore",
+      "version": "0.10.5"
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.4"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0"
+    },
+    {
+      "name": "uuid_utils",
+      "version": "0.19.0"
+    },
+    {
+      "name": "wcmatch",
+      "version": "11.2"
+    },
+    {
+      "name": "websockets",
+      "version": "17.4"
+    },
+    {
+      "name": "xxhash",
+      "version": "4.0.2"
+    },
+    {
+      "name": "zstandard",
+      "version": "0.25.0"
+    }
+  ],
+  "network_during_preflight": "Python sockets blocked before runtime imports"
+}

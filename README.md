@@ -105,3 +105,8 @@ The [optional inventory](docs/optional-cohorts.md) preserves the original 120B c
 ## Sprint plan and provenance
 
 The three [Day 1 closeout items and next experiment criteria](docs/sprint-experiment-plan.md) are documented. The frozen approval → commit → crash → resume experiment has [executed once](docs/crash-resume-evidence.md): protected replay kept one effect, while the control duplicated it. [Remaining provenance gaps](docs/provenance-gaps.md) stay explicit: historical revisions, immutable model snapshots and complete clean-install reproduction are not established. New diagnostic metadata is allowlisted from existing local traces; no live calls were made during this closeout.
+
+
+## Fresh package reproduction
+
+The [clean-install reproduction](docs/clean-install-reproduction.md) installed published packages in a new non-editable environment and repeated the five crash/resume cases once. All expected tool/effect outcomes matched, with nineteen new worker phases and zero provider calls. This verifies the setup on the same host and Python 3.14.6; it is not cross-platform reproduction or a fully locked build. `requirements-runtime.txt` now includes the checkpoint packages. The installed version inventory and separately reviewed new evidence are linked in the manifest; the default verifier still checks the earlier crash export.

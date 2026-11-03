@@ -1,0 +1,34 @@
+{
+  "experiment_id": "clean-install-reproduction-v1",
+  "frozen_on": "2026-11-03",
+  "base_lab_commit": "355a7deb851502aaaa1f76715b7f2fde811b8a1a",
+  "learner_prediction": "The published packages reproduce the same behavior",
+  "installation": "One fresh venv; public PyPI only; no editable SDK, system-site packages, automatic version substitutions or installation retries",
+  "runtime_seed_requirements_sha256": "751a3de659922b1951ccb44fa7ac75509bd3fc44a596051e3793dfd4370fc2fe",
+  "additional_recorded_versions": [
+    "langgraph-checkpoint==4.3.0",
+    "langgraph-checkpoint-sqlite==3.1.2"
+  ],
+  "budget": {
+    "installation_attempts": 1,
+    "max_install_seconds": 180,
+    "runtime_attempts_if_setup_succeeds": 1,
+    "max_workers": 19,
+    "max_worker_seconds": 30,
+    "max_runtime_seconds": 600,
+    "live_model_calls": 0,
+    "provider_tokens": 0
+  },
+  "criteria": [
+    "Installation resolves the exact recorded versions without editable Deep Agents",
+    "Record interpreter, dependency metadata, distribution source and selected module hashes before execution",
+    "If setup succeeds, execute the frozen five-case crash/resume fixture once with identical case criteria",
+    "Compare actual tool entries, committed effects, receipt reuse, approved payload and review state; do not require equal random IDs, PIDs or durations",
+    "Preserve any installation, import, fixture or behavior failure; no silent fallback to the existing environment"
+  ],
+  "stop_rule": "If exact package setup fails, no graph execution and no claim about behavioral equivalence",
+  "limitations": [
+    "Same host and Python family; not cross-platform reproduction",
+    "Fresh environment alone is not a full transitive hash lock"
+  ]
+}

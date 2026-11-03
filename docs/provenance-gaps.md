@@ -29,3 +29,8 @@ Missing fields remain missing. Earlier baseline journals can lack result executi
 The review is complete enough to state the lab's bounded claims and expose its gaps. It does not turn unknown historical revisions into known values or certify a fully reproducible clean release. New experiments must capture their own package/source identities, settings, criteria and exclusions before interpretation. The next experiment is frozen separately; its criteria are not results.
 
 [InferenceBench](https://github.com/ibrahim1023/inference-bench) remains supporting work only. No inference server, UI, new tracing platform or agent loop is part of this sprint.
+
+
+## Clean-install update, 2026-11-03
+
+The earlier unverified-clean-install limitation is narrowed by [same-host fresh-package reproduction](clean-install-reproduction.md). Five crash/resume cases matched in a non-editable environment. Cross-platform reproduction, a full artifact hash lock and clean-environment filesystem fixture execution remain unverified. Historical runtime revision gaps are unchanged. The new clean-install export is separately reviewed and hash-linked, not yet a default offline validation stage.

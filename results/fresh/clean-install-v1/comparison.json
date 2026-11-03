@@ -1,0 +1,72 @@
+{
+  "experiment_id": "clean-install-reproduction-v1",
+  "evidence_kind": "fresh package installation and one new scripted runtime reproduction; no live model evaluation",
+  "learner_prediction": "The published packages reproduce the same behavior",
+  "prediction_supported_within_tested_scope": true,
+  "base_lab_commit": "355a7deb851502aaaa1f76715b7f2fde811b8a1a",
+  "plan_sha256": "79726b425adca95a6dc6d4d65465b492822f3bb8718cb3f48586789af8b009c2",
+  "installation": {
+    "exit_code": 0,
+    "timed_out": false,
+    "duration_s": 1.6153362920013024
+  },
+  "installer_argument_validation_failure": {
+    "occurred_before_resolution": true,
+    "unsupported_option": "--retries",
+    "resolution_attempts": 1,
+    "correction": "UV_HTTP_RETRIES=0 in an allowlisted environment"
+  },
+  "case_comparison": [
+    {
+      "case": "protected-approve-1",
+      "same_assessed_behavior": true,
+      "tool_body_entries": 2,
+      "committed_effects": 1,
+      "approved_task_completed": true
+    },
+    {
+      "case": "protected-approve-2",
+      "same_assessed_behavior": true,
+      "tool_body_entries": 2,
+      "committed_effects": 1,
+      "approved_task_completed": true
+    },
+    {
+      "case": "unprotected-approve-control",
+      "same_assessed_behavior": true,
+      "tool_body_entries": 2,
+      "committed_effects": 2,
+      "approved_task_completed": false
+    },
+    {
+      "case": "protected-edit",
+      "same_assessed_behavior": true,
+      "tool_body_entries": 2,
+      "committed_effects": 1,
+      "approved_task_completed": true
+    },
+    {
+      "case": "protected-reject",
+      "same_assessed_behavior": true,
+      "tool_body_entries": 0,
+      "committed_effects": 0,
+      "approved_task_completed": false
+    }
+  ],
+  "selected_runtime_module_hashes_match_previous_environment": true,
+  "worker_processes": 19,
+  "live_model_calls": 0,
+  "provider_tokens": 0,
+  "duration_s": 8.462014167002053,
+  "original_duration_s": 15.028353374997096,
+  "duration_interpretation": "Local wall times include process startup; no controlled performance claim",
+  "inherited_report_label_correction": "execution.preflight contains the old fixture wording existing editable environment. environment.json establishes this invocation actually used a fresh non-editable installation. Raw execution preserved without rewriting that inherited label.",
+  "validation": "All five saved case verdicts recomputed with the current assessor and compared against earlier observations; no workers rerun during publication",
+  "limitations": [
+    "Same machine and Python version, not independent-host or cross-platform reproduction",
+    "Selected module hashes are not a complete source fingerprint",
+    "Installed version inventory is not a cryptographic dependency lock",
+    "Existing filesystem middleware fixtures were not rerun in this environment",
+    "Default verify-offline checks the earlier crash export; this new reproduction was separately inspected during publication"
+  ]
+}

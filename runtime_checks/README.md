@@ -1,6 +1,6 @@
 # Opt-in scripted runtime contract
 
-Use an environment containing the versions in `requirements-runtime.txt`. The recorded run reused an existing environment; a clean package installation has not been verified. Deep Agents was editable, so the selected loaded-module hashes and observed checkout revision in the result matter alongside package versions. The requirements file is an environment reference, not a complete transitive dependency lock.
+Use an environment containing the versions in `requirements-runtime.txt`. Earlier runs reused an existing environment. A [fresh non-editable package installation](../docs/clean-install-reproduction.md) now reproduced the five crash/resume cases on the same host; filesystem checks were not rerun in that environment. Deep Agents was editable, so the selected loaded-module hashes and observed checkout revision in the result matter alongside package versions. The requirements file now includes the two required checkpoint packages. It is a verified seed-version reference, not a complete transitive dependency lock.
 
 From the lab root, with that environment's Python:
 

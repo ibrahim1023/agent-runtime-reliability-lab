@@ -964,5 +964,32 @@
       "export": "results/crash-resume-check-20261103.json",
       "sha256": "fce96a012c31b2c230d0921f901f27710333ea0f65553c3e3e99744f75df04ed"
     }
+  },
+  "clean_install_v1": {
+    "plan": {
+      "export": "results/clean-install-plan-v1.json",
+      "sha256": "79726b425adca95a6dc6d4d65465b492822f3bb8718cb3f48586789af8b009c2"
+    },
+    "execution": {
+      "export": "results/fresh/clean-install-v1/execution.json",
+      "sha256": "4f2818b27fe09578234682ddb0d6ab12e9954f9ee588a7db889ee6501b77d7aa"
+    },
+    "environment": {
+      "export": "results/fresh/clean-install-v1/environment.json",
+      "sha256": "20a13fc35c3e24a465249b6831009814251d8d152b1349da0ad747c479f9c75e"
+    },
+    "comparison": {
+      "export": "results/fresh/clean-install-v1/comparison.json",
+      "sha256": "ccc0b0c00a150bc431f9ea91368da4e4ea32a9d52a25c9a86897799bc54e14fa"
+    },
+    "installed_version_inventory": {
+      "export": "requirements-runtime-resolved-20261103.txt",
+      "sha256": "d49a3588421d99ed48d5f2561ff8de632fa330364e6c527c0f332dbe4f4bb3cb"
+    },
+    "seed_requirements": {
+      "export": "requirements-runtime.txt",
+      "sha256": "ec52bbe660d4154081aa58243577d9a1ef2300e0331c2790197614c94d995c4f"
+    },
+    "default_offline_validation": "not yet included; reviewed separately during publication"
   }
 }

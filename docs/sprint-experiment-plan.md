@@ -42,6 +42,6 @@ Before implementation/execution, verify component hashes and dependency compatib
 
 Preserve every failed or interrupted attempt. A missing dependency is setup interruption; a graph-limit stop is a behavior/fixture failure, not silently excluded as infrastructure. Worker timeouts leave an unknown outcome to inspect; do not turn them into successful runs, increase budgets after the fact or retry under the same label. No claim is made about machine/power failure, arbitrary remote exactly-once delivery or authenticated review.
 
-Implementation, one bounded execution and reviewed result publication are complete. Clean-environment reproduction remains pending. The first assessment failed on the edit-message format; amendment A1 documents a saved-evidence reassessment without rerunning workers. Any later live evaluation needs a separate bounded run/token budget; old Groq allowances are not assumed.
+Implementation, one bounded execution and reviewed result publication are complete. Same-host clean-package reproduction has since completed; [see its separate evidence](clean-install-reproduction.md). Independent-host reproduction and a complete artifact lock remain pending. The first assessment failed on the edit-message format; amendment A1 documents a saved-evidence reassessment without rerunning workers. Any later live evaluation needs a separate bounded run/token budget; old Groq allowances are not assumed.
 
 Frozen v1 SHA-256: `2cd7c3d68afb6331d93e27312fe51fe9edfcd5354d0410949b8c68a46e9e04ff`.
