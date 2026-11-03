@@ -1,0 +1,1483 @@
+{
+  "experiment_id": "reconciled-final-response-v1",
+  "kind": "fresh scripted graph recovery with application response integration; no live-model evaluation",
+  "executed_at_utc": "2026-11-03T12:24:00.094846+00:00",
+  "learner_prediction": "Report uncertainty and preserve the graph answer separately",
+  "criteria_sha256": "fe2b898feaf4ca470c09c99dff980cbb59d1f58ce4a0896dd3c858f45dd78372",
+  "graph_execution": {
+    "schema_version": 1,
+    "experiment_id": "approval-commit-crash-resume-v1",
+    "kind": "fresh deterministic scripted graph/process execution; not live-model evaluation",
+    "started_at_utc": "2026-11-03T12:23:50.905284+00:00",
+    "live_model_calls": 0,
+    "estimated_provider_tokens": 0,
+    "decision_source": "simulated_reviewer",
+    "learner_prediction": "Report uncertainty and preserve the graph answer separately",
+    "report_path": "work/crash-resume/c6fe3f3218154a5790a1a9c79bf661e5/report.json",
+    "cases": [
+      {
+        "case": "protected-approve-1",
+        "decision": "approve",
+        "protected": true,
+        "thread_id": "18c95998-0b95-4d7e-9f53-3826630fb86c",
+        "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+        "original_message": "record-once",
+        "approved_message": "record-once",
+        "phases": [
+          {
+            "phase": "initial",
+            "pid": 23095,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.5052295829955256,
+            "observation": {
+              "pid": 23095,
+              "interrupts": [
+                {
+                  "id": "e8c26d7f05fb41a314c57bee440c2285",
+                  "value": {
+                    "action_requests": [
+                      {
+                        "name": "record_action",
+                        "args": {
+                          "message": "record-once"
+                        },
+                        "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'record-once'}"
+                      }
+                    ],
+                    "review_configs": [
+                      {
+                        "action_name": "record_action",
+                        "allowed_decisions": [
+                          "approve",
+                          "edit",
+                          "reject"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "checkpoint_next": [
+                "HumanInTheLoopMiddleware.after_model"
+              ],
+              "agent_duration_s": 0.01050783400569344,
+              "final_tool_status": null,
+              "final_tool_content": null,
+              "answer": null
+            },
+            "effects": 0,
+            "tool_entries": 0,
+            "pending_review": true
+          },
+          {
+            "phase": "restore",
+            "pid": 23096,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.5114706669992302,
+            "observation": {
+              "pid": 23096,
+              "interrupts": [
+                {
+                  "id": "e8c26d7f05fb41a314c57bee440c2285",
+                  "value": {
+                    "action_requests": [
+                      {
+                        "name": "record_action",
+                        "args": {
+                          "message": "record-once"
+                        },
+                        "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'record-once'}"
+                      }
+                    ],
+                    "review_configs": [
+                      {
+                        "action_name": "record_action",
+                        "allowed_decisions": [
+                          "approve",
+                          "edit",
+                          "reject"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "checkpoint_next": [
+                "HumanInTheLoopMiddleware.after_model"
+              ],
+              "agent_duration_s": 0.001886374993773643,
+              "final_tool_status": null,
+              "final_tool_content": null,
+              "answer": null
+            },
+            "effects": 0,
+            "tool_entries": 0,
+            "pending_review": true
+          },
+          {
+            "phase": "decision",
+            "pid": 23097,
+            "exit_code": 86,
+            "timeout": false,
+            "duration_s": 0.4005079999988084,
+            "observation": {},
+            "effects": 1,
+            "tool_entries": 1,
+            "pending_review": null
+          },
+          {
+            "phase": "resume",
+            "pid": 23098,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.5131610829994315,
+            "observation": {
+              "pid": 23098,
+              "interrupts": [],
+              "checkpoint_next": [],
+              "agent_duration_s": 0.015256749997206498,
+              "final_tool_status": "success",
+              "final_tool_content": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}",
+              "answer": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}"
+            },
+            "effects": 1,
+            "tool_entries": 2,
+            "pending_review": false
+          }
+        ],
+        "entries": [
+          {
+            "message": "record-once",
+            "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+            "receipt_id": "5841d034-1e6f-4faa-8a36-a32fb9613a63",
+            "status": "recorded"
+          }
+        ],
+        "tool_entries": [
+          {
+            "pid": 23097,
+            "event": "tool_enter",
+            "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+            "message": "record-once"
+          },
+          {
+            "pid": 23098,
+            "event": "tool_enter",
+            "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+            "message": "record-once"
+          }
+        ],
+        "receiver_results": [
+          {
+            "pid": 23097,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "record-once",
+              "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+              "receipt_id": "5841d034-1e6f-4faa-8a36-a32fb9613a63",
+              "status": "recorded"
+            },
+            "reused": false
+          },
+          {
+            "pid": 23098,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "record-once",
+              "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+              "receipt_id": "5841d034-1e6f-4faa-8a36-a32fb9613a63",
+              "status": "recorded"
+            },
+            "reused": true
+          }
+        ],
+        "events": [
+          {
+            "pid": 23095,
+            "event": "worker_start",
+            "phase": "initial"
+          },
+          {
+            "pid": 23096,
+            "event": "worker_start",
+            "phase": "restore"
+          },
+          {
+            "pid": 23097,
+            "event": "worker_start",
+            "phase": "decision"
+          },
+          {
+            "pid": 23097,
+            "event": "reviewer_decision",
+            "source": "simulated_reviewer",
+            "decision": {
+              "type": "approve"
+            }
+          },
+          {
+            "pid": 23097,
+            "event": "tool_enter",
+            "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+            "message": "record-once"
+          },
+          {
+            "pid": 23097,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "record-once",
+              "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+              "receipt_id": "5841d034-1e6f-4faa-8a36-a32fb9613a63",
+              "status": "recorded"
+            },
+            "reused": false
+          },
+          {
+            "pid": 23098,
+            "event": "worker_start",
+            "phase": "resume"
+          },
+          {
+            "pid": 23098,
+            "event": "tool_enter",
+            "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+            "message": "record-once"
+          },
+          {
+            "pid": 23098,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "record-once",
+              "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+              "receipt_id": "5841d034-1e6f-4faa-8a36-a32fb9613a63",
+              "status": "recorded"
+            },
+            "reused": true
+          },
+          {
+            "pid": 23098,
+            "event": "model_observed_tool",
+            "status": "success",
+            "content": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}"
+          }
+        ],
+        "same_pending_review": true,
+        "graph_completed": true,
+        "final_tool_status": "success",
+        "final_tool_content": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}",
+        "answer": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}",
+        "verdicts": {
+          "contract_met": true,
+          "graph_completed": true,
+          "review_policy_handled": true,
+          "approved_task_completed": true,
+          "report_matches_observed_tool_result": true,
+          "report_accounts_for_all_effects": true,
+          "tool_body_entries": 2,
+          "committed_effects": 1,
+          "checks": {
+            "stable_approved_identity": true,
+            "review_boundary": true,
+            "fresh_processes": true,
+            "expected_exits": true,
+            "receipt_replay": true,
+            "effect_count": true,
+            "attempt_count": true,
+            "phase_counts": true
+          }
+        }
+      },
+      {
+        "case": "protected-approve-2",
+        "decision": "approve",
+        "protected": true,
+        "thread_id": "2657d8fc-d818-4ced-ab9e-42f13c4bc9a7",
+        "operation_id": "05b7718a-c73b-4ca0-b288-3d5b5b9abec3",
+        "original_message": "record-once",
+        "approved_message": "record-once",
+        "phases": [
+          {
+            "phase": "initial",
+            "pid": 23100,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.5063651250020484,
+            "observation": {
+              "pid": 23100,
+              "interrupts": [
+                {
+                  "id": "66f40b5bea81ac5ebe7d1fd045f2a7d9",
+                  "value": {
+                    "action_requests": [
+                      {
+                        "name": "record_action",
+                        "args": {
+                          "message": "record-once"
+                        },
+                        "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'record-once'}"
+                      }
+                    ],
+                    "review_configs": [
+                      {
+                        "action_name": "record_action",
+                        "allowed_decisions": [
+                          "approve",
+                          "edit",
+                          "reject"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "checkpoint_next": [
+                "HumanInTheLoopMiddleware.after_model"
+              ],
+              "agent_duration_s": 0.008996458003821317,
+              "final_tool_status": null,
+              "final_tool_content": null,
+              "answer": null
+            },
+            "effects": 0,
+            "tool_entries": 0,
+            "pending_review": true
+          },
+          {
+            "phase": "restore",
+            "pid": 23101,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.4566929579959833,
+            "observation": {
+              "pid": 23101,
+              "interrupts": [
+                {
+                  "id": "66f40b5bea81ac5ebe7d1fd045f2a7d9",
+                  "value": {
+                    "action_requests": [
+                      {
+                        "name": "record_action",
+                        "args": {
+                          "message": "record-once"
+                        },
+                        "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'record-once'}"
+                      }
+                    ],
+                    "review_configs": [
+                      {
+                        "action_name": "record_action",
+                        "allowed_decisions": [
+                          "approve",
+                          "edit",
+                          "reject"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "checkpoint_next": [
+                "HumanInTheLoopMiddleware.after_model"
+              ],
+              "agent_duration_s": 0.0018347910008742474,
+              "final_tool_status": null,
+              "final_tool_content": null,
+              "answer": null
+            },
+            "effects": 0,
+            "tool_entries": 0,
+            "pending_review": true
+          },
+          {
+            "phase": "decision",
+            "pid": 23103,
+            "exit_code": 86,
+            "timeout": false,
+            "duration_s": 0.3956759159991634,
+            "observation": {},
+            "effects": 1,
+            "tool_entries": 1,
+            "pending_review": null
+          },
+          {
+            "phase": "resume",
+            "pid": 23105,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.5098662500022328,
+            "observation": {
+              "pid": 23105,
+              "interrupts": [],
+              "checkpoint_next": [],
+              "agent_duration_s": 0.011629499997070525,
+              "final_tool_status": "success",
+              "final_tool_content": "{\"message\": \"record-once\", \"operation_id\": \"05b7718a-c73b-4ca0-b288-3d5b5b9abec3\", \"receipt_id\": \"3e3ae811-0527-40a9-b980-036e9d4cf1f7\", \"status\": \"recorded\"}",
+              "answer": "{\"message\": \"record-once\", \"operation_id\": \"05b7718a-c73b-4ca0-b288-3d5b5b9abec3\", \"receipt_id\": \"3e3ae811-0527-40a9-b980-036e9d4cf1f7\", \"status\": \"recorded\"}"
+            },
+            "effects": 1,
+            "tool_entries": 2,
+            "pending_review": false
+          }
+        ],
+        "entries": [
+          {
+            "message": "record-once",
+            "operation_id": "05b7718a-c73b-4ca0-b288-3d5b5b9abec3",
+            "receipt_id": "3e3ae811-0527-40a9-b980-036e9d4cf1f7",
+            "status": "recorded"
+          }
+        ],
+        "tool_entries": [
+          {
+            "pid": 23103,
+            "event": "tool_enter",
+            "operation_id": "05b7718a-c73b-4ca0-b288-3d5b5b9abec3",
+            "message": "record-once"
+          },
+          {
+            "pid": 23105,
+            "event": "tool_enter",
+            "operation_id": "05b7718a-c73b-4ca0-b288-3d5b5b9abec3",
+            "message": "record-once"
+          }
+        ],
+        "receiver_results": [
+          {
+            "pid": 23103,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "record-once",
+              "operation_id": "05b7718a-c73b-4ca0-b288-3d5b5b9abec3",
+              "receipt_id": "3e3ae811-0527-40a9-b980-036e9d4cf1f7",
+              "status": "recorded"
+            },
+            "reused": false
+          },
+          {
+            "pid": 23105,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "record-once",
+              "operation_id": "05b7718a-c73b-4ca0-b288-3d5b5b9abec3",
+              "receipt_id": "3e3ae811-0527-40a9-b980-036e9d4cf1f7",
+              "status": "recorded"
+            },
+            "reused": true
+          }
+        ],
+        "events": [
+          {
+            "pid": 23100,
+            "event": "worker_start",
+            "phase": "initial"
+          },
+          {
+            "pid": 23101,
+            "event": "worker_start",
+            "phase": "restore"
+          },
+          {
+            "pid": 23103,
+            "event": "worker_start",
+            "phase": "decision"
+          },
+          {
+            "pid": 23103,
+            "event": "reviewer_decision",
+            "source": "simulated_reviewer",
+            "decision": {
+              "type": "approve"
+            }
+          },
+          {
+            "pid": 23103,
+            "event": "tool_enter",
+            "operation_id": "05b7718a-c73b-4ca0-b288-3d5b5b9abec3",
+            "message": "record-once"
+          },
+          {
+            "pid": 23103,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "record-once",
+              "operation_id": "05b7718a-c73b-4ca0-b288-3d5b5b9abec3",
+              "receipt_id": "3e3ae811-0527-40a9-b980-036e9d4cf1f7",
+              "status": "recorded"
+            },
+            "reused": false
+          },
+          {
+            "pid": 23105,
+            "event": "worker_start",
+            "phase": "resume"
+          },
+          {
+            "pid": 23105,
+            "event": "tool_enter",
+            "operation_id": "05b7718a-c73b-4ca0-b288-3d5b5b9abec3",
+            "message": "record-once"
+          },
+          {
+            "pid": 23105,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "record-once",
+              "operation_id": "05b7718a-c73b-4ca0-b288-3d5b5b9abec3",
+              "receipt_id": "3e3ae811-0527-40a9-b980-036e9d4cf1f7",
+              "status": "recorded"
+            },
+            "reused": true
+          },
+          {
+            "pid": 23105,
+            "event": "model_observed_tool",
+            "status": "success",
+            "content": "{\"message\": \"record-once\", \"operation_id\": \"05b7718a-c73b-4ca0-b288-3d5b5b9abec3\", \"receipt_id\": \"3e3ae811-0527-40a9-b980-036e9d4cf1f7\", \"status\": \"recorded\"}"
+          }
+        ],
+        "same_pending_review": true,
+        "graph_completed": true,
+        "final_tool_status": "success",
+        "final_tool_content": "{\"message\": \"record-once\", \"operation_id\": \"05b7718a-c73b-4ca0-b288-3d5b5b9abec3\", \"receipt_id\": \"3e3ae811-0527-40a9-b980-036e9d4cf1f7\", \"status\": \"recorded\"}",
+        "answer": "{\"message\": \"record-once\", \"operation_id\": \"05b7718a-c73b-4ca0-b288-3d5b5b9abec3\", \"receipt_id\": \"3e3ae811-0527-40a9-b980-036e9d4cf1f7\", \"status\": \"recorded\"}",
+        "verdicts": {
+          "contract_met": true,
+          "graph_completed": true,
+          "review_policy_handled": true,
+          "approved_task_completed": true,
+          "report_matches_observed_tool_result": true,
+          "report_accounts_for_all_effects": true,
+          "tool_body_entries": 2,
+          "committed_effects": 1,
+          "checks": {
+            "stable_approved_identity": true,
+            "review_boundary": true,
+            "fresh_processes": true,
+            "expected_exits": true,
+            "receipt_replay": true,
+            "effect_count": true,
+            "attempt_count": true,
+            "phase_counts": true
+          }
+        }
+      },
+      {
+        "case": "unprotected-approve-control",
+        "decision": "approve",
+        "protected": false,
+        "thread_id": "dde88e55-f48f-4c73-978b-dee62855851d",
+        "operation_id": "960d3021-27b3-4f9d-b134-650bf8980a82",
+        "original_message": "record-once",
+        "approved_message": "record-once",
+        "phases": [
+          {
+            "phase": "initial",
+            "pid": 23106,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.4563334999984363,
+            "observation": {
+              "pid": 23106,
+              "interrupts": [
+                {
+                  "id": "bdc764e1ed7a5366c633acabb224f7ea",
+                  "value": {
+                    "action_requests": [
+                      {
+                        "name": "record_action",
+                        "args": {
+                          "message": "record-once"
+                        },
+                        "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'record-once'}"
+                      }
+                    ],
+                    "review_configs": [
+                      {
+                        "action_name": "record_action",
+                        "allowed_decisions": [
+                          "approve",
+                          "edit",
+                          "reject"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "checkpoint_next": [
+                "HumanInTheLoopMiddleware.after_model"
+              ],
+              "agent_duration_s": 0.009430625003005844,
+              "final_tool_status": null,
+              "final_tool_content": null,
+              "answer": null
+            },
+            "effects": 0,
+            "tool_entries": 0,
+            "pending_review": true
+          },
+          {
+            "phase": "restore",
+            "pid": 23107,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.4526347079954576,
+            "observation": {
+              "pid": 23107,
+              "interrupts": [
+                {
+                  "id": "bdc764e1ed7a5366c633acabb224f7ea",
+                  "value": {
+                    "action_requests": [
+                      {
+                        "name": "record_action",
+                        "args": {
+                          "message": "record-once"
+                        },
+                        "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'record-once'}"
+                      }
+                    ],
+                    "review_configs": [
+                      {
+                        "action_name": "record_action",
+                        "allowed_decisions": [
+                          "approve",
+                          "edit",
+                          "reject"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "checkpoint_next": [
+                "HumanInTheLoopMiddleware.after_model"
+              ],
+              "agent_duration_s": 0.001869624997198116,
+              "final_tool_status": null,
+              "final_tool_content": null,
+              "answer": null
+            },
+            "effects": 0,
+            "tool_entries": 0,
+            "pending_review": true
+          },
+          {
+            "phase": "decision",
+            "pid": 23108,
+            "exit_code": 86,
+            "timeout": false,
+            "duration_s": 0.4045320000004722,
+            "observation": {},
+            "effects": 1,
+            "tool_entries": 1,
+            "pending_review": null
+          },
+          {
+            "phase": "resume",
+            "pid": 23109,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.45321970799705014,
+            "observation": {
+              "pid": 23109,
+              "interrupts": [],
+              "checkpoint_next": [],
+              "agent_duration_s": 0.008776791997661348,
+              "final_tool_status": "success",
+              "final_tool_content": "{\"message\": \"record-once\", \"operation_id\": \"960d3021-27b3-4f9d-b134-650bf8980a82\", \"receipt_id\": \"2b47a2f3-e4b2-4744-9dfd-b9503c3fed02\", \"status\": \"recorded\"}",
+              "answer": "{\"message\": \"record-once\", \"operation_id\": \"960d3021-27b3-4f9d-b134-650bf8980a82\", \"receipt_id\": \"2b47a2f3-e4b2-4744-9dfd-b9503c3fed02\", \"status\": \"recorded\"}"
+            },
+            "effects": 2,
+            "tool_entries": 2,
+            "pending_review": false
+          }
+        ],
+        "entries": [
+          {
+            "message": "record-once",
+            "operation_id": "960d3021-27b3-4f9d-b134-650bf8980a82",
+            "receipt_id": "3dcfcdbf-1091-467e-8f4d-021871ea11a0",
+            "status": "recorded"
+          },
+          {
+            "message": "record-once",
+            "operation_id": "960d3021-27b3-4f9d-b134-650bf8980a82",
+            "receipt_id": "2b47a2f3-e4b2-4744-9dfd-b9503c3fed02",
+            "status": "recorded"
+          }
+        ],
+        "tool_entries": [
+          {
+            "pid": 23108,
+            "event": "tool_enter",
+            "operation_id": "960d3021-27b3-4f9d-b134-650bf8980a82",
+            "message": "record-once"
+          },
+          {
+            "pid": 23109,
+            "event": "tool_enter",
+            "operation_id": "960d3021-27b3-4f9d-b134-650bf8980a82",
+            "message": "record-once"
+          }
+        ],
+        "receiver_results": [
+          {
+            "pid": 23108,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "record-once",
+              "operation_id": "960d3021-27b3-4f9d-b134-650bf8980a82",
+              "receipt_id": "3dcfcdbf-1091-467e-8f4d-021871ea11a0",
+              "status": "recorded"
+            },
+            "reused": false
+          },
+          {
+            "pid": 23109,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "record-once",
+              "operation_id": "960d3021-27b3-4f9d-b134-650bf8980a82",
+              "receipt_id": "2b47a2f3-e4b2-4744-9dfd-b9503c3fed02",
+              "status": "recorded"
+            },
+            "reused": false
+          }
+        ],
+        "events": [
+          {
+            "pid": 23106,
+            "event": "worker_start",
+            "phase": "initial"
+          },
+          {
+            "pid": 23107,
+            "event": "worker_start",
+            "phase": "restore"
+          },
+          {
+            "pid": 23108,
+            "event": "worker_start",
+            "phase": "decision"
+          },
+          {
+            "pid": 23108,
+            "event": "reviewer_decision",
+            "source": "simulated_reviewer",
+            "decision": {
+              "type": "approve"
+            }
+          },
+          {
+            "pid": 23108,
+            "event": "tool_enter",
+            "operation_id": "960d3021-27b3-4f9d-b134-650bf8980a82",
+            "message": "record-once"
+          },
+          {
+            "pid": 23108,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "record-once",
+              "operation_id": "960d3021-27b3-4f9d-b134-650bf8980a82",
+              "receipt_id": "3dcfcdbf-1091-467e-8f4d-021871ea11a0",
+              "status": "recorded"
+            },
+            "reused": false
+          },
+          {
+            "pid": 23109,
+            "event": "worker_start",
+            "phase": "resume"
+          },
+          {
+            "pid": 23109,
+            "event": "tool_enter",
+            "operation_id": "960d3021-27b3-4f9d-b134-650bf8980a82",
+            "message": "record-once"
+          },
+          {
+            "pid": 23109,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "record-once",
+              "operation_id": "960d3021-27b3-4f9d-b134-650bf8980a82",
+              "receipt_id": "2b47a2f3-e4b2-4744-9dfd-b9503c3fed02",
+              "status": "recorded"
+            },
+            "reused": false
+          },
+          {
+            "pid": 23109,
+            "event": "model_observed_tool",
+            "status": "success",
+            "content": "{\"message\": \"record-once\", \"operation_id\": \"960d3021-27b3-4f9d-b134-650bf8980a82\", \"receipt_id\": \"2b47a2f3-e4b2-4744-9dfd-b9503c3fed02\", \"status\": \"recorded\"}"
+          }
+        ],
+        "same_pending_review": true,
+        "graph_completed": true,
+        "final_tool_status": "success",
+        "final_tool_content": "{\"message\": \"record-once\", \"operation_id\": \"960d3021-27b3-4f9d-b134-650bf8980a82\", \"receipt_id\": \"2b47a2f3-e4b2-4744-9dfd-b9503c3fed02\", \"status\": \"recorded\"}",
+        "answer": "{\"message\": \"record-once\", \"operation_id\": \"960d3021-27b3-4f9d-b134-650bf8980a82\", \"receipt_id\": \"2b47a2f3-e4b2-4744-9dfd-b9503c3fed02\", \"status\": \"recorded\"}",
+        "verdicts": {
+          "contract_met": true,
+          "graph_completed": true,
+          "review_policy_handled": true,
+          "approved_task_completed": false,
+          "report_matches_observed_tool_result": true,
+          "report_accounts_for_all_effects": false,
+          "tool_body_entries": 2,
+          "committed_effects": 2,
+          "checks": {
+            "stable_approved_identity": true,
+            "review_boundary": true,
+            "fresh_processes": true,
+            "expected_exits": true,
+            "receipt_replay": true,
+            "effect_count": true,
+            "attempt_count": true,
+            "phase_counts": true
+          }
+        }
+      },
+      {
+        "case": "protected-edit",
+        "decision": "edit",
+        "protected": true,
+        "thread_id": "1985ceff-c2c9-4a98-a1e5-0351b707e174",
+        "operation_id": "94295431-d3c5-4c34-ac50-e2f22fdff20e",
+        "original_message": "original-proposal",
+        "approved_message": "reviewer-approved",
+        "phases": [
+          {
+            "phase": "initial",
+            "pid": 23110,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.45296275000146125,
+            "observation": {
+              "pid": 23110,
+              "interrupts": [
+                {
+                  "id": "4453e45bb881a537f3f6c0d7c287a843",
+                  "value": {
+                    "action_requests": [
+                      {
+                        "name": "record_action",
+                        "args": {
+                          "message": "original-proposal"
+                        },
+                        "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'original-proposal'}"
+                      }
+                    ],
+                    "review_configs": [
+                      {
+                        "action_name": "record_action",
+                        "allowed_decisions": [
+                          "approve",
+                          "edit",
+                          "reject"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "checkpoint_next": [
+                "HumanInTheLoopMiddleware.after_model"
+              ],
+              "agent_duration_s": 0.008773041001404636,
+              "final_tool_status": null,
+              "final_tool_content": null,
+              "answer": null
+            },
+            "effects": 0,
+            "tool_entries": 0,
+            "pending_review": true
+          },
+          {
+            "phase": "restore",
+            "pid": 23111,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.45467720799933886,
+            "observation": {
+              "pid": 23111,
+              "interrupts": [
+                {
+                  "id": "4453e45bb881a537f3f6c0d7c287a843",
+                  "value": {
+                    "action_requests": [
+                      {
+                        "name": "record_action",
+                        "args": {
+                          "message": "original-proposal"
+                        },
+                        "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'original-proposal'}"
+                      }
+                    ],
+                    "review_configs": [
+                      {
+                        "action_name": "record_action",
+                        "allowed_decisions": [
+                          "approve",
+                          "edit",
+                          "reject"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "checkpoint_next": [
+                "HumanInTheLoopMiddleware.after_model"
+              ],
+              "agent_duration_s": 0.0018146250004065223,
+              "final_tool_status": null,
+              "final_tool_content": null,
+              "answer": null
+            },
+            "effects": 0,
+            "tool_entries": 0,
+            "pending_review": true
+          },
+          {
+            "phase": "decision",
+            "pid": 23112,
+            "exit_code": 86,
+            "timeout": false,
+            "duration_s": 0.34951149999687914,
+            "observation": {},
+            "effects": 1,
+            "tool_entries": 1,
+            "pending_review": null
+          },
+          {
+            "phase": "resume",
+            "pid": 23113,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.5103238330048043,
+            "observation": {
+              "pid": 23113,
+              "interrupts": [],
+              "checkpoint_next": [],
+              "agent_duration_s": 0.010278500005370006,
+              "final_tool_status": "success",
+              "final_tool_content": "Note: a human reviewer replaced this tool call before it ran. The call recorded in your message is the one you produced, not the one that executed. This was intentional and authorized. Do not re-issue your original call. Executed instead: record_action with arguments {\"message\": \"reviewer-approved\"}.\n\nTool response:\n{\"message\": \"reviewer-approved\", \"operation_id\": \"94295431-d3c5-4c34-ac50-e2f22fdff20e\", \"receipt_id\": \"8886d687-9e50-458c-aa4f-a2f4948ea4fd\", \"status\": \"recorded\"}",
+              "answer": "Note: a human reviewer replaced this tool call before it ran. The call recorded in your message is the one you produced, not the one that executed. This was intentional and authorized. Do not re-issue your original call. Executed instead: record_action with arguments {\"message\": \"reviewer-approved\"}.\n\nTool response:\n{\"message\": \"reviewer-approved\", \"operation_id\": \"94295431-d3c5-4c34-ac50-e2f22fdff20e\", \"receipt_id\": \"8886d687-9e50-458c-aa4f-a2f4948ea4fd\", \"status\": \"recorded\"}"
+            },
+            "effects": 1,
+            "tool_entries": 2,
+            "pending_review": false
+          }
+        ],
+        "entries": [
+          {
+            "message": "reviewer-approved",
+            "operation_id": "94295431-d3c5-4c34-ac50-e2f22fdff20e",
+            "receipt_id": "8886d687-9e50-458c-aa4f-a2f4948ea4fd",
+            "status": "recorded"
+          }
+        ],
+        "tool_entries": [
+          {
+            "pid": 23112,
+            "event": "tool_enter",
+            "operation_id": "94295431-d3c5-4c34-ac50-e2f22fdff20e",
+            "message": "reviewer-approved"
+          },
+          {
+            "pid": 23113,
+            "event": "tool_enter",
+            "operation_id": "94295431-d3c5-4c34-ac50-e2f22fdff20e",
+            "message": "reviewer-approved"
+          }
+        ],
+        "receiver_results": [
+          {
+            "pid": 23112,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "reviewer-approved",
+              "operation_id": "94295431-d3c5-4c34-ac50-e2f22fdff20e",
+              "receipt_id": "8886d687-9e50-458c-aa4f-a2f4948ea4fd",
+              "status": "recorded"
+            },
+            "reused": false
+          },
+          {
+            "pid": 23113,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "reviewer-approved",
+              "operation_id": "94295431-d3c5-4c34-ac50-e2f22fdff20e",
+              "receipt_id": "8886d687-9e50-458c-aa4f-a2f4948ea4fd",
+              "status": "recorded"
+            },
+            "reused": true
+          }
+        ],
+        "events": [
+          {
+            "pid": 23110,
+            "event": "worker_start",
+            "phase": "initial"
+          },
+          {
+            "pid": 23111,
+            "event": "worker_start",
+            "phase": "restore"
+          },
+          {
+            "pid": 23112,
+            "event": "worker_start",
+            "phase": "decision"
+          },
+          {
+            "pid": 23112,
+            "event": "reviewer_decision",
+            "source": "simulated_reviewer",
+            "decision": {
+              "type": "edit",
+              "edited_action": {
+                "name": "record_action",
+                "args": {
+                  "message": "reviewer-approved"
+                }
+              }
+            }
+          },
+          {
+            "pid": 23112,
+            "event": "tool_enter",
+            "operation_id": "94295431-d3c5-4c34-ac50-e2f22fdff20e",
+            "message": "reviewer-approved"
+          },
+          {
+            "pid": 23112,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "reviewer-approved",
+              "operation_id": "94295431-d3c5-4c34-ac50-e2f22fdff20e",
+              "receipt_id": "8886d687-9e50-458c-aa4f-a2f4948ea4fd",
+              "status": "recorded"
+            },
+            "reused": false
+          },
+          {
+            "pid": 23113,
+            "event": "worker_start",
+            "phase": "resume"
+          },
+          {
+            "pid": 23113,
+            "event": "tool_enter",
+            "operation_id": "94295431-d3c5-4c34-ac50-e2f22fdff20e",
+            "message": "reviewer-approved"
+          },
+          {
+            "pid": 23113,
+            "event": "receiver_result",
+            "receipt": {
+              "message": "reviewer-approved",
+              "operation_id": "94295431-d3c5-4c34-ac50-e2f22fdff20e",
+              "receipt_id": "8886d687-9e50-458c-aa4f-a2f4948ea4fd",
+              "status": "recorded"
+            },
+            "reused": true
+          },
+          {
+            "pid": 23113,
+            "event": "model_observed_tool",
+            "status": "success",
+            "content": "Note: a human reviewer replaced this tool call before it ran. The call recorded in your message is the one you produced, not the one that executed. This was intentional and authorized. Do not re-issue your original call. Executed instead: record_action with arguments {\"message\": \"reviewer-approved\"}.\n\nTool response:\n{\"message\": \"reviewer-approved\", \"operation_id\": \"94295431-d3c5-4c34-ac50-e2f22fdff20e\", \"receipt_id\": \"8886d687-9e50-458c-aa4f-a2f4948ea4fd\", \"status\": \"recorded\"}"
+          }
+        ],
+        "same_pending_review": true,
+        "graph_completed": true,
+        "final_tool_status": "success",
+        "final_tool_content": "Note: a human reviewer replaced this tool call before it ran. The call recorded in your message is the one you produced, not the one that executed. This was intentional and authorized. Do not re-issue your original call. Executed instead: record_action with arguments {\"message\": \"reviewer-approved\"}.\n\nTool response:\n{\"message\": \"reviewer-approved\", \"operation_id\": \"94295431-d3c5-4c34-ac50-e2f22fdff20e\", \"receipt_id\": \"8886d687-9e50-458c-aa4f-a2f4948ea4fd\", \"status\": \"recorded\"}",
+        "answer": "Note: a human reviewer replaced this tool call before it ran. The call recorded in your message is the one you produced, not the one that executed. This was intentional and authorized. Do not re-issue your original call. Executed instead: record_action with arguments {\"message\": \"reviewer-approved\"}.\n\nTool response:\n{\"message\": \"reviewer-approved\", \"operation_id\": \"94295431-d3c5-4c34-ac50-e2f22fdff20e\", \"receipt_id\": \"8886d687-9e50-458c-aa4f-a2f4948ea4fd\", \"status\": \"recorded\"}",
+        "verdicts": {
+          "contract_met": true,
+          "graph_completed": true,
+          "review_policy_handled": true,
+          "approved_task_completed": true,
+          "report_matches_observed_tool_result": true,
+          "report_accounts_for_all_effects": true,
+          "tool_body_entries": 2,
+          "committed_effects": 1,
+          "checks": {
+            "stable_approved_identity": true,
+            "review_boundary": true,
+            "fresh_processes": true,
+            "expected_exits": true,
+            "receipt_replay": true,
+            "effect_count": true,
+            "attempt_count": true,
+            "phase_counts": true
+          }
+        }
+      },
+      {
+        "case": "protected-reject",
+        "decision": "reject",
+        "protected": true,
+        "thread_id": "c8bf15f1-aa41-49b7-a44d-5a0b7ad5f666",
+        "operation_id": "6371d05b-e3b0-4574-9761-837e1753ec98",
+        "original_message": "record-once",
+        "approved_message": "record-once",
+        "phases": [
+          {
+            "phase": "initial",
+            "pid": 23116,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.4544384999971953,
+            "observation": {
+              "pid": 23116,
+              "interrupts": [
+                {
+                  "id": "65a7af328311517fdd4f5ce108ae70a2",
+                  "value": {
+                    "action_requests": [
+                      {
+                        "name": "record_action",
+                        "args": {
+                          "message": "record-once"
+                        },
+                        "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'record-once'}"
+                      }
+                    ],
+                    "review_configs": [
+                      {
+                        "action_name": "record_action",
+                        "allowed_decisions": [
+                          "approve",
+                          "edit",
+                          "reject"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "checkpoint_next": [
+                "HumanInTheLoopMiddleware.after_model"
+              ],
+              "agent_duration_s": 0.008409166999626905,
+              "final_tool_status": null,
+              "final_tool_content": null,
+              "answer": null
+            },
+            "effects": 0,
+            "tool_entries": 0,
+            "pending_review": true
+          },
+          {
+            "phase": "restore",
+            "pid": 23117,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.45630316699680407,
+            "observation": {
+              "pid": 23117,
+              "interrupts": [
+                {
+                  "id": "65a7af328311517fdd4f5ce108ae70a2",
+                  "value": {
+                    "action_requests": [
+                      {
+                        "name": "record_action",
+                        "args": {
+                          "message": "record-once"
+                        },
+                        "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'record-once'}"
+                      }
+                    ],
+                    "review_configs": [
+                      {
+                        "action_name": "record_action",
+                        "allowed_decisions": [
+                          "approve",
+                          "edit",
+                          "reject"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "checkpoint_next": [
+                "HumanInTheLoopMiddleware.after_model"
+              ],
+              "agent_duration_s": 0.0018500000005587935,
+              "final_tool_status": null,
+              "final_tool_content": null,
+              "answer": null
+            },
+            "effects": 0,
+            "tool_entries": 0,
+            "pending_review": true
+          },
+          {
+            "phase": "decision",
+            "pid": 23118,
+            "exit_code": 0,
+            "timeout": false,
+            "duration_s": 0.4547010840033181,
+            "observation": {
+              "pid": 23118,
+              "interrupts": [],
+              "checkpoint_next": [],
+              "agent_duration_s": 0.009474167003645562,
+              "final_tool_status": "error",
+              "final_tool_content": "User rejected the tool call for `record_action` with reason: Simulated reviewer rejected this action; it was not executed.",
+              "answer": "User rejected the tool call for `record_action` with reason: Simulated reviewer rejected this action; it was not executed."
+            },
+            "effects": 0,
+            "tool_entries": 0,
+            "pending_review": false
+          }
+        ],
+        "entries": [],
+        "tool_entries": [],
+        "receiver_results": [],
+        "events": [
+          {
+            "pid": 23116,
+            "event": "worker_start",
+            "phase": "initial"
+          },
+          {
+            "pid": 23117,
+            "event": "worker_start",
+            "phase": "restore"
+          },
+          {
+            "pid": 23118,
+            "event": "worker_start",
+            "phase": "decision"
+          },
+          {
+            "pid": 23118,
+            "event": "reviewer_decision",
+            "source": "simulated_reviewer",
+            "decision": {
+              "type": "reject",
+              "message": "Simulated reviewer rejected this action; it was not executed."
+            }
+          },
+          {
+            "pid": 23118,
+            "event": "model_observed_tool",
+            "status": "error",
+            "content": "User rejected the tool call for `record_action` with reason: Simulated reviewer rejected this action; it was not executed."
+          }
+        ],
+        "same_pending_review": true,
+        "graph_completed": true,
+        "final_tool_status": "error",
+        "final_tool_content": "User rejected the tool call for `record_action` with reason: Simulated reviewer rejected this action; it was not executed.",
+        "answer": "User rejected the tool call for `record_action` with reason: Simulated reviewer rejected this action; it was not executed.",
+        "verdicts": {
+          "contract_met": true,
+          "graph_completed": true,
+          "review_policy_handled": true,
+          "approved_task_completed": false,
+          "report_matches_observed_tool_result": true,
+          "report_accounts_for_all_effects": true,
+          "tool_body_entries": 0,
+          "committed_effects": 0,
+          "checks": {
+            "stable_approved_identity": true,
+            "review_boundary": true,
+            "fresh_processes": true,
+            "expected_exits": true,
+            "receipt_replay": true,
+            "effect_count": true,
+            "attempt_count": true,
+            "phase_counts": true
+          }
+        }
+      }
+    ],
+    "criteria_sha256": "2cd7c3d68afb6331d93e27312fe51fe9edfcd5354d0410949b8c68a46e9e04ff",
+    "runtime": {
+      "python": "3.14.6",
+      "packages": {
+        "deepagents": "0.7.32",
+        "langchain": "1.4.7",
+        "langchain-core": "1.7.0",
+        "langgraph": "1.2.17",
+        "langgraph-prebuilt": "1.1.0",
+        "langsmith": "0.14.12",
+        "langgraph-checkpoint": "4.3.0",
+        "langgraph-checkpoint-sqlite": "3.1.2"
+      },
+      "selected_loaded_module_sha256": {
+        "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+        "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+        "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+        "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+        "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+      },
+      "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+    },
+    "implementation_sha256": {
+      "crash_worker.py": "a8bf5adf3b0f2eba38b65452bf8d4ea93ebb6f46cf9ea2a4a7690476ef9b32e2",
+      "crash_resume.py": "2d0d488e6332a0cd28c1fa7793607ced57e5b7cae526374e0dbdc7d7213a7e5d",
+      "crash_evidence.py": "f8e5c8982a36f8ef30fc7a662859f332f7a540009efae2820fbc2c566b996f55",
+      "receiver.py": "9bedcf406e0e489f854adb02e01469635fecf247ebb95e3920a87965363d2ab2"
+    },
+    "preflight": "passed; existing editable environment, not a clean-install proof",
+    "worker_processes": 19,
+    "status": "passed",
+    "duration_s": 9.18815262499993,
+    "finished_at_utc": "2026-11-03T12:24:00.093622+00:00"
+  },
+  "deliveries": [
+    {
+      "case": "protected-approve-1",
+      "response": {
+        "model_answer": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}",
+        "reconciliation": {
+          "outcome": "completed_once",
+          "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+          "observed_effects": 1,
+          "task_completed": true,
+          "evidence_available": true,
+          "graph_finished": true,
+          "report": "The local receiver contains exactly one committed record for this approved operation."
+        },
+        "user_response": "The local receiver contains exactly one committed record for this approved operation. Recorded contents: \"record-once\".",
+        "delivery_source": "receiver_reconciliation"
+      },
+      "receiver_sha256_before": "42031d326bbad0344e3ed899b1f9620694fd5548ff2bb610c120e81153686266",
+      "receiver_sha256_after": "42031d326bbad0344e3ed899b1f9620694fd5548ff2bb610c120e81153686266"
+    },
+    {
+      "case": "protected-approve-2",
+      "response": {
+        "model_answer": "{\"message\": \"record-once\", \"operation_id\": \"05b7718a-c73b-4ca0-b288-3d5b5b9abec3\", \"receipt_id\": \"3e3ae811-0527-40a9-b980-036e9d4cf1f7\", \"status\": \"recorded\"}",
+        "reconciliation": {
+          "outcome": "completed_once",
+          "operation_id": "05b7718a-c73b-4ca0-b288-3d5b5b9abec3",
+          "observed_effects": 1,
+          "task_completed": true,
+          "evidence_available": true,
+          "graph_finished": true,
+          "report": "The local receiver contains exactly one committed record for this approved operation."
+        },
+        "user_response": "The local receiver contains exactly one committed record for this approved operation. Recorded contents: \"record-once\".",
+        "delivery_source": "receiver_reconciliation"
+      },
+      "receiver_sha256_before": "49b1d06e7bbc206c25f859952c1e2e40ce180b49735c59db6b94815c131d4b41",
+      "receiver_sha256_after": "49b1d06e7bbc206c25f859952c1e2e40ce180b49735c59db6b94815c131d4b41"
+    },
+    {
+      "case": "unprotected-approve-control",
+      "response": {
+        "model_answer": "{\"message\": \"record-once\", \"operation_id\": \"960d3021-27b3-4f9d-b134-650bf8980a82\", \"receipt_id\": \"2b47a2f3-e4b2-4744-9dfd-b9503c3fed02\", \"status\": \"recorded\"}",
+        "reconciliation": {
+          "outcome": "duplicate_detected",
+          "operation_id": "960d3021-27b3-4f9d-b134-650bf8980a82",
+          "observed_effects": 2,
+          "task_completed": false,
+          "evidence_available": true,
+          "graph_finished": true,
+          "report": "Duplicate detected: the local receiver contains 2 committed records for this operation. The record-once task was not completed correctly."
+        },
+        "user_response": "Duplicate detected: the local receiver contains 2 committed records for this operation. The record-once task was not completed correctly.",
+        "delivery_source": "receiver_reconciliation"
+      },
+      "receiver_sha256_before": "074fc9d9069b547e509e3554232ae444bc9c76fdff290c0de8f126537dd752d9",
+      "receiver_sha256_after": "074fc9d9069b547e509e3554232ae444bc9c76fdff290c0de8f126537dd752d9"
+    },
+    {
+      "case": "protected-edit",
+      "response": {
+        "model_answer": "Note: a human reviewer replaced this tool call before it ran. The call recorded in your message is the one you produced, not the one that executed. This was intentional and authorized. Do not re-issue your original call. Executed instead: record_action with arguments {\"message\": \"reviewer-approved\"}.\n\nTool response:\n{\"message\": \"reviewer-approved\", \"operation_id\": \"94295431-d3c5-4c34-ac50-e2f22fdff20e\", \"receipt_id\": \"8886d687-9e50-458c-aa4f-a2f4948ea4fd\", \"status\": \"recorded\"}",
+        "reconciliation": {
+          "outcome": "completed_once",
+          "operation_id": "94295431-d3c5-4c34-ac50-e2f22fdff20e",
+          "observed_effects": 1,
+          "task_completed": true,
+          "evidence_available": true,
+          "graph_finished": true,
+          "report": "The local receiver contains exactly one committed record for this approved operation."
+        },
+        "user_response": "The local receiver contains exactly one committed record for this approved operation. Recorded contents: \"reviewer-approved\".",
+        "delivery_source": "receiver_reconciliation"
+      },
+      "receiver_sha256_before": "d4a64608adb4200b5000e8788783342904950c2827a05d271812f97666b1cd83",
+      "receiver_sha256_after": "d4a64608adb4200b5000e8788783342904950c2827a05d271812f97666b1cd83"
+    },
+    {
+      "case": "protected-reject",
+      "response": {
+        "model_answer": "User rejected the tool call for `record_action` with reason: Simulated reviewer rejected this action; it was not executed.",
+        "reconciliation": {
+          "outcome": "rejected",
+          "operation_id": "6371d05b-e3b0-4574-9761-837e1753ec98",
+          "observed_effects": 0,
+          "task_completed": false,
+          "evidence_available": true,
+          "graph_finished": true,
+          "report": "The action was rejected. No committed record was found for this operation in the local receiver."
+        },
+        "user_response": "The action was rejected. No committed record was found for this operation in the local receiver.",
+        "delivery_source": "receiver_reconciliation"
+      },
+      "receiver_sha256_before": "1912341efb042470d48d129dc5df4c7125adb111b23573d145f5857c4d67053e",
+      "receiver_sha256_after": "1912341efb042470d48d129dc5df4c7125adb111b23573d145f5857c4d67053e"
+    },
+    {
+      "case": "receiver-unavailable-after-completion",
+      "response": {
+        "model_answer": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}",
+        "reconciliation": {
+          "outcome": "outcome_unknown",
+          "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+          "observed_effects": null,
+          "task_completed": null,
+          "evidence_available": false,
+          "graph_finished": true,
+          "report": "The outcome is unknown: receiver evidence is unavailable or execution is unfinished. I cannot verify that the action completed exactly once."
+        },
+        "user_response": "The outcome is unknown: receiver evidence is unavailable or execution is unfinished. I cannot verify that the action completed exactly once.",
+        "delivery_source": "receiver_reconciliation"
+      },
+      "fault": "missing configured receiver path; actual receiver left intact",
+      "missing_receiver_stayed_missing": true
+    }
+  ],
+  "fixture_contracts_met": true,
+  "individual_task_outcomes": [
+    true,
+    true,
+    false,
+    true,
+    false,
+    null
+  ],
+  "worker_processes": 19,
+  "live_model_calls": 0,
+  "provider_tokens": 0,
+  "duration_s": 9.189977208996424,
+  "implementation_sha256": {
+    "final_response.py": "b6747f7ca9ba5dc521f9015e5d63c361c2a25745c238100a84a020d38550a051",
+    "reported_crash.py": "aaf11aa56ff2bae1011a607345548d2b565a5e12daf91bc918ce9e6e5cc698c8",
+    "outcome_reporting.py": "65a01a185a9fbeda330f6f34d5e54947b5eeca2644c7aae5c4dce3d7cbda343c"
+  },
+  "report_path": "work/final-response/452932f9033e41f1aa2e3f2c6d97e101/report.json",
+  "limitations": [
+    "Deterministic application response, not a model honesty evaluation or SDK change",
+    "Closed local receiver scope; no concurrent writers",
+    "Embedded graph preflight wording mentions editable environment; this command does not establish installation origin"
+  ]
+}

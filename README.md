@@ -51,7 +51,7 @@ Run all development checks, including evidence tampering and command failure cas
 python3 -S -m unittest discover -s tests -v
 ```
 
-Verified on Python 3.14.6: 75 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
+Verified on Python 3.14.6: 96 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
 
 See [offline verification limits](docs/offline-verification.md) for what the checks do and do not establish.
 
@@ -90,7 +90,7 @@ python -m reliability_lab scripted-root-check
 python -m unittest discover -s runtime_checks -v
 ```
 
-See [runtime environment and reproduction limits](runtime_checks/README.md). The recorded check reused an existing editable Deep Agents environment; a clean installation has not been verified. The default offline verifier does not yet validate the new scripted result. The remaining six now have separate [fresh scripted evidence](docs/scripted-filesystem-check.md), including the distinction between raw tool output and middleware-enriched model observations.
+See [runtime environment and reproduction limits](runtime_checks/README.md). The recorded check reused an existing editable Deep Agents environment; a later clean installation reproduced the crash/resume fixture; these filesystem fixtures were not rerun there. The default offline verifier does not yet validate the new scripted result. The remaining six now have separate [fresh scripted evidence](docs/scripted-filesystem-check.md), including the distinction between raw tool output and middleware-enriched model observations.
 
 Run the remaining fixtures with `python -m reliability_lab scripted-filesystem-check`. The full opt-in suite has two test methods covering seven middleware cases plus the baseline control. The standard-library development suite remains separate. No live-model evaluation is performed by either scripted command.
 
@@ -109,14 +109,19 @@ The three [Day 1 closeout items and next experiment criteria](docs/sprint-experi
 
 ## Fresh package reproduction
 
-The [clean-install reproduction](docs/clean-install-reproduction.md) installed published packages in a new non-editable environment and repeated the five crash/resume cases once. All expected tool/effect outcomes matched, with nineteen new worker phases and zero provider calls. This verifies the setup on the same host and Python 3.14.6; it is not cross-platform reproduction or a fully locked build. `requirements-runtime.txt` now includes the checkpoint packages. The installed version inventory and separately reviewed new evidence are linked in the manifest; the default verifier still checks the earlier crash export.
+The [clean-install reproduction](docs/clean-install-reproduction.md) installed published packages in a new non-editable environment and repeated the five crash/resume cases once. All expected tool/effect outcomes matched, with nineteen new worker phases and zero provider calls. This verifies the setup on the same host and Python 3.14.6; it is not cross-platform reproduction or a fully locked build. `requirements-runtime.txt` now includes the checkpoint packages. The installed version inventory and separately reviewed new evidence are linked in the manifest; the default verifier now checks this export in `clean_install_evidence`.
 
 
 ## Evidence-aware outcome reporting
 
-[The reporting experiment](docs/outcome-reporting-evidence.md) reused five closed-run receivers and added two controlled unreadable-evidence fixtures. A new read-only application reporter disclosed the duplicate that the original final receipt omitted, and returned unknown when receiver evidence could not be read. This is separate from the original model answer and is not yet integrated into the graph. Seven fresh reporting observations used zero new graph workers or provider calls. The development suite now has 83 tests. The new export is separately reviewed and manifest-linked, not yet a default offline validation stage.
+[The reporting experiment](docs/outcome-reporting-evidence.md) reused five closed-run receivers and added two controlled unreadable-evidence fixtures. A new read-only application reporter disclosed the duplicate that the original final receipt omitted, and returned unknown when receiver evidence could not be read. This is separate from the original model answer and is not yet integrated into the graph. Seven fresh reporting observations used zero new graph workers or provider calls. That milestone had 83 development tests; the current suite has 96. The export is now checked automatically in `outcome_reporting_evidence`.
 
 
 ## Automatic checks for recent evidence
 
 `verify-offline` now validates the clean-install export in `clean_install_evidence` and the seven reporting observations in `outcome_reporting_evidence`. These stages inspect saved evidence without installing packages, starting graphs or rereading private databases. Tampering tests reject contradictory conclusions even after artifact hashes are updated. This supersedes earlier pending-validator notes. The development suite has 88 tests at this milestone.
+
+
+## Integrated final application response
+
+[The integration experiment](docs/final-response-integration.md) now routes completed crash/resume results through receiver reconciliation before selecting `user_response`, while preserving `model_answer`. One new five-case execution used nineteen workers and zero provider calls; six response observations disclosed duplicates, named approved edits, handled rejection and reported unknown on unavailable evidence. `final_response_evidence` validates the saved integration without rerunning it. Use `python -m reliability_lab reported-crash-check` only to deliberately start a new bounded attempt. Current development verification: 96 tests.

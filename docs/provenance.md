@@ -119,3 +119,8 @@ The [clean-install milestone](clean-install-reproduction.md) supersedes the earl
 ## Local outcome reporting, 2026-11-03
 
 [Seven fresh application reporting observations](outcome-reporting-evidence.md) read five completed clean-install receivers and two controlled unavailable-evidence fixtures. No graph or model execution was repeated. Original database hashes were unchanged and raw databases remain local. Published SQL observations and old answers are synthetic lab data, alongside the separate new application reports. The reporter's source hash and frozen criteria are retained. Eight deterministic development tests cover the reporting behavior; these are separate from the seven observations. Automatic offline validation of this new export and integration into the agent's final response remain pending.
+
+
+## Final response integration and automatic recent evidence checks, 2026-11-03
+
+[The integrated fixture](final-response-integration.md) executed five new scripted graph cases once, with nineteen workers and six response observations including one missing configured receiver path after a completed graph. Original model answers and raw tool results remain separate from deterministic application responses. Zero provider calls were made. The default offline command now validates the previously separate clean-install/reporting exports and this new integration evidence. This supersedes earlier pending-validation/integration notes. A reviewed completion-consistency gap in the new validator was demonstrated by a failing regression and fixed without rerunning any graph experiment. Current development suite: 96 tests. Local receiver/concurrency and model-quality limitations remain explicit.

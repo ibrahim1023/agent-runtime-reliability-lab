@@ -1,0 +1,35 @@
+{
+  "kind": "publication verification; no new graph execution",
+  "development_tests_passed": 96,
+  "python_version": "3.14.6",
+  "offline_exit_code": 0,
+  "clean_install_evidence": {
+    "status": "passed",
+    "kind": "stored clean-install evidence validation; no new installation or workers",
+    "cases_checked": 5
+  },
+  "outcome_reporting_evidence": {
+    "status": "passed",
+    "kind": "stored reporting evidence validation; no new receiver reads or graph workers",
+    "observations_checked": 7
+  },
+  "final_response_evidence": {
+    "status": "passed",
+    "kind": "stored integrated-response evidence validation; no graph workers",
+    "graph_cases_checked": 5,
+    "responses_checked": 6,
+    "task_outcomes": [
+      true,
+      true,
+      false,
+      true,
+      false,
+      null
+    ],
+    "fixture_pass_is_not_universal_task_success": true
+  },
+  "fresh_receiver_contracts": 6,
+  "review_finding_fixed": "Saved completion now bound to checkpoint_next and interrupts; failing regression observed before fix",
+  "new_graph_workers_during_publication": 0,
+  "live_model_calls": 0
+}

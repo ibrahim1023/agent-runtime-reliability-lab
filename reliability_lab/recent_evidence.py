@@ -35,6 +35,10 @@ def validate_saved_run(run: dict, plan: dict) -> None:
         require([(p['phase'], p['pid']) for p in phases] == [(e['phase'], e['pid']) for e in starts], 'Saved worker journal')
         for key, event in (('tool_entries', 'tool_enter'), ('receiver_results', 'receiver_result')):
             require(case[key] == [e for e in case['events'] if e['event'] == event], 'Saved tool journal')
+        final = phases[-1]['observation']
+        require(case['graph_completed'] == (bool(final) and final.get('checkpoint_next') == [] and not final.get('interrupts')), 'Saved checkpoint completion')
+        initial, restored = (p['observation'].get('interrupts') for p in phases[:2])
+        require(bool(initial) and initial == restored and case['same_pending_review'] is True, 'Saved pending review')
         require(all(case[key] == phases[-1]['observation'][key] for key in ('answer', 'final_tool_status', 'final_tool_content')), 'Saved final observation')
 
 
@@ -97,3 +101,43 @@ def verify_outcome_reporting(root: Path) -> dict:
         required_report = outcome_report(expected['expected_outcome'], row['operation_id'], expected['expected_effects'], True)
         require(row['application_report'] == required_report, 'Reporting conclusion contradicts frozen expectations')
     return {'status': 'passed', 'kind': 'stored reporting evidence validation; no new receiver reads or graph workers', 'observations_checked': 7}
+
+
+def verify_final_response(root: Path) -> dict:
+    """Bind final application delivery to fresh graph evidence and frozen criteria."""
+    references, data = load_section(root, 'final_response_v1')
+    plan, run = data['plan'], data['execution']
+    manifest = json.loads((root / 'results/manifest.json').read_text())
+    graph_ref = manifest['next_experiment_plan']
+    graph_plan = json.loads(checked_bytes(root, graph_ref['export'], graph_ref['sha256']))
+    require(run['criteria_sha256'] == references['plan']['sha256'] and
+            run['graph_execution']['criteria_sha256'] == graph_ref['sha256'], 'Final response criteria')
+    validate_saved_run(run['graph_execution'], graph_plan)
+    require(run['fixture_contracts_met'] is True and len(run['deliveries']) == 6 and
+            run['worker_processes'] == 19 and run['live_model_calls'] == run['provider_tokens'] == 0 and
+            run['duration_s'] <= 600, 'Final response experiment bounds')
+    for name, fingerprint in run['implementation_sha256'].items():
+        require(name in ('final_response.py', 'reported_crash.py', 'outcome_reporting.py'), 'Unexpected response implementation')
+        checked_bytes(root, 'reliability_lab/' + name, fingerprint)
+    outcomes = []
+    for index, (row, expected) in enumerate(zip(run['deliveries'], plan['responses'], strict=True)):
+        case = run['graph_execution']['cases'][index if index < 5 else 0]
+        response = row['response']
+        require(row['case'] == expected['case'] and response['model_answer'] == case['answer'] and
+                response['delivery_source'] == 'receiver_reconciliation', 'Final delivery source')
+        count = len(case['entries']) if index < 5 else None
+        required = outcome_report(expected['expected_outcome'], case['operation_id'], count, case['graph_completed'])
+        require(response['reconciliation'] == required and required['task_completed'] is expected['task_completed'], 'Final reconciliation')
+        text = required['report']
+        if required['outcome'] == 'completed_once':
+            text += f" Recorded contents: {json.dumps(case['approved_message'])}."
+        require(response['user_response'] == text, 'Final application response contradicts reconciliation')
+        if index < 5:
+            require(row['receiver_sha256_before'] == row['receiver_sha256_after'], 'Final receiver changed')
+        else:
+            require(row['missing_receiver_stayed_missing'] is True and case['graph_completed'] is True, 'Final unavailable-receiver fixture')
+        outcomes.append(required['task_completed'])
+    require(run['individual_task_outcomes'] == outcomes, 'Final task summary')
+    return {'status': 'passed', 'kind': 'stored integrated-response evidence validation; no graph workers',
+            'graph_cases_checked': 5, 'responses_checked': 6,
+            'task_outcomes': outcomes, 'fixture_pass_is_not_universal_task_success': True}

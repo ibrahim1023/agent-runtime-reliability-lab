@@ -1010,5 +1010,21 @@
       "sha256": "65a01a185a9fbeda330f6f34d5e54947b5eeca2644c7aae5c4dce3d7cbda343c"
     },
     "default_offline_validation": "outcome_reporting_evidence stage"
+  },
+  "final_response_v1": {
+    "plan": {
+      "export": "results/final-response-plan-v1.json",
+      "sha256": "fe2b898feaf4ca470c09c99dff980cbb59d1f58ce4a0896dd3c858f45dd78372"
+    },
+    "status": "executed once; six response contracts met; individual outcomes separate",
+    "execution": {
+      "export": "results/fresh/final-response-v1/execution.json",
+      "sha256": "53eca18c0d8c170a1da67d84d19aad5fbdf6003e61c7d5a779ed188816c38240"
+    },
+    "default_offline_validation": "final_response_evidence stage",
+    "publication_check": {
+      "export": "results/final-response-check-20261103.json",
+      "sha256": "0f63a1e5660d4fb4b461d6920381d48b7b8c12da3076958ab7c6daa8baa0bf9c"
+    }
   }
 }

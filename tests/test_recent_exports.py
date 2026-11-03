@@ -48,3 +48,8 @@ class RecentEvidenceContracts(unittest.TestCase):
         self.alter('outcome_reporting_v1', 'execution', lambda d: d['observations'][2]['receiver_rows'].pop())
         with self.assertRaisesRegex(ValueError, 'Receiver observations'):
             verify_outcome_reporting(self.root)
+
+    def test_clean_completion_must_match_final_checkpoint(self) -> None:
+        self.alter('clean_install_v1', 'execution', lambda d: d['cases'][0]['phases'][-1]['observation'].update(checkpoint_next=['tools']))
+        with self.assertRaisesRegex(ValueError, 'Saved checkpoint completion'):
+            verify_clean_install(self.root)
