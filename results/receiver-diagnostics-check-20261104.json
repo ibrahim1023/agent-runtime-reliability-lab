@@ -1,0 +1,21 @@
+{
+  "kind": "publication verification, not a new graph experiment",
+  "development_tests_passed": 102,
+  "python_version": "3.14.6",
+  "offline_exit_code": 0,
+  "receiver_diagnostics_evidence": {
+    "status": "passed",
+    "kind": "stored application-replay evidence validation; no graph or replay executed",
+    "saved_replay_conditions_checked": 6,
+    "new_graph_workers": 0,
+    "faulted_fixture_contracts_remain_unmet": true
+  },
+  "new_graph_workers": 0,
+  "live_model_calls": 0,
+  "review": "No important correctness findings; earlier source snapshots and new before/after source fingerprints match",
+  "baseline_failures_preserved": [
+    "FileNotFoundError before report",
+    "PermissionError before report"
+  ],
+  "corrected_faulted_fixture_contracts": "both remain false; reports now saved"
+}

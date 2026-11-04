@@ -118,7 +118,9 @@ def verify_final_response(root: Path) -> dict:
             run['duration_s'] <= 600, 'Final response experiment bounds')
     for name, fingerprint in run['implementation_sha256'].items():
         require(name in ('final_response.py', 'reported_crash.py', 'outcome_reporting.py'), 'Unexpected response implementation')
-        checked_bytes(root, 'reliability_lab/' + name, fingerprint)
+        source = references.get('source_' + name.removesuffix('.py'), {'export': 'reliability_lab/' + name, 'sha256': fingerprint})
+        require(source['sha256'] == fingerprint, 'Historical response source identity')
+        checked_bytes(root, source['export'], fingerprint)
     outcomes = []
     for index, (row, expected) in enumerate(zip(run['deliveries'], plan['responses'], strict=True)):
         case = run['graph_execution']['cases'][index if index < 5 else 0]

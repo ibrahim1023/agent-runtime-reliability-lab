@@ -1,0 +1,34 @@
+{
+  "experiment_id": "receiver-diagnostics-v1",
+  "frozen_on": "2026-11-04",
+  "base_commit": "835484165b022c8f79058e076cb26eff412b0291",
+  "learner_prediction": "Return outcome unknown and preserve the graph answer",
+  "kind": "deterministic replay of application delivery over published graph output and reconstructed synthetic receivers; not fresh graph execution",
+  "conditions": [
+    "available",
+    "ordinary_receiver_missing",
+    "diagnostic_hash_unreadable_sql_readable"
+  ],
+  "budget": {
+    "baseline_conditions": 3,
+    "corrected_conditions": 3,
+    "new_graph_workers": 0,
+    "provider_calls": 0,
+    "provider_tokens": 0,
+    "automatic_retries": 0
+  },
+  "expected_baseline_hypothesis": "The ordinary path may throw during its preliminary diagnostic file read before reconciliation",
+  "corrected_criteria": [
+    "Available receiver keeps existing fixture contract and completed_once response",
+    "Missing ordinary receiver delivers outcome_unknown, preserves model answer and saves report; original fixture contract remains unmet",
+    "Diagnostic hash failure with readable SQL delivers completed_once and saves report; byte-invariance proof remains unknown and fixture contract remains unmet",
+    "Missing hashes are null; two missing hashes must never be presented as proof bytes were unchanged",
+    "No fallback to model success on SQL evidence failure",
+    "Original frozen runtime experiment and evidence remain untouched"
+  ],
+  "provenance": [
+    "Graph generation is replaced at its boundary by saved output; no claims of fresh recovery execution",
+    "Synthetic SQLite receivers reconstructed from published receipts, not original private databases",
+    "Original executed integration source snapshots preserve byte identity while current fixture is fixed"
+  ]
+}

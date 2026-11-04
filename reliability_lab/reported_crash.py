@@ -13,6 +13,14 @@ from reliability_lab.final_response import final_response
 from reliability_lab.offline import install_offline_guard
 
 
+def receiver_fingerprint(receiver: Path) -> dict[str, str | None]:
+    """Collect optional byte-identity evidence without blocking outcome reporting."""
+    try:
+        return {'sha256': hashlib.sha256(receiver.read_bytes()).hexdigest(), 'error_type': None}
+    except OSError as error:
+        return {'sha256': None, 'error_type': type(error).__name__}
+
+
 def deliver_case(receiver: Path, case: dict) -> dict:
     """Route one completed graph record through the application delivery boundary."""
     return final_response(receiver, operation_id=case['operation_id'], approved_message=case['approved_message'],
@@ -33,11 +41,14 @@ def run_reported_crash(root: Path, *, learner_prediction: str = 'not supplied') 
     deliveries = []
     for case in graph['cases']:
         receiver = graph_directory / case['case'] / 'receiver.sqlite'
-        before = hashlib.sha256(receiver.read_bytes()).hexdigest()
+        before = receiver_fingerprint(receiver)
         delivered = deliver_case(receiver, case)
-        after = hashlib.sha256(receiver.read_bytes()).hexdigest()
+        after = receiver_fingerprint(receiver)
+        unchanged = before['sha256'] == after['sha256'] if before['sha256'] is not None and after['sha256'] is not None else None
         deliveries.append({'case': case['case'], 'response': delivered,
-                           'receiver_sha256_before': before, 'receiver_sha256_after': after})
+                           'receiver_sha256_before': before['sha256'], 'receiver_sha256_after': after['sha256'],
+                           'receiver_bytes_unchanged': unchanged,
+                           'receiver_diagnostics': {'before': before, 'after': after}})
     if graph['cases']:
         unavailable = root / directory / 'unavailable-receiver.sqlite'
         delivered = deliver_case(unavailable, graph['cases'][0])
@@ -52,7 +63,7 @@ def run_reported_crash(root: Path, *, learner_prediction: str = 'not supplied') 
         matches = matches and result['reconciliation']['task_completed'] is expected['task_completed']
         matches = matches and expected.get('response_must_name', '') in result['user_response']
         if 'receiver_sha256_before' in row:
-            matches = matches and row['receiver_sha256_before'] == row['receiver_sha256_after']
+            matches = matches and row['receiver_bytes_unchanged'] is True
         else:
             matches = matches and row['missing_receiver_stayed_missing']
     elapsed = time.perf_counter() - started

@@ -1,0 +1,136 @@
+{
+  "experiment_id": "receiver-diagnostics-v1",
+  "phase": "corrected",
+  "executed_at_utc": "2026-11-04T07:27:58.083977+00:00",
+  "kind": "deterministic application orchestration replay; graph driver replaced by saved output",
+  "criteria_sha256": "deadab7c41726b755de3a30183739c9cae2d9c1bfd1bfb65aca615bde8a6bf6a",
+  "implementation_sha256": "375f0a483371661a767d15835c6b8f3b0911f3ec9244a964dbf075932dd4268d",
+  "conditions": [
+    {
+      "condition": "available",
+      "new_graph_workers": 0,
+      "reused_source_worker_count": 19,
+      "original_model_answer": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}",
+      "returned_report": true,
+      "exit_code": 0,
+      "first_delivery": {
+        "case": "protected-approve-1",
+        "response": {
+          "model_answer": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}",
+          "reconciliation": {
+            "outcome": "completed_once",
+            "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+            "observed_effects": 1,
+            "task_completed": true,
+            "evidence_available": true,
+            "graph_finished": true,
+            "report": "The local receiver contains exactly one committed record for this approved operation."
+          },
+          "user_response": "The local receiver contains exactly one committed record for this approved operation. Recorded contents: \"record-once\".",
+          "delivery_source": "receiver_reconciliation"
+        },
+        "receiver_sha256_before": "42031d326bbad0344e3ed899b1f9620694fd5548ff2bb610c120e81153686266",
+        "receiver_sha256_after": "42031d326bbad0344e3ed899b1f9620694fd5548ff2bb610c120e81153686266",
+        "receiver_bytes_unchanged": true,
+        "receiver_diagnostics": {
+          "before": {
+            "sha256": "42031d326bbad0344e3ed899b1f9620694fd5548ff2bb610c120e81153686266",
+            "error_type": null
+          },
+          "after": {
+            "sha256": "42031d326bbad0344e3ed899b1f9620694fd5548ff2bb610c120e81153686266",
+            "error_type": null
+          }
+        }
+      },
+      "fixture_contracts_met": true,
+      "report_saved": true,
+      "receiver_exists_after": true
+    },
+    {
+      "condition": "ordinary_receiver_missing",
+      "new_graph_workers": 0,
+      "reused_source_worker_count": 19,
+      "original_model_answer": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}",
+      "returned_report": true,
+      "exit_code": 1,
+      "first_delivery": {
+        "case": "protected-approve-1",
+        "response": {
+          "model_answer": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}",
+          "reconciliation": {
+            "outcome": "outcome_unknown",
+            "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+            "observed_effects": null,
+            "task_completed": null,
+            "evidence_available": false,
+            "graph_finished": true,
+            "report": "The outcome is unknown: receiver evidence is unavailable or execution is unfinished. I cannot verify that the action completed exactly once."
+          },
+          "user_response": "The outcome is unknown: receiver evidence is unavailable or execution is unfinished. I cannot verify that the action completed exactly once.",
+          "delivery_source": "receiver_reconciliation"
+        },
+        "receiver_sha256_before": null,
+        "receiver_sha256_after": null,
+        "receiver_bytes_unchanged": null,
+        "receiver_diagnostics": {
+          "before": {
+            "sha256": null,
+            "error_type": "FileNotFoundError"
+          },
+          "after": {
+            "sha256": null,
+            "error_type": "FileNotFoundError"
+          }
+        }
+      },
+      "fixture_contracts_met": false,
+      "report_saved": true,
+      "receiver_exists_after": false
+    },
+    {
+      "condition": "diagnostic_hash_unreadable_sql_readable",
+      "new_graph_workers": 0,
+      "reused_source_worker_count": 19,
+      "original_model_answer": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}",
+      "returned_report": true,
+      "exit_code": 1,
+      "first_delivery": {
+        "case": "protected-approve-1",
+        "response": {
+          "model_answer": "{\"message\": \"record-once\", \"operation_id\": \"3ccab8af-cf8c-443f-a4d5-a3422f584e4e\", \"receipt_id\": \"5841d034-1e6f-4faa-8a36-a32fb9613a63\", \"status\": \"recorded\"}",
+          "reconciliation": {
+            "outcome": "completed_once",
+            "operation_id": "3ccab8af-cf8c-443f-a4d5-a3422f584e4e",
+            "observed_effects": 1,
+            "task_completed": true,
+            "evidence_available": true,
+            "graph_finished": true,
+            "report": "The local receiver contains exactly one committed record for this approved operation."
+          },
+          "user_response": "The local receiver contains exactly one committed record for this approved operation. Recorded contents: \"record-once\".",
+          "delivery_source": "receiver_reconciliation"
+        },
+        "receiver_sha256_before": null,
+        "receiver_sha256_after": null,
+        "receiver_bytes_unchanged": null,
+        "receiver_diagnostics": {
+          "before": {
+            "sha256": null,
+            "error_type": "PermissionError"
+          },
+          "after": {
+            "sha256": null,
+            "error_type": "PermissionError"
+          }
+        }
+      },
+      "fixture_contracts_met": false,
+      "report_saved": true,
+      "receiver_exists_after": true
+    }
+  ],
+  "new_graph_workers": 0,
+  "live_model_calls": 0,
+  "provider_tokens": 0
+}

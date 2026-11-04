@@ -51,7 +51,7 @@ Run all development checks, including evidence tampering and command failure cas
 python3 -S -m unittest discover -s tests -v
 ```
 
-Verified on Python 3.14.6: 96 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
+Verified on Python 3.14.6: 102 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
 
 See [offline verification limits](docs/offline-verification.md) for what the checks do and do not establish.
 
@@ -125,3 +125,8 @@ The [clean-install reproduction](docs/clean-install-reproduction.md) installed p
 ## Integrated final application response
 
 [The integration experiment](docs/final-response-integration.md) now routes completed crash/resume results through receiver reconciliation before selecting `user_response`, while preserving `model_answer`. One new five-case execution used nineteen workers and zero provider calls; six response observations disclosed duplicates, named approved edits, handled rejection and reported unknown on unavailable evidence. `final_response_evidence` validates the saved integration without rerunning it. Use `python -m reliability_lab reported-crash-check` only to deliberately start a new bounded attempt. Current development verification: 96 tests.
+
+
+## Receiver diagnostics failure handling
+
+[The November 4 experiment](docs/receiver-diagnostics-evidence.md) found that preliminary receiver hashing could throw before the ordinary final-response path reached reconciliation. The application now records unavailable diagnostics and continues reporting: missing SQL evidence yields unknown, while readable SQL remains usable despite a failed hash read. Missing hashes never prove unchanged bytes, and unmet experiment criteria remain failed. Three baseline and three corrected application replays reused saved graph output; no new graph or provider call ran. Original integration source bytes are preserved separately. The offline verifier validates the saved replay in `receiver_diagnostics_evidence`; current development verification has 102 tests.

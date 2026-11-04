@@ -28,3 +28,6 @@ The standard-library path executes SQLite receiver contracts and checks historic
 ## Application outcome reporting
 
 The [read-only outcome reporter](outcome-reporting-evidence.md) runs outside the agent graph. With isolated workers stopped, it checks committed receiver rows for the stable operation ID and approved payload. It distinguishes one effect, duplicates, rejection, missing effects, conflicting evidence and unknown evidence. It does not infer a total effect count from a single receipt or replace the original model answer. The `reported-crash-check` application command now connects this step to its final `user_response`, preserving the raw `model_answer` separately. The graph/model implementation remains unchanged.
+
+
+Receiver byte fingerprints are optional diagnostics in the delivery path. A diagnostic read error is recorded before reconciliation proceeds; it cannot replace the SQL outcome or prevent an unknown response. Byte invariance remains null when either measurement is unavailable. [The diagnostic-failure replay](receiver-diagnostics-evidence.md) demonstrates the distinction using saved graph output, not a new graph execution.

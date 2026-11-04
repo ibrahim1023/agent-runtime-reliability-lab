@@ -38,3 +38,12 @@ class IntegratedEvidenceContracts(unittest.TestCase):
         self.alter(lambda d: d['deliveries'][3]['response'].update(user_response='Recorded original-proposal'))
         with self.assertRaisesRegex(ValueError, 'Final application response'):
             verify_final_response(self.root)
+
+    def test_historical_source_cannot_be_replaced_even_after_rehash(self) -> None:
+        path = self.root / 'results/manifest.json'; manifest = json.loads(path.read_text())
+        reference = manifest['final_response_v1']['source_reported_crash']
+        source = self.root / reference['export']; source.write_text(source.read_text() + '\n# changed\n')
+        reference['sha256'] = hashlib.sha256(source.read_bytes()).hexdigest()
+        path.write_text(json.dumps(manifest))
+        with self.assertRaisesRegex(ValueError, 'Historical response source identity'):
+            verify_final_response(self.root)

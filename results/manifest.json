@@ -1025,6 +1025,49 @@
     "publication_check": {
       "export": "results/final-response-check-20261103.json",
       "sha256": "0f63a1e5660d4fb4b461d6920381d48b7b8c12da3076958ab7c6daa8baa0bf9c"
+    },
+    "source_final_response": {
+      "export": "results/fresh/final-response-v1/implementation/final_response.py",
+      "sha256": "b6747f7ca9ba5dc521f9015e5d63c361c2a25745c238100a84a020d38550a051"
+    },
+    "source_reported_crash": {
+      "export": "results/fresh/final-response-v1/implementation/reported_crash.py",
+      "sha256": "aaf11aa56ff2bae1011a607345548d2b565a5e12daf91bc918ce9e6e5cc698c8"
+    },
+    "source_outcome_reporting": {
+      "export": "results/fresh/final-response-v1/implementation/outcome_reporting.py",
+      "sha256": "65a01a185a9fbeda330f6f34d5e54947b5eeca2644c7aae5c4dce3d7cbda343c"
+    }
+  },
+  "receiver_diagnostics_v1": {
+    "plan": {
+      "export": "results/receiver-diagnostics-plan-v1.json",
+      "sha256": "deadab7c41726b755de3a30183739c9cae2d9c1bfd1bfb65aca615bde8a6bf6a"
+    },
+    "baseline": {
+      "export": "results/fresh/receiver-diagnostics-v1/baseline.json",
+      "sha256": "bc2d82a579ad865864befbe16d91c186e7ce46051b9bb12b2835a6dcf00354c5"
+    },
+    "corrected": {
+      "export": "results/fresh/receiver-diagnostics-v1/corrected.json",
+      "sha256": "df6d40b58c211e6510923e32c75982e7d0a71c253fc922ff3e1e942cd31e628c"
+    },
+    "baseline_implementation": {
+      "export": "results/fresh/final-response-v1/implementation/reported_crash.py",
+      "sha256": "aaf11aa56ff2bae1011a607345548d2b565a5e12daf91bc918ce9e6e5cc698c8"
+    },
+    "corrected_implementation": {
+      "export": "results/fresh/receiver-diagnostics-v1/implementation/reported_crash.py",
+      "sha256": "375f0a483371661a767d15835c6b8f3b0911f3ec9244a964dbf075932dd4268d"
+    },
+    "source_execution": {
+      "export": "results/fresh/final-response-v1/execution.json",
+      "sha256": "53eca18c0d8c170a1da67d84d19aad5fbdf6003e61c7d5a779ed188816c38240"
+    },
+    "default_offline_validation": "receiver_diagnostics_evidence stage",
+    "publication_check": {
+      "export": "results/receiver-diagnostics-check-20261104.json",
+      "sha256": "72b74366c8b6926eca11263d53a64241cb3b010dbfbef5cea5234be610f1e518"
     }
   }
 }
