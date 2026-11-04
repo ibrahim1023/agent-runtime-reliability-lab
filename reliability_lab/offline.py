@@ -17,6 +17,7 @@ from reliability_lab.search_evidence import verify_search_evidence
 from reliability_lab.optional_inventory import verify_optional_inventory
 from reliability_lab.crash_evidence import verify_crash_export
 from reliability_lab.retry_evidence import verify_native_retry
+from reliability_lab.run_budget_evidence import verify_run_budget
 from reliability_lab.diagnostic_evidence import verify_diagnostics
 from reliability_lab.recent_evidence import verify_clean_install, verify_outcome_reporting, verify_final_response
 
@@ -72,6 +73,7 @@ def verify_offline(root: Path) -> tuple[dict, int]:
         "final_response_evidence": {"status": "not_run"},
         "receiver_diagnostics_evidence": {"status": "not_run"},
         "native_retry_evidence": {"status": "not_run"},
+        "run_budget_evidence": {"status": "not_run"},
         "receiver_contracts": {"status": "not_run"},
         "report_path": str(attempt / "report.json"),
     }
@@ -97,11 +99,13 @@ def verify_offline(root: Path) -> tuple[dict, int]:
         report[stage] = verify_diagnostics(root)
         stage = "native_retry_evidence"
         report[stage] = verify_native_retry(root)
+        stage = "run_budget_evidence"
+        report[stage] = verify_run_budget(root)
         stage = "receiver_contracts"
         report[stage] = receiver_contracts(root)
     except (OSError, ValueError, KeyError, TypeError, StopIteration, ImportError) as exc:
         report[stage] = {"status": "failed", "error": str(exc)}
-    passed = all(report[s]["status"] == "passed" for s in ("historical_evidence", "search_recovery_review", "historical_search_evidence", "optional_cohort_inventory", "crash_resume_evidence", "clean_install_evidence", "outcome_reporting_evidence", "final_response_evidence", "receiver_diagnostics_evidence", "native_retry_evidence", "receiver_contracts"))
+    passed = all(report[s]["status"] == "passed" for s in ("historical_evidence", "search_recovery_review", "historical_search_evidence", "optional_cohort_inventory", "crash_resume_evidence", "clean_install_evidence", "outcome_reporting_evidence", "final_response_evidence", "receiver_diagnostics_evidence", "native_retry_evidence", "run_budget_evidence", "receiver_contracts"))
     report["exit_code"] = 0 if passed else 1
     report["finished_at_utc"] = datetime.now(timezone.utc).isoformat()
     (directory / "report.json").write_text(json.dumps(report, indent=2) + "\n")

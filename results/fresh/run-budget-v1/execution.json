@@ -1,0 +1,690 @@
+{
+  "experiment_id": "native-run-budget-v1",
+  "kind": "fresh scripted Deep Agents graph execution with native retry/tool/model call limits",
+  "learner_prediction": "Up to three times",
+  "started_at_utc": "2026-11-04T12:13:20.188422+00:00",
+  "criteria_sha256": "efcb6f0e11a582bc5e9aeabfa9bad00537c638c64128bab1f15cadc327f48bc8",
+  "cases": [
+    {
+      "case": "retries-only",
+      "model_calls": 5,
+      "proposals": [
+        "budget-call-1",
+        "budget-call-2",
+        "budget-call-3",
+        "budget-call-4"
+      ],
+      "entries": [
+        "budget-call-1",
+        "budget-call-1",
+        "budget-call-1",
+        "budget-call-2",
+        "budget-call-2",
+        "budget-call-2",
+        "budget-call-3",
+        "budget-call-3",
+        "budget-call-3",
+        "budget-call-4",
+        "budget-call-4",
+        "budget-call-4"
+      ],
+      "body_errors": 12,
+      "graph_completed": true,
+      "graph_error": null,
+      "tool_messages": [
+        {
+          "tool_call_id": "budget-call-1",
+          "status": "error",
+          "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+        },
+        {
+          "tool_call_id": "budget-call-2",
+          "status": "error",
+          "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+        },
+        {
+          "tool_call_id": "budget-call-3",
+          "status": "error",
+          "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+        },
+        {
+          "tool_call_id": "budget-call-4",
+          "status": "error",
+          "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+        }
+      ],
+      "answer": "The read failed in all requested attempts.",
+      "final_answer_source": "scripted_model",
+      "duration_s": 0.0489581250003539,
+      "events": [
+        {
+          "event": "model_generation",
+          "at_s": 0.03842175000045245,
+          "model_call": 1,
+          "observed_tool_messages": [],
+          "generated_id": "scripted-1",
+          "tool_calls": [
+            {
+              "name": "read_probe",
+              "args": {},
+              "id": "budget-call-1",
+              "type": "tool_call"
+            }
+          ],
+          "content": ""
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.039526000000478234,
+          "tool_call_id": "budget-call-1",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.04109345899996697,
+          "tool_call_id": "budget-call-1",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.041344084000229486,
+          "tool_call_id": "budget-call-1",
+          "error_type": "OSError"
+        },
+        {
+          "event": "model_generation",
+          "at_s": 0.04247429200040642,
+          "model_call": 2,
+          "observed_tool_messages": [
+            {
+              "tool_call_id": "budget-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            }
+          ],
+          "generated_id": "scripted-2",
+          "tool_calls": [
+            {
+              "name": "read_probe",
+              "args": {},
+              "id": "budget-call-2",
+              "type": "tool_call"
+            }
+          ],
+          "content": ""
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.043040250000558444,
+          "tool_call_id": "budget-call-2",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.04330191700046271,
+          "tool_call_id": "budget-call-2",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.043518375000530796,
+          "tool_call_id": "budget-call-2",
+          "error_type": "OSError"
+        },
+        {
+          "event": "model_generation",
+          "at_s": 0.04448400000001129,
+          "model_call": 3,
+          "observed_tool_messages": [
+            {
+              "tool_call_id": "budget-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "budget-call-2",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            }
+          ],
+          "generated_id": "scripted-3",
+          "tool_calls": [
+            {
+              "name": "read_probe",
+              "args": {},
+              "id": "budget-call-3",
+              "type": "tool_call"
+            }
+          ],
+          "content": ""
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.04500854200068716,
+          "tool_call_id": "budget-call-3",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.045231084000079136,
+          "tool_call_id": "budget-call-3",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.04543125000054715,
+          "tool_call_id": "budget-call-3",
+          "error_type": "OSError"
+        },
+        {
+          "event": "model_generation",
+          "at_s": 0.04643679200034967,
+          "model_call": 4,
+          "observed_tool_messages": [
+            {
+              "tool_call_id": "budget-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "budget-call-2",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "budget-call-3",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            }
+          ],
+          "generated_id": "scripted-4",
+          "tool_calls": [
+            {
+              "name": "read_probe",
+              "args": {},
+              "id": "budget-call-4",
+              "type": "tool_call"
+            }
+          ],
+          "content": ""
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.04697187500005384,
+          "tool_call_id": "budget-call-4",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.04720341700067365,
+          "tool_call_id": "budget-call-4",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.04741916700004367,
+          "tool_call_id": "budget-call-4",
+          "error_type": "OSError"
+        },
+        {
+          "event": "model_generation",
+          "at_s": 0.048644209000485716,
+          "model_call": 5,
+          "observed_tool_messages": [
+            {
+              "tool_call_id": "budget-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "budget-call-2",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "budget-call-3",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "budget-call-4",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            }
+          ],
+          "generated_id": "scripted-5",
+          "tool_calls": [],
+          "content": "The read failed in all requested attempts."
+        }
+      ],
+      "verdicts": {
+        "contract_met": true,
+        "model_calls": 5,
+        "proposed_tool_requests": 4,
+        "executed_tool_requests": 4,
+        "tool_body_entries": 12,
+        "attempts_by_request": {
+          "budget-call-1": 3,
+          "budget-call-2": 3,
+          "budget-call-3": 3,
+          "budget-call-4": 3
+        },
+        "task_completed": false,
+        "scope": "All tool entries deliberately fail; graph completion is not read success"
+      }
+    },
+    {
+      "case": "tool-limit-one",
+      "model_calls": 2,
+      "proposals": [
+        "budget-call-1",
+        "budget-call-2"
+      ],
+      "entries": [
+        "budget-call-1",
+        "budget-call-1",
+        "budget-call-1"
+      ],
+      "body_errors": 3,
+      "graph_completed": true,
+      "graph_error": null,
+      "tool_messages": [
+        {
+          "tool_call_id": "budget-call-1",
+          "status": "error",
+          "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+        },
+        {
+          "tool_call_id": "budget-call-2",
+          "status": "error",
+          "content": "Tool call limit exceeded. Do not make additional tool calls."
+        }
+      ],
+      "answer": "Tool call limit reached: run limit exceeded (2/1 calls).",
+      "final_answer_source": "native_middleware",
+      "duration_s": 0.01669549999951414,
+      "events": [
+        {
+          "event": "model_generation",
+          "at_s": 0.013888040999518125,
+          "model_call": 1,
+          "observed_tool_messages": [],
+          "generated_id": "scripted-1",
+          "tool_calls": [
+            {
+              "name": "read_probe",
+              "args": {},
+              "id": "budget-call-1",
+              "type": "tool_call"
+            }
+          ],
+          "content": ""
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.014591457999813429,
+          "tool_call_id": "budget-call-1",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.014814624999416992,
+          "tool_call_id": "budget-call-1",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.015015500000117754,
+          "tool_call_id": "budget-call-1",
+          "error_type": "OSError"
+        },
+        {
+          "event": "model_generation",
+          "at_s": 0.01624945799994748,
+          "model_call": 2,
+          "observed_tool_messages": [
+            {
+              "tool_call_id": "budget-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            }
+          ],
+          "generated_id": "scripted-2",
+          "tool_calls": [
+            {
+              "name": "read_probe",
+              "args": {},
+              "id": "budget-call-2",
+              "type": "tool_call"
+            }
+          ],
+          "content": ""
+        }
+      ],
+      "verdicts": {
+        "contract_met": true,
+        "model_calls": 2,
+        "proposed_tool_requests": 2,
+        "executed_tool_requests": 1,
+        "tool_body_entries": 3,
+        "attempts_by_request": {
+          "budget-call-1": 3
+        },
+        "task_completed": false,
+        "scope": "All tool entries deliberately fail; graph completion is not read success"
+      }
+    },
+    {
+      "case": "model-limit-two",
+      "model_calls": 2,
+      "proposals": [
+        "budget-call-1",
+        "budget-call-2"
+      ],
+      "entries": [
+        "budget-call-1",
+        "budget-call-1",
+        "budget-call-1",
+        "budget-call-2",
+        "budget-call-2",
+        "budget-call-2"
+      ],
+      "body_errors": 6,
+      "graph_completed": true,
+      "graph_error": null,
+      "tool_messages": [
+        {
+          "tool_call_id": "budget-call-1",
+          "status": "error",
+          "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+        },
+        {
+          "tool_call_id": "budget-call-2",
+          "status": "error",
+          "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+        }
+      ],
+      "answer": "Model call limits exceeded: run limit (2/2)",
+      "final_answer_source": "native_middleware",
+      "duration_s": 0.017218541999682202,
+      "events": [
+        {
+          "event": "model_generation",
+          "at_s": 0.013336125000023458,
+          "model_call": 1,
+          "observed_tool_messages": [],
+          "generated_id": "scripted-1",
+          "tool_calls": [
+            {
+              "name": "read_probe",
+              "args": {},
+              "id": "budget-call-1",
+              "type": "tool_call"
+            }
+          ],
+          "content": ""
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.01406216699979268,
+          "tool_call_id": "budget-call-1",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.014317374999336607,
+          "tool_call_id": "budget-call-1",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.014527792000080808,
+          "tool_call_id": "budget-call-1",
+          "error_type": "OSError"
+        },
+        {
+          "event": "model_generation",
+          "at_s": 0.015768499999467167,
+          "model_call": 2,
+          "observed_tool_messages": [
+            {
+              "tool_call_id": "budget-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            }
+          ],
+          "generated_id": "scripted-2",
+          "tool_calls": [
+            {
+              "name": "read_probe",
+              "args": {},
+              "id": "budget-call-2",
+              "type": "tool_call"
+            }
+          ],
+          "content": ""
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.01632824999978766,
+          "tool_call_id": "budget-call-2",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.016535916999600886,
+          "tool_call_id": "budget-call-2",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.01673487500011106,
+          "tool_call_id": "budget-call-2",
+          "error_type": "OSError"
+        }
+      ],
+      "verdicts": {
+        "contract_met": true,
+        "model_calls": 2,
+        "proposed_tool_requests": 2,
+        "executed_tool_requests": 2,
+        "tool_body_entries": 6,
+        "attempts_by_request": {
+          "budget-call-1": 3,
+          "budget-call-2": 3
+        },
+        "task_completed": false,
+        "scope": "All tool entries deliberately fail; graph completion is not read success"
+      }
+    },
+    {
+      "case": "combined-tool-two-model-three",
+      "model_calls": 3,
+      "proposals": [
+        "budget-call-1",
+        "budget-call-2",
+        "budget-call-3"
+      ],
+      "entries": [
+        "budget-call-1",
+        "budget-call-1",
+        "budget-call-1",
+        "budget-call-2",
+        "budget-call-2",
+        "budget-call-2"
+      ],
+      "body_errors": 6,
+      "graph_completed": true,
+      "graph_error": null,
+      "tool_messages": [
+        {
+          "tool_call_id": "budget-call-1",
+          "status": "error",
+          "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+        },
+        {
+          "tool_call_id": "budget-call-2",
+          "status": "error",
+          "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+        },
+        {
+          "tool_call_id": "budget-call-3",
+          "status": "error",
+          "content": "Tool call limit exceeded. Do not make additional tool calls."
+        }
+      ],
+      "answer": "Tool call limit reached: run limit exceeded (3/2 calls).",
+      "final_answer_source": "native_middleware",
+      "duration_s": 0.019102458999441296,
+      "events": [
+        {
+          "event": "model_generation",
+          "at_s": 0.014291374999629625,
+          "model_call": 1,
+          "observed_tool_messages": [],
+          "generated_id": "scripted-1",
+          "tool_calls": [
+            {
+              "name": "read_probe",
+              "args": {},
+              "id": "budget-call-1",
+              "type": "tool_call"
+            }
+          ],
+          "content": ""
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.015081167000062123,
+          "tool_call_id": "budget-call-1",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.015310666999539535,
+          "tool_call_id": "budget-call-1",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.01551062499947875,
+          "tool_call_id": "budget-call-1",
+          "error_type": "OSError"
+        },
+        {
+          "event": "model_generation",
+          "at_s": 0.016555749999497493,
+          "model_call": 2,
+          "observed_tool_messages": [
+            {
+              "tool_call_id": "budget-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            }
+          ],
+          "generated_id": "scripted-2",
+          "tool_calls": [
+            {
+              "name": "read_probe",
+              "args": {},
+              "id": "budget-call-2",
+              "type": "tool_call"
+            }
+          ],
+          "content": ""
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.017195792000165966,
+          "tool_call_id": "budget-call-2",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.01740733399947203,
+          "tool_call_id": "budget-call-2",
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_body_error",
+          "at_s": 0.01761004200034222,
+          "tool_call_id": "budget-call-2",
+          "error_type": "OSError"
+        },
+        {
+          "event": "model_generation",
+          "at_s": 0.018636624999999185,
+          "model_call": 3,
+          "observed_tool_messages": [
+            {
+              "tool_call_id": "budget-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "budget-call-2",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            }
+          ],
+          "generated_id": "scripted-3",
+          "tool_calls": [
+            {
+              "name": "read_probe",
+              "args": {},
+              "id": "budget-call-3",
+              "type": "tool_call"
+            }
+          ],
+          "content": ""
+        }
+      ],
+      "verdicts": {
+        "contract_met": true,
+        "model_calls": 3,
+        "proposed_tool_requests": 3,
+        "executed_tool_requests": 2,
+        "tool_body_entries": 6,
+        "attempts_by_request": {
+          "budget-call-1": 3,
+          "budget-call-2": 3
+        },
+        "task_completed": false,
+        "scope": "All tool entries deliberately fail; graph completion is not read success"
+      }
+    }
+  ],
+  "live_model_calls": 0,
+  "provider_tokens": 0,
+  "report_path": "work/run-budget/5b37e56680774edeb88faf0cfb55e01e/report.json",
+  "runtime": {
+    "python": "3.14.6",
+    "packages": {
+      "deepagents": "0.7.32",
+      "langchain": "1.4.7",
+      "langchain-core": "1.7.0",
+      "langgraph": "1.2.17",
+      "langgraph-prebuilt": "1.1.0",
+      "langsmith": "0.14.12"
+    },
+    "selected_loaded_module_sha256": {
+      "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+      "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+      "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+      "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+      "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+    },
+    "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+  },
+  "inspected_module_sha256": {
+    "langchain.agents.middleware.tool_retry": "c60658ccdc6be6728005cc5178b5448d5c994c3c9e9068243c96189e27cfd97d",
+    "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+    "langchain.agents.middleware.model_call_limit": "96b020511dd2b44e9daecd6787bc4c9c974551d033519a7b4d7a8c787fd8ec69"
+  },
+  "fixture_contracts_met": true,
+  "duration_s": 0.5098976670005868,
+  "implementation_sha256": {
+    "run_budget.py": "3a3d4f6373a33e80e36838ebc288f28bca9a92681291fe3be99b56fcf2977e5a",
+    "run_budget_evidence.py": "27eaa10a7a9771ac381c0d4a1678da6f825ccf0135fa088a349f7f42f42f34c0"
+  }
+}

@@ -51,7 +51,7 @@ Run all development checks, including evidence tampering and command failure cas
 python3 -S -m unittest discover -s tests -v
 ```
 
-Verified on Python 3.14.6: 111 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
+Verified on Python 3.14.6: 118 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
 
 See [offline verification limits](docs/offline-verification.md) for what the checks do and do not establish.
 
@@ -135,3 +135,8 @@ The [clean-install reproduction](docs/clean-install-reproduction.md) installed p
 ## Native retries and synchronous timeouts
 
 [Six native-runtime cases](docs/retry-timeout-evidence.md) show bounded read retries, exhaustion as an error ToolMessage, duplicate effects under broad unprotected write retry, safe receipt reuse with a protected receiver, and a write committing before a synchronous timeout reaches its caller. Six graphs and eleven tool entries ran with zero provider calls. A setup failure and partial-worker fixture failure are retained with explicit amendments; coverage is five cases plus one continuation, not one uninterrupted successful suite. The default offline verifier checks the saved evidence in `native_retry_evidence`. Current development verification: 111 tests.
+
+
+## Native limits for one run
+
+[The four-case budget experiment](docs/run-budget-evidence.md) distinguishes model requests from tool-body retry attempts. Four fresh graphs in one worker used twenty-seven controlled failed read entries and zero provider calls. A tool-call cap of one permitted one request with three attempts, then blocked the next request. Combined model/tool limits stopped further work while preserving task failure. The default offline command checks the saved trace in `run_budget_evidence`; development verification has 118 tests. Limits across restarts or multiple invocations remain untested.

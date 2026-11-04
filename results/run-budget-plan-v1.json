@@ -1,0 +1,77 @@
+{
+  "experiment_id": "native-run-budget-v1",
+  "frozen_on": "2026-11-04",
+  "base_commit": "e948e76f2bbf89072722d8b825368aff90095cdd",
+  "learner_prediction": "Up to three times",
+  "kind": "fresh scripted Deep Agents graph execution with native retry/tool/model call limits",
+  "budget": {
+    "graph_cases": 4,
+    "worker_processes": 1,
+    "max_tool_entries": 30,
+    "max_seconds": 60,
+    "recursion_limit_per_case": 24,
+    "provider_calls": 0,
+    "provider_tokens": 0,
+    "automatic_experiment_retries": 0
+  },
+  "shared_settings": {
+    "max_retries": 2,
+    "retry_on": "OSError",
+    "initial_delay": 0,
+    "jitter": false,
+    "retry_on_failure": "continue",
+    "limiter_exit_behavior": "end",
+    "scripted_model": "Propose one failing read per generation, at most four proposed calls; then finish with an explicit failure message"
+  },
+  "cases": [
+    {
+      "case": "retries-only",
+      "tool_limit": null,
+      "model_limit": null,
+      "expected_model_calls": 5,
+      "expected_proposals": 4,
+      "expected_tool_entries": 12,
+      "expected_executed_requests": 4
+    },
+    {
+      "case": "tool-limit-one",
+      "tool_limit": 1,
+      "model_limit": null,
+      "expected_model_calls": 2,
+      "expected_proposals": 2,
+      "expected_tool_entries": 3,
+      "expected_executed_requests": 1
+    },
+    {
+      "case": "model-limit-two",
+      "tool_limit": null,
+      "model_limit": 2,
+      "expected_model_calls": 2,
+      "expected_proposals": 2,
+      "expected_tool_entries": 6,
+      "expected_executed_requests": 2
+    },
+    {
+      "case": "combined-tool-two-model-three",
+      "tool_limit": 2,
+      "model_limit": 3,
+      "expected_model_calls": 3,
+      "expected_proposals": 3,
+      "expected_tool_entries": 6,
+      "expected_executed_requests": 2
+    }
+  ],
+  "invariants": [
+    "Use existing ToolRetryMiddleware, ToolCallLimitMiddleware and ModelCallLimitMiddleware; no custom agent loop",
+    "Record each proposed tool call ID and actual body entry ID so retries and new requests cannot be confused",
+    "Every tool body entry deliberately raises OSError; no successful read/task claim",
+    "Preserve raw returned ToolMessages and final response, including native limit messages",
+    "Graph completion after a limit does not mean the read task succeeded",
+    "Run-level limits apply to this graph invocation; crash/resume, thread limits, batch/parallel calls and provider retries are untested"
+  ],
+  "inspected_module_sha256": {
+    "langchain.agents.middleware.tool_retry": "c60658ccdc6be6728005cc5178b5448d5c994c3c9e9068243c96189e27cfd97d",
+    "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+    "langchain.agents.middleware.model_call_limit": "96b020511dd2b44e9daecd6787bc4c9c974551d033519a7b4d7a8c787fd8ec69"
+  }
+}

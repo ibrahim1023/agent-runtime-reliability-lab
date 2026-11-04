@@ -1,0 +1,17 @@
+{
+  "kind": "publication verification; no new graph execution",
+  "development_tests_passed": 118,
+  "python_version": "3.14.6",
+  "offline_exit_code": 0,
+  "run_budget_evidence": {
+    "status": "passed",
+    "kind": "stored native run-limit evidence validation; no graphs executed",
+    "graph_cases_checked": 4,
+    "body_entries_observed": 27,
+    "new_graph_workers": 0,
+    "task_completion": "All controlled reads failed; limits stopped further work"
+  },
+  "review_finding_fixed": "Blocked proposed IDs and final answer/source now checked under A1; original verdicts unchanged",
+  "new_graph_workers_during_publication": 0,
+  "provider_calls": 0
+}

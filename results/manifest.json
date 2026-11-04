@@ -1125,5 +1125,37 @@
       "export": "results/fresh/native-retry-v1/implementation/retry_evidence-validated.py",
       "sha256": "762bd70b8404a0d181c3ca4dbe2aef36497fbd79f9176cf81573825206db1062"
     }
+  },
+  "run_budget_v1": {
+    "plan": {
+      "export": "results/run-budget-plan-v1.json",
+      "sha256": "efcb6f0e11a582bc5e9aeabfa9bad00537c638c64128bab1f15cadc327f48bc8"
+    },
+    "status": "four cases executed once in one worker; all read tasks failed as designed",
+    "execution": {
+      "export": "results/fresh/run-budget-v1/execution.json",
+      "sha256": "8d8749e148029f1cff91fa2b5cc519e8eb5e3ea3e194d0091f5b1cee1c032bb9"
+    },
+    "launch": {
+      "export": "results/fresh/run-budget-v1/launch.json",
+      "sha256": "7679c42fcddd05ebe5377dda7b5e3124136f5d53ff95da635da41479ac953800"
+    },
+    "driver_at_execution": {
+      "export": "results/fresh/run-budget-v1/implementation/run_budget.py",
+      "sha256": "3a3d4f6373a33e80e36838ebc288f28bca9a92681291fe3be99b56fcf2977e5a"
+    },
+    "assessor_at_execution": {
+      "export": "results/fresh/run-budget-v1/implementation/run_budget_evidence.py",
+      "sha256": "27eaa10a7a9771ac381c0d4a1678da6f825ccf0135fa088a349f7f42f42f34c0"
+    },
+    "assessment_amendment": {
+      "export": "results/run-budget-assessment-amendment-a1.json",
+      "sha256": "ba61d5b8474fd845b27e91ce1296ee28c76b4bd3c3767de744afbeb39875d7f7"
+    },
+    "default_offline_validation": "run_budget_evidence stage",
+    "publication_check": {
+      "export": "results/run-budget-check-20261104.json",
+      "sha256": "e219c8865fa812c839d4e96c6a2c0d4485223be80c84313e69fb016d0309d160"
+    }
   }
 }

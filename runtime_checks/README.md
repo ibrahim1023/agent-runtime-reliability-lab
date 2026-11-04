@@ -19,3 +19,6 @@ The separate `reported-crash-check` command integrates receiver reconciliation i
 
 
 `native-retry-check` deliberately executes six native retry/timeout graph cases in a compatible runtime environment. It is not part of the two existing runtime test methods or the default offline command. Recorded coverage is a preserved five-case partial attempt plus a timeout-only continuation, with explicit setup amendments; the corrected whole command was not rerun as one suite. See [native evidence and limits](../docs/retry-timeout-evidence.md).
+
+
+`run-budget-check` deliberately starts four new graphs comparing native retry, tool-call and model-call limits. It is separate from the ordinary runtime tests. The default offline command validates its saved evidence without rerunning those graphs. See [budget semantics and scope](../docs/run-budget-evidence.md).

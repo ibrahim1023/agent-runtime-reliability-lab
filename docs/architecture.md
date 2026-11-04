@@ -36,3 +36,6 @@ Receiver byte fingerprints are optional diagnostics in the delivery path. A diag
 ## Native retry and timeout controls
 
 Deep Agents passes caller middleware into LangChain's agent construction. The lab's [native retry experiment](retry-timeout-evidence.md) uses `ToolRetryMiddleware` to scope retry eligibility and attempts per tool call. LangGraph handles the synchronous graph step deadline and executor cleanup. The observed timeout did not stop a running tool from committing. Per-call retry counts, graph completion, receiver effects and caller-visible errors must remain distinct; the scripted one-call fixture does not prove a global request retry budget.
+
+
+The [run-budget experiment](run-budget-evidence.md) adds native `ToolCallLimitMiddleware` after-model checks and `ModelCallLimitMiddleware` before-model checks. Accepted tool requests and internal retry entries are different counts. In the serial fixture, two accepted requests with two retries each produce at most six entries. These are invocation-scoped observations, not a demonstrated persistent budget across restarts or provider-internal retries.

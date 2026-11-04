@@ -1,0 +1,9 @@
+{
+  "experiment_id": "native-run-budget-v1",
+  "reason": "Review found the initial assessor accepted missing blocked-call ToolMessages and altered final answer/source.",
+  "change": "Require one error ToolMessage per proposed ID including blocked IDs; bind final answer/source to the deterministic scripted failure or native limiter message for the recorded installed version.",
+  "regressions": "Two failures observed before fix; now pass.",
+  "saved_case_verdicts_changed": false,
+  "new_graph_executions": 0,
+  "limitation": "Exact native message rendering is version-specific; this is deterministic consistency checking, not a semantic LLM judge."
+}
