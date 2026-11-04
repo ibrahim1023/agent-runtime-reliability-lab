@@ -139,3 +139,8 @@ The [clean-install milestone](clean-install-reproduction.md) supersedes the earl
 ## Native per-invocation budgets, 2026-11-04
 
 [Four fresh native graph cases](run-budget-evidence.md) ran once in one verified-package worker with zero provider calls and twenty-seven controlled failed tool entries. The script proposed repeated reads deliberately; this is not a live-model compliance evaluation. Request IDs distinguish native retries from new requests. All read tasks failed, while native limits ended the capped graphs. Review found and fixed missing-blocked-message and final-answer/source validation gaps under A1 using saved observations only; original verdicts and executed sources remain preserved. The default offline command checks the stored trace without graph execution. Current development verification has 118 tests.
+
+
+## Conversation budget lifetime, 2026-11-04
+
+[Four fresh native graph invocations](budget-lifetime-evidence.md) in separate workers compared run-only and run-plus-thread limits across completed turns, clean restarts and new user input. The same thread/checkpoint was reused within each condition. Nine controlled failed tool entries and zero provider calls ran; no raw checkpoint dump is published. Every worker independently recorded the inspected source fingerprints. Review found and corrected a launcher-success validation gap under A1 without rerunning the actual successful workers; executed and guarded driver sources are preserved separately. The default offline stage verifies saved counter/history continuity and launch status. Current development verification has 124 tests.

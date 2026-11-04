@@ -39,3 +39,6 @@ Deep Agents passes caller middleware into LangChain's agent construction. The la
 
 
 The [run-budget experiment](run-budget-evidence.md) adds native `ToolCallLimitMiddleware` after-model checks and `ModelCallLimitMiddleware` before-model checks. Accepted tool requests and internal retry entries are different counts. In the serial fixture, two accepted requests with two retries each produce at most six entries. These are invocation-scoped observations, not a demonstrated persistent budget across restarts or provider-internal retries.
+
+
+The [budget-lifetime experiment](budget-lifetime-evidence.md) distinguishes invocation state from persisted thread state. The inspected run counter uses `UntrackedValue` and is absent from checkpoints; the thread counter and prior messages persisted into a fresh worker. A stable thread ID scopes the conversation allowance. These observations cover new user turns after completed execution, not unfinished crash/resume or concurrent callers.

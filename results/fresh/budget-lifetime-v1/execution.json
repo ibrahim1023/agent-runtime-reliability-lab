@@ -1,0 +1,579 @@
+{
+  "experiment_id": "budget-lifetime-v1",
+  "kind": "fresh scripted graph invocations across clean process restarts and new user turns on the same checkpoint thread",
+  "learner_prediction": "No\u2014the checkpoint keeps the run allowance used up",
+  "criteria_sha256": "5f46adb93cc4e2f25e9e2c88fe528e1c302fb76a2ed1c80ab58fdc71b97879bc",
+  "cases": [
+    {
+      "case": "run-only",
+      "thread_id": "a375414f-4a66-472b-86a0-47cb76c1f402",
+      "phases": [
+        {
+          "phase": "initial",
+          "pid": 9844,
+          "thread_id": "a375414f-4a66-472b-86a0-47cb76c1f402",
+          "input_kind": "new_user_message",
+          "model_calls": 2,
+          "entries": [
+            "initial-call-1",
+            "initial-call-1",
+            "initial-call-1"
+          ],
+          "proposals": [
+            "initial-call-1",
+            "initial-call-2"
+          ],
+          "tool_messages": [
+            {
+              "tool_call_id": "initial-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "initial-call-2",
+              "status": "error",
+              "content": "Tool call limit exceeded. Do not make additional tool calls."
+            }
+          ],
+          "all_tool_messages": [
+            {
+              "tool_call_id": "initial-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "initial-call-2",
+              "status": "error",
+              "content": "Tool call limit exceeded. Do not make additional tool calls."
+            }
+          ],
+          "answer": "Tool call limit reached: run limit exceeded (2/1 calls).",
+          "answer_source": "native_middleware",
+          "events": [
+            {
+              "event": "model_generation",
+              "model_call": 1,
+              "tool_calls": [
+                {
+                  "name": "read_probe",
+                  "args": {},
+                  "id": "initial-call-1",
+                  "type": "tool_call"
+                }
+              ],
+              "observed_tool_messages": [],
+              "content": ""
+            },
+            {
+              "event": "tool_body_error",
+              "tool_call_id": "initial-call-1",
+              "error_type": "OSError"
+            },
+            {
+              "event": "tool_body_error",
+              "tool_call_id": "initial-call-1",
+              "error_type": "OSError"
+            },
+            {
+              "event": "tool_body_error",
+              "tool_call_id": "initial-call-1",
+              "error_type": "OSError"
+            },
+            {
+              "event": "model_generation",
+              "model_call": 2,
+              "tool_calls": [
+                {
+                  "name": "read_probe",
+                  "args": {},
+                  "id": "initial-call-2",
+                  "type": "tool_call"
+                }
+              ],
+              "observed_tool_messages": [
+                {
+                  "tool_call_id": "initial-call-1",
+                  "status": "error",
+                  "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+                }
+              ],
+              "content": ""
+            }
+          ],
+          "checkpoint_thread_before": 0,
+          "checkpoint_thread_after": 1,
+          "run_counter_checkpointed_before": false,
+          "run_counter_checkpointed_after": false,
+          "checkpoint_next": [],
+          "graph_completed": true,
+          "duration_s": 0.014816165999945952,
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          },
+          "inspected_module_sha256": {
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langgraph.channels.untracked_value": "ea15573ce7899269b75b4aa81dec04a08a5efc7b0887d64bb8ff9810155aafee",
+            "langchain.agents.middleware.tool_retry": "c60658ccdc6be6728005cc5178b5448d5c994c3c9e9068243c96189e27cfd97d"
+          }
+        },
+        {
+          "phase": "new-turn",
+          "pid": 9847,
+          "thread_id": "a375414f-4a66-472b-86a0-47cb76c1f402",
+          "input_kind": "new_user_message",
+          "model_calls": 2,
+          "entries": [
+            "new-turn-call-1",
+            "new-turn-call-1",
+            "new-turn-call-1"
+          ],
+          "proposals": [
+            "new-turn-call-1",
+            "new-turn-call-2"
+          ],
+          "tool_messages": [
+            {
+              "tool_call_id": "new-turn-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "new-turn-call-2",
+              "status": "error",
+              "content": "Tool call limit exceeded. Do not make additional tool calls."
+            }
+          ],
+          "all_tool_messages": [
+            {
+              "tool_call_id": "initial-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "initial-call-2",
+              "status": "error",
+              "content": "Tool call limit exceeded. Do not make additional tool calls."
+            },
+            {
+              "tool_call_id": "new-turn-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "new-turn-call-2",
+              "status": "error",
+              "content": "Tool call limit exceeded. Do not make additional tool calls."
+            }
+          ],
+          "answer": "Tool call limit reached: run limit exceeded (2/1 calls).",
+          "answer_source": "native_middleware",
+          "events": [
+            {
+              "event": "model_generation",
+              "model_call": 1,
+              "tool_calls": [
+                {
+                  "name": "read_probe",
+                  "args": {},
+                  "id": "new-turn-call-1",
+                  "type": "tool_call"
+                }
+              ],
+              "observed_tool_messages": [
+                {
+                  "tool_call_id": "initial-call-1",
+                  "status": "error",
+                  "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+                },
+                {
+                  "tool_call_id": "initial-call-2",
+                  "status": "error",
+                  "content": "Tool call limit exceeded. Do not make additional tool calls."
+                }
+              ],
+              "content": ""
+            },
+            {
+              "event": "tool_body_error",
+              "tool_call_id": "new-turn-call-1",
+              "error_type": "OSError"
+            },
+            {
+              "event": "tool_body_error",
+              "tool_call_id": "new-turn-call-1",
+              "error_type": "OSError"
+            },
+            {
+              "event": "tool_body_error",
+              "tool_call_id": "new-turn-call-1",
+              "error_type": "OSError"
+            },
+            {
+              "event": "model_generation",
+              "model_call": 2,
+              "tool_calls": [
+                {
+                  "name": "read_probe",
+                  "args": {},
+                  "id": "new-turn-call-2",
+                  "type": "tool_call"
+                }
+              ],
+              "observed_tool_messages": [
+                {
+                  "tool_call_id": "initial-call-1",
+                  "status": "error",
+                  "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+                },
+                {
+                  "tool_call_id": "initial-call-2",
+                  "status": "error",
+                  "content": "Tool call limit exceeded. Do not make additional tool calls."
+                },
+                {
+                  "tool_call_id": "new-turn-call-1",
+                  "status": "error",
+                  "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+                }
+              ],
+              "content": ""
+            }
+          ],
+          "checkpoint_thread_before": 1,
+          "checkpoint_thread_after": 2,
+          "run_counter_checkpointed_before": false,
+          "run_counter_checkpointed_after": false,
+          "checkpoint_next": [],
+          "graph_completed": true,
+          "duration_s": 0.012878916999397916,
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          },
+          "inspected_module_sha256": {
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langgraph.channels.untracked_value": "ea15573ce7899269b75b4aa81dec04a08a5efc7b0887d64bb8ff9810155aafee",
+            "langchain.agents.middleware.tool_retry": "c60658ccdc6be6728005cc5178b5448d5c994c3c9e9068243c96189e27cfd97d"
+          }
+        }
+      ],
+      "verdicts": {
+        "contract_met": true,
+        "tool_entries_by_turn": [
+          3,
+          3
+        ],
+        "same_thread": true,
+        "fresh_process_per_turn": true,
+        "task_completed": false,
+        "scope": "new user turns after clean process restart, not pending-work crash resume"
+      }
+    },
+    {
+      "case": "run-and-thread",
+      "thread_id": "19137627-1813-475b-9690-f81ab5aa5d38",
+      "phases": [
+        {
+          "phase": "initial",
+          "pid": 9849,
+          "thread_id": "19137627-1813-475b-9690-f81ab5aa5d38",
+          "input_kind": "new_user_message",
+          "model_calls": 2,
+          "entries": [
+            "initial-call-1",
+            "initial-call-1",
+            "initial-call-1"
+          ],
+          "proposals": [
+            "initial-call-1",
+            "initial-call-2"
+          ],
+          "tool_messages": [
+            {
+              "tool_call_id": "initial-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "initial-call-2",
+              "status": "error",
+              "content": "Tool call limit exceeded. Do not make additional tool calls."
+            }
+          ],
+          "all_tool_messages": [
+            {
+              "tool_call_id": "initial-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "initial-call-2",
+              "status": "error",
+              "content": "Tool call limit exceeded. Do not make additional tool calls."
+            }
+          ],
+          "answer": "Tool call limit reached: thread limit exceeded (2/1 calls) and run limit exceeded (2/1 calls).",
+          "answer_source": "native_middleware",
+          "events": [
+            {
+              "event": "model_generation",
+              "model_call": 1,
+              "tool_calls": [
+                {
+                  "name": "read_probe",
+                  "args": {},
+                  "id": "initial-call-1",
+                  "type": "tool_call"
+                }
+              ],
+              "observed_tool_messages": [],
+              "content": ""
+            },
+            {
+              "event": "tool_body_error",
+              "tool_call_id": "initial-call-1",
+              "error_type": "OSError"
+            },
+            {
+              "event": "tool_body_error",
+              "tool_call_id": "initial-call-1",
+              "error_type": "OSError"
+            },
+            {
+              "event": "tool_body_error",
+              "tool_call_id": "initial-call-1",
+              "error_type": "OSError"
+            },
+            {
+              "event": "model_generation",
+              "model_call": 2,
+              "tool_calls": [
+                {
+                  "name": "read_probe",
+                  "args": {},
+                  "id": "initial-call-2",
+                  "type": "tool_call"
+                }
+              ],
+              "observed_tool_messages": [
+                {
+                  "tool_call_id": "initial-call-1",
+                  "status": "error",
+                  "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+                }
+              ],
+              "content": ""
+            }
+          ],
+          "checkpoint_thread_before": 0,
+          "checkpoint_thread_after": 1,
+          "run_counter_checkpointed_before": false,
+          "run_counter_checkpointed_after": false,
+          "checkpoint_next": [],
+          "graph_completed": true,
+          "duration_s": 0.013562165999246645,
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          },
+          "inspected_module_sha256": {
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langgraph.channels.untracked_value": "ea15573ce7899269b75b4aa81dec04a08a5efc7b0887d64bb8ff9810155aafee",
+            "langchain.agents.middleware.tool_retry": "c60658ccdc6be6728005cc5178b5448d5c994c3c9e9068243c96189e27cfd97d"
+          }
+        },
+        {
+          "phase": "new-turn",
+          "pid": 9850,
+          "thread_id": "19137627-1813-475b-9690-f81ab5aa5d38",
+          "input_kind": "new_user_message",
+          "model_calls": 1,
+          "entries": [],
+          "proposals": [
+            "new-turn-call-1"
+          ],
+          "tool_messages": [
+            {
+              "tool_call_id": "new-turn-call-1",
+              "status": "error",
+              "content": "Tool call limit exceeded. Do not make additional tool calls."
+            }
+          ],
+          "all_tool_messages": [
+            {
+              "tool_call_id": "initial-call-1",
+              "status": "error",
+              "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+            },
+            {
+              "tool_call_id": "initial-call-2",
+              "status": "error",
+              "content": "Tool call limit exceeded. Do not make additional tool calls."
+            },
+            {
+              "tool_call_id": "new-turn-call-1",
+              "status": "error",
+              "content": "Tool call limit exceeded. Do not make additional tool calls."
+            }
+          ],
+          "answer": "Tool call limit reached: thread limit exceeded (2/1 calls).",
+          "answer_source": "native_middleware",
+          "events": [
+            {
+              "event": "model_generation",
+              "model_call": 1,
+              "tool_calls": [
+                {
+                  "name": "read_probe",
+                  "args": {},
+                  "id": "new-turn-call-1",
+                  "type": "tool_call"
+                }
+              ],
+              "observed_tool_messages": [
+                {
+                  "tool_call_id": "initial-call-1",
+                  "status": "error",
+                  "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled persistent read failure. Please try again."
+                },
+                {
+                  "tool_call_id": "initial-call-2",
+                  "status": "error",
+                  "content": "Tool call limit exceeded. Do not make additional tool calls."
+                }
+              ],
+              "content": ""
+            }
+          ],
+          "checkpoint_thread_before": 1,
+          "checkpoint_thread_after": 1,
+          "run_counter_checkpointed_before": false,
+          "run_counter_checkpointed_after": false,
+          "checkpoint_next": [],
+          "graph_completed": true,
+          "duration_s": 0.009410417000253801,
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          },
+          "inspected_module_sha256": {
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langgraph.channels.untracked_value": "ea15573ce7899269b75b4aa81dec04a08a5efc7b0887d64bb8ff9810155aafee",
+            "langchain.agents.middleware.tool_retry": "c60658ccdc6be6728005cc5178b5448d5c994c3c9e9068243c96189e27cfd97d"
+          }
+        }
+      ],
+      "verdicts": {
+        "contract_met": true,
+        "tool_entries_by_turn": [
+          3,
+          0
+        ],
+        "same_thread": true,
+        "fresh_process_per_turn": true,
+        "task_completed": false,
+        "scope": "new user turns after clean process restart, not pending-work crash resume"
+      }
+    }
+  ],
+  "launches": [
+    {
+      "case": "run-only",
+      "phase": "initial",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.6686325419996137
+    },
+    {
+      "case": "run-only",
+      "phase": "new-turn",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.5032858329996088
+    },
+    {
+      "case": "run-and-thread",
+      "phase": "initial",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.5055547499996464
+    },
+    {
+      "case": "run-and-thread",
+      "phase": "new-turn",
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.5080877500004135
+    }
+  ],
+  "live_model_calls": 0,
+  "provider_tokens": 0,
+  "fixture_contracts_met": true,
+  "implementation_sha256": {
+    "budget_lifetime.py": "75c501229817077771a2a138fa3441e81f11e3d61f774e0705077b4bd532dd19",
+    "budget_lifetime_worker.py": "dacc325f83bbeb42c18382b69d7aa6070f89e3352b2d294f73a80510ece4296d",
+    "budget_lifetime_evidence.py": "f1f68441550f5d8dd89efac75fa0d7f167c8d839dd2d40c4264ff80cdd8b93dd"
+  },
+  "report_path": "work/budget-lifetime/ff3be0df3a79422f800f244d1f524adc/report.json"
+}

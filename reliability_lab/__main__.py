@@ -9,7 +9,7 @@ from reliability_lab.offline import verify_offline
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Inspect evidence and execute local receiver contracts.")
-    parser.add_argument("command", choices=["verify-offline", "scripted-root-check", "scripted-filesystem-check", "crash-resume-check", "reported-crash-check", "native-retry-check", "run-budget-check"])
+    parser.add_argument("command", choices=["verify-offline", "scripted-root-check", "scripted-filesystem-check", "crash-resume-check", "reported-crash-check", "native-retry-check", "run-budget-check", "budget-lifetime-check"])
     parser.add_argument("--prediction", default="not supplied", help="Optional learner prediction for a new scripted experiment")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
@@ -31,6 +31,9 @@ def main() -> int:
     elif args.command == "run-budget-check":
         from reliability_lab.run_budget import run_budget_check
         report, code = run_budget_check(root, learner_prediction=args.prediction)
+    elif args.command == "budget-lifetime-check":
+        from reliability_lab.budget_lifetime import run_lifetime
+        report, code = run_lifetime(root, learner_prediction=args.prediction)
     else:
         report, code = verify_offline(root)
     print(json.dumps(report, indent=2))

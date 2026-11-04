@@ -1,0 +1,18 @@
+{
+  "kind": "publication verification; no new worker execution",
+  "development_tests_passed": 124,
+  "python_version": "3.14.6",
+  "offline_exit_code": 0,
+  "budget_lifetime_evidence": {
+    "status": "passed",
+    "kind": "stored budget-lifetime evidence validation; no worker restart or graph execution",
+    "worker_invocations_checked": 4,
+    "actual_tool_entries_observed": 9,
+    "new_workers": 0,
+    "scope": "completed new user turns across clean restarts on persistent thread IDs"
+  },
+  "review_finding_fixed": "Require successful zero-exit workers even when phase output exists; actual four workers already passed",
+  "new_graph_workers_during_publication": 0,
+  "provider_calls": 0,
+  "guarded_full_command_rerun": false
+}

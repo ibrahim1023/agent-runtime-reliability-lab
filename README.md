@@ -51,7 +51,7 @@ Run all development checks, including evidence tampering and command failure cas
 python3 -S -m unittest discover -s tests -v
 ```
 
-Verified on Python 3.14.6: 118 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
+Verified on Python 3.14.6: 124 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
 
 See [offline verification limits](docs/offline-verification.md) for what the checks do and do not establish.
 
@@ -140,3 +140,8 @@ The [clean-install reproduction](docs/clean-install-reproduction.md) installed p
 ## Native limits for one run
 
 [The four-case budget experiment](docs/run-budget-evidence.md) distinguishes model requests from tool-body retry attempts. Four fresh graphs in one worker used twenty-seven controlled failed read entries and zero provider calls. A tool-call cap of one permitted one request with three attempts, then blocked the next request. Combined model/tool limits stopped further work while preserving task failure. The default offline command checks the saved trace in `run_budget_evidence`; development verification has 118 tests. Limits across restarts or multiple invocations remain untested.
+
+
+## Budget lifetime across clean restarts
+
+[The two-turn experiment](docs/budget-lifetime-evidence.md) used four fresh workers and the same checkpoint thread per condition. Run-only limits allowed three failed tool entries on each new turn; adding a thread limit allowed three on the first and zero on the second. The conversation counter and prior messages persisted, while the run counter was absent from checkpoints. This covers completed turns with new input, not pending-work crash/resume or global user budgets. The default offline verifier checks the saved evidence in `budget_lifetime_evidence`; current development verification has 124 tests.

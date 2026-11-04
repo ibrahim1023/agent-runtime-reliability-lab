@@ -1,0 +1,84 @@
+{
+  "experiment_id": "budget-lifetime-v1",
+  "frozen_on": "2026-11-04",
+  "base_commit": "201c53051b93b97920adf2c40bfb90f12ef37178",
+  "learner_prediction": "No\u2014the checkpoint keeps the run allowance used up",
+  "kind": "fresh scripted graph invocations across clean process restarts and new user turns on the same checkpoint thread",
+  "budget": {
+    "conditions": 2,
+    "worker_processes": 4,
+    "graph_invocations": 4,
+    "max_tool_entries": 12,
+    "max_seconds_per_worker": 10,
+    "max_total_worker_seconds": 60,
+    "provider_calls": 0,
+    "provider_tokens": 0,
+    "automatic_retries": 0
+  },
+  "conditions": [
+    {
+      "case": "run-only",
+      "run_limit": 1,
+      "thread_limit": null,
+      "expected_entries": [
+        3,
+        3
+      ],
+      "expected_model_calls": [
+        2,
+        2
+      ],
+      "expected_checkpoint_thread_counts": [
+        1,
+        2
+      ]
+    },
+    {
+      "case": "run-and-thread",
+      "run_limit": 1,
+      "thread_limit": 1,
+      "expected_entries": [
+        3,
+        0
+      ],
+      "expected_model_calls": [
+        2,
+        1
+      ],
+      "expected_checkpoint_thread_counts": [
+        1,
+        1
+      ]
+    }
+  ],
+  "phases": [
+    "initial",
+    "new-turn"
+  ],
+  "shared_settings": {
+    "native_max_retries": 2,
+    "retry_on": "OSError",
+    "retry_delay": 0,
+    "jitter": false,
+    "limit_exit": "end",
+    "recursion_limit": 24
+  },
+  "invariants": [
+    "Stable application thread ID and separate checkpoint DB per condition; different worker PID per phase",
+    "Both invocations supply a new user message; no crash, pending-work resume or invoke(None)",
+    "Record only allowlisted budget-counter values from checkpoints; no raw checkpoint dump",
+    "Identify each new tool request by a phase-specific unique ID; three body attempts per executed request",
+    "All controlled reads fail; graph completion or budget stop is not task success",
+    "Run counter presence in checkpoint and persisted thread counter are observations, not assumed from present checkout revision"
+  ],
+  "inspected_module_sha256": {
+    "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+    "langgraph.channels.untracked_value": "ea15573ce7899269b75b4aa81dec04a08a5efc7b0887d64bb8ff9810155aafee",
+    "langchain.agents.middleware.tool_retry": "c60658ccdc6be6728005cc5178b5448d5c994c3c9e9068243c96189e27cfd97d"
+  },
+  "limitations": [
+    "Sequential completed turns only; no abrupt-crash/resume or concurrent callers",
+    "Thread ID defines this conversation scope; a new ID starts a different budget scope",
+    "Counters limit logical requests, not every internal retry; no wall-time/token/global-user allowance claim"
+  ]
+}

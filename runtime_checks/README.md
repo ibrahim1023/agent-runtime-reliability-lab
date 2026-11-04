@@ -22,3 +22,6 @@ The separate `reported-crash-check` command integrates receiver reconciliation i
 
 
 `run-budget-check` deliberately starts four new graphs comparing native retry, tool-call and model-call limits. It is separate from the ordinary runtime tests. The default offline command validates its saved evidence without rerunning those graphs. See [budget semantics and scope](../docs/run-budget-evidence.md).
+
+
+`budget-lifetime-check` deliberately launches four fresh workers for two completed new-user turns per condition on persistent SQLite checkpoint threads. It is separate from the ordinary runtime tests. Its saved evidence is verified without workers by the offline command. See [lifetime scope and limits](../docs/budget-lifetime-evidence.md).

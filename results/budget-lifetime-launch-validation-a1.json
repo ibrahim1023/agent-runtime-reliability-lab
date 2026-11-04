@@ -1,0 +1,9 @@
+{
+  "experiment_id": "budget-lifetime-v1",
+  "reason": "Review found a worker could write valid phase output then exit nonzero or time out while the old driver still accepted its phase observations.",
+  "correction": "Require both per-condition launches and all four expected workers to exit zero without timeout before fixture pass.",
+  "actual_saved_worker_outcomes": "All four already exited zero without timeout; recorded case verdicts unchanged.",
+  "new_graph_invocations": 0,
+  "corrected_full_command_rerun": false,
+  "scope": "Post-execution launcher validation correction, enforced for future attempts and by offline saved-evidence checks."
+}

@@ -1157,5 +1157,45 @@
       "export": "results/run-budget-check-20261104.json",
       "sha256": "e219c8865fa812c839d4e96c6a2c0d4485223be80c84313e69fb016d0309d160"
     }
+  },
+  "budget_lifetime_v1": {
+    "plan": {
+      "export": "results/budget-lifetime-plan-v1.json",
+      "sha256": "5f46adb93cc4e2f25e9e2c88fe528e1c302fb76a2ed1c80ab58fdc71b97879bc"
+    },
+    "status": "two conditions, four successful fresh workers; launch guard subsequently strengthened without rerun",
+    "execution": {
+      "export": "results/fresh/budget-lifetime-v1/execution.json",
+      "sha256": "9a7c87cf0653169502a25bdffc499f851fbc108f512af101dd78a5b7748de09d"
+    },
+    "launch": {
+      "export": "results/fresh/budget-lifetime-v1/launch.json",
+      "sha256": "8007e14c06ed1cff4ebfb7f3a4cf5b29ed7de74e7f9d02264851d4dc2a91af9c"
+    },
+    "driver_at_execution": {
+      "export": "results/fresh/budget-lifetime-v1/implementation/budget_lifetime.py",
+      "sha256": "75c501229817077771a2a138fa3441e81f11e3d61f774e0705077b4bd532dd19"
+    },
+    "worker_at_execution": {
+      "export": "results/fresh/budget-lifetime-v1/implementation/budget_lifetime_worker.py",
+      "sha256": "dacc325f83bbeb42c18382b69d7aa6070f89e3352b2d294f73a80510ece4296d"
+    },
+    "assessor_at_execution": {
+      "export": "results/fresh/budget-lifetime-v1/implementation/budget_lifetime_evidence.py",
+      "sha256": "f1f68441550f5d8dd89efac75fa0d7f167c8d839dd2d40c4264ff80cdd8b93dd"
+    },
+    "launch_validation_amendment": {
+      "export": "results/budget-lifetime-launch-validation-a1.json",
+      "sha256": "4fbcf305a392cd34a086e7855958e3c82cd8258e765228764bb789742bbbc323"
+    },
+    "guarded_driver": {
+      "export": "results/fresh/budget-lifetime-v1/implementation/budget_lifetime-launch-guarded.py",
+      "sha256": "99f4d5fade9b5c5107c7b717a61d03bea9ba30ec00ff9043077723f207542162"
+    },
+    "default_offline_validation": "budget_lifetime_evidence stage",
+    "publication_check": {
+      "export": "results/budget-lifetime-check-20261104.json",
+      "sha256": "63374f3a47d2e5a4aebba1b57cb3dc8da080020d288c80dda61858dae6c27578"
+    }
   }
 }
