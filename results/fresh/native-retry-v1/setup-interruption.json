@@ -1,0 +1,19 @@
+{
+  "experiment_id": "native-retry-timeout-v1",
+  "kind": "fresh scripted Deep Agents graphs using installed LangChain ToolRetryMiddleware and LangGraph synchronous step_timeout",
+  "learner_prediction": "No\u2014the timeout prevents the commit",
+  "started_at_utc": "2026-11-04T11:53:47.859518+00:00",
+  "criteria_sha256": "23933d61e8b82334dfe045fee122eec88a23b591382789136d279a99f85ef451",
+  "cases": [],
+  "live_model_calls": 0,
+  "provider_tokens": 0,
+  "report_path": "work/native-retry/2fb906af92d54477bccfb44b58bf728b/report.json",
+  "fixture_contracts_met": false,
+  "interruption_type": "ModuleNotFoundError",
+  "duration_s": 0.00014320800073619466,
+  "implementation_sha256": {
+    "native_retry.py": "10c2bfeb433d4093a212c6515ec2ec6fd508229c3f1a0c4887dba448c569c990",
+    "retry_evidence.py": "8556a9b16937643eb6eecb4e51c8ba8b1b2f441c2642ca2cb33593cf8fd32790",
+    "receiver.py": "9bedcf406e0e489f854adb02e01469635fecf247ebb95e3920a87965363d2ab2"
+  }
+}

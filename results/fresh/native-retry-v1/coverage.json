@@ -1,0 +1,578 @@
+{
+  "experiment_id": "native-retry-timeout-v1",
+  "kind": "six-case native-runtime coverage across preserved partial attempt and one-case continuation",
+  "criteria_sha256": "23933d61e8b82334dfe045fee122eec88a23b591382789136d279a99f85ef451",
+  "learner_prediction": "No\u2014the timeout prevents the commit",
+  "prediction_supported": false,
+  "coverage_complete": true,
+  "single_uninterrupted_successful_attempt": false,
+  "setup_or_fixture_interruptions": 2,
+  "worker_processes_including_interruptions": 3,
+  "fresh_graph_invocations": 6,
+  "actual_tool_entries": 11,
+  "live_model_calls": 0,
+  "provider_tokens": 0,
+  "launch_observations": [
+    {
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.07716916700064758
+    },
+    {
+      "exit_code": 1,
+      "timed_out": false,
+      "duration_s": 0.9965376669997568
+    },
+    {
+      "exit_code": 0,
+      "timed_out": false,
+      "duration_s": 0.8903597919997992
+    }
+  ],
+  "runtime": {
+    "python": "3.14.6",
+    "packages": {
+      "deepagents": "0.7.32",
+      "langchain": "1.4.7",
+      "langchain-core": "1.7.0",
+      "langgraph": "1.2.17",
+      "langgraph-prebuilt": "1.1.0",
+      "langsmith": "0.14.12"
+    },
+    "selected_loaded_module_sha256": {
+      "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+      "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+      "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+      "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+      "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+    },
+    "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+  },
+  "inspected_module_sha256": {
+    "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+    "langchain.agents.middleware.tool_retry": "c60658ccdc6be6728005cc5178b5448d5c994c3c9e9068243c96189e27cfd97d",
+    "langgraph.pregel.main": "c96d4424e7a75388aef09afeaa8fcfe17c026e60dafca1331003775ca1bf0ffc",
+    "langgraph.pregel._runner": "dc835c835cbd2c783ff1df3ca46343ecab9b4a7f534ed0083be8d0664d21816e",
+    "langgraph.pregel._executor": "5afb1e7e7bd768fc5ff7ed5e222539abb73bd11f88d8e150eb75c30a8484364d",
+    "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+  },
+  "cases": [
+    {
+      "case": "read-transient",
+      "operation_id": "0380384b-2ca0-4a59-9761-91f097869915",
+      "protected": false,
+      "graph_outcome": "completed",
+      "graph_error": null,
+      "duration_s": 0.009914457999911974,
+      "case_duration_s": 0.04869849999977305,
+      "tool_status": "success",
+      "tool_content": "north\nsouth",
+      "answer": "north\nsouth",
+      "events": [
+        {
+          "event": "model_proposal",
+          "at_s": 0.04560029200001736,
+          "name": "read_probe",
+          "args": {
+            "message": "note"
+          }
+        },
+        {
+          "event": "tool_enter",
+          "at_s": 0.04664441699969757,
+          "operation_id": "0380384b-2ca0-4a59-9761-91f097869915",
+          "attempt": 1
+        },
+        {
+          "event": "controlled_tool_error",
+          "at_s": 0.04670604199964146,
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_enter",
+          "at_s": 0.047000042000036046,
+          "operation_id": "0380384b-2ca0-4a59-9761-91f097869915",
+          "attempt": 2
+        },
+        {
+          "event": "model_observed_tool",
+          "at_s": 0.048301416999493085,
+          "status": "success",
+          "content": "north\nsouth"
+        },
+        {
+          "event": "graph_return",
+          "at_s": 0.04864612500023213
+        }
+      ],
+      "entries": [],
+      "model_observations": [
+        {
+          "status": "success",
+          "content": "north\nsouth"
+        }
+      ],
+      "controller_joined": true,
+      "step_timeout_s": null,
+      "verdicts": {
+        "contract_met": true,
+        "tool_entries": 2,
+        "committed_effects": 0,
+        "graph_completed": true,
+        "single_effect_observed": false,
+        "single_effect_task_completed": false,
+        "checks": {
+          "stable_identity": true,
+          "receipt_consistency": true,
+          "model_observation_consistent": true,
+          "timeout_event_order": true
+        }
+      }
+    },
+    {
+      "case": "read-exhausted",
+      "operation_id": "94990e3a-e7b7-4cc5-9273-9d6d74dbae0a",
+      "protected": false,
+      "graph_outcome": "completed",
+      "graph_error": null,
+      "duration_s": 0.006068833999961498,
+      "case_duration_s": 0.016984875000161992,
+      "tool_status": "error",
+      "tool_content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled temporary read failure. Please try again.",
+      "answer": "Tool 'read_probe' failed after 3 attempts with OSError: controlled temporary read failure. Please try again.",
+      "events": [
+        {
+          "event": "model_proposal",
+          "at_s": 0.013892375000068569,
+          "name": "read_probe",
+          "args": {
+            "message": "note"
+          }
+        },
+        {
+          "event": "tool_enter",
+          "at_s": 0.014627874999860069,
+          "operation_id": "94990e3a-e7b7-4cc5-9273-9d6d74dbae0a",
+          "attempt": 1
+        },
+        {
+          "event": "controlled_tool_error",
+          "at_s": 0.014702999999826716,
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_enter",
+          "at_s": 0.014964915999371442,
+          "operation_id": "94990e3a-e7b7-4cc5-9273-9d6d74dbae0a",
+          "attempt": 2
+        },
+        {
+          "event": "controlled_tool_error",
+          "at_s": 0.015007457999672624,
+          "error_type": "OSError"
+        },
+        {
+          "event": "tool_enter",
+          "at_s": 0.015243290999933379,
+          "operation_id": "94990e3a-e7b7-4cc5-9273-9d6d74dbae0a",
+          "attempt": 3
+        },
+        {
+          "event": "controlled_tool_error",
+          "at_s": 0.015281999999388063,
+          "error_type": "OSError"
+        },
+        {
+          "event": "model_observed_tool",
+          "at_s": 0.016597290999925463,
+          "status": "error",
+          "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled temporary read failure. Please try again."
+        },
+        {
+          "event": "graph_return",
+          "at_s": 0.016941207999479957
+        }
+      ],
+      "entries": [],
+      "model_observations": [
+        {
+          "status": "error",
+          "content": "Tool 'read_probe' failed after 3 attempts with OSError: controlled temporary read failure. Please try again."
+        }
+      ],
+      "controller_joined": true,
+      "step_timeout_s": null,
+      "verdicts": {
+        "contract_met": true,
+        "tool_entries": 3,
+        "committed_effects": 0,
+        "graph_completed": true,
+        "single_effect_observed": false,
+        "single_effect_task_completed": false,
+        "checks": {
+          "stable_identity": true,
+          "receipt_consistency": true,
+          "model_observation_consistent": true,
+          "timeout_event_order": true
+        }
+      }
+    },
+    {
+      "case": "write-unprotected-broad-retry",
+      "operation_id": "08438b83-fbee-4a9d-8bc9-3dc74efdcf45",
+      "protected": false,
+      "graph_outcome": "completed",
+      "graph_error": null,
+      "duration_s": 0.006323042000076384,
+      "case_duration_s": 0.017302749999544176,
+      "tool_status": "success",
+      "tool_content": "{\"message\": \"note\", \"operation_id\": \"08438b83-fbee-4a9d-8bc9-3dc74efdcf45\", \"receipt_id\": \"a9e02246-b47a-4523-86de-93eae6915b59\", \"status\": \"recorded\"}",
+      "answer": "{\"message\": \"note\", \"operation_id\": \"08438b83-fbee-4a9d-8bc9-3dc74efdcf45\", \"receipt_id\": \"a9e02246-b47a-4523-86de-93eae6915b59\", \"status\": \"recorded\"}",
+      "events": [
+        {
+          "event": "model_proposal",
+          "at_s": 0.013936999999714317,
+          "name": "write_probe",
+          "args": {
+            "message": "note"
+          }
+        },
+        {
+          "event": "tool_enter",
+          "at_s": 0.014605583000047773,
+          "operation_id": "08438b83-fbee-4a9d-8bc9-3dc74efdcf45",
+          "attempt": 1
+        },
+        {
+          "event": "receiver_result",
+          "at_s": 0.015094166999915615,
+          "receipt": {
+            "message": "note",
+            "operation_id": "08438b83-fbee-4a9d-8bc9-3dc74efdcf45",
+            "receipt_id": "7afe52f4-a098-41e7-a1f7-b4dee2141143",
+            "status": "recorded"
+          },
+          "reused": false
+        },
+        {
+          "event": "controlled_tool_error",
+          "at_s": 0.015140041999984533,
+          "error_type": "ResponseLost"
+        },
+        {
+          "event": "tool_enter",
+          "at_s": 0.015427624999574618,
+          "operation_id": "08438b83-fbee-4a9d-8bc9-3dc74efdcf45",
+          "attempt": 2
+        },
+        {
+          "event": "receiver_result",
+          "at_s": 0.015863832999457372,
+          "receipt": {
+            "message": "note",
+            "operation_id": "08438b83-fbee-4a9d-8bc9-3dc74efdcf45",
+            "receipt_id": "a9e02246-b47a-4523-86de-93eae6915b59",
+            "status": "recorded"
+          },
+          "reused": false
+        },
+        {
+          "event": "model_observed_tool",
+          "at_s": 0.016987750000225788,
+          "status": "success",
+          "content": "{\"message\": \"note\", \"operation_id\": \"08438b83-fbee-4a9d-8bc9-3dc74efdcf45\", \"receipt_id\": \"a9e02246-b47a-4523-86de-93eae6915b59\", \"status\": \"recorded\"}"
+        },
+        {
+          "event": "graph_return",
+          "at_s": 0.017269666999709443
+        }
+      ],
+      "entries": [
+        {
+          "message": "note",
+          "operation_id": "08438b83-fbee-4a9d-8bc9-3dc74efdcf45",
+          "receipt_id": "7afe52f4-a098-41e7-a1f7-b4dee2141143",
+          "status": "recorded"
+        },
+        {
+          "message": "note",
+          "operation_id": "08438b83-fbee-4a9d-8bc9-3dc74efdcf45",
+          "receipt_id": "a9e02246-b47a-4523-86de-93eae6915b59",
+          "status": "recorded"
+        }
+      ],
+      "model_observations": [
+        {
+          "status": "success",
+          "content": "{\"message\": \"note\", \"operation_id\": \"08438b83-fbee-4a9d-8bc9-3dc74efdcf45\", \"receipt_id\": \"a9e02246-b47a-4523-86de-93eae6915b59\", \"status\": \"recorded\"}"
+        }
+      ],
+      "controller_joined": true,
+      "step_timeout_s": null,
+      "verdicts": {
+        "contract_met": true,
+        "tool_entries": 2,
+        "committed_effects": 2,
+        "graph_completed": true,
+        "single_effect_observed": false,
+        "single_effect_task_completed": false,
+        "checks": {
+          "stable_identity": true,
+          "receipt_consistency": true,
+          "model_observation_consistent": true,
+          "timeout_event_order": true
+        }
+      }
+    },
+    {
+      "case": "write-unprotected-read-scoped-retry",
+      "operation_id": "d7f73457-a418-4052-af94-fb683b496c63",
+      "protected": false,
+      "graph_outcome": "ResponseLost",
+      "graph_error": "controlled response lost after receiver commit",
+      "duration_s": 0.004114958999707596,
+      "case_duration_s": 0.014658666999821435,
+      "tool_status": null,
+      "tool_content": null,
+      "answer": null,
+      "events": [
+        {
+          "event": "model_proposal",
+          "at_s": 0.013406416999714565,
+          "name": "write_probe",
+          "args": {
+            "message": "note"
+          }
+        },
+        {
+          "event": "tool_enter",
+          "at_s": 0.014040375000149652,
+          "operation_id": "d7f73457-a418-4052-af94-fb683b496c63",
+          "attempt": 1
+        },
+        {
+          "event": "receiver_result",
+          "at_s": 0.014404708000256505,
+          "receipt": {
+            "message": "note",
+            "operation_id": "d7f73457-a418-4052-af94-fb683b496c63",
+            "receipt_id": "22ef95fc-e43f-46dc-9712-127d87aa5750",
+            "status": "recorded"
+          },
+          "reused": false
+        },
+        {
+          "event": "controlled_tool_error",
+          "at_s": 0.014438666999922134,
+          "error_type": "ResponseLost"
+        },
+        {
+          "event": "graph_error",
+          "at_s": 0.014608792000217363,
+          "error_type": "ResponseLost"
+        }
+      ],
+      "entries": [
+        {
+          "message": "note",
+          "operation_id": "d7f73457-a418-4052-af94-fb683b496c63",
+          "receipt_id": "22ef95fc-e43f-46dc-9712-127d87aa5750",
+          "status": "recorded"
+        }
+      ],
+      "model_observations": [],
+      "controller_joined": true,
+      "step_timeout_s": null,
+      "verdicts": {
+        "contract_met": true,
+        "tool_entries": 1,
+        "committed_effects": 1,
+        "graph_completed": false,
+        "single_effect_observed": true,
+        "single_effect_task_completed": false,
+        "checks": {
+          "stable_identity": true,
+          "receipt_consistency": true,
+          "model_observation_consistent": true,
+          "timeout_event_order": true
+        }
+      }
+    },
+    {
+      "case": "write-protected-retry",
+      "operation_id": "b374b36e-6b72-4cc2-ba65-0b712445064a",
+      "protected": true,
+      "graph_outcome": "completed",
+      "graph_error": null,
+      "duration_s": 0.007610667000335525,
+      "case_duration_s": 0.018767832999401435,
+      "tool_status": "success",
+      "tool_content": "{\"message\": \"note\", \"operation_id\": \"b374b36e-6b72-4cc2-ba65-0b712445064a\", \"receipt_id\": \"faeac8ac-3ed2-44fe-b5b5-559cb6be97e3\", \"status\": \"recorded\"}",
+      "answer": "{\"message\": \"note\", \"operation_id\": \"b374b36e-6b72-4cc2-ba65-0b712445064a\", \"receipt_id\": \"faeac8ac-3ed2-44fe-b5b5-559cb6be97e3\", \"status\": \"recorded\"}",
+      "events": [
+        {
+          "event": "model_proposal",
+          "at_s": 0.015887624999777472,
+          "name": "write_probe",
+          "args": {
+            "message": "note"
+          }
+        },
+        {
+          "event": "tool_enter",
+          "at_s": 0.016671957999278675,
+          "operation_id": "b374b36e-6b72-4cc2-ba65-0b712445064a",
+          "attempt": 1
+        },
+        {
+          "event": "receiver_result",
+          "at_s": 0.01709329200002685,
+          "receipt": {
+            "message": "note",
+            "operation_id": "b374b36e-6b72-4cc2-ba65-0b712445064a",
+            "receipt_id": "faeac8ac-3ed2-44fe-b5b5-559cb6be97e3",
+            "status": "recorded"
+          },
+          "reused": false
+        },
+        {
+          "event": "controlled_tool_error",
+          "at_s": 0.017133332999947015,
+          "error_type": "ResponseLost"
+        },
+        {
+          "event": "tool_enter",
+          "at_s": 0.01736137499938195,
+          "operation_id": "b374b36e-6b72-4cc2-ba65-0b712445064a",
+          "attempt": 2
+        },
+        {
+          "event": "receiver_result",
+          "at_s": 0.017487499999333522,
+          "receipt": {
+            "message": "note",
+            "operation_id": "b374b36e-6b72-4cc2-ba65-0b712445064a",
+            "receipt_id": "faeac8ac-3ed2-44fe-b5b5-559cb6be97e3",
+            "status": "recorded"
+          },
+          "reused": true
+        },
+        {
+          "event": "model_observed_tool",
+          "at_s": 0.01842237499931798,
+          "status": "success",
+          "content": "{\"message\": \"note\", \"operation_id\": \"b374b36e-6b72-4cc2-ba65-0b712445064a\", \"receipt_id\": \"faeac8ac-3ed2-44fe-b5b5-559cb6be97e3\", \"status\": \"recorded\"}"
+        },
+        {
+          "event": "graph_return",
+          "at_s": 0.018722082999374834
+        }
+      ],
+      "entries": [
+        {
+          "message": "note",
+          "operation_id": "b374b36e-6b72-4cc2-ba65-0b712445064a",
+          "receipt_id": "faeac8ac-3ed2-44fe-b5b5-559cb6be97e3",
+          "status": "recorded"
+        }
+      ],
+      "model_observations": [
+        {
+          "status": "success",
+          "content": "{\"message\": \"note\", \"operation_id\": \"b374b36e-6b72-4cc2-ba65-0b712445064a\", \"receipt_id\": \"faeac8ac-3ed2-44fe-b5b5-559cb6be97e3\", \"status\": \"recorded\"}"
+        }
+      ],
+      "controller_joined": true,
+      "step_timeout_s": null,
+      "verdicts": {
+        "contract_met": true,
+        "tool_entries": 2,
+        "committed_effects": 1,
+        "graph_completed": true,
+        "single_effect_observed": true,
+        "single_effect_task_completed": true,
+        "checks": {
+          "stable_identity": true,
+          "receipt_consistency": true,
+          "model_observation_consistent": true,
+          "timeout_event_order": true
+        }
+      }
+    },
+    {
+      "case": "write-sync-step-timeout",
+      "operation_id": "30f8f092-1465-42bf-aace-13f9507638f1",
+      "protected": false,
+      "graph_outcome": "TimeoutError",
+      "graph_error": "Timed out",
+      "duration_s": 0.21389704200009874,
+      "case_duration_s": 0.25697337499968853,
+      "tool_status": null,
+      "tool_content": null,
+      "answer": null,
+      "events": [
+        {
+          "event": "model_proposal",
+          "at_s": 0.04879574999995384,
+          "name": "write_probe",
+          "args": {
+            "message": "note"
+          }
+        },
+        {
+          "event": "tool_enter",
+          "at_s": 0.05004437499974301,
+          "operation_id": "30f8f092-1465-42bf-aace-13f9507638f1",
+          "attempt": 1
+        },
+        {
+          "event": "gate_release",
+          "at_s": 0.25203433299975586
+        },
+        {
+          "event": "receiver_result",
+          "at_s": 0.25525274999927205,
+          "receipt": {
+            "message": "note",
+            "operation_id": "30f8f092-1465-42bf-aace-13f9507638f1",
+            "receipt_id": "198e79c3-e687-446d-8750-b79217810f22",
+            "status": "recorded"
+          },
+          "reused": false
+        },
+        {
+          "event": "graph_error",
+          "at_s": 0.25670979200003785,
+          "error_type": "TimeoutError"
+        }
+      ],
+      "entries": [
+        {
+          "message": "note",
+          "operation_id": "30f8f092-1465-42bf-aace-13f9507638f1",
+          "receipt_id": "198e79c3-e687-446d-8750-b79217810f22",
+          "status": "recorded"
+        }
+      ],
+      "model_observations": [],
+      "controller_joined": true,
+      "step_timeout_s": 0.05,
+      "verdicts": {
+        "contract_met": true,
+        "tool_entries": 1,
+        "committed_effects": 1,
+        "graph_completed": false,
+        "single_effect_observed": true,
+        "single_effect_task_completed": false,
+        "checks": {
+          "stable_identity": true,
+          "receipt_consistency": true,
+          "model_observation_consistent": true,
+          "timeout_event_order": true
+        }
+      }
+    }
+  ],
+  "limits": "Native retry counts are per tool call. Scripted model proposes once. Zero retry delay does not test backoff. Native synchronous step timeout is not a hard kill of a running thread.",
+  "denominator_note": "Initial system-Python worker executed zero cases. Next worker invoked first five graphs; timeout-case construction failed before invoke. Final worker invoked only the timeout graph. No completed graph was rerun."
+}

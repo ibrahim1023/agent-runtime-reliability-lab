@@ -1,0 +1,23 @@
+{
+  "kind": "publication verification; no new runtime executions",
+  "development_tests_passed": 111,
+  "python_version": "3.14.6",
+  "offline_exit_code": 0,
+  "native_retry_evidence": {
+    "status": "passed",
+    "kind": "stored native retry/timeout evidence validation; no graph or provider calls",
+    "graph_cases_checked": 6,
+    "tool_entries_observed": 11,
+    "new_graph_workers": 0,
+    "single_uninterrupted_attempt": false,
+    "preserved_attempt_interruptions": 2
+  },
+  "review_finding_fixed": "Tool status alone was insufficient; final content, observed ToolMessage, journal and actual receipt are now bound by A3 validation",
+  "initial_interruptions_preserved": 2,
+  "total_runtime_workers_including_interruptions": 3,
+  "actual_graph_invocations_in_experiment": 6,
+  "actual_tool_entries_in_experiment": 11,
+  "new_graph_invocations_during_publication": 0,
+  "provider_calls": 0,
+  "continuation_runtime_fingerprint": "Same virtual-environment executable path; full module fingerprint not independently recollected"
+}

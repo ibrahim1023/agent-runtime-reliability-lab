@@ -1,0 +1,11 @@
+{
+  "experiment_id": "native-retry-timeout-v1",
+  "amendment": "A3 stricter saved-observation validation",
+  "reason": "Review found initial assessor compared model-facing status without binding content and answer to the journal and receiver receipt.",
+  "change": "Bind model_observations, model_observed_tool journal content, final tool content and answer; successful write output must equal the actual final SQL receipt.",
+  "criteria_change": "None; this enforces existing recorded-tool-result and receipt invariants.",
+  "new_graph_executions": 0,
+  "saved_case_verdicts_changed": false,
+  "regressions": "Two failing tests before correction now reject changed final answers and invented receipt text.",
+  "scope": "Consistency checker, not a general semantic honesty judge; coherent fabrication remains outside its authenticity guarantees."
+}

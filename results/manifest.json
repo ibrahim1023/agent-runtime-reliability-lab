@@ -1069,5 +1069,61 @@
       "export": "results/receiver-diagnostics-check-20261104.json",
       "sha256": "72b74366c8b6926eca11263d53a64241cb3b010dbfbef5cea5234be610f1e518"
     }
+  },
+  "native_retry_v1": {
+    "plan": {
+      "export": "results/retry-timeout-plan-v1.json",
+      "sha256": "23933d61e8b82334dfe045fee122eec88a23b591382789136d279a99f85ef451"
+    },
+    "status": "six cases covered across interrupted attempt and continuation; no uninterrupted successful suite",
+    "setup_interruption": {
+      "export": "results/fresh/native-retry-v1/setup-interruption.json",
+      "sha256": "43d5ba9ad287d6b0ab826f6aa84ec849a3d2492f1a7046181350284a5bcc2b0d"
+    },
+    "partial_attempt": {
+      "export": "results/fresh/native-retry-v1/partial-five-cases.json",
+      "sha256": "ae2f994096d86f3a2024254a8189c1d8c113d9c91a4314dbf7685a3e08387087"
+    },
+    "continuation": {
+      "export": "results/fresh/native-retry-v1/timeout-continuation.json",
+      "sha256": "2802115b6375118ee742fdae6c6b57776b59d1a78a76d9e581b6f0328d43f745"
+    },
+    "coverage": {
+      "export": "results/fresh/native-retry-v1/coverage.json",
+      "sha256": "96a95a128204681f644cd4c6aad47ef2a399374344527d22a36ae4f9f7ed05f6"
+    },
+    "launch_amendment": {
+      "export": "results/native-retry-launch-amendment-a1.json",
+      "sha256": "c4354ea9fdc3aa15c67a628dae347d3b1db3ad9c17897073acc436533f0b1aef"
+    },
+    "timeout_amendment": {
+      "export": "results/native-retry-timeout-amendment-a2.json",
+      "sha256": "db51fa91339a4d613c190f6fd979968799fe4a9006191baadfc05ec8c535d59d"
+    },
+    "original_implementation": {
+      "export": "results/fresh/native-retry-v1/implementation/native_retry-before-fix.py",
+      "sha256": "10c2bfeb433d4093a212c6515ec2ec6fd508229c3f1a0c4887dba448c569c990"
+    },
+    "corrected_implementation": {
+      "export": "results/fresh/native-retry-v1/implementation/native_retry-corrected.py",
+      "sha256": "528a7960681a7a2d9c9ffa97df5a3369f0cb1a8c114f50c1b0482aaeeef86b36"
+    },
+    "assessor_at_execution": {
+      "export": "results/fresh/native-retry-v1/implementation/retry_evidence-at-execution.py",
+      "sha256": "8556a9b16937643eb6eecb4e51c8ba8b1b2f441c2642ca2cb33593cf8fd32790"
+    },
+    "assessment_amendment": {
+      "export": "results/native-retry-assessment-amendment-a3.json",
+      "sha256": "fca59df122206d899c2a5ab62d1d2d9cfdafdf26f1d91ee3ccbe6616659980b8"
+    },
+    "default_offline_validation": "native_retry_evidence stage",
+    "publication_check": {
+      "export": "results/native-retry-check-20261104.json",
+      "sha256": "0a69130fe6a1fa476c1549c5fe04195f9dc1895325e0fe7f41df456d4a0a16ed"
+    },
+    "validated_assessor": {
+      "export": "results/fresh/native-retry-v1/implementation/retry_evidence-validated.py",
+      "sha256": "762bd70b8404a0d181c3ca4dbe2aef36497fbd79f9176cf81573825206db1062"
+    }
   }
 }

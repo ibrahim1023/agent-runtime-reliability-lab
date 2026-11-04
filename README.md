@@ -51,7 +51,7 @@ Run all development checks, including evidence tampering and command failure cas
 python3 -S -m unittest discover -s tests -v
 ```
 
-Verified on Python 3.14.6: 102 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
+Verified on Python 3.14.6: 111 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
 
 See [offline verification limits](docs/offline-verification.md) for what the checks do and do not establish.
 
@@ -130,3 +130,8 @@ The [clean-install reproduction](docs/clean-install-reproduction.md) installed p
 ## Receiver diagnostics failure handling
 
 [The November 4 experiment](docs/receiver-diagnostics-evidence.md) found that preliminary receiver hashing could throw before the ordinary final-response path reached reconciliation. The application now records unavailable diagnostics and continues reporting: missing SQL evidence yields unknown, while readable SQL remains usable despite a failed hash read. Missing hashes never prove unchanged bytes, and unmet experiment criteria remain failed. Three baseline and three corrected application replays reused saved graph output; no new graph or provider call ran. Original integration source bytes are preserved separately. The offline verifier validates the saved replay in `receiver_diagnostics_evidence`; current development verification has 102 tests.
+
+
+## Native retries and synchronous timeouts
+
+[Six native-runtime cases](docs/retry-timeout-evidence.md) show bounded read retries, exhaustion as an error ToolMessage, duplicate effects under broad unprotected write retry, safe receipt reuse with a protected receiver, and a write committing before a synchronous timeout reaches its caller. Six graphs and eleven tool entries ran with zero provider calls. A setup failure and partial-worker fixture failure are retained with explicit amendments; coverage is five cases plus one continuation, not one uninterrupted successful suite. The default offline verifier checks the saved evidence in `native_retry_evidence`. Current development verification: 111 tests.

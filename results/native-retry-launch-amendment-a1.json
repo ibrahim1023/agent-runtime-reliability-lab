@@ -1,0 +1,18 @@
+{
+  "experiment_id": "native-retry-timeout-v1",
+  "amendment": "A1 launch correction",
+  "recorded_before_corrected_launch": true,
+  "reason": "Initial launcher resolved the virtual-environment Python symlink to system Python. It failed with ModuleNotFoundError before runtime import or any graph execution.",
+  "initial_setup_worker_processes": 1,
+  "initial_graph_cases": 0,
+  "initial_worker_wall_s": 0.07716916700064758,
+  "corrected_launch": "Use the absolute venv executable path without resolving its symlink. Confirm sys.prefix against the venv before graph cases.",
+  "corrected_runtime_worker_processes_allowed": 1,
+  "total_worker_processes_including_setup": 2,
+  "remaining_worker_wall_budget_s": 89.9,
+  "graph_budget_unchanged": 6,
+  "tool_entry_budget_unchanged": 12,
+  "provider_calls": 0,
+  "criteria_change": "None: retry counts, expected effects, exception statuses and timeout event-order criteria remain frozen.",
+  "failure_preservation": "Original plan and failed report unchanged; no case has yet executed. This is a bounded explicit setup correction, not an automatic retry of a graph experiment."
+}

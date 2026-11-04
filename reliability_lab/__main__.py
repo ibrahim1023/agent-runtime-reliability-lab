@@ -9,8 +9,8 @@ from reliability_lab.offline import verify_offline
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Inspect evidence and execute local receiver contracts.")
-    parser.add_argument("command", choices=["verify-offline", "scripted-root-check", "scripted-filesystem-check", "crash-resume-check", "reported-crash-check"])
-    parser.add_argument("--prediction", default="not supplied", help="Optional learner prediction for a new crash/resume attempt")
+    parser.add_argument("command", choices=["verify-offline", "scripted-root-check", "scripted-filesystem-check", "crash-resume-check", "reported-crash-check", "native-retry-check"])
+    parser.add_argument("--prediction", default="not supplied", help="Optional learner prediction for a new scripted experiment")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     if args.command == "scripted-root-check":
@@ -25,6 +25,9 @@ def main() -> int:
     elif args.command == "reported-crash-check":
         from reliability_lab.reported_crash import run_reported_crash
         report, code = run_reported_crash(root, learner_prediction=args.prediction)
+    elif args.command == "native-retry-check":
+        from reliability_lab.native_retry import run_native_retry
+        report, code = run_native_retry(root, learner_prediction=args.prediction)
     else:
         report, code = verify_offline(root)
     print(json.dumps(report, indent=2))

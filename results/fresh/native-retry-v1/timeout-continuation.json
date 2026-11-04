@@ -1,0 +1,77 @@
+{
+  "kind": "one-case continuation after preserved fixture setup failure; no earlier case rerun",
+  "case": {
+    "case": "write-sync-step-timeout",
+    "operation_id": "30f8f092-1465-42bf-aace-13f9507638f1",
+    "protected": false,
+    "graph_outcome": "TimeoutError",
+    "graph_error": "Timed out",
+    "duration_s": 0.21389704200009874,
+    "case_duration_s": 0.25697337499968853,
+    "tool_status": null,
+    "tool_content": null,
+    "answer": null,
+    "events": [
+      {
+        "event": "model_proposal",
+        "at_s": 0.04879574999995384,
+        "name": "write_probe",
+        "args": {
+          "message": "note"
+        }
+      },
+      {
+        "event": "tool_enter",
+        "at_s": 0.05004437499974301,
+        "operation_id": "30f8f092-1465-42bf-aace-13f9507638f1",
+        "attempt": 1
+      },
+      {
+        "event": "gate_release",
+        "at_s": 0.25203433299975586
+      },
+      {
+        "event": "receiver_result",
+        "at_s": 0.25525274999927205,
+        "receipt": {
+          "message": "note",
+          "operation_id": "30f8f092-1465-42bf-aace-13f9507638f1",
+          "receipt_id": "198e79c3-e687-446d-8750-b79217810f22",
+          "status": "recorded"
+        },
+        "reused": false
+      },
+      {
+        "event": "graph_error",
+        "at_s": 0.25670979200003785,
+        "error_type": "TimeoutError"
+      }
+    ],
+    "entries": [
+      {
+        "message": "note",
+        "operation_id": "30f8f092-1465-42bf-aace-13f9507638f1",
+        "receipt_id": "198e79c3-e687-446d-8750-b79217810f22",
+        "status": "recorded"
+      }
+    ],
+    "model_observations": [],
+    "controller_joined": true,
+    "step_timeout_s": 0.05,
+    "verdicts": {
+      "contract_met": true,
+      "tool_entries": 1,
+      "committed_effects": 1,
+      "graph_completed": false,
+      "single_effect_observed": true,
+      "single_effect_task_completed": false,
+      "checks": {
+        "stable_identity": true,
+        "receipt_consistency": true,
+        "model_observation_consistent": true,
+        "timeout_event_order": true
+      }
+    }
+  },
+  "implementation_sha256": "528a7960681a7a2d9c9ffa97df5a3369f0cb1a8c114f50c1b0482aaeeef86b36"
+}

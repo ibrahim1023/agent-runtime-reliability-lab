@@ -16,3 +16,6 @@ Keep these opt-in checks separate from `python3 -S -m unittest discover -s tests
 
 
 The separate `reported-crash-check` command integrates receiver reconciliation into the application's final response. It deliberately launches a new nineteen-worker attempt when invoked; it is not included in the two runtime tests. The default `verify-offline` checks its saved evidence, along with clean-install and reporting exports, without starting workers. See [integration evidence and limits](../docs/final-response-integration.md).
+
+
+`native-retry-check` deliberately executes six native retry/timeout graph cases in a compatible runtime environment. It is not part of the two existing runtime test methods or the default offline command. Recorded coverage is a preserved five-case partial attempt plus a timeout-only continuation, with explicit setup amendments; the corrected whole command was not rerun as one suite. See [native evidence and limits](../docs/retry-timeout-evidence.md).

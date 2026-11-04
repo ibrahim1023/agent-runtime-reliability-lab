@@ -1,0 +1,18 @@
+{
+  "experiment_id": "native-retry-timeout-v1",
+  "amendment": "A2 fixture assembly correction and one-case continuation",
+  "recorded_before_continuation": true,
+  "completed_cases_preserved": 5,
+  "unexecuted_case": "write-sync-step-timeout",
+  "failure": "AttributeError at agent.bound.step_timeout before invoke; installed Pregel.with_config returns a configured graph copy, not a generic runnable binding",
+  "correction": "Set agent.step_timeout directly; preserve five completed cases and execute only the remaining case",
+  "original_implementation_sha256": "10c2bfeb433d4093a212c6515ec2ec6fd508229c3f1a0c4887dba448c569c990",
+  "additional_worker_processes_allowed": 1,
+  "total_processes_including_setup_and_partial_worker": 3,
+  "total_graph_invocations_allowed_unchanged": 6,
+  "remaining_graph_invocations": 1,
+  "remaining_tool_entries_allowed": 2,
+  "continuation_worker_timeout_s": 30,
+  "criteria_change": "No expected graph statuses, attempts, effects, retry settings or timeout event-order criteria changed",
+  "preservation": "The initial setup failure and partial worker failure remain failures; the combined evidence is a six-case coverage result across a partial attempt and continuation, not one uninterrupted successful suite."
+}

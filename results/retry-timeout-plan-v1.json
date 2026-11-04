@@ -1,0 +1,105 @@
+{
+  "experiment_id": "native-retry-timeout-v1",
+  "frozen_on": "2026-11-04",
+  "base_commit": "b31e8a55986c7d49a0ddb35919710fa5716d6556",
+  "kind": "fresh scripted Deep Agents graphs using installed LangChain ToolRetryMiddleware and LangGraph synchronous step_timeout",
+  "budget": {
+    "graph_cases": 6,
+    "max_worker_processes": 1,
+    "max_seconds_per_case": 10,
+    "max_total_seconds": 90,
+    "max_tool_entries": 12,
+    "max_graph_recursion_per_case": 10,
+    "live_model_calls": 0,
+    "provider_tokens": 0,
+    "automatic_experiment_retries": 0
+  },
+  "cases": [
+    {
+      "case": "read-transient",
+      "max_retries": 2,
+      "expected_entries": 2,
+      "expected_effects": 0,
+      "expected_graph": "completed",
+      "expected_tool_status": "success"
+    },
+    {
+      "case": "read-exhausted",
+      "max_retries": 2,
+      "expected_entries": 3,
+      "expected_effects": 0,
+      "expected_graph": "completed",
+      "expected_tool_status": "error"
+    },
+    {
+      "case": "write-unprotected-broad-retry",
+      "max_retries": 1,
+      "expected_entries": 2,
+      "expected_effects": 2,
+      "expected_graph": "completed",
+      "expected_tool_status": "success"
+    },
+    {
+      "case": "write-unprotected-read-scoped-retry",
+      "max_retries": 2,
+      "expected_entries": 1,
+      "expected_effects": 1,
+      "expected_graph": "ResponseLost",
+      "expected_tool_status": null
+    },
+    {
+      "case": "write-protected-retry",
+      "max_retries": 1,
+      "expected_entries": 2,
+      "expected_effects": 1,
+      "expected_graph": "completed",
+      "expected_tool_status": "success"
+    },
+    {
+      "case": "write-sync-step-timeout",
+      "max_retries": 0,
+      "expected_entries": 1,
+      "expected_effects": 1,
+      "expected_graph": "TimeoutError",
+      "expected_tool_status": null
+    }
+  ],
+  "native_retry_settings": {
+    "retry_on": "OSError only; simulated ResponseLost is a TimeoutError subclass",
+    "initial_delay_s": 0,
+    "jitter": false,
+    "on_failure": "continue",
+    "scope": "per tool invocation; scripted model proposes once and never reissues a call"
+  },
+  "timeout_settings": {
+    "step_timeout_s": 0.05,
+    "release_delay_after_tool_start_s": 0.2,
+    "tool_gate_wait_cap_s": 2,
+    "controller_start_wait_cap_s": 2,
+    "expected_order": "tool started, delayed release, receiver commit, timeout error observed by caller",
+    "claim_boundary": "Native synchronous timeout may wait during executor cleanup; no claim of a hard wall-clock return deadline or universal cancellation"
+  },
+  "invariants": [
+    "Use create_deep_agent; no replacement agent loop or dependency patches",
+    "Stable operation ID across retries; one proposed tool call per case",
+    "Separate actual tool entries, committed receiver rows, receipts, model-facing tool status, graph completion and elapsed duration",
+    "Preserve unexpected failures and stop without automatic reruns",
+    "Keep protected replay receipts exact; unprotected broad retry is expected duplication, not task success",
+    "Trace error observations, release/commit order and controller cleanup; no lingering controlled tool thread",
+    "Validate saved observations separately from fresh unit/receiver checks"
+  ],
+  "inspected_module_sha256": {
+    "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+    "langchain.agents.middleware.tool_retry": "c60658ccdc6be6728005cc5178b5448d5c994c3c9e9068243c96189e27cfd97d",
+    "langgraph.pregel.main": "c96d4424e7a75388aef09afeaa8fcfe17c026e60dafca1331003775ca1bf0ffc",
+    "langgraph.pregel._runner": "dc835c835cbd2c783ff1df3ca46343ecab9b4a7f534ed0083be8d0664d21816e",
+    "langgraph.pregel._executor": "5afb1e7e7bd768fc5ff7ed5e222539abb73bd11f88d8e150eb75c30a8484364d",
+    "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+  },
+  "limitations": [
+    "One installed Python/runtime environment",
+    "Scripted model and controlled local tool failures, not real provider/network latency",
+    "Zero-delay retry isolates attempt count and does not test backoff or jitter",
+    "Receiver reconciliation unavailable case reuses earlier validated evidence; no new service-outage graph case"
+  ]
+}

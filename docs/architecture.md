@@ -31,3 +31,8 @@ The [read-only outcome reporter](outcome-reporting-evidence.md) runs outside the
 
 
 Receiver byte fingerprints are optional diagnostics in the delivery path. A diagnostic read error is recorded before reconciliation proceeds; it cannot replace the SQL outcome or prevent an unknown response. Byte invariance remains null when either measurement is unavailable. [The diagnostic-failure replay](receiver-diagnostics-evidence.md) demonstrates the distinction using saved graph output, not a new graph execution.
+
+
+## Native retry and timeout controls
+
+Deep Agents passes caller middleware into LangChain's agent construction. The lab's [native retry experiment](retry-timeout-evidence.md) uses `ToolRetryMiddleware` to scope retry eligibility and attempts per tool call. LangGraph handles the synchronous graph step deadline and executor cleanup. The observed timeout did not stop a running tool from committing. Per-call retry counts, graph completion, receiver effects and caller-visible errors must remain distinct; the scripted one-call fixture does not prove a global request retry budget.
