@@ -1,0 +1,1626 @@
+{
+  "experiment_id": "budget-crash-resume-v1",
+  "kind": "fresh native Deep Agents approval, thread budget and abrupt process crash/resume with local receiver",
+  "criteria_sha256": "fc0c76c19bb712c9a2bf98321120d6ca9f3bfc4f4da2395a1c45e73051812429",
+  "learner_prediction": "not supplied",
+  "cases": [
+    {
+      "case": "protected",
+      "thread_id": "aba9b212-5c9a-476c-b241-5b7e63f58952",
+      "first_operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+      "next_operation_id": "a2766177-8ea7-49f5-b67e-aee20cae5bda",
+      "protected": true,
+      "inspected_module_sha256": {
+        "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+        "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+        "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+        "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+      },
+      "phases": [
+        {
+          "phase": "initial",
+          "pid": 11044,
+          "exit_code": 0,
+          "timeout": false,
+          "duration_s": 0.593212042000232,
+          "observation": {
+            "phase": "initial",
+            "pid": 11044,
+            "thread_id": "aba9b212-5c9a-476c-b241-5b7e63f58952",
+            "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+            "input_kind": "new_user_message",
+            "thread_count_before": 0,
+            "thread_count_after": 0,
+            "interrupts": [
+              {
+                "id": "4250601106de168334f575a8e7bb5e7a",
+                "value": {
+                  "action_requests": [
+                    {
+                      "name": "record_action",
+                      "args": {
+                        "message": "note"
+                      },
+                      "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'note'}"
+                    }
+                  ],
+                  "review_configs": [
+                    {
+                      "action_name": "record_action",
+                      "allowed_decisions": [
+                        "approve"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "checkpoint_next": [
+              "HumanInTheLoopMiddleware.after_model"
+            ],
+            "tool_messages": [],
+            "final_tool_call_id": null,
+            "final_tool_status": null,
+            "final_tool_content": null,
+            "answer": null,
+            "answer_source": "scripted_model",
+            "duration_s": 0.00801304199922015,
+            "inspected_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+              "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+            },
+            "runtime": {
+              "python": "3.14.6",
+              "packages": {
+                "deepagents": "0.7.32",
+                "langchain": "1.4.7",
+                "langchain-core": "1.7.0",
+                "langgraph": "1.2.17",
+                "langgraph-prebuilt": "1.1.0",
+                "langsmith": "0.14.12"
+              },
+              "selected_loaded_module_sha256": {
+                "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+                "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+                "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+                "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+                "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+              },
+              "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+            }
+          },
+          "tool_entries": 0,
+          "effects": 0
+        },
+        {
+          "phase": "restore",
+          "pid": 11045,
+          "exit_code": 0,
+          "timeout": false,
+          "duration_s": 0.4332194590006111,
+          "observation": {
+            "phase": "restore",
+            "pid": 11045,
+            "thread_id": "aba9b212-5c9a-476c-b241-5b7e63f58952",
+            "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+            "input_kind": "resume_none",
+            "thread_count_before": 0,
+            "thread_count_after": 0,
+            "interrupts": [
+              {
+                "id": "4250601106de168334f575a8e7bb5e7a",
+                "value": {
+                  "action_requests": [
+                    {
+                      "name": "record_action",
+                      "args": {
+                        "message": "note"
+                      },
+                      "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'note'}"
+                    }
+                  ],
+                  "review_configs": [
+                    {
+                      "action_name": "record_action",
+                      "allowed_decisions": [
+                        "approve"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "checkpoint_next": [
+              "HumanInTheLoopMiddleware.after_model"
+            ],
+            "tool_messages": [],
+            "final_tool_call_id": null,
+            "final_tool_status": null,
+            "final_tool_content": null,
+            "answer": null,
+            "answer_source": "native_middleware",
+            "duration_s": 0.0014182909999362892,
+            "inspected_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+              "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+            },
+            "runtime": {
+              "python": "3.14.6",
+              "packages": {
+                "deepagents": "0.7.32",
+                "langchain": "1.4.7",
+                "langchain-core": "1.7.0",
+                "langgraph": "1.2.17",
+                "langgraph-prebuilt": "1.1.0",
+                "langsmith": "0.14.12"
+              },
+              "selected_loaded_module_sha256": {
+                "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+                "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+                "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+                "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+                "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+              },
+              "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+            }
+          },
+          "tool_entries": 0,
+          "effects": 0
+        },
+        {
+          "phase": "approve-first",
+          "pid": 11046,
+          "exit_code": 86,
+          "timeout": false,
+          "duration_s": 0.36326287500014587,
+          "observation": {},
+          "tool_entries": 1,
+          "effects": 1
+        },
+        {
+          "phase": "resume",
+          "pid": 11047,
+          "exit_code": 0,
+          "timeout": false,
+          "duration_s": 0.4252101669990225,
+          "observation": {
+            "phase": "resume",
+            "pid": 11047,
+            "thread_id": "aba9b212-5c9a-476c-b241-5b7e63f58952",
+            "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+            "input_kind": "resume_none",
+            "thread_count_before": 1,
+            "thread_count_after": 1,
+            "interrupts": [],
+            "checkpoint_next": [],
+            "tool_messages": [
+              {
+                "tool_call_id": "first-call",
+                "name": "record_action",
+                "status": "success",
+                "content": "{\"message\": \"note\", \"operation_id\": \"709e6ec0-fc69-4bcf-88c9-44ddae5b8397\", \"receipt_id\": \"609f1fc1-d238-4e38-99e5-2bd92cb90d59\", \"status\": \"recorded\"}"
+              }
+            ],
+            "final_tool_call_id": "first-call",
+            "final_tool_status": "success",
+            "final_tool_content": "{\"message\": \"note\", \"operation_id\": \"709e6ec0-fc69-4bcf-88c9-44ddae5b8397\", \"receipt_id\": \"609f1fc1-d238-4e38-99e5-2bd92cb90d59\", \"status\": \"recorded\"}",
+            "answer": "{\"message\": \"note\", \"operation_id\": \"709e6ec0-fc69-4bcf-88c9-44ddae5b8397\", \"receipt_id\": \"609f1fc1-d238-4e38-99e5-2bd92cb90d59\", \"status\": \"recorded\"}",
+            "answer_source": "scripted_model",
+            "duration_s": 0.007681458000661223,
+            "inspected_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+              "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+            },
+            "runtime": {
+              "python": "3.14.6",
+              "packages": {
+                "deepagents": "0.7.32",
+                "langchain": "1.4.7",
+                "langchain-core": "1.7.0",
+                "langgraph": "1.2.17",
+                "langgraph-prebuilt": "1.1.0",
+                "langsmith": "0.14.12"
+              },
+              "selected_loaded_module_sha256": {
+                "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+                "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+                "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+                "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+                "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+              },
+              "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+            }
+          },
+          "tool_entries": 2,
+          "effects": 1
+        },
+        {
+          "phase": "new-request",
+          "pid": 11051,
+          "exit_code": 0,
+          "timeout": false,
+          "duration_s": 0.4167167089999566,
+          "observation": {
+            "phase": "new-request",
+            "pid": 11051,
+            "thread_id": "aba9b212-5c9a-476c-b241-5b7e63f58952",
+            "operation_id": "a2766177-8ea7-49f5-b67e-aee20cae5bda",
+            "input_kind": "new_user_message",
+            "thread_count_before": 1,
+            "thread_count_after": 1,
+            "interrupts": [
+              {
+                "id": "06ec144d3567587bd090f1378a78918c",
+                "value": {
+                  "action_requests": [
+                    {
+                      "name": "record_action",
+                      "args": {
+                        "message": "next-note"
+                      },
+                      "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'next-note'}"
+                    }
+                  ],
+                  "review_configs": [
+                    {
+                      "action_name": "record_action",
+                      "allowed_decisions": [
+                        "approve"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "checkpoint_next": [
+              "HumanInTheLoopMiddleware.after_model"
+            ],
+            "tool_messages": [
+              {
+                "tool_call_id": "first-call",
+                "name": "record_action",
+                "status": "success",
+                "content": "{\"message\": \"note\", \"operation_id\": \"709e6ec0-fc69-4bcf-88c9-44ddae5b8397\", \"receipt_id\": \"609f1fc1-d238-4e38-99e5-2bd92cb90d59\", \"status\": \"recorded\"}"
+              }
+            ],
+            "final_tool_call_id": "first-call",
+            "final_tool_status": "success",
+            "final_tool_content": "{\"message\": \"note\", \"operation_id\": \"709e6ec0-fc69-4bcf-88c9-44ddae5b8397\", \"receipt_id\": \"609f1fc1-d238-4e38-99e5-2bd92cb90d59\", \"status\": \"recorded\"}",
+            "answer": null,
+            "answer_source": "scripted_model",
+            "duration_s": 0.006512125000881497,
+            "inspected_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+              "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+            },
+            "runtime": {
+              "python": "3.14.6",
+              "packages": {
+                "deepagents": "0.7.32",
+                "langchain": "1.4.7",
+                "langchain-core": "1.7.0",
+                "langgraph": "1.2.17",
+                "langgraph-prebuilt": "1.1.0",
+                "langsmith": "0.14.12"
+              },
+              "selected_loaded_module_sha256": {
+                "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+                "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+                "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+                "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+                "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+              },
+              "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+            }
+          },
+          "tool_entries": 2,
+          "effects": 1
+        },
+        {
+          "phase": "approve-next",
+          "pid": 11052,
+          "exit_code": 0,
+          "timeout": false,
+          "duration_s": 0.4281074169994099,
+          "observation": {
+            "phase": "approve-next",
+            "pid": 11052,
+            "thread_id": "aba9b212-5c9a-476c-b241-5b7e63f58952",
+            "operation_id": "a2766177-8ea7-49f5-b67e-aee20cae5bda",
+            "input_kind": "simulated_approval",
+            "thread_count_before": 1,
+            "thread_count_after": 1,
+            "interrupts": [],
+            "checkpoint_next": [],
+            "tool_messages": [
+              {
+                "tool_call_id": "first-call",
+                "name": "record_action",
+                "status": "success",
+                "content": "{\"message\": \"note\", \"operation_id\": \"709e6ec0-fc69-4bcf-88c9-44ddae5b8397\", \"receipt_id\": \"609f1fc1-d238-4e38-99e5-2bd92cb90d59\", \"status\": \"recorded\"}"
+              },
+              {
+                "tool_call_id": "next-call",
+                "name": "record_action",
+                "status": "error",
+                "content": "Tool call limit exceeded. Do not make additional tool calls."
+              }
+            ],
+            "final_tool_call_id": "next-call",
+            "final_tool_status": "error",
+            "final_tool_content": "Tool call limit exceeded. Do not make additional tool calls.",
+            "answer": "Tool call limit reached: thread limit exceeded (2/1 calls).",
+            "answer_source": "native_middleware",
+            "duration_s": 0.003004624999448424,
+            "inspected_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+              "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+            },
+            "runtime": {
+              "python": "3.14.6",
+              "packages": {
+                "deepagents": "0.7.32",
+                "langchain": "1.4.7",
+                "langchain-core": "1.7.0",
+                "langgraph": "1.2.17",
+                "langgraph-prebuilt": "1.1.0",
+                "langsmith": "0.14.12"
+              },
+              "selected_loaded_module_sha256": {
+                "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+                "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+                "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+                "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+                "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+              },
+              "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+            }
+          },
+          "tool_entries": 2,
+          "effects": 1
+        }
+      ],
+      "events": [
+        {
+          "pid": 11044,
+          "event": "worker_start",
+          "phase": "initial",
+          "thread_id": "aba9b212-5c9a-476c-b241-5b7e63f58952",
+          "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397"
+        },
+        {
+          "pid": 11044,
+          "event": "worker_preflight",
+          "phase": "initial",
+          "inspected_module_sha256": {
+            "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+            "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+          },
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          }
+        },
+        {
+          "pid": 11044,
+          "event": "checkpoint_before",
+          "phase": "initial",
+          "thread_count": 0
+        },
+        {
+          "pid": 11044,
+          "event": "model_proposal",
+          "phase": "initial",
+          "tool_call_id": "first-call",
+          "name": "record_action",
+          "args": {
+            "message": "note"
+          },
+          "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397"
+        },
+        {
+          "pid": 11045,
+          "event": "worker_start",
+          "phase": "restore",
+          "thread_id": "aba9b212-5c9a-476c-b241-5b7e63f58952",
+          "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397"
+        },
+        {
+          "pid": 11045,
+          "event": "worker_preflight",
+          "phase": "restore",
+          "inspected_module_sha256": {
+            "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+            "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+          },
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          }
+        },
+        {
+          "pid": 11045,
+          "event": "checkpoint_before",
+          "phase": "restore",
+          "thread_count": 0
+        },
+        {
+          "pid": 11046,
+          "event": "worker_start",
+          "phase": "approve-first",
+          "thread_id": "aba9b212-5c9a-476c-b241-5b7e63f58952",
+          "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397"
+        },
+        {
+          "pid": 11046,
+          "event": "worker_preflight",
+          "phase": "approve-first",
+          "inspected_module_sha256": {
+            "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+            "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+          },
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          }
+        },
+        {
+          "pid": 11046,
+          "event": "reviewer_decision",
+          "phase": "approve-first",
+          "source": "simulated_reviewer",
+          "decision": "approve"
+        },
+        {
+          "pid": 11046,
+          "event": "checkpoint_before",
+          "phase": "approve-first",
+          "thread_count": 0
+        },
+        {
+          "pid": 11046,
+          "event": "tool_enter",
+          "phase": "approve-first",
+          "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+          "message": "note",
+          "thread_count": 1
+        },
+        {
+          "pid": 11046,
+          "event": "receiver_result",
+          "phase": "approve-first",
+          "receipt": {
+            "message": "note",
+            "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+            "receipt_id": "609f1fc1-d238-4e38-99e5-2bd92cb90d59",
+            "status": "recorded"
+          },
+          "reused": false
+        },
+        {
+          "pid": 11047,
+          "event": "worker_start",
+          "phase": "resume",
+          "thread_id": "aba9b212-5c9a-476c-b241-5b7e63f58952",
+          "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397"
+        },
+        {
+          "pid": 11047,
+          "event": "worker_preflight",
+          "phase": "resume",
+          "inspected_module_sha256": {
+            "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+            "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+          },
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          }
+        },
+        {
+          "pid": 11047,
+          "event": "checkpoint_before",
+          "phase": "resume",
+          "thread_count": 1
+        },
+        {
+          "pid": 11047,
+          "event": "tool_enter",
+          "phase": "resume",
+          "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+          "message": "note",
+          "thread_count": 1
+        },
+        {
+          "pid": 11047,
+          "event": "receiver_result",
+          "phase": "resume",
+          "receipt": {
+            "message": "note",
+            "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+            "receipt_id": "609f1fc1-d238-4e38-99e5-2bd92cb90d59",
+            "status": "recorded"
+          },
+          "reused": true
+        },
+        {
+          "pid": 11047,
+          "event": "model_observed_tool",
+          "phase": "resume",
+          "status": "success",
+          "content": "{\"message\": \"note\", \"operation_id\": \"709e6ec0-fc69-4bcf-88c9-44ddae5b8397\", \"receipt_id\": \"609f1fc1-d238-4e38-99e5-2bd92cb90d59\", \"status\": \"recorded\"}",
+          "tool_call_id": "first-call"
+        },
+        {
+          "pid": 11051,
+          "event": "worker_start",
+          "phase": "new-request",
+          "thread_id": "aba9b212-5c9a-476c-b241-5b7e63f58952",
+          "operation_id": "a2766177-8ea7-49f5-b67e-aee20cae5bda"
+        },
+        {
+          "pid": 11051,
+          "event": "worker_preflight",
+          "phase": "new-request",
+          "inspected_module_sha256": {
+            "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+            "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+          },
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          }
+        },
+        {
+          "pid": 11051,
+          "event": "checkpoint_before",
+          "phase": "new-request",
+          "thread_count": 1
+        },
+        {
+          "pid": 11051,
+          "event": "model_proposal",
+          "phase": "new-request",
+          "tool_call_id": "next-call",
+          "name": "record_action",
+          "args": {
+            "message": "next-note"
+          },
+          "operation_id": "a2766177-8ea7-49f5-b67e-aee20cae5bda"
+        },
+        {
+          "pid": 11052,
+          "event": "worker_start",
+          "phase": "approve-next",
+          "thread_id": "aba9b212-5c9a-476c-b241-5b7e63f58952",
+          "operation_id": "a2766177-8ea7-49f5-b67e-aee20cae5bda"
+        },
+        {
+          "pid": 11052,
+          "event": "worker_preflight",
+          "phase": "approve-next",
+          "inspected_module_sha256": {
+            "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+            "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+          },
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          }
+        },
+        {
+          "pid": 11052,
+          "event": "reviewer_decision",
+          "phase": "approve-next",
+          "source": "simulated_reviewer",
+          "decision": "approve"
+        },
+        {
+          "pid": 11052,
+          "event": "checkpoint_before",
+          "phase": "approve-next",
+          "thread_count": 1
+        }
+      ],
+      "entries": [
+        {
+          "message": "note",
+          "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+          "receipt_id": "609f1fc1-d238-4e38-99e5-2bd92cb90d59",
+          "status": "recorded"
+        }
+      ],
+      "tool_entries": [
+        {
+          "pid": 11046,
+          "event": "tool_enter",
+          "phase": "approve-first",
+          "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+          "message": "note",
+          "thread_count": 1
+        },
+        {
+          "pid": 11047,
+          "event": "tool_enter",
+          "phase": "resume",
+          "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+          "message": "note",
+          "thread_count": 1
+        }
+      ],
+      "receiver_results": [
+        {
+          "pid": 11046,
+          "event": "receiver_result",
+          "phase": "approve-first",
+          "receipt": {
+            "message": "note",
+            "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+            "receipt_id": "609f1fc1-d238-4e38-99e5-2bd92cb90d59",
+            "status": "recorded"
+          },
+          "reused": false
+        },
+        {
+          "pid": 11047,
+          "event": "receiver_result",
+          "phase": "resume",
+          "receipt": {
+            "message": "note",
+            "operation_id": "709e6ec0-fc69-4bcf-88c9-44ddae5b8397",
+            "receipt_id": "609f1fc1-d238-4e38-99e5-2bd92cb90d59",
+            "status": "recorded"
+          },
+          "reused": true
+        }
+      ],
+      "verdicts": {
+        "contract_met": true,
+        "pending_tool_replayed": true,
+        "first_action_completed_once": true,
+        "new_action_blocked": true,
+        "tool_body_entries": 2,
+        "committed_effects": 1,
+        "checks": {
+          "launches": true,
+          "review_flow": true,
+          "stable_identity": true,
+          "budget_counter": true,
+          "phase_counts": true,
+          "receipt_replay": true,
+          "replay_answer": true
+        }
+      }
+    },
+    {
+      "case": "unprotected-control",
+      "thread_id": "dc277b9a-4ecd-4755-bfeb-5169e899e24a",
+      "first_operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+      "next_operation_id": "d88db87d-5466-4000-ab2b-5cb8d2cd9e14",
+      "protected": false,
+      "inspected_module_sha256": {
+        "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+        "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+        "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+        "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+      },
+      "phases": [
+        {
+          "phase": "initial",
+          "pid": 11053,
+          "exit_code": 0,
+          "timeout": false,
+          "duration_s": 0.41379849999975704,
+          "observation": {
+            "phase": "initial",
+            "pid": 11053,
+            "thread_id": "dc277b9a-4ecd-4755-bfeb-5169e899e24a",
+            "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+            "input_kind": "new_user_message",
+            "thread_count_before": 0,
+            "thread_count_after": 0,
+            "interrupts": [
+              {
+                "id": "327d7e9a00064ac15ee731576db23d18",
+                "value": {
+                  "action_requests": [
+                    {
+                      "name": "record_action",
+                      "args": {
+                        "message": "note"
+                      },
+                      "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'note'}"
+                    }
+                  ],
+                  "review_configs": [
+                    {
+                      "action_name": "record_action",
+                      "allowed_decisions": [
+                        "approve"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "checkpoint_next": [
+              "HumanInTheLoopMiddleware.after_model"
+            ],
+            "tool_messages": [],
+            "final_tool_call_id": null,
+            "final_tool_status": null,
+            "final_tool_content": null,
+            "answer": null,
+            "answer_source": "scripted_model",
+            "duration_s": 0.005973999999696389,
+            "inspected_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+              "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+            },
+            "runtime": {
+              "python": "3.14.6",
+              "packages": {
+                "deepagents": "0.7.32",
+                "langchain": "1.4.7",
+                "langchain-core": "1.7.0",
+                "langgraph": "1.2.17",
+                "langgraph-prebuilt": "1.1.0",
+                "langsmith": "0.14.12"
+              },
+              "selected_loaded_module_sha256": {
+                "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+                "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+                "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+                "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+                "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+              },
+              "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+            }
+          },
+          "tool_entries": 0,
+          "effects": 0
+        },
+        {
+          "phase": "restore",
+          "pid": 11054,
+          "exit_code": 0,
+          "timeout": false,
+          "duration_s": 0.44074237499989977,
+          "observation": {
+            "phase": "restore",
+            "pid": 11054,
+            "thread_id": "dc277b9a-4ecd-4755-bfeb-5169e899e24a",
+            "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+            "input_kind": "resume_none",
+            "thread_count_before": 0,
+            "thread_count_after": 0,
+            "interrupts": [
+              {
+                "id": "327d7e9a00064ac15ee731576db23d18",
+                "value": {
+                  "action_requests": [
+                    {
+                      "name": "record_action",
+                      "args": {
+                        "message": "note"
+                      },
+                      "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'note'}"
+                    }
+                  ],
+                  "review_configs": [
+                    {
+                      "action_name": "record_action",
+                      "allowed_decisions": [
+                        "approve"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "checkpoint_next": [
+              "HumanInTheLoopMiddleware.after_model"
+            ],
+            "tool_messages": [],
+            "final_tool_call_id": null,
+            "final_tool_status": null,
+            "final_tool_content": null,
+            "answer": null,
+            "answer_source": "native_middleware",
+            "duration_s": 0.0014553339988196967,
+            "inspected_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+              "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+            },
+            "runtime": {
+              "python": "3.14.6",
+              "packages": {
+                "deepagents": "0.7.32",
+                "langchain": "1.4.7",
+                "langchain-core": "1.7.0",
+                "langgraph": "1.2.17",
+                "langgraph-prebuilt": "1.1.0",
+                "langsmith": "0.14.12"
+              },
+              "selected_loaded_module_sha256": {
+                "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+                "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+                "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+                "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+                "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+              },
+              "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+            }
+          },
+          "tool_entries": 0,
+          "effects": 0
+        },
+        {
+          "phase": "approve-first",
+          "pid": 11055,
+          "exit_code": 86,
+          "timeout": false,
+          "duration_s": 0.356414958001551,
+          "observation": {},
+          "tool_entries": 1,
+          "effects": 1
+        },
+        {
+          "phase": "resume",
+          "pid": 11056,
+          "exit_code": 0,
+          "timeout": false,
+          "duration_s": 0.42658229200060305,
+          "observation": {
+            "phase": "resume",
+            "pid": 11056,
+            "thread_id": "dc277b9a-4ecd-4755-bfeb-5169e899e24a",
+            "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+            "input_kind": "resume_none",
+            "thread_count_before": 1,
+            "thread_count_after": 1,
+            "interrupts": [],
+            "checkpoint_next": [],
+            "tool_messages": [
+              {
+                "tool_call_id": "first-call",
+                "name": "record_action",
+                "status": "success",
+                "content": "{\"message\": \"note\", \"operation_id\": \"ac69b7ca-b366-4826-903d-fc11d9fb2d38\", \"receipt_id\": \"4dc12615-906e-4b19-87f3-5c70714023a3\", \"status\": \"recorded\"}"
+              }
+            ],
+            "final_tool_call_id": "first-call",
+            "final_tool_status": "success",
+            "final_tool_content": "{\"message\": \"note\", \"operation_id\": \"ac69b7ca-b366-4826-903d-fc11d9fb2d38\", \"receipt_id\": \"4dc12615-906e-4b19-87f3-5c70714023a3\", \"status\": \"recorded\"}",
+            "answer": "{\"message\": \"note\", \"operation_id\": \"ac69b7ca-b366-4826-903d-fc11d9fb2d38\", \"receipt_id\": \"4dc12615-906e-4b19-87f3-5c70714023a3\", \"status\": \"recorded\"}",
+            "answer_source": "scripted_model",
+            "duration_s": 0.008095082999716396,
+            "inspected_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+              "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+            },
+            "runtime": {
+              "python": "3.14.6",
+              "packages": {
+                "deepagents": "0.7.32",
+                "langchain": "1.4.7",
+                "langchain-core": "1.7.0",
+                "langgraph": "1.2.17",
+                "langgraph-prebuilt": "1.1.0",
+                "langsmith": "0.14.12"
+              },
+              "selected_loaded_module_sha256": {
+                "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+                "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+                "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+                "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+                "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+              },
+              "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+            }
+          },
+          "tool_entries": 2,
+          "effects": 2
+        },
+        {
+          "phase": "new-request",
+          "pid": 11057,
+          "exit_code": 0,
+          "timeout": false,
+          "duration_s": 0.43798262500058627,
+          "observation": {
+            "phase": "new-request",
+            "pid": 11057,
+            "thread_id": "dc277b9a-4ecd-4755-bfeb-5169e899e24a",
+            "operation_id": "d88db87d-5466-4000-ab2b-5cb8d2cd9e14",
+            "input_kind": "new_user_message",
+            "thread_count_before": 1,
+            "thread_count_after": 1,
+            "interrupts": [
+              {
+                "id": "a9cdc2a09f20b064cd28f4d2a438e3ea",
+                "value": {
+                  "action_requests": [
+                    {
+                      "name": "record_action",
+                      "args": {
+                        "message": "next-note"
+                      },
+                      "description": "Tool execution requires approval\n\nTool: record_action\nArgs: {'message': 'next-note'}"
+                    }
+                  ],
+                  "review_configs": [
+                    {
+                      "action_name": "record_action",
+                      "allowed_decisions": [
+                        "approve"
+                      ]
+                    }
+                  ]
+                }
+              }
+            ],
+            "checkpoint_next": [
+              "HumanInTheLoopMiddleware.after_model"
+            ],
+            "tool_messages": [
+              {
+                "tool_call_id": "first-call",
+                "name": "record_action",
+                "status": "success",
+                "content": "{\"message\": \"note\", \"operation_id\": \"ac69b7ca-b366-4826-903d-fc11d9fb2d38\", \"receipt_id\": \"4dc12615-906e-4b19-87f3-5c70714023a3\", \"status\": \"recorded\"}"
+              }
+            ],
+            "final_tool_call_id": "first-call",
+            "final_tool_status": "success",
+            "final_tool_content": "{\"message\": \"note\", \"operation_id\": \"ac69b7ca-b366-4826-903d-fc11d9fb2d38\", \"receipt_id\": \"4dc12615-906e-4b19-87f3-5c70714023a3\", \"status\": \"recorded\"}",
+            "answer": null,
+            "answer_source": "scripted_model",
+            "duration_s": 0.006527667001137161,
+            "inspected_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+              "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+            },
+            "runtime": {
+              "python": "3.14.6",
+              "packages": {
+                "deepagents": "0.7.32",
+                "langchain": "1.4.7",
+                "langchain-core": "1.7.0",
+                "langgraph": "1.2.17",
+                "langgraph-prebuilt": "1.1.0",
+                "langsmith": "0.14.12"
+              },
+              "selected_loaded_module_sha256": {
+                "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+                "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+                "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+                "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+                "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+              },
+              "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+            }
+          },
+          "tool_entries": 2,
+          "effects": 2
+        },
+        {
+          "phase": "approve-next",
+          "pid": 11058,
+          "exit_code": 0,
+          "timeout": false,
+          "duration_s": 0.4280972500000644,
+          "observation": {
+            "phase": "approve-next",
+            "pid": 11058,
+            "thread_id": "dc277b9a-4ecd-4755-bfeb-5169e899e24a",
+            "operation_id": "d88db87d-5466-4000-ab2b-5cb8d2cd9e14",
+            "input_kind": "simulated_approval",
+            "thread_count_before": 1,
+            "thread_count_after": 1,
+            "interrupts": [],
+            "checkpoint_next": [],
+            "tool_messages": [
+              {
+                "tool_call_id": "first-call",
+                "name": "record_action",
+                "status": "success",
+                "content": "{\"message\": \"note\", \"operation_id\": \"ac69b7ca-b366-4826-903d-fc11d9fb2d38\", \"receipt_id\": \"4dc12615-906e-4b19-87f3-5c70714023a3\", \"status\": \"recorded\"}"
+              },
+              {
+                "tool_call_id": "next-call",
+                "name": "record_action",
+                "status": "error",
+                "content": "Tool call limit exceeded. Do not make additional tool calls."
+              }
+            ],
+            "final_tool_call_id": "next-call",
+            "final_tool_status": "error",
+            "final_tool_content": "Tool call limit exceeded. Do not make additional tool calls.",
+            "answer": "Tool call limit reached: thread limit exceeded (2/1 calls).",
+            "answer_source": "native_middleware",
+            "duration_s": 0.0032489999994140817,
+            "inspected_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+              "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+            },
+            "runtime": {
+              "python": "3.14.6",
+              "packages": {
+                "deepagents": "0.7.32",
+                "langchain": "1.4.7",
+                "langchain-core": "1.7.0",
+                "langgraph": "1.2.17",
+                "langgraph-prebuilt": "1.1.0",
+                "langsmith": "0.14.12"
+              },
+              "selected_loaded_module_sha256": {
+                "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+                "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+                "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+                "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+                "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+              },
+              "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+            }
+          },
+          "tool_entries": 2,
+          "effects": 2
+        }
+      ],
+      "events": [
+        {
+          "pid": 11053,
+          "event": "worker_start",
+          "phase": "initial",
+          "thread_id": "dc277b9a-4ecd-4755-bfeb-5169e899e24a",
+          "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38"
+        },
+        {
+          "pid": 11053,
+          "event": "worker_preflight",
+          "phase": "initial",
+          "inspected_module_sha256": {
+            "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+            "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+          },
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          }
+        },
+        {
+          "pid": 11053,
+          "event": "checkpoint_before",
+          "phase": "initial",
+          "thread_count": 0
+        },
+        {
+          "pid": 11053,
+          "event": "model_proposal",
+          "phase": "initial",
+          "tool_call_id": "first-call",
+          "name": "record_action",
+          "args": {
+            "message": "note"
+          },
+          "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38"
+        },
+        {
+          "pid": 11054,
+          "event": "worker_start",
+          "phase": "restore",
+          "thread_id": "dc277b9a-4ecd-4755-bfeb-5169e899e24a",
+          "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38"
+        },
+        {
+          "pid": 11054,
+          "event": "worker_preflight",
+          "phase": "restore",
+          "inspected_module_sha256": {
+            "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+            "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+          },
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          }
+        },
+        {
+          "pid": 11054,
+          "event": "checkpoint_before",
+          "phase": "restore",
+          "thread_count": 0
+        },
+        {
+          "pid": 11055,
+          "event": "worker_start",
+          "phase": "approve-first",
+          "thread_id": "dc277b9a-4ecd-4755-bfeb-5169e899e24a",
+          "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38"
+        },
+        {
+          "pid": 11055,
+          "event": "worker_preflight",
+          "phase": "approve-first",
+          "inspected_module_sha256": {
+            "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+            "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+          },
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          }
+        },
+        {
+          "pid": 11055,
+          "event": "reviewer_decision",
+          "phase": "approve-first",
+          "source": "simulated_reviewer",
+          "decision": "approve"
+        },
+        {
+          "pid": 11055,
+          "event": "checkpoint_before",
+          "phase": "approve-first",
+          "thread_count": 0
+        },
+        {
+          "pid": 11055,
+          "event": "tool_enter",
+          "phase": "approve-first",
+          "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+          "message": "note",
+          "thread_count": 1
+        },
+        {
+          "pid": 11055,
+          "event": "receiver_result",
+          "phase": "approve-first",
+          "receipt": {
+            "message": "note",
+            "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+            "receipt_id": "d2a5db5d-2bde-48e4-b9f2-dc88f85c3747",
+            "status": "recorded"
+          },
+          "reused": false
+        },
+        {
+          "pid": 11056,
+          "event": "worker_start",
+          "phase": "resume",
+          "thread_id": "dc277b9a-4ecd-4755-bfeb-5169e899e24a",
+          "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38"
+        },
+        {
+          "pid": 11056,
+          "event": "worker_preflight",
+          "phase": "resume",
+          "inspected_module_sha256": {
+            "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+            "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+          },
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          }
+        },
+        {
+          "pid": 11056,
+          "event": "checkpoint_before",
+          "phase": "resume",
+          "thread_count": 1
+        },
+        {
+          "pid": 11056,
+          "event": "tool_enter",
+          "phase": "resume",
+          "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+          "message": "note",
+          "thread_count": 1
+        },
+        {
+          "pid": 11056,
+          "event": "receiver_result",
+          "phase": "resume",
+          "receipt": {
+            "message": "note",
+            "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+            "receipt_id": "4dc12615-906e-4b19-87f3-5c70714023a3",
+            "status": "recorded"
+          },
+          "reused": false
+        },
+        {
+          "pid": 11056,
+          "event": "model_observed_tool",
+          "phase": "resume",
+          "status": "success",
+          "content": "{\"message\": \"note\", \"operation_id\": \"ac69b7ca-b366-4826-903d-fc11d9fb2d38\", \"receipt_id\": \"4dc12615-906e-4b19-87f3-5c70714023a3\", \"status\": \"recorded\"}",
+          "tool_call_id": "first-call"
+        },
+        {
+          "pid": 11057,
+          "event": "worker_start",
+          "phase": "new-request",
+          "thread_id": "dc277b9a-4ecd-4755-bfeb-5169e899e24a",
+          "operation_id": "d88db87d-5466-4000-ab2b-5cb8d2cd9e14"
+        },
+        {
+          "pid": 11057,
+          "event": "worker_preflight",
+          "phase": "new-request",
+          "inspected_module_sha256": {
+            "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+            "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+          },
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          }
+        },
+        {
+          "pid": 11057,
+          "event": "checkpoint_before",
+          "phase": "new-request",
+          "thread_count": 1
+        },
+        {
+          "pid": 11057,
+          "event": "model_proposal",
+          "phase": "new-request",
+          "tool_call_id": "next-call",
+          "name": "record_action",
+          "args": {
+            "message": "next-note"
+          },
+          "operation_id": "d88db87d-5466-4000-ab2b-5cb8d2cd9e14"
+        },
+        {
+          "pid": 11058,
+          "event": "worker_start",
+          "phase": "approve-next",
+          "thread_id": "dc277b9a-4ecd-4755-bfeb-5169e899e24a",
+          "operation_id": "d88db87d-5466-4000-ab2b-5cb8d2cd9e14"
+        },
+        {
+          "pid": 11058,
+          "event": "worker_preflight",
+          "phase": "approve-next",
+          "inspected_module_sha256": {
+            "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+            "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+            "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+            "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+          },
+          "runtime": {
+            "python": "3.14.6",
+            "packages": {
+              "deepagents": "0.7.32",
+              "langchain": "1.4.7",
+              "langchain-core": "1.7.0",
+              "langgraph": "1.2.17",
+              "langgraph-prebuilt": "1.1.0",
+              "langsmith": "0.14.12"
+            },
+            "selected_loaded_module_sha256": {
+              "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+              "deepagents.backends.state": "d8283ca6b8b33286eadb1042e14e4e5c66336f0ddc1357ba042a862e963447f5",
+              "deepagents.backends.utils": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+              "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+              "langgraph.prebuilt.tool_node": "af6df67779000d219b2e1799401238f3618511658b26316a70a5e432891040d3"
+            },
+            "scope": "Selected loaded modules, not a complete dependency lock or historical execution identity"
+          }
+        },
+        {
+          "pid": 11058,
+          "event": "reviewer_decision",
+          "phase": "approve-next",
+          "source": "simulated_reviewer",
+          "decision": "approve"
+        },
+        {
+          "pid": 11058,
+          "event": "checkpoint_before",
+          "phase": "approve-next",
+          "thread_count": 1
+        }
+      ],
+      "entries": [
+        {
+          "message": "note",
+          "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+          "receipt_id": "d2a5db5d-2bde-48e4-b9f2-dc88f85c3747",
+          "status": "recorded"
+        },
+        {
+          "message": "note",
+          "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+          "receipt_id": "4dc12615-906e-4b19-87f3-5c70714023a3",
+          "status": "recorded"
+        }
+      ],
+      "tool_entries": [
+        {
+          "pid": 11055,
+          "event": "tool_enter",
+          "phase": "approve-first",
+          "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+          "message": "note",
+          "thread_count": 1
+        },
+        {
+          "pid": 11056,
+          "event": "tool_enter",
+          "phase": "resume",
+          "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+          "message": "note",
+          "thread_count": 1
+        }
+      ],
+      "receiver_results": [
+        {
+          "pid": 11055,
+          "event": "receiver_result",
+          "phase": "approve-first",
+          "receipt": {
+            "message": "note",
+            "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+            "receipt_id": "d2a5db5d-2bde-48e4-b9f2-dc88f85c3747",
+            "status": "recorded"
+          },
+          "reused": false
+        },
+        {
+          "pid": 11056,
+          "event": "receiver_result",
+          "phase": "resume",
+          "receipt": {
+            "message": "note",
+            "operation_id": "ac69b7ca-b366-4826-903d-fc11d9fb2d38",
+            "receipt_id": "4dc12615-906e-4b19-87f3-5c70714023a3",
+            "status": "recorded"
+          },
+          "reused": false
+        }
+      ],
+      "verdicts": {
+        "contract_met": true,
+        "pending_tool_replayed": true,
+        "first_action_completed_once": false,
+        "new_action_blocked": true,
+        "tool_body_entries": 2,
+        "committed_effects": 2,
+        "checks": {
+          "launches": true,
+          "review_flow": true,
+          "stable_identity": true,
+          "budget_counter": true,
+          "phase_counts": true,
+          "receipt_replay": true,
+          "replay_answer": true
+        }
+      }
+    }
+  ],
+  "live_model_calls": 0,
+  "provider_tokens": 0,
+  "fixture_contracts_met": true,
+  "duration_s": 5.172047707999809,
+  "worker_processes": 12,
+  "implementation_sha256": {
+    "budget_recovery.py": "dc4d1cc25260051f8d218a576b5f144b23028b7fe42c8e9fc078c74fee2cc8d9",
+    "budget_recovery_worker.py": "9edffd2dec689303d35ab1eb75c5896108cd81ec45b0179285c5e9951ce527e5",
+    "budget_recovery_evidence.py": "26c957c181dcf031997c19cb4ed0181e6c756f65ebcfa0731a2d42a205617185",
+    "receiver.py": "9bedcf406e0e489f854adb02e01469635fecf247ebb95e3920a87965363d2ab2"
+  },
+  "report_path": "work/budget-recovery/928f84bf0e9e4a4fb24b0b98f6019830/report.json"
+}

@@ -1197,5 +1197,45 @@
       "export": "results/budget-lifetime-check-20261104.json",
       "sha256": "63374f3a47d2e5a4aebba1b57cb3dc8da080020d288c80dda61858dae6c27578"
     }
+  },
+  "budget_recovery_v1": {
+    "plan": {
+      "export": "results/budget-recovery-plan-v1.json",
+      "sha256": "fc0c76c19bb712c9a2bf98321120d6ca9f3bfc4f4da2395a1c45e73051812429"
+    },
+    "status": "two conditions executed once, twelve workers; protected recovery and duplicate control both retained",
+    "execution": {
+      "export": "results/fresh/budget-recovery-v1/execution.json",
+      "sha256": "958f82b0ce265df293d32c3de7657d5044e74fe5cb34a51dd9f48208d5f1979b"
+    },
+    "launch": {
+      "export": "results/fresh/budget-recovery-v1/launch.json",
+      "sha256": "a55efadbef5767307b254b196a9f4f6ac24cd1c8122f2dc75407ff96652de246"
+    },
+    "driver_at_execution": {
+      "export": "results/fresh/budget-recovery-v1/implementation/budget_recovery.py",
+      "sha256": "dc4d1cc25260051f8d218a576b5f144b23028b7fe42c8e9fc078c74fee2cc8d9"
+    },
+    "worker_at_execution": {
+      "export": "results/fresh/budget-recovery-v1/implementation/budget_recovery_worker.py",
+      "sha256": "9edffd2dec689303d35ab1eb75c5896108cd81ec45b0179285c5e9951ce527e5"
+    },
+    "assessor_at_execution": {
+      "export": "results/fresh/budget-recovery-v1/implementation/budget_recovery_evidence.py",
+      "sha256": "26c957c181dcf031997c19cb4ed0181e6c756f65ebcfa0731a2d42a205617185"
+    },
+    "receiver_at_execution": {
+      "export": "results/fresh/budget-recovery-v1/implementation/receiver.py",
+      "sha256": "9bedcf406e0e489f854adb02e01469635fecf247ebb95e3920a87965363d2ab2"
+    },
+    "learning_note": {
+      "export": "results/budget-recovery-learning-note.json",
+      "sha256": "6078e7c681e312828edb6387cd4615b3eb9bf2908986b136b5b7ab45df6f3525"
+    },
+    "default_offline_validation": "budget_recovery_evidence stage",
+    "publication_check": {
+      "export": "results/budget-recovery-check-20261104.json",
+      "sha256": "8a8a0c26d986469db7b6d3fcf226033f0516de2931c507deb034544b2d3f84d9"
+    }
   }
 }

@@ -144,3 +144,8 @@ The [clean-install milestone](clean-install-reproduction.md) supersedes the earl
 ## Conversation budget lifetime, 2026-11-04
 
 [Four fresh native graph invocations](budget-lifetime-evidence.md) in separate workers compared run-only and run-plus-thread limits across completed turns, clean restarts and new user input. The same thread/checkpoint was reused within each condition. Nine controlled failed tool entries and zero provider calls ran; no raw checkpoint dump is published. Every worker independently recorded the inspected source fingerprints. Review found and corrected a launcher-success validation gap under A1 without rerunning the actual successful workers; executed and guarded driver sources are preserved separately. The default offline stage verifies saved counter/history continuity and launch status. Current development verification has 124 tests.
+
+
+## Budget, approval and pending-work crash recovery, 2026-11-04
+
+[Two fresh scripted conditions](budget-recovery-evidence.md) used twelve worker phases, including expected post-commit exits86, with four tool-body entries and zero provider calls. The protected replay kept one effect; the control duplicated the first action. Both later new requests received simulated approval then were budget-blocked. Every worker gated graph invocation on the frozen native source fingerprints. Raw checkpoints remain private. The learner answer arrived after execution and is recorded separately without replacing the original “not supplied” prediction. Stored input-kind, review, counter, receipt and model-result evidence is validated offline without rerunning workers. Development verification has 130 tests.

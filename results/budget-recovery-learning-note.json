@@ -1,0 +1,8 @@
+{
+  "experiment_id": "budget-crash-resume-v1",
+  "answer": "Yes\u2014the spent budget blocks the replay",
+  "timing": "received after experiment execution and initial result inspection",
+  "original_run_prediction": "not supplied",
+  "original_evidence_changed": false,
+  "comparison": "Pending tool replayed in both conditions; new request was blocked. Protected receiver prevented another effect."
+}

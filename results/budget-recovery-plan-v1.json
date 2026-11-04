@@ -1,0 +1,79 @@
+{
+  "experiment_id": "budget-crash-resume-v1",
+  "frozen_on": "2026-11-04",
+  "base_commit": "46ea320fbff8b8cdc52382b78c563962762302a7",
+  "kind": "fresh native Deep Agents approval, thread budget and abrupt process crash/resume with local receiver",
+  "budget": {
+    "conditions": 2,
+    "workers": 12,
+    "max_seconds_per_worker": 10,
+    "max_total_seconds": 120,
+    "max_tool_body_entries": 4,
+    "provider_calls": 0,
+    "provider_tokens": 0,
+    "automatic_retries": 0
+  },
+  "conditions": [
+    {
+      "case": "protected",
+      "protected": true,
+      "expected_final_effects": 1,
+      "expected_reused_receipt": true
+    },
+    {
+      "case": "unprotected-control",
+      "protected": false,
+      "expected_final_effects": 2,
+      "expected_reused_receipt": false
+    }
+  ],
+  "phases": [
+    "initial",
+    "restore",
+    "approve-first",
+    "resume",
+    "new-request",
+    "approve-next"
+  ],
+  "expected_exit_codes": [
+    0,
+    0,
+    86,
+    0,
+    0,
+    0
+  ],
+  "thread_limit": 1,
+  "limit_exit": "end",
+  "recursion_limit": 24,
+  "review_source": "simulated_reviewer",
+  "phase_protocol": [
+    "Initial first action pauses for approval; receiver empty. In inspected ordering approval precedes budget; thread count observed before pause is expected zero.",
+    "Fresh process invokes None, no review decision; same first approval remains pending and receiver empty.",
+    "Simulated approve: budget count reaches one; receiver commits and fsynced receipt journal exists; exit86 before tool returns.",
+    "Fresh process invokes None with same operation and thread IDs, no new approval; pending tool replays despite countone. Protected receiver reuses receipt; control records duplicate.",
+    "New user request uses a different operationID and callID in the same thread; pauses for its own approval.",
+    "Simulated approve of new request; native thread limit blocks it before body entry; no receipt/effect under new operationID."
+  ],
+  "invariants": [
+    "One stable application thread ID per condition; distinct first and next operation IDs persisted once before workers",
+    "No graph input or approval decision resubmitted on post-crash resume",
+    "Exactly two body entries, both first operation ID and first payload, with thread countone at both entries",
+    "Checkpoint budget stays one after the first approval and through recovery/new request",
+    "Protected replay returns exact prior receipt; unprotected duplication remains task failure",
+    "New request gets no receiver row or body entry; recorded new approval is not permission to bypass budget",
+    "Preserve approval pause values, budget counter values, receipts, model-facing results and launch exits; no raw checkpoints or private paths",
+    "Any unexpected post-crash approval pause or worker failure is preserved as failed criterion; never approved/retried away"
+  ],
+  "limitations": [
+    "Local synchronous fixture with simulated reviewer, not authenticated approval or remote exactly-once delivery",
+    "Abrupt exit after receiver commit, not machine power loss",
+    "Native limit counts model-proposed requests; no atomic user/account/global resource-budget claim"
+  ],
+  "inspected_module_sha256": {
+    "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+    "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+    "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+    "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+  }
+}

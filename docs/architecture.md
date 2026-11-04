@@ -42,3 +42,6 @@ The [run-budget experiment](run-budget-evidence.md) adds native `ToolCallLimitMi
 
 
 The [budget-lifetime experiment](budget-lifetime-evidence.md) distinguishes invocation state from persisted thread state. The inspected run counter uses `UntrackedValue` and is absent from checkpoints; the thread counter and prior messages persisted into a fresh worker. A stable thread ID scopes the conversation allowance. These observations cover new user turns after completed execution, not unfinished crash/resume or concurrent callers.
+
+
+The [budgeted crash experiment](budget-recovery-evidence.md) shows why request budgets and receiver deduplication remain separate. A pending tools-node replay can occur with a spent thread counter, without a new model proposal or approval. A new request is still budget-checked. In the tested installed middleware order, simulated approval precedes that new-request budget check; approval does not override the spent allowance.

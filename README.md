@@ -51,7 +51,7 @@ Run all development checks, including evidence tampering and command failure cas
 python3 -S -m unittest discover -s tests -v
 ```
 
-Verified on Python 3.14.6: 124 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
+Verified on Python 3.14.6: 130 tests passed. On Python before 3.13, the connection-warning regression test is explicitly skipped because SQLite did not emit that warning; skipped counts are reported. Other contracts remain active.
 
 See [offline verification limits](docs/offline-verification.md) for what the checks do and do not establish.
 
@@ -145,3 +145,8 @@ The [clean-install reproduction](docs/clean-install-reproduction.md) installed p
 ## Budget lifetime across clean restarts
 
 [The two-turn experiment](docs/budget-lifetime-evidence.md) used four fresh workers and the same checkpoint thread per condition. Run-only limits allowed three failed tool entries on each new turn; adding a thread limit allowed three on the first and zero on the second. The conversation counter and prior messages persisted, while the run counter was absent from checkpoints. This covers completed turns with new input, not pending-work crash/resume or global user budgets. The default offline verifier checks the saved evidence in `budget_lifetime_evidence`; current development verification has 124 tests.
+
+
+## Budgeted crash recovery
+
+[The combined experiment](docs/budget-recovery-evidence.md) resumed a pending approved tool while the conversation counter remained spent. Both receivers replayed the body; protected storage kept one effect while the control created two. A genuinely new approved request was budget-blocked in both cases. Two conditions used twelve expected worker exits, four actual tool entries and zero provider calls. Approval-before-budget ordering is retained explicitly. The offline verifier checks the saved evidence in `budget_recovery_evidence`; current development verification has 130 tests.

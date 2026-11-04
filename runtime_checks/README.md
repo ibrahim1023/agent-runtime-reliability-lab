@@ -25,3 +25,6 @@ The separate `reported-crash-check` command integrates receiver reconciliation i
 
 
 `budget-lifetime-check` deliberately launches four fresh workers for two completed new-user turns per condition on persistent SQLite checkpoint threads. It is separate from the ordinary runtime tests. Its saved evidence is verified without workers by the offline command. See [lifetime scope and limits](../docs/budget-lifetime-evidence.md).
+
+
+`budget-recovery-check` deliberately starts twelve worker phases for protected/control post-commit crash recovery plus a budget-blocked new request. It is separate from the two ordinary runtime tests. Its saved evidence is checked offline without workers. See [the combined evidence and limits](../docs/budget-recovery-evidence.md).

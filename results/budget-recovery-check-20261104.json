@@ -1,0 +1,25 @@
+{
+  "kind": "publication verification; no new graph workers",
+  "development_tests_passed": 130,
+  "python_version": "3.14.6",
+  "offline_exit_code": 0,
+  "budget_recovery_evidence": {
+    "status": "passed",
+    "kind": "stored budget/crash evidence validation; no new workers or graphs",
+    "worker_phases_checked": 12,
+    "tool_entries_observed": 4,
+    "new_workers": 0,
+    "first_action_effects": [
+      1,
+      2
+    ],
+    "new_action_effects": [
+      0,
+      0
+    ]
+  },
+  "expected_crash_exits": 2,
+  "provider_calls": 0,
+  "new_graph_workers_during_publication": 0,
+  "review": "No blocking setup/runtime issue; runtime fingerprints and phase input/review/tool-result bindings checked"
+}
