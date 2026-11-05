@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-05",
+  "kind": "presentation packaging and fresh dependency-free verification; not a new graph or model experiment",
+  "baseline_commit": "605718a8cdf8eb067bde005fd540c9309cbaa432",
+  "working_checkout": {
+    "python_version": "3.14.6",
+    "offline": {
+      "command": "python3 -S -m reliability_lab verify-offline",
+      "exit_code": 0,
+      "stored_stages": "all passed",
+      "receiver_contracts": {
+        "tests_run": 6,
+        "skipped": 0,
+        "failures": 0,
+        "errors": 0
+      }
+    },
+    "development": {
+      "command": "python3 -S -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "tests_run": 130,
+      "passed": 130,
+      "skipped": 0
+    }
+  },
+  "isolated_source_copy": {
+    "source": "tracked source/evidence plus new presentation documents; no work, virtual environment or dotenv copied",
+    "environment": "allowlisted process essentials; site-package loading disabled with -S; no provider keys inherited",
+    "isolation": {
+      "site_loaded": false,
+      "deepagents_available": false,
+      "python": "3.12.11"
+    },
+    "checks": [
+      {
+        "command": "python3 -S -m reliability_lab verify-offline",
+        "exit_code": 0,
+        "stages": {
+          "historical_evidence": "passed",
+          "search_recovery_review": "passed",
+          "historical_search_evidence": "passed",
+          "optional_cohort_inventory": "passed",
+          "crash_resume_evidence": "passed",
+          "clean_install_evidence": "passed",
+          "outcome_reporting_evidence": "passed",
+          "final_response_evidence": "passed",
+          "receiver_diagnostics_evidence": "passed",
+          "native_retry_evidence": "passed",
+          "run_budget_evidence": "passed",
+          "budget_lifetime_evidence": "passed",
+          "budget_recovery_evidence": "passed",
+          "receiver_contracts": "passed"
+        },
+        "receiver_contracts": {
+          "tests_run": 6,
+          "skipped": 1,
+          "failures": 0,
+          "errors": 0
+        }
+      },
+      {
+        "command": "python3 -S -m unittest discover -s tests -v",
+        "exit_code": 0,
+        "tests_run": 130,
+        "summary": "OK (skipped=1)"
+      }
+    ],
+    "test_interpretation": "129 passed and one explicit pre-3.13 SQLite warning test skipped; total tests run 130"
+  },
+  "saved_case_cross_checks": {
+    "crash_cases": [
+      {
+        "case": "protected-approve-1",
+        "tool_entries": 2,
+        "effects": 1
+      },
+      {
+        "case": "protected-approve-2",
+        "tool_entries": 2,
+        "effects": 1
+      },
+      {
+        "case": "unprotected-approve-control",
+        "tool_entries": 2,
+        "effects": 2
+      },
+      {
+        "case": "protected-edit",
+        "tool_entries": 2,
+        "effects": 1
+      },
+      {
+        "case": "protected-reject",
+        "tool_entries": 0,
+        "effects": 0
+      }
+    ],
+    "integration_responses": 6,
+    "budget_recovery_workers_observed_in_saved_record": 12,
+    "new_graph_workers": 0
+  },
+  "publication_review": {
+    "scope": "README.md, REPORT.md, demo, claim map, reproduction guide, plan and this separate check record",
+    "review": "independent read-only documentation review found no substantive findings; requested addition of this planned check record",
+    "original_evidence_and_source_files": "unchanged relative to baseline",
+    "new_documents": "checked local link targets and private path/key prefix patterns; no raw checkpoints or traces added",
+    "local_copy_draft": "stored only under ignored work; not committed or published to other surfaces",
+    "local_document_links_checked": 96
+  },
+  "fresh_runtime_installations": 0,
+  "fresh_graph_experiments": 0,
+  "live_model_calls": 0,
+  "provider_tokens": 0,
+  "not_executed": [
+    "pip spelling of optional setup",
+    "independent-host or cross-platform runtime reproduction",
+    "runtime execution on Python 3.12.11",
+    "full corrected native retry suite as one uninterrupted attempt"
+  ],
+  "reused_runtime_precedent": [
+    "results/fresh/clean-install-v1/environment.json",
+    "results/fresh/clean-install-v1/execution.json",
+    "results/fresh/clean-install-v1/comparison.json"
+  ],
+  "limitations": [
+    "isolated copy is same-host dependency-free verification, not an independent runtime reproduction",
+    "seed requirements and installed inventory are not full transitive artifact locks",
+    "historical revision/model identity gaps and coherent artifact replacement limits remain",
+    "checks do not turn intentionally failed tasks into successful tasks"
+  ]
+}
