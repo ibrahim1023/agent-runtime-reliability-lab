@@ -1,66 +1,92 @@
 # Agent Runtime Reliability Lab
 
-**A tool can run twice even when a checkpoint remembers the conversation.** This independent, AI-assisted lab investigates what happens when an action commits, its process crashes before tool completion is saved, and the runtime resumes pending work.
+**What happens when an agent's action succeeds—but the process crashes before it saves the tool result?**
 
-The central comparison is small: both receivers see two tool attempts. The unprotected receiver commits twice; the protected SQLite receiver recognizes the same operation ID and returns its original receipt, leaving one effect. A separate application reporter checks receiver evidence rather than treating a successful graph or receipt as proof of task success.
+On restart, the runtime can execute the pending tool again. This independent, AI-assisted lab makes that behavior visible and tests safeguards against duplicate effects and misleading success reports.
 
-## What this project contributes
+Built with **Python, SQLite, Deep Agents, LangChain and LangGraph**. Start with the [five-minute walkthrough](docs/demo.md) or read the [full report](REPORT.md).
 
-Ibrahim Arshad developed the experiment harness, local receiver, outcome reporting, evaluators and reviewed evidence with AI assistance. **Deep Agents, LangChain and LangGraph supply the agent runtime.** Scripted models drive the fresh recovery fixtures; historical live-model results are retained separately. This is not an upstream SDK contribution or a production deployment.
+## The core experiment
 
-## Selected findings
+```text
+Action commits → process crashes → pending tool replays
+```
 
-| Finding | Observed result | Inspect the evidence |
-|---|---|---|
-| Checkpoints can replay an already committed action | Two tool entries: two unprotected effects versus one protected effect | [Crash/replay comparison](docs/crash-resume-evidence.md), [saved phases and receipts](results/fresh/crash-resume-v1/execution.json), [corrected assessment](results/fresh/crash-resume-v1/reassessment-a1.json) |
-| Approval and edited contents survive this restart boundary | Edited payload replayed unchanged; rejection made no effect | [Frozen expectations](results/next-experiment-plan-v1.json), [same-host package reproduction](results/fresh/clean-install-v1/execution.json) |
-| Graph completion and a valid receipt do not prove one effect | Application disclosed a duplicate; unavailable verification produced unknown | [Integrated responses](docs/final-response-integration.md), [saved graph answers and application responses](results/fresh/final-response-v1/execution.json) |
-| A spent request budget does not prevent pending tool replay | Both receivers replayed; a genuinely new request was blocked | [Budget/recovery explanation](docs/budget-recovery-evidence.md), [saved execution](results/fresh/budget-recovery-v1/execution.json) |
-| Broader recovery guidance can make decisions worse | Rejected middleware chose one of two plausible sources and wrote output | [Historical comparison](docs/search-recovery-evidence.md), [actual rejected run](results/historical/search/candidate-ambiguous-1.json) |
+Both receivers get two attempts at the same operation:
 
-These are bounded findings, including intentionally failed tasks. Passing the fixture means observing the expected behavior, including the unsafe control.
+| Receiver | Tool attempts | Committed effects | Result |
+|---|---:|---:|---|
+| Unprotected control | 2 | 2 | Duplicate action; the task failed |
+| Protected SQLite receiver | 2 | 1 | Original receipt returned; no second effect |
 
-## Verify without dependencies or keys
+The checkpoint restores pending work. The protected receiver recognizes the stable operation ID and prevents another effect. A separate application reporter checks receiver records before reporting the outcome.
 
-From the repository root, with Python 3.10 or newer (checked on 3.14.6 and 3.12.11):
+**A successful graph or a valid receipt alone does not prove the action happened once.**
+
+## What the evidence shows
+
+| Finding | Evidence |
+|---|---|
+| Pending tools can replay after their actions commit | [Crash/replay observations and corrected assessment](docs/crash-resume-evidence.md) |
+| Approval, edited contents and rejection survive the tested restart boundary | [Five-case published-package reproduction](docs/clean-install-reproduction.md) |
+| The application can disclose duplicates and report unavailable evidence as unknown | [Graph answers versus application responses](docs/final-response-integration.md) |
+| A spent request budget blocks a new request, but allows pending work to replay | [Budget and crash recovery](docs/budget-recovery-evidence.md) |
+| Broader recovery guidance can introduce incorrect source selection | [Why one middleware candidate was rejected](docs/search-recovery-evidence.md) |
+
+These are bounded findings. A passing experiment can include an intentionally unsafe control whose user task failed. Each walkthrough links the saved observations; [the claim map](docs/claim-evidence.md) connects public claims to results, code and limits.
+
+## Verify locally—no dependencies or API keys
+
+From the repository root, with Python 3.10 or newer:
 
 ```sh
 python3 -S -m reliability_lab verify-offline
 ```
 
-Exit 0 means the stored-evidence stages passed their hash and consistency checks and the six receiver contracts passed against fresh temporary databases. The JSON separates those activities and prints a unique `work/attempts/<id>/report.json` path. It does **not** rerun historical agents, install packages or launch graph workers. Invalid evidence stops later stages and produces a nonzero exit. On Python before 3.13, the SQLite connection-warning contract is explicitly skipped and reported.
+This validates saved evidence and runs **six fresh SQLite receiver contracts**. The JSON reports each stage separately and gives the path to a new local report under `work/attempts/`. Exit 0 means the checks passed; invalid evidence produces a nonzero exit.
 
-For the separate development suite:
+It does **not** rerun historical agents, launch graph workers or call a model. Stored records include failures and excluded attempts; their count is not a count of successful evaluations.
+
+Run the separate development suite with:
 
 ```sh
 python3 -S -m unittest discover -s tests -v
 ```
 
-The suite ran 130 tests: all passed on Python 3.14.6; on 3.12.11, 129 passed and one was explicitly skipped. These include tampering checks and deterministic application tests, not 130 model evaluations. Python socket operations are blocked on the offline command's execution path; this is not an operating-system security sandbox. See [verification scope](docs/reproduction.md).
+Verified on Python 3.14.6: **130 passed**. On Python 3.12.11: **129 passed, one explicitly skipped** because the SQLite connection warning is unavailable before 3.13. These are development tests, not model evaluations. See the [verification record](results/presentation-closeout-check-20261105.json).
 
-## Optional: deliberately reproduce crash/replay
+## Optional: run a new crash/replay experiment
 
-Use saved evidence first. A fresh runtime attempt requires a virtual environment and the eight pinned seed versions in [requirements-runtime.txt](requirements-runtime.txt), including SQLite checkpoint support. The recorded published-package installation used Python 3.14.6; other Python/platform combinations are unverified. From the repository root, these are **setup and fresh-execution commands**, not offline validation:
+Saved evidence is enough for the walkthrough. To deliberately reproduce the five-case experiment, use a virtual environment with the eight pinned seed versions in [requirements-runtime.txt](requirements-runtime.txt), including SQLite checkpoint support. Runtime execution was verified on Python 3.14.6 on the same host; other runtime platforms and Python versions remain unverified.
 
 ```sh
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements-runtime.txt
-.venv/bin/python -m reliability_lab crash-resume-check --prediction 'Write your prediction before running'
+.venv/bin/python -m reliability_lab crash-resume-check --prediction 'Your prediction before running'
 ```
 
-This launches up to **19 fresh worker phases across five cases**, with zero live model calls or provider tokens, no automatic case retries, a 30-second wait cap per worker, a 600-second case-sequence budget and graph recursion limit 10. Approved crash phases intentionally exit 86. Reports, databases and logs stay in ignored `work/crash-resume/`; only reviewable extracts belong in published evidence.
+**Execution bound:** up to 19 fresh worker phases, five cases, zero provider calls/tokens, no automatic case retries, a 30-second wait cap per worker, a 600-second case-sequence budget and recursion limit 10 per invocation. Approved crash phases intentionally exit 86. New reports, databases and logs stay in ignored `work/crash-resume/`.
 
-The eight seeds are not a full transitive artifact lock. The original clean installation used uv; this pip spelling has not separately been executed. Existing [same-host clean-package evidence](docs/clean-install-reproduction.md) reproduced the five cases once. Today's command uses the current assessor, not the original mistaken assessor. The historical report's generic editable-environment preflight wording is retained and corrected by its separate environment record. See [exact prerequisites, expected outcomes and verification limits](docs/reproduction.md) before running. No new runtime installation or graph experiment was performed for this presentation closeout.
+The seed requirements are not a full transitive artifact lock. The recorded clean installation used uv; the pip setup spelling above has not separately been executed. Read the [setup details, expected outcomes and known limitations](docs/reproduction.md) before starting. No new runtime experiment was run for this documentation closeout.
 
-## Reading order
+## Project contribution and attribution
 
-1. [Five-minute demo](docs/demo.md): inspect saved evidence and run the offline check.
-2. [REPORT.md](REPORT.md): the central story, failures, safeguards and corrections.
-3. [Claim-to-evidence map](docs/claim-evidence.md): what each public claim supports and where it stops.
-4. [Architecture](docs/architecture.md), [provenance](docs/provenance.md) and [remaining gaps](docs/provenance-gaps.md): deeper reference and historical milestone notes.
+Ibrahim Arshad developed the experiment harness, local receiver, outcome reporting, evaluators and reviewed evidence with AI assistance. **Deep Agents, LangChain and LangGraph supply the agent runtime.** This is an independent lab, not an upstream SDK contribution or production deployment.
 
-## Limits
+Fresh recovery experiments use scripted model proposals and simulated reviewer decisions. Earlier live-model evaluations are retained as a separate evidence category. [InferenceBench](https://github.com/ibrahim1023/inference-bench) is a separate supporting project.
 
-The receiver is local SQLite, approval is simulated, and the crash is abrupt process exit rather than power loss. Fresh scripted runs test runtime mechanics, not general model reliability. Historical answer-quality labels remain earlier manual assistant review. The unresolved [120B result and separate 20B cohort](docs/optional-cohorts.md) remain separate. Selected source hashes and same-host reproduction do not establish every historical revision, cross-platform behavior or authenticity against coherent artifact fabrication. Saved filesystem graph exports are not yet covered by the default offline verifier.
+## Read next
 
-No claim is made of general exactly-once delivery, authenticated human approval, production deployment or inference optimization. [InferenceBench](https://github.com/ibrahim1023/inference-bench) is separate supporting work. Original milestone documents and failed assessments are preserved; their dated status statements are historical, not the current entry point.
+1. [Five-minute demo](docs/demo.md) — follow the crash/replay comparison using saved evidence.
+2. [Full report](REPORT.md) — understand the safeguards, failures and evaluator corrections.
+3. [Architecture](docs/architecture.md) — see where the runtime, receiver and reporter fit.
+4. [Claim map](docs/claim-evidence.md) and [provenance gaps](docs/provenance-gaps.md) — inspect support and uncertainty behind each claim.
+
+## Scope and limitations
+
+- **Local recovery mechanics:** SQLite receiver, simulated approval and abrupt process exit; no general exactly-once delivery or power-loss guarantee.
+- **Bounded evaluation:** scripted runs test runtime behavior, not general model reliability. Historical answer-quality labels remain earlier manual assistant review. The [unresolved 120B result and separate 20B comparison](docs/optional-cohorts.md) remain visible.
+- **Partial reproducibility:** same-host package reproduction and selected source hashes do not establish every historical revision or cross-platform behavior. Saved filesystem graph exports are not yet checked by the default offline verifier.
+- **Evidence integrity:** hashes and consistency checks cannot authenticate a coherent replacement of artifacts and manifest. The offline Python socket guard is not an operating-system security sandbox.
+
+Original milestone documents, failed assessments and interrupted attempts are preserved. Their dated status notes are historical; [the reproduction guide](docs/reproduction.md) describes current verification coverage.
