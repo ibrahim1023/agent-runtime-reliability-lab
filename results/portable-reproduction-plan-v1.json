@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "experiment_id": "portable-crash-reproduction-v1",
+  "frozen_on": "2026-11-09",
+  "baseline_commit": "74bc67d2410cb890cba895219555f3a40127da49",
+  "kind": "one fresh hosted-runner installation and scripted graph/process execution; not a live-model evaluation",
+  "learner_prediction": "Yes—the same recovery behavior will reproduce",
+  "target": {"runner": "ubuntu-24.04", "python": "3.14.6", "requirements": "requirements-runtime.txt", "seed_versions": 8},
+  "budget": {"workflow_dispatches": 1, "installation_attempts": 1, "installation_timeout_minutes": 5, "pip_retries": 0, "runtime_attempts": 1, "cases": 5, "maximum_worker_phases": 19, "maximum_seconds_per_worker": 30, "case_sequence_seconds": 600, "recursion_limit": 10, "job_timeout_minutes": 20, "provider_calls": 0, "provider_tokens": 0, "automatic_case_retries": 0},
+  "expectations": {"protected-approve-1": [2, 1], "protected-approve-2": [2, 1], "unprotected-approve-control": [2, 2], "protected-edit": [2, 1], "protected-reject": [0, 0]},
+  "criteria": ["Fresh non-editable virtual environment, eight exact seed versions, no system site packages", "Match the existing frozen five-case plan without changing runtime or receiver behavior", "Recompute existing assessor contracts; do not trust a green job alone", "Protected cases reuse the exact receipt, edited contents remain approved, reject has no effects", "Control duplication remains task failure; completion, effects and reporting are separate", "Record selected loaded module hashes, installed version inventory, commit, runner and phase observations", "Preserve setup/runtime failure and do not silently retry or substitute versions"],
+  "publication": ["Only allowlisted summary JSON is uploaded", "No raw checkpoint databases, tool journals, raw stdout/stderr, credentials or private paths", "Synthetic counts and receipt equality facts, not raw receipts or prompts", "Review and copy the hosted result into the repository after execution"],
+  "limits": ["One hosted Linux runner is not an independent human reproduction", "Same seed versions can resolve different transitive packages", "Runner images and seed requirements are not full artifact locks", "Python socket guard is not an OS security sandbox", "Abrupt process exit, simulated reviewer and scripted model proposals remain unchanged"],
+  "plan_change_policy": "Preserve this version; record any amendment and failed attempt before another dispatch. Workflow setup alone is not a completed reproduction."
+}
