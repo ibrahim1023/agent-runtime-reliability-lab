@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "experiment_id": "budget-aware-approval-v2",
+  "frozen_on": "2026-11-09",
+  "base_commit": "bcd522670f6bb4fe9a339b188c53ac0001a56981",
+  "kind": "fresh corrected-candidate scripted graph execution; preserved baseline comparison from v1",
+  "learner_prediction": "not supplied for the corrective follow-up; original prospective prediction remains in v1",
+  "budget": {
+    "conditions": 4,
+    "maximum_worker_phases": 15,
+    "max_seconds_per_worker": 20,
+    "max_total_seconds": 300,
+    "max_tool_body_entries": 5,
+    "provider_calls": 0,
+    "provider_tokens": 0,
+    "automatic_retries": 0
+  },
+  "thread_limit": 1,
+  "recursion_limit": 24,
+  "conditions": [
+    {
+      "case": "candidate-approve-then-exhausted",
+      "mode": "candidate",
+      "phases": [
+        "initial",
+        "restore",
+        "approve-first",
+        "new-request"
+      ],
+      "exits": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "effects": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "counts": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "reviews": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "tool_entries": 1
+    },
+    {
+      "case": "candidate-reject-then-approve",
+      "mode": "candidate",
+      "phases": [
+        "initial",
+        "reject-first",
+        "new-request",
+        "approve-next"
+      ],
+      "exits": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "effects": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "counts": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "reviews": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "tool_entries": 1
+    },
+    {
+      "case": "candidate-protected-crash",
+      "mode": "candidate",
+      "phases": [
+        "initial",
+        "restore",
+        "approve-first",
+        "resume",
+        "new-request"
+      ],
+      "exits": [
+        0,
+        0,
+        86,
+        0,
+        0
+      ],
+      "effects": [
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "counts": [
+        0,
+        0,
+        null,
+        1,
+        1
+      ],
+      "reviews": [
+        true,
+        true,
+        null,
+        false,
+        false
+      ],
+      "tool_entries": 2,
+      "crash": true
+    },
+    {
+      "case": "candidate-edit",
+      "mode": "candidate",
+      "phases": [
+        "initial",
+        "edit-first"
+      ],
+      "exits": [
+        0,
+        0
+      ],
+      "effects": [
+        0,
+        1
+      ],
+      "counts": [
+        0,
+        1
+      ],
+      "reviews": [
+        true,
+        false
+      ],
+      "tool_entries": 1,
+      "approved_message": "approved-note"
+    }
+  ],
+  "inspected_module_sha256": {
+    "deepagents.graph": "5964f538571f415331870230b86eae1833f11e52c0d91b38e3c37e6e0c609569",
+    "langchain.agents.factory": "cc4a7d9a620224558c4eddd4e13edc988a9ac9e328b7a67deeb71ed2c5ec5174",
+    "langchain.agents.middleware.tool_call_limit": "098b71e918b95f92412d4aa13791a9299475edc981e58834fb6e5761c828cf50",
+    "langchain.agents.middleware.human_in_the_loop": "9b9a84d3f0f917f801db07f49440f7f4af06f36c21ab9e1af5d3a9b408f1b146"
+  },
+  "policy": [
+    "The approval callback reads the native thread counter but does not increment it",
+    "When no allowance remains, skip the prompt; the paired native limiter must block before body entry",
+    "Keep the native limiter after the approval hook; no middleware reordering or SDK patch",
+    "Reject malformed counters and unsupported batches instead of auto-approving them",
+    "Protected pending replay still uses the stable operation ID and exact receipt; no new approval on replay",
+    "Edit preserves the approved replacement; no original-payload effect",
+    "Keep proposal and synthetic rejection reply in message history; skip counter delegation only when the latest proposal already has matching tool replies",
+    "Use a narrow subclass of the native limiter; delegate unanswered proposals to native enforcement",
+    "Available accepted calls spend allowance before execution; rejection does not spend it in this corrected candidate"
+  ],
+  "publication": [
+    "Preserve failed attempts and assessed outcomes",
+    "Only reviewed synthetic observations and source identities; no raw checkpoint dumps, credentials or private paths"
+  ],
+  "limits": [
+    "Serial single record_action proposals in an isolated local synchronous fixture",
+    "No concurrent/global budget or authenticated review guarantee",
+    "The predicate and native limiter must share the same configured thread limit",
+    "No run-limit, multi-tool batch, async or account-wide policy claim",
+    "No live model quality evaluation; no new installation or dependency"
+  ]
+}

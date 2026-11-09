@@ -20,3 +20,5 @@
 **Review focus:** Skipping review is safe here only because the paired native limiter blocks exhausted requests; rejected calls must disappear before counting; pending tools-node replay must retain receiver deduplication; edits must use approved args. This is a serial local policy, not a concurrent reservation mechanism.
 
 Pre-execution review: no serial-policy blocker. Added an explicit worker cap, pre-execution source fingerprints and malformed-observation preservation. Tool-entry bound is from scripted proposals, not a separate atomic cap; provider totals are design declarations supported by socket blocking and scrubbed environment.
+
+A1: Original attempt stopped after12workers on real native rejection accounting, not an evaluator false negative. V1 frozen criteria, failed report and executed bytes retained. V2 changes the candidate counter adapter; four candidate conditions15workers, no baseline rerun. Original source-review interpretation of rejection was wrong.

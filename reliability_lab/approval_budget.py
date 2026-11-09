@@ -5,6 +5,7 @@ from functools import partial
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+    from langchain.agents.middleware import ToolCallLimitMiddleware
     from langchain_core.language_models import BaseChatModel
     from langchain_core.tools import BaseTool
     from langgraph.checkpoint.base import BaseCheckpointSaver
@@ -37,11 +38,42 @@ def review_required(request: object, *, thread_limit: int) -> bool:
     return count < thread_limit
 
 
+def proposal_already_answered(state: Mapping[str, object]) -> bool:
+    """Recognize replies after the latest proposal without changing history.
+
+    In this serial approval stack, a reply present before tool execution is the
+    synthetic rejection answer. It must not spend the execution allowance.
+    """
+    messages = state.get('messages', [])
+    for index in range(len(messages)-1, -1, -1):
+        message = messages[index]
+        if getattr(message, 'type', None) != 'ai':
+            continue
+        calls = getattr(message, 'tool_calls', [])
+        replies = {getattr(m, 'tool_call_id', None) for m in messages[index+1:] if getattr(m, 'type', None) == 'tool'}
+        return bool(calls) and all(call['id'] in replies for call in calls)
+    return False
+
+
+def execution_allowance_limiter(thread_limit: int) -> 'ToolCallLimitMiddleware':
+    """Delegate native enforcement only for proposals still awaiting execution."""
+    from langchain.agents.middleware import ToolCallLimitMiddleware
+    from langchain.agents.middleware.types import hook_config
+
+    class UnansweredRequestLimitMiddleware(ToolCallLimitMiddleware):
+        @hook_config(can_jump_to=['end'])
+        def after_model(self, state: dict, runtime: object) -> dict | None:
+            if proposal_already_answered(state):
+                return None
+            return super().after_model(state, runtime)
+
+    return UnansweredRequestLimitMiddleware(thread_limit=thread_limit, exit_behavior='end')
+
+
 def create_budget_aware_agent(*, model: 'BaseChatModel', action: 'BaseTool',
                               checkpointer: 'BaseCheckpointSaver', thread_limit: int = 1) -> 'CompiledStateGraph':
     """Pair review eligibility and enforcement for the lab's one-action fixture."""
     from deepagents import create_deep_agent
-    from langchain.agents.middleware import ToolCallLimitMiddleware
 
     if action.name != 'record_action' or type(thread_limit) is not int or thread_limit < 1:
         raise ValueError('Expected record_action and a positive integer thread limit')
@@ -49,5 +81,5 @@ def create_budget_aware_agent(*, model: 'BaseChatModel', action: 'BaseTool',
         model=model, tools=[action], checkpointer=checkpointer,
         interrupt_on={'record_action': {'allowed_decisions': ['approve', 'reject', 'edit'],
                                        'when': partial(review_required, thread_limit=thread_limit)}},
-        middleware=[ToolCallLimitMiddleware(thread_limit=thread_limit, exit_behavior='end')],
+        middleware=[execution_allowance_limiter(thread_limit)],
     )

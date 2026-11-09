@@ -4,7 +4,7 @@ import copy
 from types import SimpleNamespace
 import unittest
 
-from reliability_lab.approval_budget import review_required
+from reliability_lab.approval_budget import review_required, proposal_already_answered
 
 
 def request(count=0, *, calls=1):
@@ -40,3 +40,15 @@ class ApprovalBudgetContracts(unittest.TestCase):
                 review_required(request(), thread_limit=limit)
         with self.assertRaises(ValueError):
             review_required(request(calls=2), thread_limit=1)
+
+    def test_rejection_reply_marks_proposal_answered_without_removing_history(self):
+        proposed = request()
+        proposed.state['messages'].append(SimpleNamespace(type='tool', tool_call_id='call-0', status='error'))
+        before = copy.deepcopy(proposed.state)
+        self.assertTrue(proposal_already_answered(proposed.state))
+        self.assertEqual(proposed.state, before)
+
+    def test_unanswered_new_proposal_is_not_confused_with_older_reply(self):
+        proposed = request()
+        proposed.state['messages'].insert(0, SimpleNamespace(type='tool', tool_call_id='call-0', status='error'))
+        self.assertFalse(proposal_already_answered(proposed.state))

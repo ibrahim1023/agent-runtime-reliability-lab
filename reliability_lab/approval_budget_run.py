@@ -18,7 +18,7 @@ from reliability_lab.receiver import Ledger
 def run_approval_budget(root: Path, *, learner_prediction: str = 'not supplied') -> tuple[dict, int]:
     """Keep one bounded attempt, including any unexpected worker failure."""
     install_offline_guard()
-    plan_path = root / 'results/budget-aware-approval-plan-v1.json'
+    plan_path = root / 'results/budget-aware-approval-plan-v2.json'
     plan = json.loads(plan_path.read_text())
     relative = Path('work/approval-budget') / uuid.uuid4().hex
     directory = root / relative; directory.mkdir(parents=True)
@@ -82,6 +82,6 @@ def run_approval_budget(root: Path, *, learner_prediction: str = 'not supplied')
     report['duration_s'] = time.perf_counter()-started
     report['sources_unchanged'] = all(hashlib.sha256((root / 'reliability_lab' / name).read_bytes()).hexdigest() == digest
         for name, digest in report['implementation_sha256'].items())
-    report['fixture_contracts_met'] = report['sources_unchanged'] and len(report['cases']) == 6 and all(c['verdicts']['contract_met'] for c in report['cases'])
+    report['fixture_contracts_met'] = report['sources_unchanged'] and len(report['cases']) == len(plan['conditions']) and all(c['verdicts']['contract_met'] for c in report['cases'])
     (directory / 'report.json').write_text(json.dumps(report, indent=2)+'\n')
     return report, 0 if report['fixture_contracts_met'] else 1
