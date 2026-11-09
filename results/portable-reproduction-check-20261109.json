@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-09",
+  "kind": "stored-evidence validation and development checks; not another graph execution",
+  "executed_workflow_commit": "614d115ec2ab55956135c79735787fb6235c13e3",
+  "hosted_run_url": "https://github.com/ibrahim1023/agent-runtime-reliability-lab/actions/runs/42596424861",
+  "fresh_remote_dispatches": 1,
+  "fresh_remote_installations": 1,
+  "fresh_remote_runtime_attempts": 1,
+  "fresh_remote_worker_phases": 19,
+  "live_model_calls": 0,
+  "provider_tokens": 0,
+  "working_checkout": {
+    "python": "3.14.6",
+    "development_tests_run": 136,
+    "passed": 136,
+    "skipped": 0,
+    "offline_exit_code": 0,
+    "portable_saved_cases_checked": 5,
+    "fresh_receiver_contracts": 6
+  },
+  "isolated_copy": {
+    "python": "3.12.11",
+    "scope": "isolated same-host source copy; no optional environment or dotenv copied; not another runtime reproduction",
+    "checks": [
+      {
+        "command": "python3 -S -m reliability_lab verify-offline",
+        "exit_code": 0,
+        "portable_reproduction_evidence": {
+          "status": "passed",
+          "kind": "stored hosted summary validation; no installation or graph execution",
+          "cases_checked": 5,
+          "worker_phases_observed": 19,
+          "new_workers": 0,
+          "changed_transitive_versions": 12,
+          "control_task_failed": true
+        },
+        "all_stages_passed": true
+      },
+      {
+        "command": "python3 -S -m unittest discover -s tests -v",
+        "exit_code": 0,
+        "tests_run": 136,
+        "result": "OK (skipped=1)"
+      }
+    ]
+  },
+  "publication_review": {
+    "local_document_links_checked": 111,
+    "executed_workflow_and_exporter_snapshots": "byte-identical to executed commit",
+    "original_fixture_receiver_requirements_and_historical_evidence": "unchanged",
+    "existing_manifest_sections": "unchanged; portable_reproduction_v1 added",
+    "private_path_and_key_prefix_scan": "no matches in new evidence",
+    "independent_review": "no material blocker; minor exporter CLI/environment branch coverage gap remains documented"
+  },
+  "limits": [
+    "Only allowlisted derived observations were exported from the hosted runner",
+    "Tests and offline validation are not additional model or crash experiments",
+    "One Linux runner is not an independent human reproduction or a broad platform matrix"
+  ]
+}

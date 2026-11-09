@@ -28,3 +28,5 @@ The separate `reported-crash-check` command integrates receiver reconciliation i
 
 
 `budget-recovery-check` deliberately starts twelve worker phases for protected/control post-commit crash recovery plus a budget-blocked new request. It is separate from the two ordinary runtime tests. Its saved evidence is checked offline without workers. See [the combined evidence and limits](../docs/budget-recovery-evidence.md).
+
+The separate manual [hosted Linux workflow](../.github/workflows/portable-reproduction.yml) reproduced the five crash cases once on November 9. It is not triggered by pushes or the ordinary runtime tests. The default `portable_reproduction_evidence` stage validates its reviewed saved summary without installation or workers. See [the actual outcome and dependency differences](../docs/portable-reproduction.md).

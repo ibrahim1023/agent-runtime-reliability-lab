@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "kind": "reviewed comparison of one new hosted scripted execution with saved same-host evidence; not another execution",
+  "same_host_source": "results/fresh/clean-install-v1/execution.json",
+  "case_comparison": [
+    {
+      "case": "protected-approve-1",
+      "tool_entries": 2,
+      "committed_effects": 1,
+      "approved_task_completed": true,
+      "same_attempt_effect_task_outcome": true
+    },
+    {
+      "case": "protected-approve-2",
+      "tool_entries": 2,
+      "committed_effects": 1,
+      "approved_task_completed": true,
+      "same_attempt_effect_task_outcome": true
+    },
+    {
+      "case": "unprotected-approve-control",
+      "tool_entries": 2,
+      "committed_effects": 2,
+      "approved_task_completed": false,
+      "same_attempt_effect_task_outcome": true
+    },
+    {
+      "case": "protected-edit",
+      "tool_entries": 2,
+      "committed_effects": 1,
+      "approved_task_completed": true,
+      "same_attempt_effect_task_outcome": true
+    },
+    {
+      "case": "protected-reject",
+      "tool_entries": 0,
+      "committed_effects": 0,
+      "approved_task_completed": false,
+      "same_attempt_effect_task_outcome": true
+    }
+  ],
+  "selected_module_hashes_match": true,
+  "changed_installed_versions": {
+    "anthropic": {
+      "previous": "2.4.0",
+      "linux": "2.6.0"
+    },
+    "bracex": {
+      "previous": "3.2",
+      "linux": "3.2.2"
+    },
+    "jiter": {
+      "previous": "0.18.0",
+      "linux": "0.19.0"
+    },
+    "jsonpatch": {
+      "previous": "1.41",
+      "linux": "1.44"
+    },
+    "jsonpointer": {
+      "previous": "3.8",
+      "linux": "3.10"
+    },
+    "langchain-protocol": {
+      "previous": "0.0.20",
+      "linux": "0.0.21"
+    },
+    "langgraph-sdk": {
+      "previous": "0.4.11",
+      "linux": "0.4.14"
+    },
+    "ormsgpack": {
+      "previous": "1.13.0",
+      "linux": "1.13.1"
+    },
+    "pydantic": {
+      "previous": "2.14.2",
+      "linux": "2.14.3"
+    },
+    "pydantic-core": {
+      "previous": "2.50.2",
+      "linux": "2.50.4"
+    },
+    "typing-inspection": {
+      "previous": "0.4.4",
+      "linux": "0.4.5"
+    },
+    "wcmatch": {
+      "previous": "11.2",
+      "linux": "12.0.1"
+    }
+  },
+  "added_inventory_entries": {
+    "pip": "26.1.2"
+  },
+  "removed_inventory_entries": {},
+  "job_wall_seconds": 51,
+  "runtime_step_wall_seconds": 17,
+  "timing_interpretation": "GitHub job and step timestamps include orchestration; not directly comparable to earlier fixture perf_counter durations or evidence of a speed change",
+  "learner_prediction": "Yes\u2014the same recovery behavior will reproduce",
+  "prediction_result": "Supported within the five-case scope on this hosted Linux runner",
+  "dispatches": 1,
+  "installation_attempts": 1,
+  "runtime_attempts": 1,
+  "worker_phases": 19,
+  "provider_calls": 0,
+  "provider_tokens": 0,
+  "limitations": [
+    "Derived receipt-equality/identity facts, not raw receipts or checkpoint dumps, were exported",
+    "One hosted runner, not independent human replication or a broad platform matrix",
+    "Twelve transitive versions changed and pip is additionally inventoried; seeds are not a full artifact lock",
+    "Same selected module hashes do not establish identical complete environments",
+    "Historical revision, model-quality, authenticated-review and power-loss gaps remain unchanged"
+  ]
+}

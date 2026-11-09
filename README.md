@@ -53,21 +53,21 @@ Run the separate development suite with:
 python3 -S -m unittest discover -s tests -v
 ```
 
-Verified on Python 3.14.6: **130 passed**. On Python 3.12.11: **129 passed, one explicitly skipped** because the SQLite connection warning is unavailable before 3.13. These are development tests, not model evaluations. See the [verification record](results/presentation-closeout-check-20261105.json).
+The November 5 check ran 130 development tests on Python 3.14.6; Python 3.12.11 passed 129 with one explicit SQLite warning-test skip. Subsequent [Linux reproduction and saved-evidence checks](docs/portable-reproduction.md) are documented separately. Test counts are not model-evaluation counts.
 
 ## Optional: run a new crash/replay experiment
 
-Saved evidence is enough for the walkthrough. To deliberately reproduce the five-case experiment, use a virtual environment with the eight pinned seed versions in [requirements-runtime.txt](requirements-runtime.txt), including SQLite checkpoint support. Runtime execution was verified on Python 3.14.6 on the same host; other runtime platforms and Python versions remain unverified.
+Saved evidence is enough for the walkthrough. To deliberately reproduce the five-case experiment, use a virtual environment with the eight pinned seed versions in [requirements-runtime.txt](requirements-runtime.txt), including SQLite checkpoint support. Runtime execution was verified on Python 3.14.6 locally and on a separate hosted Ubuntu 24.04 runner. This is not a broad platform or Python-version matrix.
 
 ```sh
 python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-runtime.txt
+.venv/bin/python -m pip install --retries 0 --timeout 30 -r requirements-runtime.txt
 .venv/bin/python -m reliability_lab crash-resume-check --prediction 'Your prediction before running'
 ```
 
 **Execution bound:** up to 19 fresh worker phases, five cases, zero provider calls/tokens, no automatic case retries, a 30-second wait cap per worker, a 600-second case-sequence budget and recursion limit 10 per invocation. Approved crash phases intentionally exit 86. New reports, databases and logs stay in ignored `work/crash-resume/`.
 
-The seed requirements are not a full transitive artifact lock. The recorded clean installation used uv; the pip setup spelling above has not separately been executed. Read the [setup details, expected outcomes and known limitations](docs/reproduction.md) before starting. No new runtime experiment was run for this documentation closeout.
+The seed requirements are not a full transitive artifact lock. The [Linux reproduction](docs/portable-reproduction.md) exercised pip setup and matched all five case outcomes, despite twelve changed transitive versions. Read the [setup details, expected outcomes and known limitations](docs/reproduction.md) before starting.
 
 ## Project contribution and attribution
 
@@ -86,7 +86,7 @@ Fresh recovery experiments use scripted model proposals and simulated reviewer d
 
 - **Local recovery mechanics:** SQLite receiver, simulated approval and abrupt process exit; no general exactly-once delivery or power-loss guarantee.
 - **Bounded evaluation:** scripted runs test runtime behavior, not general model reliability. Historical answer-quality labels remain earlier manual assistant review. The [unresolved 120B result and separate 20B comparison](docs/optional-cohorts.md) remain visible.
-- **Partial reproducibility:** same-host package reproduction and selected source hashes do not establish every historical revision or cross-platform behavior. Saved filesystem graph exports are not yet checked by the default offline verifier.
+- **Partial reproducibility:** local and hosted Linux reproduction plus selected source hashes do not establish every historical revision or general cross-platform behavior. Saved filesystem graph exports are not yet checked by the default offline verifier.
 - **Evidence integrity:** hashes and consistency checks cannot authenticate a coherent replacement of artifacts and manifest. The offline Python socket guard is not an operating-system security sandbox.
 
 Original milestone documents, failed assessments and interrupted attempts are preserved. Their dated status notes are historical; [the reproduction guide](docs/reproduction.md) describes current verification coverage.

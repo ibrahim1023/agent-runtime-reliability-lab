@@ -85,7 +85,9 @@ The native retry fixture had genuine infrastructure interruptions: an incorrect 
 
 A [fresh non-editable installation](docs/clean-install-reproduction.md) repeated the five crash cases once on the same host with Python 3.14.6 and published packages. Nineteen new workers produced the same tool/effect contract outcomes. [Environment](results/fresh/clean-install-v1/environment.json), [comparison](results/fresh/clean-install-v1/comparison.json), selected source hashes and a [59-package inventory](requirements-runtime-resolved-20261103.txt) are retained.
 
-That narrows the editable-checkout concern. It is not independent-host/cross-platform reproduction or a full transitive artifact lock. Raw preflight wording inherited from the older fixture says editable; the separate environment observations establish that this installation was non-editable. Historical runtime revisions and immutable provider model revisions remain unknown.
+That narrowed the editable-checkout concern at the November 3 milestone. It was not independent-host/cross-platform reproduction or a full transitive artifact lock. Raw preflight wording inherited from the older fixture says editable; the separate environment observations establish that this installation was non-editable. Historical runtime revisions and immutable provider model revisions remain unknown.
+
+A [November 9 hosted Linux reproduction](docs/portable-reproduction.md) subsequently ran the same five cases once on Ubuntu 24.04/Python 3.14.6. Nineteen worker phases matched the earlier attempt/effect/task outcomes, including the failed duplicate control. Eight seed versions and five selected module hashes matched; twelve transitive versions changed. The pip setup path is now exercised, but the complete environment is still not artifact-locked. This is another host/operating-system execution, not independent human verification or a platform matrix. The repository retains only an allowlisted summary, so raw receipts are not available for independent reassessment. The default offline verifier checks that summary without running another graph.
 
 From the repository root:
 

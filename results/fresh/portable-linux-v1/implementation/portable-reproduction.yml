@@ -1,0 +1,70 @@
+name: Portable crash reproduction
+run-name: One bounded Linux crash-replay attempt
+
+on:
+  workflow_dispatch:
+    inputs:
+      prediction:
+        description: Learner prediction recorded before execution (public)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portable-crash-reproduction
+  cancel-in-progress: false
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      LANGSMITH_TRACING: 'false'
+      LANGCHAIN_TRACING_V2: 'false'
+      PYTHONNOUSERSITE: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+      LEARNER_PREDICTION: ${{ inputs.prediction }}
+    steps:
+      - name: Check out this workflow's commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Select exact recorded Python version
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.14.6'
+      - name: Install seed versions once
+        id: install
+        timeout-minutes: 5
+        run: |
+          mkdir -p work/ci
+          python -m venv .venv
+          .venv/bin/python -m pip install --retries 0 --timeout 30 -r requirements-runtime.txt
+      - name: Record non-editable environment identity
+        run: .venv/bin/python -m reliability_lab.portable_summary environment
+      - name: Execute the existing five cases once
+        id: runtime
+        timeout-minutes: 11
+        shell: bash
+        run: |
+          set +e
+          .venv/bin/python -m reliability_lab crash-resume-check --prediction "$LEARNER_PREDICTION" > work/ci/execution.json 2> work/ci/runtime-stderr.txt
+          result=$?
+          printf '%s\n' "$result" > work/ci/runtime-exit.txt
+          exit "$result"
+      - name: Export allowlisted observations even on failure
+        if: always()
+        env:
+          INSTALL_OUTCOME: ${{ steps.install.outcome }}
+          RUNTIME_OUTCOME: ${{ steps.runtime.outcome }}
+        run: python -S -m reliability_lab.portable_summary
+      - name: Upload only the public observation summary
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: portable-reproduction-${{ github.run_id }}
+          path: work/ci/public-summary.json
+          if-no-files-found: error
+          retention-days: 14

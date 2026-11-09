@@ -1237,5 +1237,35 @@
       "export": "results/budget-recovery-check-20261104.json",
       "sha256": "8a8a0c26d986469db7b6d3fcf226033f0516de2931c507deb034544b2d3f84d9"
     }
+  },
+  "portable_reproduction_v1": {
+    "plan": {
+      "export": "results/portable-reproduction-plan-v1.json",
+      "sha256": "bc518b4fa5968b8b4950a665f887634a323a5f1b8eadb067dd682f62f2a9044b"
+    },
+    "execution": {
+      "export": "results/fresh/portable-linux-v1/execution-summary.json",
+      "sha256": "54f9ea4be02464e169cb2a52d36ee83f6954c195419b6b2b92908033220f8f2b"
+    },
+    "hosted_run": {
+      "export": "results/fresh/portable-linux-v1/hosted-run.json",
+      "sha256": "82bb6cbfbbfadd4259f37bb4cffcaaab665c302e95a189b80f974bc93eb51c18"
+    },
+    "comparison": {
+      "export": "results/fresh/portable-linux-v1/comparison.json",
+      "sha256": "1f8432e0f1688478c84354e9f9f542389cf76472f3c0cfba7f535906d3045b92"
+    },
+    "source_exporter": {
+      "export": "results/fresh/portable-linux-v1/implementation/portable_summary.py",
+      "sha256": "0caf469963d15da8fe18bd6c89b6c58875149d70c39524163510d0bede5f32af"
+    },
+    "source_workflow": {
+      "export": "results/fresh/portable-linux-v1/implementation/portable-reproduction.yml",
+      "sha256": "91732345600663bb953cfdb3d2c6f930795f077c3e3c19891e3a163d942176a9"
+    },
+    "seed_requirements": {
+      "export": "requirements-runtime.txt",
+      "sha256": "ec52bbe660d4154081aa58243577d9a1ef2300e0331c2790197614c94d995c4f"
+    }
   }
 }

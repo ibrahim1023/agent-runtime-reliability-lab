@@ -1,0 +1,122 @@
+{
+  "conclusion": "success",
+  "createdAt": "2026-11-09T09:50:11Z",
+  "databaseId": 42596424861,
+  "event": "workflow_dispatch",
+  "headSha": "614d115ec2ab55956135c79735787fb6235c13e3",
+  "jobs": [
+    {
+      "completedAt": "2026-11-09T09:51:16Z",
+      "conclusion": "success",
+      "databaseId": 129090085067,
+      "name": "reproduce",
+      "startedAt": "2026-11-09T09:50:25Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-09T09:50:26Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-09T09:50:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-09T09:50:27Z",
+          "conclusion": "success",
+          "name": "Check out this workflow's commit",
+          "number": 2,
+          "startedAt": "2026-11-09T09:50:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-09T09:50:35Z",
+          "conclusion": "success",
+          "name": "Select exact recorded Python version",
+          "number": 3,
+          "startedAt": "2026-11-09T09:50:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-09T09:50:53Z",
+          "conclusion": "success",
+          "name": "Install seed versions once",
+          "number": 4,
+          "startedAt": "2026-11-09T09:50:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-09T09:50:53Z",
+          "conclusion": "success",
+          "name": "Record non-editable environment identity",
+          "number": 5,
+          "startedAt": "2026-11-09T09:50:53Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-09T09:51:10Z",
+          "conclusion": "success",
+          "name": "Execute the existing five cases once",
+          "number": 6,
+          "startedAt": "2026-11-09T09:50:53Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-09T09:51:10Z",
+          "conclusion": "success",
+          "name": "Export allowlisted observations even on failure",
+          "number": 7,
+          "startedAt": "2026-11-09T09:51:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-09T09:51:13Z",
+          "conclusion": "success",
+          "name": "Upload only the public observation summary",
+          "number": 8,
+          "startedAt": "2026-11-09T09:51:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-09T09:51:13Z",
+          "conclusion": "success",
+          "name": "Post Select exact recorded Python version",
+          "number": 15,
+          "startedAt": "2026-11-09T09:51:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-09T09:51:13Z",
+          "conclusion": "success",
+          "name": "Post Check out this workflow's commit",
+          "number": 16,
+          "startedAt": "2026-11-09T09:51:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-09T09:51:13Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 17,
+          "startedAt": "2026-11-09T09:51:13Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/ibrahim1023/agent-runtime-reliability-lab/actions/runs/42596424861/job/129090085067"
+    }
+  ],
+  "startedAt": "2026-11-09T09:50:11Z",
+  "status": "completed",
+  "updatedAt": "2026-11-09T09:51:17Z",
+  "url": "https://github.com/ibrahim1023/agent-runtime-reliability-lab/actions/runs/42596424861",
+  "artifact": {
+    "id": 13664251082,
+    "name": "portable-reproduction-42596424861",
+    "digest": "sha256:ee8ad841330e757de5ee64079d25bc8935381bdcee7c866a23817e247236e227",
+    "downloaded_archive_sha256": "ee8ad841330e757de5ee64079d25bc8935381bdcee7c866a23817e247236e227",
+    "members": [
+      "public-summary.json"
+    ],
+    "expires_at": "2026-11-23T09:51:10Z"
+  }
+}

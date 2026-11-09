@@ -24,9 +24,9 @@
 
 ## Task 3 — Run and review
 
-- [ ] Dispatch exactly once with the learner prediction; check actual workflow SHA and job outcome.
-- [ ] Review downloaded summary, compare selected module identities and attempt/effect outcomes, preserve any interruption.
-- [ ] Commit/push the reviewed result and explain the prediction versus evidence in simple language.
+- [x] Dispatch exactly once with the learner prediction; check actual workflow SHA and job outcome.
+- [x] Review downloaded summary, compare selected module identities and attempt/effect outcomes, preserve any interruption.
+- [x] Prepare the reviewed result for publication and explain the prediction versus evidence. Final commit/push status is confirmed by Git after checks.
 
 **Review focus:** No masked nonzero exit, no green empty/incomplete roster, no skipped dependency/version check, no raw logs in artifacts, no double dispatch/retry. Installation failure is not runtime failure. Same outcomes do not imply identical dependency bytes or a speed improvement.
 
